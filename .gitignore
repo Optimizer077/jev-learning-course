@@ -1,0 +1,10 @@
+.venv/
+.ipynb_checkpoints/
+__pycache__/
+.env
+backups/
+dist/
+.DS_Store
+Thumbs.db
+qa_summary.json
+dist-validation.json

@@ -1,0 +1,82 @@
+[
+  {
+    "notebook": "00_start_here.ipynb",
+    "code_cells": 1,
+    "executed": true,
+    "seconds": 1.42,
+    "figures": 0,
+    "live_api": "not used"
+  },
+  {
+    "notebook": "01_jev_basics.ipynb",
+    "code_cells": 9,
+    "executed": true,
+    "seconds": 1.88,
+    "figures": 2,
+    "live_api": "not used"
+  },
+  {
+    "notebook": "02_decision_model_from_scratch.ipynb",
+    "code_cells": 11,
+    "executed": true,
+    "seconds": 2.5,
+    "figures": 4,
+    "live_api": "not used"
+  },
+  {
+    "notebook": "03_calibration_and_decisions.ipynb",
+    "code_cells": 10,
+    "executed": true,
+    "seconds": 2.72,
+    "figures": 4,
+    "live_api": "not used"
+  },
+  {
+    "notebook": "04_workflows_and_related_models.ipynb",
+    "code_cells": 6,
+    "executed": true,
+    "seconds": 1.61,
+    "figures": 0,
+    "live_api": "not used"
+  },
+  {
+    "notebook": "05_optional_real_jev_api.ipynb",
+    "code_cells": 9,
+    "executed": true,
+    "seconds": 1.8,
+    "figures": 0,
+    "live_api": "skipped"
+  },
+  {
+    "notebook": "06_architecture_and_training_lab.ipynb",
+    "code_cells": 8,
+    "executed": true,
+    "seconds": 2.58,
+    "figures": 3,
+    "live_api": "not used"
+  },
+  {
+    "notebook": "07_text_routing_capstone.ipynb",
+    "code_cells": 11,
+    "executed": true,
+    "seconds": 4.22,
+    "figures": 2,
+    "live_api": "not used"
+  },
+  {
+    "notebook": "08_exercises_and_solutions.ipynb",
+    "code_cells": 8,
+    "executed": true,
+    "seconds": 1.69,
+    "figures": 0,
+    "live_api": "not used"
+  },
+  {
+    "notebook": "09_related_models_lab.ipynb",
+    "code_cells": 9,
+    "executed": true,
+    "seconds": 2.41,
+    "figures": 2,
+    "live_api": "not used"
+  }
+]

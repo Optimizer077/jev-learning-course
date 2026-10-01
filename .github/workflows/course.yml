@@ -1,0 +1,54 @@
+name: Check course
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  course:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TYPESAFE_API_KEY: ""
+      MPLBACKEND: Agg
+    steps:
+      - name: Check out the course
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install course requirements
+        run: python -m pip install -r requirements.txt
+
+      - name: Check committed course files and links
+        run: python validate_course.py
+
+      - name: Rebuild maintained lessons
+        run: python build_notebooks.py
+
+      - name: Execute notebooks in fresh kernels
+        run: python execute_notebooks.py
+
+      - name: Check regenerated course files and links
+        run: python validate_course.py
+
+      - name: Package the checked course
+        run: python package_course.py
+
+      - name: Save the GitHub course archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: jev-learning-course
+          path: dist/jev-learning-github.zip
+          if-no-files-found: error

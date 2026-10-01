@@ -32,19 +32,23 @@ jobs:
         run: python -m pip install -r requirements.txt
 
       - name: Check committed course files and links
-        run: python validate_course.py
+        run: python scripts/validate_course.py
 
       - name: Rebuild maintained lessons
-        run: python build_notebooks.py
+        run: |
+          python scripts/build_visuals.py
+          python scripts/build_notebooks.py
 
       - name: Execute notebooks in fresh kernels
-        run: python execute_notebooks.py
+        run: python scripts/execute_notebooks.py
 
       - name: Check regenerated course files and links
-        run: python validate_course.py
+        run: |
+          python scripts/validate_course.py
+          python scripts/check_colab_setup.py
 
       - name: Package the checked course
-        run: python package_course.py
+        run: python scripts/package_course.py
 
       - name: Save the GitHub course archive
         uses: actions/upload-artifact@v4

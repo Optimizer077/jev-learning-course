@@ -1,7 +1,7 @@
 # Assignment 3 · Evaluate a router
 
-**Preparation:** [03](../03_calibration_and_decisions.ipynb) and
-[07](../07_text_routing_capstone.ipynb). Reading saved outputs is enough for the core task.
+**Preparation:** [03](../notebooks/03_calibration_and_decisions.ipynb) and
+[07](../notebooks/07_text_routing_capstone.ipynb). Reading saved outputs is enough for the core task.
 
 ## Your task
 
@@ -38,6 +38,6 @@ test split fixed. If you tune a model or policy after inspecting test cases, rec
 reserve fresh cases for the next assessment.</p>
 </details>
 
-For another view, compare methods in [lesson 09](../09_related_models_lab.ipynb).
+For another view, compare methods in [lesson 09](../notebooks/09_related_models_lab.ipynb).
 
-[All assignments](README.md) · [Course outline](../COURSE.md)
+[All assignments](README.md) · [Course outline](../docs/COURSE.md)

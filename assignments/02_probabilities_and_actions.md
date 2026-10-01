@@ -1,7 +1,7 @@
 # Assignment 2 · Probabilities and actions
 
-**Preparation:** [02](../02_decision_model_from_scratch.ipynb) and
-[03](../03_calibration_and_decisions.ipynb). You can calculate by hand or use a notebook.
+**Preparation:** [02](../notebooks/02_decision_model_from_scratch.ipynb) and
+[03](../notebooks/03_calibration_and_decisions.ipynb). You can calculate by hand or use a notebook.
 
 All values below are invented teaching examples.
 
@@ -31,7 +31,7 @@ All values below are invented teaching examples.
 Use the quick reference after attempting the calculations.</p>
 </details>
 
-Check your reasoning with [the quick reference](../QUICK_REFERENCE.md) and
-[the worked notebook exercises](../08_exercises_and_solutions.ipynb).
+Check your reasoning with [the quick reference](../docs/QUICK_REFERENCE.md) and
+[the worked notebook exercises](../notebooks/08_exercises_and_solutions.ipynb).
 
-[All assignments](README.md) · [Course outline](../COURSE.md)
+[All assignments](README.md) · [Course outline](../docs/COURSE.md)

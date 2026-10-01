@@ -1,6 +1,6 @@
 # Assignment 1 · Design a decision
 
-**Preparation:** [00](../00_start_here.ipynb) and [01](../01_jev_basics.ipynb). No coding required.
+**Preparation:** [00](../notebooks/00_start_here.ipynb) and [01](../notebooks/01_jev_basics.ipynb). No coding required.
 
 ## Scenario
 
@@ -41,7 +41,7 @@ policy explicitly. A requested correction is not automatically a request to retu
 unauthorized action, and where that rule lives.</p>
 </details>
 
-Review [lesson 04](../04_workflows_and_related_models.ipynb) and the first section of
-[the practice questions](../PRACTICE.md) after writing your answer.
+Review [lesson 04](../notebooks/04_workflows_and_related_models.ipynb) and the first section of
+[the practice questions](../docs/PRACTICE.md) after writing your answer.
 
-[All assignments](README.md) · [Course outline](../COURSE.md)
+[All assignments](README.md) · [Course outline](../docs/COURSE.md)

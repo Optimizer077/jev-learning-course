@@ -7816,7 +7816,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a><a href="01_jev_basics.html">Previous lesson</a><a href="03_calibration_and_decisions.html">Next lesson →</a><a download="" href="../../notebooks/02_decision_model_from_scratch.ipynb">Notebook ↓</a></nav><section aria-label="Reading controls" class="reader-tools">
 <label><input id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
-<details><summary>In this lesson</summary><ul><li><a href="#The-idea-before-the-code">The idea before the code</a></li><li><a href="#Goal">Goal</a></li><li><a href="#Setup">Setup</a></li><li><a href="#Begin-with-numbers-you-can-calculate-by-hand">Begin with numbers you can calculate by hand</a></li><li><a href="#Steps">Steps</a></li><li><a href="#Checks">Checks</a></li><li><a href="#Next-Steps">Next Steps</a></li><li><a href="#Take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#Check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#begin-with-numbers-you-can-calculate-by-hand">Begin with numbers you can calculate by hand</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ed379ce23a4c-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7825,7 +7825,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a href="https://colab.research.google.com/github/Optimizer077/jev-learning-course/blob/main/notebooks/02_decision_model_from_scratch.ipynb"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<h1 id="2-%C2%B7-Build-a-tiny-decision-model-from-scratch">2 · Build a tiny decision model from scratch<a class="anchor-link" href="#2-%C2%B7-Build-a-tiny-decision-model-from-scratch">¶</a></h1><p><strong>Path:</strong> Optional math<br/>
+<h1 id="2--build-a-tiny-decision-model-from-scratch">2 · Build a tiny decision model from scratch<a class="anchor-link" href="#2--build-a-tiny-decision-model-from-scratch">¶</a></h1><p><strong>Path:</strong> Optional math<br/>
 <strong>Before you start:</strong> Basic Python; lesson 01; matrix multiplication is explained here</p>
 <p><a href="README.html">Course home</a> · <a href="COURSE.html">Course outline</a> · <a href="SETUP.html">Setup help</a> · <a href="GLOSSARY.html">Glossary</a></p>
 </div>
@@ -7838,7 +7838,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="The-idea-before-the-code">The idea before the code<a class="anchor-link" href="#The-idea-before-the-code">¶</a></h2><p>Training changes a table of numbers so examples receive better scores. We normalize those scores into probabilities, then choose the largest.</p>
+<h2 id="the-idea-before-the-code">The idea before the code<a class="anchor-link" href="#the-idea-before-the-code">¶</a></h2><p>Training changes a table of numbers so examples receive better scores. We normalize those scores into probabilities, then choose the largest.</p>
 <p><strong>Your first pass:</strong> Follow sections 1–4 for the main idea. Decision regions and the gradient check are optional deeper work.</p>
 </div>
 </div>
@@ -7850,7 +7850,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Words-you-need-for-this-lesson">Words you need for this lesson<a class="anchor-link" href="#Words-you-need-for-this-lesson">¶</a></h3><table>
+<h3 id="words-you-need-for-this-lesson">Words you need for this lesson<a class="anchor-link" href="#words-you-need-for-this-lesson">¶</a></h3><table>
 <thead>
 <tr>
 <th>Word</th>
@@ -7886,7 +7886,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Goal">Goal<a class="anchor-link" href="#Goal">¶</a></h2><p>Learn the general machinery behind <strong>direct scoring</strong>: features → logits → probabilities → decision.
+<h2 id="goal">Goal<a class="anchor-link" href="#goal">¶</a></h2><p>Learn the general machinery behind <strong>direct scoring</strong>: features → logits → probabilities → decision.
 We will train a three-class linear model using NumPy, so every operation is visible.</p>
 <p><strong>This is not Jev, a replica of Jev, or RLCD.</strong> Our toy is a supervised classifier on synthetic numeric
 features. It does not understand text or new question descriptions.</p>
@@ -7894,7 +7894,7 @@ features. It does not understand text or new question descriptions.</p>
 Decisions (RLCD). It describes producing decision probabilities in parallel instead of decoding
 answer text token by token. The reviewed public pages do not specify the architecture or a reproducible
 training recipe. <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">Announcement</a>.</p>
-<h2 id="Setup">Setup<a class="anchor-link" href="#Setup">¶</a></h2><p>No GPU, downloaded weights, or API access.</p>
+<h2 id="setup">Setup<a class="anchor-link" href="#setup">¶</a></h2><p>No GPU, downloaded weights, or API access.</p>
 </div>
 </div>
 </div>
@@ -7909,7 +7909,9 @@ training recipe. <a href="https://typesafe.ai/blog/introducing-system-one-models
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Find the included teaching helpers from the course folder.</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="n">REQUIRED_FILES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"src/lab_core.py"</span><span class="p">,</span> <span class="s2">"src/tutorial_utils.py"</span><span class="p">,</span> <span class="s2">"data/tickets.json"</span><span class="p">)</span>
+<span class="n">REQUIRED_FILES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"src/lab_core.py"</span><span class="p">,</span> <span class="s2">"src/tutorial_utils.py"</span><span class="p">,</span> <span class="s2">"data/tickets.json"</span><span class="p">,</span>
+                  <span class="s2">"assets/decision-flow.png"</span><span class="p">,</span> <span class="s2">"assets/question-types.png"</span><span class="p">,</span>
+                  <span class="s2">"assets/calibration-counts.png"</span><span class="p">,</span> <span class="s2">"assets/data-splits.png"</span><span class="p">,</span> <span class="s2">"assets/word-order.png"</span><span class="p">)</span>
 <span class="n">COURSE_ROOT</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">)</span>
                     <span class="k">if</span> <span class="nb">all</span><span class="p">((</span><span class="n">p</span> <span class="o">/</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">REQUIRED_FILES</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
 <span class="c1"># Colab opens a single notebook; fetch its companion code and fictional data.</span>
@@ -7948,7 +7950,7 @@ training recipe. <a href="https://typesafe.ai/blog/introducing-system-one-models
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Begin-with-numbers-you-can-calculate-by-hand">Begin with numbers you can calculate by hand<a class="anchor-link" href="#Begin-with-numbers-you-can-calculate-by-hand">¶</a></h2><p>Before the matrix notation, follow <strong>one</strong> example. We invent two input features: 2 and 1.
+<h2 id="begin-with-numbers-you-can-calculate-by-hand">Begin with numbers you can calculate by hand<a class="anchor-link" href="#begin-with-numbers-you-can-calculate-by-hand">¶</a></h2><p>Before the matrix notation, follow <strong>one</strong> example. We invent two input features: 2 and 1.
 Each option has one weight for each feature and one extra number called a bias.</p>
 <p>For the technical option: <strong>2 × 0.8 + 1 × (−0.2) + 0.1 = 1.5</strong>.
 Repeat that multiplication-and-addition for the other options. The table below traces every term.
@@ -8025,7 +8027,7 @@ Restart and Run All after trying it. This warm-up has its own variables and does
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Steps">Steps<a class="anchor-link" href="#Steps">¶</a></h2><h3 id="1.-Make-a-visible-learning-problem">1. Make a visible learning problem<a class="anchor-link" href="#1.-Make-a-visible-learning-problem">¶</a></h3><p>Each point has two invented features and one of three classes. We generate independent training
+<h2 id="steps">Steps<a class="anchor-link" href="#steps">¶</a></h2><h3 id="1-make-a-visible-learning-problem">1. Make a visible learning problem<a class="anchor-link" href="#1-make-a-visible-learning-problem">¶</a></h3><p>Each point has two invented features and one of three classes. We generate independent training
 and test examples from the same known process. Classes overlap, so perfect classification is not expected.
 These coordinates are a teaching stand-in for a learned representation, not a proposed Jev encoding.</p>
 </div>
@@ -8080,7 +8082,7 @@ These coordinates are a teaching stand-in for a learned representation, not a pr
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Convert-logits-into-probabilities">2. Convert logits into probabilities<a class="anchor-link" href="#2.-Convert-logits-into-probabilities">¶</a></h3><p>A <strong>logit</strong> is an unconstrained score. For a feature vector $x$, our model computes
+<h3 id="2-convert-logits-into-probabilities">2. Convert logits into probabilities<a class="anchor-link" href="#2-convert-logits-into-probabilities">¶</a></h3><p>A <strong>logit</strong> is an unconstrained score. For a feature vector $x$, our model computes
 $z=xW+b$. Softmax turns the three scores into a distribution:
 $$p_k=\frac{\exp(z_k/T)}{\sum_j\exp(z_j/T)}.$$
 The temperature $T&gt;0$ controls concentration. Lower temperature makes the distribution sharper;
@@ -8131,7 +8133,7 @@ changing the answer. This is general classifier mathematics, not a disclosed Jev
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Train-by-penalizing-the-wrong-distribution">3. Train by penalizing the wrong distribution<a class="anchor-link" href="#3.-Train-by-penalizing-the-wrong-distribution">¶</a></h3><p>Cross-entropy loss is $-\frac{1}{N}\sum_i\log p_{i,y_i}$. It penalizes assigning low probability
+<h3 id="3-train-by-penalizing-the-wrong-distribution">3. Train by penalizing the wrong distribution<a class="anchor-link" href="#3-train-by-penalizing-the-wrong-distribution">¶</a></h3><p>Cross-entropy loss is $-\frac{1}{N}\sum_i\log p_{i,y_i}$. It penalizes assigning low probability
 to the correct class. For this linear-softmax model the gradient of the logits is $(p-Y)/N$,
 where $Y$ contains one-hot labels. We take small steps opposite the gradient.</p>
 <p>This ordinary supervised objective teaches probabilistic prediction. It is <strong>not</strong> an implementation
@@ -8197,7 +8199,7 @@ of RLCD; TypeSafe describes RLCD's objective at a high level as calibrated decis
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Inspect-one-forward-pass">4. Inspect one forward pass<a class="anchor-link" href="#4.-Inspect-one-forward-pass">¶</a></h3><p>All three option scores are computed by one matrix operation. A new input still needs inference,
+<h3 id="4-inspect-one-forward-pass">4. Inspect one forward pass<a class="anchor-link" href="#4-inspect-one-forward-pass">¶</a></h3><p>All three option scores are computed by one matrix operation. A new input still needs inference,
 but this toy does not run a loop to generate an answer string.</p>
 </div>
 </div>
@@ -8247,7 +8249,7 @@ but this toy does not run a loop to generate an answer string.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Why-skipping-output-token-decoding-can-help">5. Why skipping output-token decoding can help<a class="anchor-link" href="#5.-Why-skipping-output-token-decoding-can-help">¶</a></h3><p>A simplified latency model is:
+<h3 id="5-why-skipping-output-token-decoding-can-help">5. Why skipping output-token decoding can help<a class="anchor-link" href="#5-why-skipping-output-token-decoding-can-help">¶</a></h3><p>A simplified latency model is:
 $$t_{\text{text}}=t_{\text{input}}+L\,t_{\text{token}},\qquad
 t_{\text{decision}}=t_{\text{input}}+t_{\text{head}}.$$
 $L$ is generated output length. This only illustrates a possible source of savings.
@@ -8310,7 +8312,7 @@ The next chart uses <strong>invented constants</strong>, not measured Jev or LLM
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.-Keep-track-of-the-tensor-dimensions">6. Keep track of the tensor dimensions<a class="anchor-link" href="#6.-Keep-track-of-the-tensor-dimensions">¶</a></h3><p>Our training matrix $X$ has one row per example. Multiplying by $W$ produces one score per class.
+<h3 id="6-keep-track-of-the-tensor-dimensions">6. Keep track of the tensor dimensions<a class="anchor-link" href="#6-keep-track-of-the-tensor-dimensions">¶</a></h3><p>Our training matrix $X$ has one row per example. Multiplying by $W$ produces one score per class.
 Bias adds one learned offset to each class, repeated across rows by NumPy broadcasting.</p>
 </div>
 </div>
@@ -8353,7 +8355,7 @@ Bias adds one learned offset to each class, repeated across rows by NumPy broadc
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.-See-what-the-classifier-learned">7. See what the classifier learned<a class="anchor-link" href="#7.-See-what-the-classifier-learned">¶</a></h3><p>Background colors mark the most likely class; dashed contours show the maximum class probability.
+<h3 id="7-see-what-the-classifier-learned">7. See what the classifier learned<a class="anchor-link" href="#7-see-what-the-classifier-learned">¶</a></h3><p>Background colors mark the most likely class; dashed contours show the maximum class probability.
 Each panel comes from the same trained model. The numeric features are meaningful only inside
 this synthetic world. Far from the training clouds, a linear classifier can still be extremely confident.
 That is an important limitation: low uncertainty is not an out-of-distribution detector.</p>
@@ -8417,7 +8419,7 @@ That is an important limitation: low uncertainty is not an out-of-distribution d
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="8.-Verify-one-gradient-by-finite-differences">8. Verify one gradient by finite differences<a class="anchor-link" href="#8.-Verify-one-gradient-by-finite-differences">¶</a></h3><p>For one weight, perturb it slightly in both directions and estimate the slope of the loss.
+<h3 id="8-verify-one-gradient-by-finite-differences">8. Verify one gradient by finite differences<a class="anchor-link" href="#8-verify-one-gradient-by-finite-differences">¶</a></h3><p>For one weight, perturb it slightly in both directions and estimate the slope of the loss.
 This is an independent numerical check of the analytic update used above, not a second copy of its formula.</p>
 </div>
 </div>
@@ -8483,7 +8485,7 @@ explores that distinction and shows a generic attention mechanism without claimi
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Checks">Checks<a class="anchor-link" href="#Checks">¶</a></h2><p>The loss should fall, rows should sum to 1, and test accuracy should beat the roughly one-third
+<h2 id="checks">Checks<a class="anchor-link" href="#checks">¶</a></h2><p>The loss should fall, rows should sum to 1, and test accuracy should beat the roughly one-third
 chance baseline on this deliberately easy synthetic task. None of these checks establishes calibration.</p>
 </div>
 </div>
@@ -8526,7 +8528,7 @@ chance baseline on this deliberately easy synthetic task. None of these checks e
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Next-Steps">Next Steps<a class="anchor-link" href="#Next-Steps">¶</a></h2><p>Increase noise from 0.85 to 1.5 and rerun. Why is certainty harder when the classes overlap?
+<h2 id="next-steps">Next Steps<a class="anchor-link" href="#next-steps">¶</a></h2><p>Increase noise from 0.85 to 1.5 and rerun. Why is certainty harder when the classes overlap?
 Try multiplying all test logits by 3: the predicted classes stay the same, but probabilities change.
 That is why accuracy alone is insufficient. Continue to <a href="03_calibration_and_decisions.html">calibration</a>.</p>
 </div>
@@ -8539,7 +8541,7 @@ That is why accuracy alone is insufficient. Continue to <a href="03_calibration_
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Take-three-ideas-with-you">Take three ideas with you<a class="anchor-link" href="#Take-three-ideas-with-you">¶</a></h2><ul>
+<h2 id="take-three-ideas-with-you">Take three ideas with you<a class="anchor-link" href="#take-three-ideas-with-you">¶</a></h2><ul>
 <li>A matrix of weights maps features to scores. Softmax converts scores to a distribution.</li>
 <li>Learning changes the weights to reduce loss.</li>
 <li>A confident prediction can still be wrong or outside the training distribution.</li>
@@ -8555,7 +8557,7 @@ That is why accuracy alone is insufficient. Continue to <a href="03_calibration_
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Check-your-understanding">Check your understanding<a class="anchor-link" href="#Check-your-understanding">¶</a></h2><p>If I make probabilities more extreme, have I made the model more accurate?</p>
+<h2 id="check-your-understanding">Check your understanding<a class="anchor-link" href="#check-your-understanding">¶</a></h2><p>If I make probabilities more extreme, have I made the model more accurate?</p>
 <p>Pause and explain your answer before opening the explanation.</p>
 <details>
 <summary>Show the explanation</summary>

@@ -6,7 +6,7 @@
 
 | Guide | Use it when… |
 |---|---|
-| [Visual guide](VISUAL_GUIDE.md) | You want to see evidence, question types, and calibration before the code |
+| [Visual guide](VISUAL_GUIDE.md) | You want diagrams for decisions, probabilities, data splits, and word-order failures |
 | [Course outline](COURSE.md) | You want the modules, prerequisites, and checkpoints |
 | [Setup](SETUP.md) | You want to run in Colab or on your computer |
 | [Learning guide](LEARNING_GUIDE.md) | You want a short study schedule |

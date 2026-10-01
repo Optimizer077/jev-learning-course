@@ -38,6 +38,7 @@ def check_colab_setup():
             assert kwargs == {'check': True}
             shutil.copytree(ROOT/'src', clone/'src')
             shutil.copytree(ROOT/'data', clone/'data')
+            shutil.copytree(ROOT/'assets', clone/'assets')
             return subprocess.CompletedProcess(arguments, 0)
 
         original_path = sys.path.copy()
@@ -54,6 +55,14 @@ def check_colab_setup():
             spec.loader.exec_module(model)
             assert len(model.load_tickets()) == 54
             assert list(model.softmax([0.0, 0.0])) == [0.5, 0.5]
+            helper_spec = importlib.util.spec_from_file_location('colab_tutorial_utils', clone/'src/tutorial_utils.py')
+            helper = importlib.util.module_from_spec(helper_spec)
+            helper_spec.loader.exec_module(helper)
+            with patch.object(helper, 'display') as show:
+                helper.show_diagram('data-splits', 'Training, validation, test, and stress counts.')
+            output = show.call_args.args[0]
+            assert output.data.startswith(b'\x89PNG\r\n\x1a\n')
+            assert output.embed and output.alt == 'Training, validation, test, and stress counts.'
             with patch.dict(sys.modules, {'google':google, 'google.colab':colab}), \
                  patch('subprocess.run') as fetch:
                 exec(setup, {})
@@ -70,7 +79,7 @@ def check_colab_setup():
             assert fetch.call_count == 0, 'Do not clone into or overwrite an incomplete folder'
         finally:
             sys.path[:] = original_path
-    print('Ten entry points; fresh Colab download, cached reuse, and incomplete-cache error passed. No browser opened.')
+    print('Ten entry points; fresh Colab download with embedded artwork, cached reuse, and incomplete-cache error passed. No browser opened.')
 
 
 if __name__ == '__main__':

@@ -7816,7 +7816,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a><a href="05_optional_real_jev_api.html">Previous lesson</a><a href="07_text_routing_capstone.html">Next lesson →</a><a download="" href="../../notebooks/06_architecture_and_training_lab.ipynb">Notebook ↓</a></nav><section aria-label="Reading controls" class="reader-tools">
 <label><input id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
-<details><summary>In this lesson</summary><ul><li><a href="#The-idea-before-the-code">The idea before the code</a></li><li><a href="#Goal">Goal</a></li><li><a href="#Setup">Setup</a></li><li><a href="#Steps">Steps</a></li><li><a href="#Checks">Checks</a></li><li><a href="#Next-Steps">Next Steps</a></li><li><a href="#Take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#Check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=52278afbf311-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7825,7 +7825,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a href="https://colab.research.google.com/github/Optimizer077/jev-learning-course/blob/main/notebooks/06_architecture_and_training_lab.ipynb"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<h1 id="6-%C2%B7-Architecture-and-training:-what-we-can-actually-explain">6 · Architecture and training: what we can actually explain<a class="anchor-link" href="#6-%C2%B7-Architecture-and-training:-what-we-can-actually-explain">¶</a></h1><p><strong>Path:</strong> Optional advanced lab<br/>
+<h1 id="6--architecture-and-training-what-we-can-actually-explain">6 · Architecture and training: what we can actually explain<a class="anchor-link" href="#6--architecture-and-training-what-we-can-actually-explain">¶</a></h1><p><strong>Path:</strong> Optional advanced lab<br/>
 <strong>Before you start:</strong> Lesson 02; matrix multiplication and softmax</p>
 <p><a href="README.html">Course home</a> · <a href="COURSE.html">Course outline</a> · <a href="SETUP.html">Setup help</a> · <a href="GLOSSARY.html">Glossary</a></p>
 </div>
@@ -7838,7 +7838,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="The-idea-before-the-code">The idea before the code<a class="anchor-link" href="#The-idea-before-the-code">¶</a></h2><p>Several different mechanisms can produce bounded decisions. We experiment with generic candidate scoring and attention to understand the possibilities, not to reveal Jev’s unpublished design.</p>
+<h2 id="the-idea-before-the-code">The idea before the code<a class="anchor-link" href="#the-idea-before-the-code">¶</a></h2><p>Several different mechanisms can produce bounded decisions. We experiment with generic candidate scoring and attention to understand the possibilities, not to reveal Jev’s unpublished design.</p>
 <p><strong>Your first pass:</strong> Read each diagram and its explanation before the code. The loss derivation is optional.</p>
 </div>
 </div>
@@ -7850,7 +7850,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Words-you-need-for-this-lesson">Words you need for this lesson<a class="anchor-link" href="#Words-you-need-for-this-lesson">¶</a></h3><table>
+<h3 id="words-you-need-for-this-lesson">Words you need for this lesson<a class="anchor-link" href="#words-you-need-for-this-lesson">¶</a></h3><table>
 <thead>
 <tr>
 <th>Word</th>
@@ -7882,7 +7882,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Goal">Goal<a class="anchor-link" href="#Goal">¶</a></h2><p>Connect the interface to concrete computational ideas while keeping the evidence boundary visible.
+<h2 id="goal">Goal<a class="anchor-link" href="#goal">¶</a></h2><p>Connect the interface to concrete computational ideas while keeping the evidence boundary visible.
 <strong>35–45 minutes · intermediate.</strong> Prerequisites: vectors, matrix multiplication, and softmax from lesson 2.</p>
 <p>TypeSafe describes parallel question evaluation and decision-oriented training.
 Its public overview does not supply the full architecture or RLCD algorithm.
@@ -7890,7 +7890,7 @@ Its public overview does not supply the full architecture or RLCD algorithm.
 <a href="https://docs.typesafe.ai/patterns/fan-out">Parallel questions pattern</a>.</p>
 <p>We will build <strong>our own generic mechanisms</strong>: score descriptions, isolate questions with an attention
 mask, and compare objectives. These are demonstrations of possibilities, not claims about Jev's implementation.</p>
-<h2 id="Setup">Setup<a class="anchor-link" href="#Setup">¶</a></h2><p>All computations use NumPy, random or author-chosen toy vectors, and no downloaded model weights.</p>
+<h2 id="setup">Setup<a class="anchor-link" href="#setup">¶</a></h2><p>All computations use NumPy, random or author-chosen toy vectors, and no downloaded model weights.</p>
 </div>
 </div>
 </div>
@@ -7905,7 +7905,9 @@ mask, and compare objectives. These are demonstrations of possibilities, not cla
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Find the included teaching helpers from the course folder.</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="n">REQUIRED_FILES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"src/lab_core.py"</span><span class="p">,</span> <span class="s2">"src/tutorial_utils.py"</span><span class="p">,</span> <span class="s2">"data/tickets.json"</span><span class="p">)</span>
+<span class="n">REQUIRED_FILES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"src/lab_core.py"</span><span class="p">,</span> <span class="s2">"src/tutorial_utils.py"</span><span class="p">,</span> <span class="s2">"data/tickets.json"</span><span class="p">,</span>
+                  <span class="s2">"assets/decision-flow.png"</span><span class="p">,</span> <span class="s2">"assets/question-types.png"</span><span class="p">,</span>
+                  <span class="s2">"assets/calibration-counts.png"</span><span class="p">,</span> <span class="s2">"assets/data-splits.png"</span><span class="p">,</span> <span class="s2">"assets/word-order.png"</span><span class="p">)</span>
 <span class="n">COURSE_ROOT</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">)</span>
                     <span class="k">if</span> <span class="nb">all</span><span class="p">((</span><span class="n">p</span> <span class="o">/</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">REQUIRED_FILES</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
 <span class="c1"># Colab opens a single notebook; fetch its companion code and fictional data.</span>
@@ -7946,7 +7948,7 @@ mask, and compare objectives. These are demonstrations of possibilities, not cla
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Steps">Steps<a class="anchor-link" href="#Steps">¶</a></h2><h3 id="1.-Fixed-class-heads-versus-scoring-descriptions">1. Fixed class heads versus scoring descriptions<a class="anchor-link" href="#1.-Fixed-class-heads-versus-scoring-descriptions">¶</a></h3><p>The linear model in lesson 2 has one trained column per class. It cannot suddenly learn a fourth
+<h2 id="steps">Steps<a class="anchor-link" href="#steps">¶</a></h2><h3 id="1-fixed-class-heads-versus-scoring-descriptions">1. Fixed class heads versus scoring descriptions<a class="anchor-link" href="#1-fixed-class-heads-versus-scoring-descriptions">¶</a></h3><p>The linear model in lesson 2 has one trained column per class. It cannot suddenly learn a fourth
 class merely because you add a new name. An alternative pattern embeds <strong>both the state and the
 candidate description</strong>, then computes compatibility. Changing descriptions changes the scored inputs.</p>
 <p>The simple example below is only word overlap. A learned encoder or cross-encoder can be much
@@ -8002,7 +8004,7 @@ representation adapted for downstream classification; it is not evidence that Je
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Change-the-answer-set">2. Change the answer set<a class="anchor-link" href="#2.-Change-the-answer-set">¶</a></h3><p>Softmax probabilities are relative to the available candidates. Duplicating a strong option divides
+<h3 id="2-change-the-answer-set">2. Change the answer set<a class="anchor-link" href="#2-change-the-answer-set">¶</a></h3><p>Softmax probabilities are relative to the available candidates. Duplicating a strong option divides
 probability mass even though the evidence has not changed. This is a generic softmax property;
 we are not asserting how Jev responds to duplicate descriptions.</p>
 </div>
@@ -8052,7 +8054,7 @@ Duplicate technical weight: 0.497
 <p>This explains why closed-set selection and “does any candidate fit?” are different questions.
 If every option is poor, a normalized distribution still sums to one. Add a none-of-the-above
 option or use a separate applicability test, and evaluate it on out-of-domain inputs.</p>
-<h3 id="3.-An-attention-mechanism-in-one-equation">3. An attention mechanism in one equation<a class="anchor-link" href="#3.-An-attention-mechanism-in-one-equation">¶</a></h3><p>For query vectors $Q$, key vectors $K$, and value vectors $V$:
+<h3 id="3-an-attention-mechanism-in-one-equation">3. An attention mechanism in one equation<a class="anchor-link" href="#3-an-attention-mechanism-in-one-equation">¶</a></h3><p>For query vectors $Q$, key vectors $K$, and value vectors $V$:
 $$\operatorname{Attention}(Q,K,V)=\operatorname{softmax}(QK^T/\sqrt{d}+M)V.$$
 $QK^T$ scores compatibility. The mask $M$ is zero for allowed connections and $-\infty$ for blocked
 ones. Softmax operates across keys in each row. This is the scaled dot-product attention pattern
@@ -8115,7 +8117,7 @@ causal mask instead allows each position to read only earlier positions and itse
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Verify-isolation-by-changing-the-other-question">4. Verify isolation by changing the other question<a class="anchor-link" href="#4.-Verify-isolation-by-changing-the-other-question">¶</a></h3><p>The next function is one attention layer with random, untrained weights. It is not a useful language
+<h3 id="4-verify-isolation-by-changing-the-other-question">4. Verify isolation by changing the other question<a class="anchor-link" href="#4-verify-isolation-by-changing-the-other-question">¶</a></h3><p>The next function is one attention layer with random, untrained weights. It is not a useful language
 model. It lets us verify an information-flow claim exactly: changing question B must not change
 question A's output under our mask. Remove the mask and that guarantee disappears.</p>
 </div>
@@ -8183,7 +8185,7 @@ Question A change with all connections: 17.9544
 and reach question A through state in a later layer. Isolation must hold across the full computation,
 not just the final row of one attention matrix. Whether a particular architecture caches, batches,
 or computes these blocks efficiently is a separate implementation question.</p>
-<h3 id="5.-Shared-computation-can-reduce-repeated-work">5. Shared computation can reduce repeated work<a class="anchor-link" href="#5.-Shared-computation-can-reduce-repeated-work">¶</a></h3><p>Suppose state encoding costs $S$ units and each question costs $Q$ units. Repeating everything
+<h3 id="5-shared-computation-can-reduce-repeated-work">5. Shared computation can reduce repeated work<a class="anchor-link" href="#5-shared-computation-can-reduce-repeated-work">¶</a></h3><p>Suppose state encoding costs $S$ units and each question costs $Q$ units. Repeating everything
 for $m$ questions costs $m(S+Q)$. An idealized reusable state costs $S+mQ$.
 This models work, not latency; parallel hardware does not make additional computation free.</p>
 </div>
@@ -8229,7 +8231,7 @@ This models work, not latency; parallel hardware does not make additional comput
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.-Why-rewarding-only-the-chosen-answer-can-overstate-certainty">6. Why rewarding only the chosen answer can overstate certainty<a class="anchor-link" href="#6.-Why-rewarding-only-the-chosen-answer-can-overstate-certainty">¶</a></h3><p>Let the true chance of a positive outcome be $q=0.7$. If your objective only rewards choosing the
+<h3 id="6-why-rewarding-only-the-chosen-answer-can-overstate-certainty">6. Why rewarding only the chosen answer can overstate certainty<a class="anchor-link" href="#6-why-rewarding-only-the-chosen-answer-can-overstate-certainty">¶</a></h3><p>Let the true chance of a positive outcome be $q=0.7$. If your objective only rewards choosing the
 correct binary label, reporting $p=0.51$ and $p=0.99$ produces the same “yes” action and expected
 accuracy. A probabilistic loss also cares how certain you were.</p>
 <p>The expected Brier loss is
@@ -8285,12 +8287,12 @@ It helps explain the motivation for calibrated prediction, but does not reveal t
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.-Place-RLCD-claims-in-context">7. Place RLCD claims in context<a class="anchor-link" href="#7.-Place-RLCD-claims-in-context">¶</a></h3><p>RLHF uses human-preference signals; RLVR uses verifiable outcomes; TypeSafe describes RLCD as targeting
+<h3 id="7-place-rlcd-claims-in-context">7. Place RLCD claims in context<a class="anchor-link" href="#7-place-rlcd-claims-in-context">¶</a></h3><p>RLHF uses human-preference signals; RLVR uses verifiable outcomes; TypeSafe describes RLCD as targeting
 calibrated decisions. These are high-level objective descriptions, not complete mutually exclusive
 training recipes. A real system may combine multiple training stages and losses.</p>
 <p>Without the detailed RLCD algorithm we cannot specify its reward estimator, optimizer, sampling procedure,
 or how its calibration generalizes. We can still test the externally visible contract and evaluate its outputs.</p>
-<h2 id="Checks">Checks<a class="anchor-link" href="#Checks">¶</a></h2>
+<h2 id="checks">Checks<a class="anchor-link" href="#checks">¶</a></h2>
 </div>
 </div>
 </div>
@@ -8331,7 +8333,7 @@ or how its calibration generalizes. We can still test the externally visible con
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Next-Steps">Next Steps<a class="anchor-link" href="#Next-Steps">¶</a></h2><p><strong>Exercise 6:</strong> Unblock question A's attention to question B and rerun the isolation test.
+<h2 id="next-steps">Next Steps<a class="anchor-link" href="#next-steps">¶</a></h2><p><strong>Exercise 6:</strong> Unblock question A's attention to question B and rerun the isolation test.
 Predict which assertion will fail. Explain why “parallel” does not by itself imply “isolated.”</p>
 <p><strong>Exercise 7:</strong> For the assumed work model, derive the speedup in work units as $m$ grows very large.
 Why should you avoid interpreting that limit as a promised wall-clock speedup?</p>
@@ -8346,7 +8348,7 @@ Why should you avoid interpreting that limit as a promised wall-clock speedup?</
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Take-three-ideas-with-you">Take three ideas with you<a class="anchor-link" href="#Take-three-ideas-with-you">¶</a></h2><ul>
+<h2 id="take-three-ideas-with-you">Take three ideas with you<a class="anchor-link" href="#take-three-ideas-with-you">¶</a></h2><ul>
 <li>Candidate descriptions can be inputs to a scorer; a fixed classifier head works differently.</li>
 <li>Masks govern information flow; scheduling governs parallel execution.</li>
 <li>The demonstrated mechanisms do not reproduce Jev or RLCD.</li>
@@ -8362,7 +8364,7 @@ Why should you avoid interpreting that limit as a promised wall-clock speedup?</
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Check-your-understanding">Check your understanding<a class="anchor-link" href="#Check-your-understanding">¶</a></h2><p>Our attention demo keeps questions separate. Does that prove Jev uses this mask?</p>
+<h2 id="check-your-understanding">Check your understanding<a class="anchor-link" href="#check-your-understanding">¶</a></h2><p>Our attention demo keeps questions separate. Does that prove Jev uses this mask?</p>
 <p>Pause and explain your answer before opening the explanation.</p>
 <details>
 <summary>Show the explanation</summary>

@@ -7815,15 +7815,15 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=614a1334">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e4568f7d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Self-review-and-repairs">Self-review and repairs<a class="anchor-link" href="#Self-review-and-repairs">¶</a></h1><p>Reviewed on <strong>2026-10-02</strong> for a beginner reading on GitHub, a learner running in Colab,
+<h1 id="self-review-and-repairs">Self-review and repairs<a class="anchor-link" href="#self-review-and-repairs">¶</a></h1><p>Reviewed on <strong>2026-10-02</strong> for a beginner reading on GitHub, a learner running in Colab,
 and a contributor rebuilding the course. <a href="README.html">Course home</a> · <a href="VISUAL_GUIDE.html">Visual guide</a></p>
-<h2 id="What-the-review-found">What the review found<a class="anchor-link" href="#What-the-review-found">¶</a></h2><table>
+<h2 id="what-the-review-found">What the review found<a class="anchor-link" href="#what-the-review-found">¶</a></h2><table>
 <thead>
 <tr>
 <th>Finding</th>
@@ -7865,7 +7865,7 @@ and a contributor rebuilding the course. <a href="README.html">Course home</a> �
 </tr>
 </tbody>
 </table>
-<h2 id="What-was-checked">What was checked<a class="anchor-link" href="#What-was-checked">¶</a></h2><ul>
+<h2 id="what-was-checked">What was checked<a class="anchor-link" href="#what-was-checked">¶</a></h2><ul>
 <li>Notebook format and execution in fresh kernels.</li>
 <li>Local Markdown, notebook, HTML, and responsive-image links in the packaged course.</li>
 <li>Colab lesson destinations and a local simulation of fresh download, cached reuse, and incomplete-cache recovery.</li>
@@ -7877,7 +7877,7 @@ and a contributor rebuilding the course. <a href="README.html">Course home</a> �
 <p>Execution records are in <a href="../../docs/validation.json">validation.json</a>. The
 <a href="https://github.com/Optimizer077/jev-learning-course/actions/workflows/course.yml">GitHub workflow</a>
 records the separate Ubuntu checks and produces a checked archive.</p>
-<h2 id="Limits-of-this-review">Limits of this review<a class="anchor-link" href="#Limits-of-this-review">¶</a></h2><p>No webpages or hosted Colab runtimes were opened. The SVG artwork was inspected through local
+<h2 id="limits-of-this-review">Limits of this review<a class="anchor-link" href="#limits-of-this-review">¶</a></h2><p>No webpages or hosted Colab runtimes were opened. The SVG artwork was inspected through local
 raster previews; browser layout and GitHub's image switching were not visually previewed.
 Local Colab simulation checks setup behavior, not Google's authentication or runtime availability.
 No live Jev call was made. The 54 authored messages remain a teaching dataset, not a benchmark.</p>
@@ -7886,6 +7886,52 @@ Provider descriptions retain the source-check date in <a href="SOURCES.html">SOU
 <p>Action release sources: <a href="https://github.com/actions/checkout/releases/tag/v7.0.1">checkout v7.0.1</a>,
 <a href="https://github.com/actions/setup-python/releases/tag/v7.0.0">setup-python v7.0.0</a>, and
 <a href="https://github.com/actions/upload-artifact/releases/tag/v7.0.1">upload-artifact v7.0.1</a>.</p>
+<h2 id="second-pass-project-clarity-and-portable-visuals">Second pass: project clarity and portable visuals<a class="anchor-link" href="#second-pass-project-clarity-and-portable-visuals">¶</a></h2><table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Repair</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The curriculum checkpoint was fixed, but the short study plan still introduced calibration too early.</td>
+<td>Aligned both: questions 1–6 after basics, 7 after workflows, 8–9 after calibration and costs, 10–12 after the project.</td>
+</tr>
+<tr>
+<td>The switch from introductory queue options to project labels was easy to miss.</td>
+<td>Explicitly explain the new billing/technical/account question and the out-of-domain <code>other</code> stress label.</td>
+</tr>
+<tr>
+<td>Data-split roles and word-order failure relied mostly on prose and tables.</td>
+<td>Added two diagrams beside the project steps and in the visual guide, with predict-and-explain checks.</td>
+</tr>
+<tr>
+<td>Relative SVG links relied on companion files being resolved by a notebook viewer.</td>
+<td>Embedded PNG artwork in saved outputs; the first Colab cell also fetches and checks the companion PNGs for rerunning.</td>
+</tr>
+<tr>
+<td>The two failure labs repeated the same authored pair independently.</td>
+<td>Both labs and the diagram use a single pair definition; the visual reads the actual training vocabulary.</td>
+</tr>
+<tr>
+<td>The HTML exporter replaced useful image descriptions with a generic heading.</td>
+<td>Preserve authored image descriptions; use the heading fallback only for unlabelled figures.</td>
+</tr>
+<tr>
+<td>Section links did not match exported heading IDs; some IDs also retained literal URL escapes.</td>
+<td>Normalize section IDs in course exports, update their anchors and outlines, and check every local HTML section destination.</td>
+</tr>
+</tbody>
+</table>
+<p>The new data counts were reconciled against all JSON rows. The word-order diagram was checked
+against both full token sets and the actual training-only vocabulary: <code>failed</code> is unseen, and
+the same four features are active in both messages. Adding that unseen word would still leave
+their word-presence vectors identical.</p>
+<p>The new diagrams were inspected as local raster previews, including 360-pixel color and grayscale views. The saved
+notebook outputs, image descriptions, Colab setup simulation, rebuilt exports, and archive links
+were checked again. Notebook execution records remain in <a href="../../docs/validation.json">validation.json</a>.
+The browser and hosted-Colab limits described above still apply.</p>
 </div>
 </div>
 </div>

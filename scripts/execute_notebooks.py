@@ -21,7 +21,8 @@ for path in paths:
                    resources={'metadata': {'path': str(NOTEBOOKS)}}).execute()
     nbformat.write(notebook, path)
     html, _ = HTMLExporter().from_notebook_node(notebook)
-    html = style_lesson(html, path.stem, [p.stem for p in paths], source_path=path.relative_to(ROOT).as_posix())
+    html = style_lesson(html, path.stem, [p.stem for p in paths],
+                        source_path=path.relative_to(ROOT).as_posix(), notebook=notebook)
     (EXPORTS / f'{path.stem}.html').write_text(html, encoding='utf-8')
     result = {'notebook': path.name, 'code_cells': sum(c.cell_type == 'code' for c in notebook.cells),
               'executed': True, 'seconds': round(perf_counter()-started,2),

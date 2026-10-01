@@ -7815,17 +7815,17 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=44288495">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7ab5622b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Guided-practice:-predict,-check,-explain">Guided practice: predict, check, explain<a class="anchor-link" href="#Guided-practice:-predict,-check,-explain">¶</a></h1><p>Try each question before opening the explanation. All numbers and messages are teaching examples.</p>
+<h1 id="guided-practice-predict-check-explain">Guided practice: predict, check, explain<a class="anchor-link" href="#guided-practice-predict-check-explain">¶</a></h1><p>Try each question before opening the explanation. All numbers and messages are teaching examples.</p>
 <p><a href="README.html">Course home</a> · <a href="COURSE.html">Course outline</a></p>
 <p>For the optional interactive copy, download the course and open <code>site/practice.html</code> locally. The questions below work directly in GitHub’s Markdown viewer.</p>
 <p>The three sections move from the interface to probabilities and then to building a system. You can use this page for individual study or print it for a group.</p>
-<h2 id="1.-Understand-the-interface">1. Understand the interface<a class="anchor-link" href="#1.-Understand-the-interface">¶</a></h2><p>A customer writes “The export button crashes.” What belongs in the state?</p>
+<h2 id="1-understand-the-interface">1. Understand the interface<a class="anchor-link" href="#1-understand-the-interface">¶</a></h2><p>A customer writes “The export button crashes.” What belongs in the state?</p>
 <ul>
 <li><strong>A.</strong> The customer message and relevant evidence</li>
 <li><strong>B.</strong> The answer “technical” that we want the model to choose</li>
@@ -7834,7 +7834,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <details><summary>Hint</summary><p>State is what the model gets to examine.</p></details>
 <details><summary>Answer and explanation</summary><p><strong>A.</strong> State supplies evidence. The question and criteria describe the judgment. The routing threshold belongs to the application policy.</p></details>
 <p><a href="01_jev_basics.html">Review 01 · State and typed questions</a></p>
-<h2 id="2.-Understand-the-interface">2. Understand the interface<a class="anchor-link" href="#2.-Understand-the-interface">¶</a></h2><p>You need one primary queue: billing, technical, or other. Which question type fits?</p>
+<h2 id="2-understand-the-interface">2. Understand the interface<a class="anchor-link" href="#2-understand-the-interface">¶</a></h2><p>You need one primary queue: billing, technical, or other. Which question type fits?</p>
 <ul>
 <li><strong>A.</strong> Score</li>
 <li><strong>B.</strong> Choice</li>
@@ -7843,7 +7843,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <details><summary>Hint</summary><p>The alternatives are named categories, with no low-to-high order.</p></details>
 <details><summary>Answer and explanation</summary><p><strong>B.</strong> Choice compares the supplied alternatives and returns a selected option plus probabilities. Write descriptions that distinguish the queues.</p></details>
 <p><a href="01_jev_basics.html">Review 01 · Choice</a></p>
-<h2 id="3.-Understand-the-interface">3. Understand the interface<a class="anchor-link" href="#3.-Understand-the-interface">¶</a></h2><p>You ask “Does this message explicitly request a refund?” Which type fits?</p>
+<h2 id="3-understand-the-interface">3. Understand the interface<a class="anchor-link" href="#3-understand-the-interface">¶</a></h2><p>You ask “Does this message explicitly request a refund?” Which type fits?</p>
 <ul>
 <li><strong>A.</strong> Choice over all support queues</li>
 <li><strong>B.</strong> Score from 0 to 2</li>
@@ -7852,7 +7852,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <details><summary>Hint</summary><p>Think about whether the question has a positive and a negative answer.</p></details>
 <details><summary>Answer and explanation</summary><p><strong>C.</strong> Noul reports the probability of the positive answer to a yes/no question. The program can apply a threshold to that number.</p></details>
 <p><a href="01_jev_basics.html">Review 01 · Noul</a></p>
-<h2 id="4.-Understand-the-interface">4. Understand the interface<a class="anchor-link" href="#4.-Understand-the-interface">¶</a></h2><p>A rubric has 0 = no disruption, 1 = partial disruption, 2 = fully blocked. Which type fits?</p>
+<h2 id="4-understand-the-interface">4. Understand the interface<a class="anchor-link" href="#4-understand-the-interface">¶</a></h2><p>A rubric has 0 = no disruption, 1 = partial disruption, 2 = fully blocked. Which type fits?</p>
 <ul>
 <li><strong>A.</strong> Score</li>
 <li><strong>B.</strong> Noul</li>
@@ -7861,7 +7861,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <details><summary>Hint</summary><p>These labels are levels along an ordered scale.</p></details>
 <details><summary>Answer and explanation</summary><p><strong>A.</strong> Score uses ordered rubric levels and returns their expected position. The meaning of each level should be clear.</p></details>
 <p><a href="01_jev_basics.html">Review 01 · Score</a></p>
-<h2 id="5.-Read-the-numbers">5. Read the numbers<a class="anchor-link" href="#5.-Read-the-numbers">¶</a></h2><p>The probabilities for levels 0, 1, and 2 are 5%, 25%, and 70%. What is the expected score?</p>
+<h2 id="5-read-the-numbers">5. Read the numbers<a class="anchor-link" href="#5-read-the-numbers">¶</a></h2><p>The probabilities for levels 0, 1, and 2 are 5%, 25%, and 70%. What is the expected score?</p>
 <ul>
 <li><strong>A.</strong> 2, because it is the most likely level</li>
 <li><strong>B.</strong> 1.65, from 0 × 0.05 + 1 × 0.25 + 2 × 0.70</li>
@@ -7870,7 +7870,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <details><summary>Hint</summary><p>Average the levels using their probabilities as weights.</p></details>
 <details><summary>Answer and explanation</summary><p><strong>B.</strong> The weighted average is 1.65. The most likely level is 2, but selecting that level and averaging the distribution are different calculations.</p></details>
 <p><a href="01_jev_basics.html">Review 01 · Calculate a Score</a></p>
-<h2 id="6.-Read-the-numbers">6. Read the numbers<a class="anchor-link" href="#6.-Read-the-numbers">¶</a></h2><p>Technical has probability 0.90. Our rule routes only when the largest probability is at least 0.95. What happens?</p>
+<h2 id="6-read-the-numbers">6. Read the numbers<a class="anchor-link" href="#6-read-the-numbers">¶</a></h2><p>Technical has probability 0.90. Our rule routes only when the largest probability is at least 0.95. What happens?</p>
 <ul>
 <li><strong>A.</strong> Route to technical because it is largest</li>
 <li><strong>B.</strong> Change the model estimate to 0.95</li>
@@ -7879,7 +7879,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <details><summary>Hint</summary><p>Compare 0.90 with the threshold before taking the action.</p></details>
 <details><summary>Answer and explanation</summary><p><strong>C.</strong> The estimate stays 0.90 and the winning queue stays technical. The application sends the case for review because 0.90 is below 0.95.</p></details>
 <p><a href="01_jev_basics.html">Review 01 · Prediction and policy</a></p>
-<h2 id="7.-Read-the-numbers">7. Read the numbers<a class="anchor-link" href="#7.-Read-the-numbers">¶</a></h2><p>“billing” is an allowed output, but the message describes an export crash. What did the type check establish?</p>
+<h2 id="7-read-the-numbers">7. Read the numbers<a class="anchor-link" href="#7-read-the-numbers">¶</a></h2><p>“billing” is an allowed output, but the message describes an export crash. What did the type check establish?</p>
 <ul>
 <li><strong>A.</strong> The output has an allowed form</li>
 <li><strong>B.</strong> The model understood the message correctly</li>
@@ -7888,7 +7888,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <details><summary>Hint</summary><p>A format check can inspect the allowed values without knowing the right answer.</p></details>
 <details><summary>Answer and explanation</summary><p><strong>A.</strong> The output is structurally valid. Accuracy needs a reference judgment, and authorization needs the application’s permission rules.</p></details>
 <p><a href="04_workflows_and_related_models.html">Review 04 · Judgments and rules</a></p>
-<h2 id="8.-Read-the-numbers">8. Read the numbers<a class="anchor-link" href="#8.-Read-the-numbers">¶</a></h2><p>A calibrated model repeatedly gives 80% for comparable yes/no cases. What should happen across many such cases?</p>
+<h2 id="8-read-the-numbers">8. Read the numbers<a class="anchor-link" href="#8-read-the-numbers">¶</a></h2><p>A calibrated model repeatedly gives 80% for comparable yes/no cases. What should happen across many such cases?</p>
 <ul>
 <li><strong>A.</strong> Every case is yes</li>
 <li><strong>B.</strong> About 80% are yes, with sampling variation</li>
@@ -7897,7 +7897,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <details><summary>Hint</summary><p>A probability describes a pattern across outcomes, not a promise for one outcome.</p></details>
 <details><summary>Answer and explanation</summary><p><strong>B.</strong> Calibration compares stated probabilities with observed frequencies across many predictions. Individual cases can be negative, and finite groups fluctuate.</p></details>
 <p><a href="03_calibration_and_decisions.html">Review 03 · Calibration</a></p>
-<h2 id="9.-Build-and-evaluate">9. Build and evaluate<a class="anchor-link" href="#9.-Build-and-evaluate">¶</a></h2><p>p(yes) = 0.90. Acting yes costs 4 if wrong; acting no costs 1 if wrong. Perfect review costs 0.20. Correct actions cost 0. Which is cheapest in expectation?</p>
+<h2 id="9-build-and-evaluate">9. Build and evaluate<a class="anchor-link" href="#9-build-and-evaluate">¶</a></h2><p>p(yes) = 0.90. Acting yes costs 4 if wrong; acting no costs 1 if wrong. Perfect review costs 0.20. Correct actions cost 0. Which is cheapest in expectation?</p>
 <ul>
 <li><strong>A.</strong> Act yes: expected cost 0.40</li>
 <li><strong>B.</strong> Act no: expected cost 0.90</li>
@@ -7906,7 +7906,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <details><summary>Hint</summary><p>Compare (1 − 0.90) × 4, 0.90 × 1, and 0.20.</p></details>
 <details><summary>Answer and explanation</summary><p><strong>C.</strong> Review has the lowest expected cost: 0.20 versus 0.40 and 0.90. This result assumes calibrated probabilities and perfectly accurate review.</p></details>
 <p><a href="03_calibration_and_decisions.html">Review 03 · Expected action costs</a></p>
-<h2 id="10.-Build-and-evaluate">10. Build and evaluate<a class="anchor-link" href="#10.-Build-and-evaluate">¶</a></h2><p>You have trained the model and need to choose a routing threshold. Which split should you use?</p>
+<h2 id="10-build-and-evaluate">10. Build and evaluate<a class="anchor-link" href="#10-build-and-evaluate">¶</a></h2><p>You have trained the model and need to choose a routing threshold. Which split should you use?</p>
 <ul>
 <li><strong>A.</strong> Validation; then assess the frozen system on test</li>
 <li><strong>B.</strong> Test; keep changing the threshold until the mistakes disappear</li>
@@ -7915,7 +7915,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <details><summary>Hint</summary><p>Keep the final assessment separate from decisions about settings.</p></details>
 <details><summary>Answer and explanation</summary><p><strong>A.</strong> Use validation data to choose the threshold. Reserve test data to assess the frozen model and policy. Repeated tuning on test examples weakens that assessment.</p></details>
 <p><a href="07_text_routing_capstone.html">Review 07 · Training, validation, and test</a></p>
-<h2 id="11.-Build-and-evaluate">11. Build and evaluate<a class="anchor-link" href="#11.-Build-and-evaluate">¶</a></h2><p>“The payment failed, not the export.” and “The export failed, not the payment.” have identical bag-of-words features. Can a deterministic classifier using only those features distinguish them?</p>
+<h2 id="11-build-and-evaluate">11. Build and evaluate<a class="anchor-link" href="#11-build-and-evaluate">¶</a></h2><p>“The payment failed, not the export.” and “The export failed, not the payment.” have identical bag-of-words features. Can a deterministic classifier using only those features distinguish them?</p>
 <ul>
 <li><strong>A.</strong> Yes, if we lower temperature enough</li>
 <li><strong>B.</strong> No; the representation removed the distinguishing word order</li>
@@ -7924,7 +7924,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <details><summary>Hint</summary><p>The classifier sees the same feature vector for both messages.</p></details>
 <details><summary>Answer and explanation</summary><p><strong>B.</strong> Identical input features produce identical outputs in this deterministic model. Word order and the scope of “not” matter here; temperature or thresholds cannot restore discarded information.</p></details>
 <p><a href="07_text_routing_capstone.html">Review 07 · Inspect the minimal-pair failure</a></p>
-<h2 id="12.-Build-and-evaluate">12. Build and evaluate<a class="anchor-link" href="#12.-Build-and-evaluate">¶</a></h2><p>Our local classifier scores every option in one matrix operation. What does that experiment establish?</p>
+<h2 id="12-build-and-evaluate">12. Build and evaluate<a class="anchor-link" href="#12-build-and-evaluate">¶</a></h2><p>Our local classifier scores every option in one matrix operation. What does that experiment establish?</p>
 <ul>
 <li><strong>A.</strong> That Jev must use our exact weight matrix and training method</li>
 <li><strong>B.</strong> That our local accuracy is a Jev benchmark</li>

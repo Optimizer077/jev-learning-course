@@ -29,6 +29,7 @@ For personal study, edit the notebooks. For maintained editions, edit their sour
 | `scripts/public_course.py` | Public welcome lesson, reader guides, recaps, and self-checks |
 | `src/lab_core.py` | NumPy teaching model and evaluation functions |
 | `src/tutorial_utils.py` | Plot and table helpers |
+| `scripts/build_visuals.py` | SVG guides and PNGs embedded in saved notebook outputs |
 | `scripts/build_site.py` / `scripts/public_site.py` | Browser pages, reading mode, and navigation |
 | `scripts/build_practice.py` / `scripts/practice_questions.py` | Guided browser practice and printable companion |
 | `data/tickets.json` | Fictional text-routing dataset with fixed splits |
@@ -45,6 +46,7 @@ Use the Python executable from your course environment. Replace `python` below w
 python scripts/build_visuals.py
 python scripts/build_notebooks.py
 python scripts/execute_notebooks.py
+python scripts/check_colab_setup.py
 python scripts/validate_course.py
 python scripts/package_course.py
 ```

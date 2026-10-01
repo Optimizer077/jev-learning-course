@@ -57,7 +57,9 @@ def rewrite_legacy_markdown(source, destination):
 NOTEBOOK_SETUP = '''# Find the included teaching helpers from the course folder.
 from pathlib import Path
 import sys
-REQUIRED_FILES = ("src/lab_core.py", "src/tutorial_utils.py", "data/tickets.json")
+REQUIRED_FILES = ("src/lab_core.py", "src/tutorial_utils.py", "data/tickets.json",
+                  "assets/decision-flow.png", "assets/question-types.png",
+                  "assets/calibration-counts.png", "assets/data-splits.png", "assets/word-order.png")
 COURSE_ROOT = next((p for p in (Path.cwd(), *Path.cwd().parents)
                     if all((p / name).is_file() for name in REQUIRED_FILES)), None)
 # Colab opens a single notebook; fetch its companion code and fictional data.

@@ -7816,7 +7816,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a><a href="07_text_routing_capstone.html">Previous lesson</a><a href="09_related_models_lab.html">Next lesson →</a><a download="" href="../../notebooks/08_exercises_and_solutions.ipynb">Notebook ↓</a></nav><section aria-label="Reading controls" class="reader-tools">
 <label><input id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
-<details><summary>In this lesson</summary><ul><li><a href="#The-idea-before-the-code">The idea before the code</a></li><li><a href="#Goal">Goal</a></li><li><a href="#Setup">Setup</a></li><li><a href="#Steps">Steps</a></li><li><a href="#Checks">Checks</a></li><li><a href="#Next-Steps">Next Steps</a></li><li><a href="#Take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#Check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=703c7713c0e4-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7825,7 +7825,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a href="https://colab.research.google.com/github/Optimizer077/jev-learning-course/blob/main/notebooks/08_exercises_and_solutions.ipynb"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<h1 id="8-%C2%B7-Worked-exercises-and-explanations">8 · Worked exercises and explanations<a class="anchor-link" href="#8-%C2%B7-Worked-exercises-and-explanations">¶</a></h1><p><strong>Path:</strong> Practice and review<br/>
+<h1 id="8--worked-exercises-and-explanations">8 · Worked exercises and explanations<a class="anchor-link" href="#8--worked-exercises-and-explanations">¶</a></h1><p><strong>Path:</strong> Practice and review<br/>
 <strong>Before you start:</strong> Attempt the matching exercise before opening its answer</p>
 <p><a href="README.html">Course home</a> · <a href="COURSE.html">Course outline</a> · <a href="SETUP.html">Setup help</a> · <a href="GLOSSARY.html">Glossary</a></p>
 </div>
@@ -7838,7 +7838,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="The-idea-before-the-code">The idea before the code<a class="anchor-link" href="#The-idea-before-the-code">¶</a></h2><p>A useful explanation lets you predict what will happen when something changes. These worked answers check that skill.</p>
+<h2 id="the-idea-before-the-code">The idea before the code<a class="anchor-link" href="#the-idea-before-the-code">¶</a></h2><p>A useful explanation lets you predict what will happen when something changes. These worked answers check that skill.</p>
 <p><strong>Your first pass:</strong> Read only the solution you need. Return to the originating lesson after checking it.</p>
 </div>
 </div>
@@ -7850,9 +7850,9 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Goal">Goal<a class="anchor-link" href="#Goal">¶</a></h2><p>Check whether you can reason about the output contract, the math, and the software policy.
+<h2 id="goal">Goal<a class="anchor-link" href="#goal">¶</a></h2><p>Check whether you can reason about the output contract, the math, and the software policy.
 Try each exercise in its lesson before reading this notebook. These are worked solutions, not a graded test.</p>
-<h2 id="Setup">Setup<a class="anchor-link" href="#Setup">¶</a></h2><p>This notebook is independent of previous kernels and makes no API calls.</p>
+<h2 id="setup">Setup<a class="anchor-link" href="#setup">¶</a></h2><p>This notebook is independent of previous kernels and makes no API calls.</p>
 </div>
 </div>
 </div>
@@ -7867,7 +7867,9 @@ Try each exercise in its lesson before reading this notebook. These are worked s
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Find the included teaching helpers from the course folder.</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="n">REQUIRED_FILES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"src/lab_core.py"</span><span class="p">,</span> <span class="s2">"src/tutorial_utils.py"</span><span class="p">,</span> <span class="s2">"data/tickets.json"</span><span class="p">)</span>
+<span class="n">REQUIRED_FILES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"src/lab_core.py"</span><span class="p">,</span> <span class="s2">"src/tutorial_utils.py"</span><span class="p">,</span> <span class="s2">"data/tickets.json"</span><span class="p">,</span>
+                  <span class="s2">"assets/decision-flow.png"</span><span class="p">,</span> <span class="s2">"assets/question-types.png"</span><span class="p">,</span>
+                  <span class="s2">"assets/calibration-counts.png"</span><span class="p">,</span> <span class="s2">"assets/data-splits.png"</span><span class="p">,</span> <span class="s2">"assets/word-order.png"</span><span class="p">)</span>
 <span class="n">COURSE_ROOT</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">)</span>
                     <span class="k">if</span> <span class="nb">all</span><span class="p">((</span><span class="n">p</span> <span class="o">/</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">REQUIRED_FILES</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
 <span class="c1"># Colab opens a single notebook; fetch its companion code and fictional data.</span>
@@ -7908,10 +7910,10 @@ Try each exercise in its lesson before reading this notebook. These are worked s
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Steps">Steps<a class="anchor-link" href="#Steps">¶</a></h2><h3 id="1.-Choose-a-primitive">1. Choose a primitive<a class="anchor-link" href="#1.-Choose-a-primitive">¶</a></h3><p>One queue → <strong>Choice</strong>. Explicit refund request → <strong>Noul</strong>. Ordered disruption levels → <strong>Score</strong>.
+<h2 id="steps">Steps<a class="anchor-link" href="#steps">¶</a></h2><h3 id="1-choose-a-primitive">1. Choose a primitive<a class="anchor-link" href="#1-choose-a-primitive">¶</a></h3><p>One queue → <strong>Choice</strong>. Explicit refund request → <strong>Noul</strong>. Ordered disruption levels → <strong>Score</strong>.
 Writing an email requires generation; a bounded decision interface can choose a template or route
 to a generative model, but cannot directly supply arbitrary new prose.</p>
-<h3 id="2.-Shift-and-scale-logits">2. Shift and scale logits<a class="anchor-link" href="#2.-Shift-and-scale-logits">¶</a></h3><p>Adding the same constant to every score cancels between numerator and denominator in softmax.
+<h3 id="2-shift-and-scale-logits">2. Shift and scale logits<a class="anchor-link" href="#2-shift-and-scale-logits">¶</a></h3><p>Adding the same constant to every score cancels between numerator and denominator in softmax.
 Multiplying by a positive constant preserves ranking, but changes concentration. A negative
 multiplier would reverse ranking; multiplying by zero gives a uniform distribution.</p>
 </div>
@@ -7955,7 +7957,7 @@ multiplier would reverse ranking; multiplying by zero gives a uniform distributi
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Derive-the-review-region">3. Derive the review region<a class="anchor-link" href="#3.-Derive-the-review-region">¶</a></h3><p>“No” costs $p$, so it ties review at $p=0.2$. “Yes” costs $4(1-p)$, so it ties review at $p=0.95$.
+<h3 id="3-derive-the-review-region">3. Derive the review region<a class="anchor-link" href="#3-derive-the-review-region">¶</a></h3><p>“No” costs $p$, so it ties review at $p=0.2$. “Yes” costs $4(1-p)$, so it ties review at $p=0.95$.
 Thus choose no below 0.2, review between 0.2 and 0.95, and yes above 0.95. At boundaries either tied
 action has equal modeled cost. If review costs 0.8, the review region disappears except a three-way
 tie at $p=0.8$: the best binary action already costs at most 0.8.</p>
@@ -8000,7 +8002,7 @@ tie at $p=0.8$: the best binary action already costs at most 0.8.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="4.-Confidence-is-not-authorization">4. Confidence is not authorization<a class="anchor-link" href="#4.-Confidence-is-not-authorization">¶</a></h3><p>A high topic probability is irrelevant to a required permission check. The application must enforce
+<h3 id="4-confidence-is-not-authorization">4. Confidence is not authorization<a class="anchor-link" href="#4-confidence-is-not-authorization">¶</a></h3><p>A high topic probability is irrelevant to a required permission check. The application must enforce
 the permission deterministically before action. The model can supply a recommendation, while code
 enforces which recommendations are allowed to be acted on.</p>
 </div>
@@ -8030,7 +8032,7 @@ enforces which recommendations are allowed to be acted on.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Avoid-label-leakage">5. Avoid label leakage<a class="anchor-link" href="#5.-Avoid-label-leakage">¶</a></h3><p>The <code>label</code> field is the desired answer. Supplying it to the model lets the model copy the reference
+<h3 id="5-avoid-label-leakage">5. Avoid label leakage<a class="anchor-link" href="#5-avoid-label-leakage">¶</a></h3><p>The <code>label</code> field is the desired answer. Supplying it to the model lets the model copy the reference
 instead of inferring it. A legitimate policy describes general rules available at deployment time;
 it does not reveal this example's hidden answer. Restrict state to an explicit allowlist of input fields.</p>
 </div>
@@ -8073,10 +8075,10 @@ it does not reveal this example's hidden answer. Restrict state to an explicit a
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="6.-Explain-the-attention-isolation-test">6. Explain the attention isolation test<a class="anchor-link" href="#6.-Explain-the-attention-isolation-test">¶</a></h3><p>Unblocking A→B lets A use B's key/value vectors, so perturbing B can change A. The equality assertion
+<h3 id="6-explain-the-attention-isolation-test">6. Explain the attention isolation test<a class="anchor-link" href="#6-explain-the-attention-isolation-test">¶</a></h3><p>Unblocking A→B lets A use B's key/value vectors, so perturbing B can change A. The equality assertion
 will generally fail. “Parallel” describes scheduling; “isolated” describes allowed information flow.
 State also must not absorb question information if it is reused across layers.</p>
-<h3 id="7.-Work-sharing-limit">7. Work-sharing limit<a class="anchor-link" href="#7.-Work-sharing-limit">¶</a></h3><p>The ratio is $m(S+Q)/(S+mQ)$. As $m$ tends to infinity, it approaches $(S+Q)/Q$.
+<h3 id="7-work-sharing-limit">7. Work-sharing limit<a class="anchor-link" href="#7-work-sharing-limit">¶</a></h3><p>The ratio is $m(S+Q)/(S+mQ)$. As $m$ tends to infinity, it approaches $(S+Q)/Q$.
 For $S=100$, $Q=8$, the limit is 13.5. Memory bandwidth, latency, scheduling, and other overheads
 are absent, so this does not establish a real model's speedup.</p>
 </div>
@@ -8119,7 +8121,7 @@ Ratio at 16 questions: 7.578947368421052
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="8.-An-all-unknown-input">8. An all-unknown input<a class="anchor-link" href="#8.-An-all-unknown-input">¶</a></h3><p>With no recognized words, the feature vector is zero. The output is softmax of the bias alone.
+<h3 id="8-an-all-unknown-input">8. An all-unknown input<a class="anchor-link" href="#8-an-all-unknown-input">¶</a></h3><p>With no recognized words, the feature vector is zero. The output is softmax of the bias alone.
 Nothing in that operation detects that the request is out of domain.</p>
 </div>
 </div>
@@ -8163,7 +8165,7 @@ Nothing in that operation detects that the request is out of domain.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="9.-Bigram-extension:-one-possible-implementation">9. Bigram extension: one possible implementation<a class="anchor-link" href="#9.-Bigram-extension:-one-possible-implementation">¶</a></h3><p>Append adjacent token pairs to the unigram features. This gives “not locked” a different feature
+<h3 id="9-bigram-extension-one-possible-implementation">9. Bigram extension: one possible implementation<a class="anchor-link" href="#9-bigram-extension-one-possible-implementation">¶</a></h3><p>Append adjacent token pairs to the unigram features. This gives “not locked” a different feature
 from “locked,” but only training examples can teach the model what that feature means.
 Sparse bigrams do not solve language understanding or generalize automatically to all paraphrases.</p>
 </div>
@@ -8208,7 +8210,7 @@ Sparse bigrams do not solve language understanding or generalize automatically t
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Checks">Checks<a class="anchor-link" href="#Checks">¶</a></h2><p>You should now be able to explain why each of these implications is false:</p>
+<h2 id="checks">Checks<a class="anchor-link" href="#checks">¶</a></h2><p>You should now be able to explain why each of these implications is false:</p>
 <ol>
 <li>Valid schema ⇒ correct answer.</li>
 <li>Higher probability ⇒ permission to act.</li>
@@ -8217,7 +8219,7 @@ Sparse bigrams do not solve language understanding or generalize automatically t
 <li>One successful API call ⇒ production readiness.</li>
 <li>A generic attention demo ⇒ Jev's published architecture.</li>
 </ol>
-<h2 id="Next-Steps">Next Steps<a class="anchor-link" href="#Next-Steps">¶</a></h2><p>Pick your own bounded task, write the answer space, collect labeled examples, and establish a
+<h2 id="next-steps">Next Steps<a class="anchor-link" href="#next-steps">¶</a></h2><p>Pick your own bounded task, write the answer space, collect labeled examples, and establish a
 simple baseline before increasing complexity. Keep test examples held out. Use real Jev calls only
 when you want to measure Jev, and keep the model's predictions separate from your operating policy.</p>
 <p><a href="00_start_here.html">Return to the course map</a>.</p>
@@ -8231,7 +8233,7 @@ when you want to measure Jev, and keep the model's predictions separate from you
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Take-three-ideas-with-you">Take three ideas with you<a class="anchor-link" href="#Take-three-ideas-with-you">¶</a></h2><ul>
+<h2 id="take-three-ideas-with-you">Take three ideas with you<a class="anchor-link" href="#take-three-ideas-with-you">¶</a></h2><ul>
 <li>Predict, run, explain, and state a limitation.</li>
 <li>Keep output validity, accuracy, calibration, and authorization distinct.</li>
 <li>Use the smallest model and workflow that you can evaluate for your task.</li>
@@ -8247,7 +8249,7 @@ when you want to measure Jev, and keep the model's predictions separate from you
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Check-your-understanding">Check your understanding<a class="anchor-link" href="#Check-your-understanding">¶</a></h2><p>I can rerun every cell. Does that mean I understand the course?</p>
+<h2 id="check-your-understanding">Check your understanding<a class="anchor-link" href="#check-your-understanding">¶</a></h2><p>I can rerun every cell. Does that mean I understand the course?</p>
 <p>Pause and explain your answer before opening the explanation.</p>
 <details>
 <summary>Show the explanation</summary>

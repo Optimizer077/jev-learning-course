@@ -7815,16 +7815,18 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0a3c8d1d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=81c987a0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Teaching-data">Teaching data<a class="anchor-link" href="#Teaching-data">¶</a></h1><p><code>tickets.json</code> contains 54 author-written fictional English support tickets: 24 training,
+<h1 id="teaching-data">Teaching data<a class="anchor-link" href="#teaching-data">¶</a></h1><p><code>tickets.json</code> contains 54 author-written fictional English support tickets: 24 training,
 12 validation, 12 test, and 6 stress examples. No customer records or Jev outputs are included.</p>
 <p>The three classes are billing, technical, and account. The labels express the author's
 intended primary routing topic; mixed-topic labels are inherently policy-dependent.
+These are the project options. The introductory illustration uses billing, technical, and other
+to show that a Choice's options come from its question, rather than a fixed universal label list.
 Stress cases deliberately include negation, mixed intent, irrelevant instructions, and an
 out-of-domain request. The out-of-domain row uses <code>other</code>, outside the trained classes.</p>
 <p>Splits are fixed before fitting. The vocabulary and weights use training only; temperature
@@ -7832,6 +7834,8 @@ and routing policy use validation only; test is reserved for the final evaluatio
 tiny, manually authored dataset is not representative of real support traffic. Shared topic
 words make it deliberately approachable, while unseen wording exposes the baseline's limits.
 Do not use its accuracy to compare Jev with any other model.</p>
+<p>See <a href="VISUAL_GUIDE.html#keep-fitting-tuning-and-testing-separate">the split diagram</a>
+before running the project. The figure's counts are read from this JSON file when rebuilt.</p>
 </div>
 </div>
 </div>

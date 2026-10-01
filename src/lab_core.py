@@ -6,6 +6,10 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 LABELS = ('billing', 'technical', 'account')
+WORD_ORDER_PAIR = (
+    ('The payment failed, not the export.', 'billing'),
+    ('The export failed, not the payment.', 'technical'),
+)
 
 def softmax(logits, temperature=1.0):
     if not np.isfinite(temperature) or temperature <= 0:

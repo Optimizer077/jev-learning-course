@@ -1,5 +1,7 @@
 """Validate and zip the public course using an explicit file allowlist. Never uploads."""
 import json
+import ast
+import base64
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from zipfile import ZIP_DEFLATED, ZipFile
@@ -39,7 +41,8 @@ def validate(root=ROOT):
     notebooks = sorted((root/'notebooks').glob('[0-9][0-9]_*.ipynb'))
     if len(notebooks) != 10:
         raise ValueError(f'Expected ten lessons, found {len(notebooks)}.')
-    code_cells = figures = 0
+    code_cells = figures = diagrams = 0
+    expected_artwork = []
     for path in notebooks:
         nb = nbformat.read(path, as_version=4)
         nbformat.validate(nb)
@@ -52,30 +55,63 @@ def validate(root=ROOT):
             if any(out.output_type == 'error' for out in cell.outputs):
                 raise ValueError(f'{path.name}: saved error in {cell.id}')
             figures += sum('image/png' in out.get('data', {}) for out in cell.outputs)
+            if 'show_diagram(' in cell.source:
+                calls = [node for node in ast.walk(ast.parse(cell.source))
+                         if isinstance(node, ast.Call) and isinstance(node.func, ast.Name)
+                         and node.func.id == 'show_diagram']
+                for call in calls:
+                    name, description = [ast.literal_eval(argument) for argument in call.args]
+                    asset = root/'assets'/f'{name}.png'
+                    if asset.resolve() not in included:
+                        raise ValueError(f'{path.name}: companion artwork missing: {name}')
+                    images = [out for out in cell.outputs if 'image/png' in out.get('data', {})]
+                    if not any(base64.b64decode(out.data['image/png']) == asset.read_bytes()
+                               and out.metadata.get('image/png', {}).get('alt') == description
+                               for out in images):
+                        raise ValueError(f'{path.name}: saved diagram or image description missing: {name}')
+                    diagrams += 1
+                    expected_artwork.append((path.stem, asset.read_bytes(), description))
         if path.name.startswith('05'):
             live_cells = [c.source for c in nb.cells if c.cell_type == 'code' and 'RUN_LIVE =' in c.source]
             if not any('RUN_LIVE = False' in source for source in live_cells):
                 raise ValueError('Reset lesson 05 to RUN_LIVE = False before sharing.')
-    checked_links = 0
+    checked_links = checked_sections = 0
     broken = []
     pages = [p for p in files if p.suffix == '.html']
+    parsed = {page.resolve(): BeautifulSoup(page.read_text(encoding='utf-8'), 'html.parser')
+              for page in pages}
+    sections = {page: {tag['id'] for tag in soup.select('[id]')} |
+                     {tag['name'] for tag in soup.select('a[name]')}
+                for page, soup in parsed.items()}
+    for stem, image, description in expected_artwork:
+        page = (root/'site'/'lessons'/f'{stem}.html').resolve()
+        source = 'data:image/png;base64,'+base64.b64encode(image).decode('ascii')
+        if page not in parsed or not any(tag.get('src') == source and tag.get('alt') == description
+                                         for tag in parsed[page].select('img')):
+            raise ValueError(f'{stem}: embedded HTML artwork or authored description missing')
     for page in pages:
-        soup = BeautifulSoup(page.read_text(encoding='utf-8'), 'html.parser')
+        soup = parsed[page.resolve()]
         for value in (url for tag in soup.select('[href], [src], [srcset]') for url in html_references(tag)):
             link = urlsplit(value)
-            if link.scheme or link.netloc or not link.path:
+            if link.scheme or link.netloc:
                 continue
-            target = (page.parent/unquote(link.path)).resolve()
-            checked_links += 1
+            target = (page.parent/unquote(link.path)).resolve() if link.path else page.resolve()
+            checked_links += bool(link.path)
             if target not in included:
                 broken.append(f'{page.relative_to(root)} → {value}')
+            elif link.fragment and target in sections:
+                checked_sections += 1
+                if unquote(link.fragment) not in sections[target]:
+                    broken.append(f'{page.relative_to(root)} → missing section {value}')
         if page.stem[:2].isdigit() and not soup.select_one('#show-code'):
             raise ValueError(f'{page.name}: reading controls missing; rebuild the HTML.')
     if broken:
         raise ValueError('Links missing from the public package:\n'+'\n'.join(broken))
     return files, {'notebooks': len(notebooks), 'executed_code_cells': code_cells,
                    'saved_figures': figures, 'html_pages': len(pages),
-                   'checked_local_links': checked_links, 'live_api': 'disabled'}
+                   'embedded_teaching_diagrams': diagrams,
+                   'checked_local_links': checked_links, 'checked_section_links': checked_sections,
+                   'live_api': 'disabled'}
 
 
 def main():

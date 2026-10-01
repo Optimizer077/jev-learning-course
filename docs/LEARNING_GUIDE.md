@@ -10,8 +10,9 @@ calculations or build something. Times below are study estimates; take longer wh
 1. Read [00 · Start here](../notebooks/00_start_here.ipynb). Explain the difference between an estimate and an action.
 2. Read the plain-language introduction, question-type table, and sections 1–5 in
    [01 · Jev basics](../notebooks/01_jev_basics.ipynb). Skip equations if they interrupt your understanding.
-3. Try questions 1–8 in [guided practice](PRACTICE.md). You can finish the last four later.
+3. Try questions 1–6 in [guided practice](PRACTICE.md).
 4. Read the main workflow in [04 · Workflows](../notebooks/04_workflows_and_related_models.ipynb).
+   Then try question 7. Save calibration and cost questions 8–9 for session 2.
 
 **Your checkpoint:** given an export-crash message, choose a question type, name the evidence,
 and say what the program should do if the estimate is uncertain.
@@ -39,6 +40,7 @@ policy can ask for review when one primary queue cannot adequately represent a m
    Then read the reliability diagram and its denominators.
 4. In the [playground](../site/playground.html), predict the effect of changing temperature. Then change
    the review cost while keeping the probability fixed.
+5. Try guided-practice questions 8–9 and explain the cost assumptions.
 
 **Your checkpoint:** explain why the winning label can stay the same while probabilities change,
 and why the most likely outcome need not be the cheapest action.
@@ -53,7 +55,7 @@ Keep the complete folder together and use Restart Kernel and Run All for a fresh
 1. Run [07 · Text routing](../notebooks/07_text_routing_capstone.ipynb) with its original settings.
 2. Identify what is fitted on training, selected on validation, and measured on test.
 3. Read the stress cases and the two messages with identical bag-of-words features.
-4. Finish guided-practice questions 9–12, then choose one exercise in
+4. Finish guided-practice questions 10–12, then choose one exercise in
    [08 · Worked exercises](../notebooks/08_exercises_and_solutions.ipynb).
 
 **Your checkpoint:** describe one failure, its cause, and what evidence you would need before

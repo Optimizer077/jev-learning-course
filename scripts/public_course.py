@@ -1,6 +1,7 @@
 """Reader-facing teaching scaffolding, kept separate from computational examples."""
 from textwrap import dedent
 import hashlib
+import re
 
 GUIDES = {
  '00': ('Start here', 'No Python or machine learning background needed',
@@ -145,7 +146,7 @@ queue stays `technical`. A real model's prediction can still be wrong.
 | You want to… | Start with… | What you can skip at first |
 |---|---|---|
 | Understand the idea without coding | [01 · Basics](01_jev_basics.ipynb) → [04 · Workflows](04_workflows_and_related_models.ipynb) | All code and equations |
-| Try changing numbers | [Interactive playground](playground.html) → [03 · Calibration](03_calibration_and_decisions.ipynb) | The optional math extensions |
+| Try changing numbers | [03 · Calibration](03_calibration_and_decisions.ipynb) | The optional math extensions |
 | Learn how a small model is trained | [02 · From scratch](02_decision_model_from_scratch.ipynb) | Lesson 06 until later |
 | Build a complete local project | 02 → 03 → [07 · Text routing](07_text_routing_capstone.ipynb) | The live API lesson |
 | Call real Jev | 01 → [05 · Optional API](05_optional_real_jev_api.ipynb) | The architecture lab |
@@ -362,6 +363,24 @@ If you are unsure where to go next, use [the course outline](COURSE.md).
             cell.source = cell.source.replace('[Interactive playground](playground.html)', '[Calibration examples](03_calibration_and_decisions.ipynb)')
             cell.source = cell.source.replace('[playground](playground.html)', '[optional playground setup](SETUP.md)')
             cell.source = cell.source.replace('[interactive playground](playground.html)', '[optional playground setup](SETUP.md)')
+    # Saved PNG outputs travel with the notebook, including in Colab's single-file view.
+    # Keep SVG versions for Markdown guides, where repository-relative links are useful.
+    portable = []
+    diagrams = re.compile(r'!\[([^\]]*)\]\(assets/(decision-flow|question-types|calibration-counts|data-splits|word-order)\.svg\)')
+    for cell in cells:
+        if cell.cell_type != 'markdown' or not diagrams.search(cell.source):
+            portable.append(cell)
+            continue
+        end = 0
+        for match in diagrams.finditer(cell.source):
+            if cell.source[end:match.start()].strip():
+                portable.append(md(cell.source[end:match.start()]))
+            description, diagram = match.groups()
+            portable.append(code(f'from tutorial_utils import show_diagram\nshow_diagram({diagram!r}, {description!r})'))
+            end = match.end()
+        if cell.source[end:].strip():
+            portable.append(md(cell.source[end:]))
+    cells = portable
     # Stable IDs reduce noisy notebook diffs when the public course is rebuilt.
     seen = {}
     for cell in cells:

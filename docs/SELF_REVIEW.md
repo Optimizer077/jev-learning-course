@@ -43,3 +43,25 @@ Provider descriptions retain the source-check date in [SOURCES.md](SOURCES.md).
 Action release sources: [checkout v7.0.1](https://github.com/actions/checkout/releases/tag/v7.0.1),
 [setup-python v7.0.0](https://github.com/actions/setup-python/releases/tag/v7.0.0), and
 [upload-artifact v7.0.1](https://github.com/actions/upload-artifact/releases/tag/v7.0.1).
+
+## Second pass: project clarity and portable visuals
+
+| Finding | Repair |
+|---|---|
+| The curriculum checkpoint was fixed, but the short study plan still introduced calibration too early. | Aligned both: questions 1–6 after basics, 7 after workflows, 8–9 after calibration and costs, 10–12 after the project. |
+| The switch from introductory queue options to project labels was easy to miss. | Explicitly explain the new billing/technical/account question and the out-of-domain `other` stress label. |
+| Data-split roles and word-order failure relied mostly on prose and tables. | Added two diagrams beside the project steps and in the visual guide, with predict-and-explain checks. |
+| Relative SVG links relied on companion files being resolved by a notebook viewer. | Embedded PNG artwork in saved outputs; the first Colab cell also fetches and checks the companion PNGs for rerunning. |
+| The two failure labs repeated the same authored pair independently. | Both labs and the diagram use a single pair definition; the visual reads the actual training vocabulary. |
+| The HTML exporter replaced useful image descriptions with a generic heading. | Preserve authored image descriptions; use the heading fallback only for unlabelled figures. |
+| Section links did not match exported heading IDs; some IDs also retained literal URL escapes. | Normalize section IDs in course exports, update their anchors and outlines, and check every local HTML section destination. |
+
+The new data counts were reconciled against all JSON rows. The word-order diagram was checked
+against both full token sets and the actual training-only vocabulary: `failed` is unseen, and
+the same four features are active in both messages. Adding that unseen word would still leave
+their word-presence vectors identical.
+
+The new diagrams were inspected as local raster previews, including 360-pixel color and grayscale views. The saved
+notebook outputs, image descriptions, Colab setup simulation, rebuilt exports, and archive links
+were checked again. Notebook execution records remain in [validation.json](validation.json).
+The browser and hosted-Colab limits described above still apply.

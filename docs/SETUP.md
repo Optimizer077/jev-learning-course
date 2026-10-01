@@ -27,7 +27,7 @@ The optional playground and interactive practice also work after downloading the
 1. Choose a **Colab** link in [the lesson catalog](../notebooks/README.md).
 2. Sign in to Google if Colab asks, and connect to a **CPU runtime**.
 3. Choose **Runtime → Run all**. The first cell clones the public course repository
-   to fetch the included helpers and fictional data. No Jev key is requested.
+   to fetch the included helpers, fictional data, and artwork. No Jev key is requested.
 4. Read the outputs, change one value, and run the affected cell again.
 5. Save a copy to your own Drive if you want to keep edits. A new runtime may discard local files.
 
@@ -35,6 +35,8 @@ Colab needs internet for the initial clone. NumPy, Matplotlib, and IPython are t
 dependencies; if a runtime reports a missing package, run `%pip install numpy matplotlib ipython`
 in a new cell, then restart and run the lesson. No GPU or model download is necessary.
 The optional live API stays disabled in lesson 05.
+Teaching diagrams are embedded in saved notebook outputs. They remain visible when you open
+a single notebook; rerunning them loads the accompanying PNGs from the cloned course.
 
 ## Option C: run and change the examples locally
 
@@ -87,7 +89,7 @@ Restarting clears those variables. Running top to bottom recreates them. Use Run
 if a result seems inconsistent.
 
 VS Code also works: install its Python and Jupyter extensions, open the whole folder, and choose
-`.venv` as the notebook kernel. Preserve the `notebooks/`, `src/`, and `data/` folders.
+`.venv` as the notebook kernel. Preserve the `notebooks/`, `src/`, `data/`, and `assets/` folders.
 
 ## Common problems
 

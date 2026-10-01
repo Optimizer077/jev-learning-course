@@ -30,7 +30,7 @@ A local linear classifier helps explain a classifier head, but lacks BERT's lang
 CPU-only NumPy experiments. No downloaded model, extra dependency, or API account is required.
 This notebook runs independently of earlier notebooks.
 '''), code(setup+'''
-from lab_core import (LABELS, tokenise, vectorise, train_text_baseline, split_arrays, softmax)
+from lab_core import (LABELS, WORD_ORDER_PAIR, tokenise, vectorise, train_text_baseline, split_arrays, softmax)
 '''), md(r'''
 ## Steps
 ### 1. Hold the examples and task fixed
@@ -198,13 +198,15 @@ else:
     print('The methods agree on these twelve cases. That does not establish broader equivalence.')
 '''), md(r'''
 ### 6. Construct a shared failure
+![Two different meanings produce the same binary features, so the vector-based methods cannot distinguish them.](assets/word-order.svg)
+
 These two messages contain the same words, but “not” changes which failure is being denied.
 Their intended primary queues are different. Both the prototype matcher and the learned classifier
 receive identical word-presence vectors, so they cannot produce different answers for this pair.
 The keyword rule also sees the same set of words, though it can send both to review.
 '''), code('''
-related_pair = ['The payment failed, not the export.', 'The export failed, not the payment.']
-related_pair_reference = ['billing','technical']
+related_pair = [message for message, _ in WORD_ORDER_PAIR]
+related_pair_reference = [reference for _, reference in WORD_ORDER_PAIR]
 related_pair_X = vectorise(related_pair,related_vocab)
 related_pair_lexical = lexical_labels(lexical_scores(related_pair))
 related_pair_linear = [LABELS[i] for i in softmax(related_pair_X @ related_weights + related_bias).argmax(axis=1)]

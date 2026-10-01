@@ -7815,13 +7815,13 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d157737e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7247f8e8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Maintainer-guide:-edit,-rebuild,-and-share">Maintainer guide: edit, rebuild, and share<a class="anchor-link" href="#Maintainer-guide:-edit,-rebuild,-and-share">¶</a></h1><h2 id="Share-the-complete-course">Share the complete course<a class="anchor-link" href="#Share-the-complete-course">¶</a></h2><p>Run <code>python scripts/package_course.py</code> with the requirements installed. It checks notebook outputs and
+<h1 id="maintainer-guide-edit-rebuild-and-share">Maintainer guide: edit, rebuild, and share<a class="anchor-link" href="#maintainer-guide-edit-rebuild-and-share">¶</a></h1><h2 id="share-the-complete-course">Share the complete course<a class="anchor-link" href="#share-the-complete-course">¶</a></h2><p>Run <code>python scripts/package_course.py</code> with the requirements installed. It checks notebook outputs and
 local HTML links, then creates <code>dist/jev-learning-public.zip</code> and <code>dist/jev-learning-github.zip</code>.
 The public archive uses a <code>jev-learning</code> folder; the GitHub archive uses <code>jev-learning-course</code>.
 Both contain the complete course. The README is the starting point for GitHub readers.</p>
@@ -7831,7 +7831,7 @@ extracted public folder to your repository or static host. The script does not p
 <p>For the GitHub repository layout and publishing commands, see <a href="GITHUB_PUBLISHING.html">GITHUB_PUBLISHING.md</a>.</p>
 <p>Before publishing under a reuse license, choose your author attribution and license; neither is
 invented on your behalf. Keep the independent-course notice and source links.</p>
-<h2 id="Edit-the-course">Edit the course<a class="anchor-link" href="#Edit-the-course">¶</a></h2><p>For personal study, edit the notebooks. For maintained editions, edit their source:</p>
+<h2 id="edit-the-course">Edit the course<a class="anchor-link" href="#edit-the-course">¶</a></h2><p>For personal study, edit the notebooks. For maintained editions, edit their source:</p>
 <table>
 <thead>
 <tr>
@@ -7869,6 +7869,10 @@ invented on your behalf. Keep the independent-course notice and source links.</p
 <td>Plot and table helpers</td>
 </tr>
 <tr>
+<td><code>scripts/build_visuals.py</code></td>
+<td>SVG guides and PNGs embedded in saved notebook outputs</td>
+</tr>
+<tr>
 <td><code>scripts/build_site.py</code> / <code>scripts/public_site.py</code></td>
 <td>Browser pages, reading mode, and navigation</td>
 </tr>
@@ -7884,11 +7888,12 @@ invented on your behalf. Keep the independent-course notice and source links.</p
 </table>
 <p>Back up personal notebook edits before regeneration: <code>scripts/build_notebooks.py</code> recreates cells and
 clears saved output. The source files are the maintained version of the course.</p>
-<h2 id="Rebuild-a-public-edition">Rebuild a public edition<a class="anchor-link" href="#Rebuild-a-public-edition">¶</a></h2><p>Use the Python executable from your course environment. Replace <code>python</code> below with
+<h2 id="rebuild-a-public-edition">Rebuild a public edition<a class="anchor-link" href="#rebuild-a-public-edition">¶</a></h2><p>Use the Python executable from your course environment. Replace <code>python</code> below with
 <code>.\.venv\Scripts\python.exe</code> on Windows or <code>.venv/bin/python</code> on macOS/Linux.</p>
 <div class="highlight"><pre><span></span>python<span class="w"> </span>scripts/build_visuals.py
 python<span class="w"> </span>scripts/build_notebooks.py
 python<span class="w"> </span>scripts/execute_notebooks.py
+python<span class="w"> </span>scripts/check_colab_setup.py
 python<span class="w"> </span>scripts/validate_course.py
 python<span class="w"> </span>scripts/package_course.py
 </pre></div>

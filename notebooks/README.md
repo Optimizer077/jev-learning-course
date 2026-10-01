@@ -3,7 +3,7 @@
 [← Course home](../README.md) · [Full curriculum](../docs/COURSE.md) · [Setup help](../docs/SETUP.md)
 
 Read saved results on GitHub, or choose **Colab** to run a lesson without a local installation.
-Use **Runtime → Run all**. The first cell fetches the companion teaching code and fictional data.
+Use **Runtime → Run all**. The first cell fetches the companion teaching code, fictional data, and artwork.
 No GPU or Jev key is needed for the local examples.
 
 | Lesson | What you learn | Run |
@@ -20,5 +20,6 @@ No GPU or Jev key is needed for the local examples.
 | [09 · Compare related approaches](09_related_models_lab.ipynb) | Try rules, lexical prototypes, and a learned classifier on the same fictional messages. | [Colab](https://colab.research.google.com/github/Optimizer077/jev-learning-course/blob/main/notebooks/09_related_models_lab.ipynb) |
 
 Each notebook runs independently. Choose a **CPU runtime**; a GPU is unnecessary.
+Teaching diagrams are saved inside the notebook, so you can inspect them before running anything.
 Colab needs internet access for the initial repository clone. A local checkout needs no clone.
 See [the setup guide](../docs/SETUP.md) for prerequisites and troubleshooting.

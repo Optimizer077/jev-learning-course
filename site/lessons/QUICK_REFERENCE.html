@@ -7815,14 +7815,14 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2a0de43a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bf6c8f12">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Keep-this-beside-your-notebook">Keep this beside your notebook<a class="anchor-link" href="#Keep-this-beside-your-notebook">¶</a></h1><p>Prefer diagrams first? Use <a href="VISUAL_GUIDE.html">the visual guide</a>, then return here for exact formulas.</p>
-<h2 id="One-decision-in-four-steps">One decision in four steps<a class="anchor-link" href="#One-decision-in-four-steps">¶</a></h2><ol>
+<h1 id="keep-this-beside-your-notebook">Keep this beside your notebook<a class="anchor-link" href="#keep-this-beside-your-notebook">¶</a></h1><p>Prefer diagrams first? Use <a href="VISUAL_GUIDE.html">the visual guide</a>, then return here for exact formulas.</p>
+<h2 id="one-decision-in-four-steps">One decision in four steps<a class="anchor-link" href="#one-decision-in-four-steps">¶</a></h2><ol>
 <li><strong>Evidence:</strong> what information should the judgment use?</li>
 <li><strong>Question:</strong> what exactly are we asking, and what do the allowed answers mean?</li>
 <li><strong>Estimate:</strong> what output did the model or scoring rule produce?</li>
@@ -7830,7 +7830,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </ol>
 <p>Running example: an export crash is evidence; “Which queue?” is a question; probabilities are
 estimates; routing or review is an application action.</p>
-<h2 id="Choose-a-question-type">Choose a question type<a class="anchor-link" href="#Choose-a-question-type">¶</a></h2><table>
+<h2 id="choose-a-question-type">Choose a question type<a class="anchor-link" href="#choose-a-question-type">¶</a></h2><table>
 <thead>
 <tr>
 <th>Need</th>
@@ -7858,7 +7858,7 @@ estimates; routing or review is an application action.</p>
 </table>
 <p><a href="https://docs.typesafe.ai/primitives/choice">Choice</a> · <a href="https://docs.typesafe.ai/primitives/score">Score</a> ·
 <a href="https://docs.typesafe.ai/primitives/noul">Noul</a>. Examples and formulas in this reference are teaching examples.</p>
-<h2 id="Read-three-calculations">Read three calculations<a class="anchor-link" href="#Read-three-calculations">¶</a></h2><table>
+<h2 id="read-three-calculations">Read three calculations<a class="anchor-link" href="#read-three-calculations">¶</a></h2><table>
 <thead>
 <tr>
 <th>Calculation</th>
@@ -7885,7 +7885,7 @@ estimates; routing or review is an application action.</p>
 </tbody>
 </table>
 <p>A single group agreeing with its predicted frequency does not establish calibration across a population.</p>
-<h2 id="Choose-an-action-using-costs">Choose an action using costs<a class="anchor-link" href="#Choose-an-action-using-costs">¶</a></h2><p>In the binary teaching example, correct actions cost zero and review is perfectly accurate.
+<h2 id="choose-an-action-using-costs">Choose an action using costs<a class="anchor-link" href="#choose-an-action-using-costs">¶</a></h2><p>In the binary teaching example, correct actions cost zero and review is perfectly accurate.
 If <code>p</code> is the calibrated probability of yes:</p>
 <table>
 <thead>
@@ -7912,7 +7912,7 @@ If <code>p</code> is the calibrated probability of yes:</p>
 <p>At p = 0.90, false-positive cost = 4, false-negative cost = 1, and review cost = 0.20,
 the costs are <strong>0.40</strong>, <strong>0.90</strong>, and <strong>0.20</strong>. Review is cheapest under these assumptions.
 Real review can make mistakes; evaluate that behavior before using the same rule.</p>
-<h2 id="Keep-these-distinctions-clear">Keep these distinctions clear<a class="anchor-link" href="#Keep-these-distinctions-clear">¶</a></h2><table>
+<h2 id="keep-these-distinctions-clear">Keep these distinctions clear<a class="anchor-link" href="#keep-these-distinctions-clear">¶</a></h2><table>
 <thead>
 <tr>
 <th>Common confusion</th>
@@ -7963,7 +7963,7 @@ Real review can make mistakes; evaluate that behavior before using the same rule
 </tr>
 </tbody>
 </table>
-<h2 id="Evaluate-with-explicit-denominators">Evaluate with explicit denominators<a class="anchor-link" href="#Evaluate-with-explicit-denominators">¶</a></h2><ul>
+<h2 id="evaluate-with-explicit-denominators">Evaluate with explicit denominators<a class="anchor-link" href="#evaluate-with-explicit-denominators">¶</a></h2><ul>
 <li><strong>Accuracy:</strong> correct labels / evaluated cases.</li>
 <li><strong>Automatic coverage:</strong> automatic cases / all cases.</li>
 <li><strong>Selective error:</strong> wrong automatic cases / automatic cases.</li>
@@ -7971,7 +7971,7 @@ Real review can make mistakes; evaluate that behavior before using the same rule
 </ul>
 <p>When there are no automatic cases, selective error is undefined, rather than evidence of zero
 error. A tiny authored test set can illustrate calculations but cannot establish broad reliability.</p>
-<h2 id="Study-without-getting-lost">Study without getting lost<a class="anchor-link" href="#Study-without-getting-lost">¶</a></h2><p>Start with <strong>00 → 01 → 04</strong> for the main idea. Use <strong>02 → 03 → 07</strong> to build a local system.
+<h2 id="study-without-getting-lost">Study without getting lost<a class="anchor-link" href="#study-without-getting-lost">¶</a></h2><p>Start with <strong>00 → 01 → 04</strong> for the main idea. Use <strong>02 → 03 → 07</strong> to build a local system.
 Try <strong>09</strong> when you want to compare mechanisms. Use the browser's code toggle to read explanations
 first, then inspect the Python when ready.</p>
 <p>For an experiment: <strong>predict → change one thing → restart and run → explain → state a limitation</strong>.</p>

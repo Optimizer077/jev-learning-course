@@ -68,7 +68,7 @@ All local data and model results are teaching examples. The optional live API ca
 <a href="lessons/data_README.html">Data provenance</a> · <a href="lessons/SHARING.html">Maintainer guide</a></p></main>'''
 
 
-def reader_view(html, is_lesson):
+def reader_view(html, is_lesson, image_descriptions=None):
     """Keep saved output visible; reveal code with a keyboard-accessible control."""
     soup = BeautifulSoup(html, 'html.parser')
     soup.html['lang'] = 'en'
@@ -110,6 +110,12 @@ document.body.classList.toggle('reading-mode',!this.checked);});'''
     soup.body.append(script)
     # The preceding prose provides context for saved figures; expose that context to assistive readers.
     for img in soup.select('.jp-RenderedImage img'):
+        encoded = img.get('src', '').removeprefix('data:image/png;base64,')
+        if image_descriptions and encoded in image_descriptions:
+            img['alt'] = image_descriptions[encoded]
+        existing_alt = img.get('alt', '').strip()
+        if existing_alt and 'no description' not in existing_alt.lower():
+            continue
         cell = img.find_parent(class_='jp-Cell')
         heading = cell.find_previous(['h2', 'h3']) if cell else None
         if heading:

@@ -287,19 +287,25 @@ Build a complete local text decision system: **text → features → probabiliti
 This is a small bag-of-words baseline, **not Jev**. Its limitations are part of the lesson.
 The 54 tickets are authored fictional examples; performance is not a real-world benchmark.
 
+**New question, new options:** this project routes to **billing, technical, or account**.
+The introductory illustration used **billing, technical, or other**. Options belong to the task;
+they are not fixed model categories. Here, `other` appears only as an out-of-domain stress label.
+
 ## Setup
 The data file includes 24 training, 12 validation, 12 test, and 6 stress cases.
 We fit vocabulary/weights on training, choose temperature/policy on validation, and evaluate once on test.
 The stress set probes deliberately difficult inputs separately.
 '''), code(setup + '''
 from collections import Counter
-from lab_core import (LABELS, load_tickets, vocabulary, vectorise, fit_linear, softmax,
+from lab_core import (LABELS, WORD_ORDER_PAIR, load_tickets, vocabulary, vectorise, fit_linear, softmax,
                       nll, multiclass_brier, split_arrays, choose_temperature,
                       selective_metrics, confusion_counts)
 rows = load_tickets()
 '''), md(r'''
 ## Steps
 ### 1. Inspect examples and validate the split
+![Training, validation, test, and stress have distinct roles. Counts come from the fictional course data.](assets/data-splits.svg)
+
 The answer labels are for learning and evaluation, never model input. The small sample sizes mean
 one test mistake changes accuracy by 8.3 percentage points. Do not treat the displayed decimals as precision.
 '''), code('''
@@ -417,13 +423,15 @@ table(['Stress text', 'Intended topic', 'Predicted topic', 'Max probability'], [
 print('Stress labels include other; the model has no other output column.')
 '''), md(r'''
 ### 7b. Construct a failure the representation cannot solve
+![The messages have different intended queues but identical binary features. Lost word order cannot be recovered by changing a threshold.](assets/word-order.svg)
+
 These two messages contain the same words but negate different problems. A binary bag of words
 maps them to exactly the same feature vector. No amount of training this same representation can
 make it assign different outputs to the pair. At least one primary-topic answer must be wrong.
 This is an architectural limitation of our baseline, not a measured Jev failure.
 '''), code('''
-minimal_pair = ['The payment failed, not the export.', 'The export failed, not the payment.']
-pair_reference = ['billing', 'technical']
+minimal_pair = [message for message, _ in WORD_ORDER_PAIR]
+pair_reference = [reference for _, reference in WORD_ORDER_PAIR]
 pair_X = vectorise(minimal_pair, vocab)
 pair_p = softmax(pair_X @ weights + bias, temperature)
 table(['Message', 'Intended topic', 'Prediction'],

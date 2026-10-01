@@ -2,7 +2,7 @@
 from html import escape
 from pathlib import Path
 import matplotlib.pyplot as plt
-from IPython.display import HTML, display
+from IPython.display import HTML, Image, display
 
 BLUE, ORANGE, GREY = '#2563a6', '#c46b20', '#444444'
 
@@ -18,6 +18,15 @@ def show_figure(name):
     plt.gcf().savefig(figures / f'{name}.png', bbox_inches='tight')
     plt.show()
     plt.close()
+
+
+def show_diagram(name, description):
+    """Embed the course artwork in saved outputs for GitHub, Colab, and offline reading."""
+    image = Path(__file__).resolve().parents[1] / 'assets' / f'{name}.png'
+    if not image.is_file():
+        raise FileNotFoundError('Keep the complete course folder, including assets, together.')
+    # Preserve descriptions for notebook viewers and the course's HTML export.
+    display(Image(filename=str(image), width=540, alt=description), metadata={'alt': description})
 
 def flow_diagram(labels, name, title):
     """A readable conceptual flow; boxes do not claim neural-network internals."""

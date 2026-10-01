@@ -7815,16 +7815,46 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b4f1a134">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6673cedb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="See-the-idea-before-the-code">See the idea before the code<a class="anchor-link" href="#See-the-idea-before-the-code">¶</a></h1><p><a href="README.html">Course home</a> · <a href="00_start_here.html">Start lesson 00</a> · <a href="QUICK_REFERENCE.html">Quick reference</a></p>
+<h1 id="see-the-idea-before-the-code">See the idea before the code<a class="anchor-link" href="#see-the-idea-before-the-code">¶</a></h1><p><a href="README.html">Course home</a> · <a href="00_start_here.html">Start lesson 00</a> · <a href="QUICK_REFERENCE.html">Quick reference</a></p>
 <p>These diagrams use invented examples. They describe the decision interface and application rules;
 they do not show Jev's proprietary architecture or measure its accuracy.</p>
-<h2 id="Follow-one-ticket">Follow one ticket<a class="anchor-link" href="#Follow-one-ticket">¶</a></h2><p>Give the message as <strong>evidence</strong>, then ask a <strong>question</strong> with clear <strong>criteria</strong>:
+<table>
+<thead>
+<tr>
+<th>You want to understand…</th>
+<th>Start here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What goes into a decision</td>
+<td><a href="#follow-one-ticket">Follow one ticket</a></td>
+</tr>
+<tr>
+<td>Which answer type fits</td>
+<td><a href="#ask-three-different-questions">Ask three different questions</a></td>
+</tr>
+<tr>
+<td>What a probability means</td>
+<td><a href="#compare-predictions-with-outcomes">Compare predictions with outcomes</a></td>
+</tr>
+<tr>
+<td>How to evaluate a small project</td>
+<td><a href="#keep-fitting-tuning-and-testing-separate">Keep the data splits separate</a></td>
+</tr>
+<tr>
+<td>Why words alone can fail</td>
+<td><a href="#see-what-word-order-changes">See what word order changes</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="follow-one-ticket">Follow one ticket<a class="anchor-link" href="#follow-one-ticket">¶</a></h2><p>Give the message as <strong>evidence</strong>, then ask a <strong>question</strong> with clear <strong>criteria</strong>:
 technical means broken product behavior, billing means charges or invoices, and other means
 neither listed queue fits or the evidence is insufficient.</p>
 <img alt="Evidence: the export button crashes. Question: which queue fits? Invented probabilities: technical 90%, billing 6%, other 4%. A threshold of 0.85 routes to technical; 0.95 sends the same estimate to review." src="../../assets/decision-flow.svg" width="660"/>
@@ -7836,7 +7866,7 @@ Permissions remain separate: a refund prediction cannot authorize a payment.</p>
 <p>The case goes to review because 0.90 is below 0.92. Technical remains the most likely queue.</p>
 </details>
 <p>Continue with <a href="01_jev_basics.html">lesson 01</a>.</p>
-<h2 id="Ask-three-different-questions">Ask three different questions<a class="anchor-link" href="#Ask-three-different-questions">¶</a></h2><p>The same message can support several judgments. Choose the answer type to match the question.</p>
+<h2 id="ask-three-different-questions">Ask three different questions<a class="anchor-link" href="#ask-three-different-questions">¶</a></h2><p>The same message can support several judgments. Choose the answer type to match the question.</p>
 <img alt="Choice selects among named queues with probabilities. Score averages ordered rubric levels: 5% at level 0, 25% at level 1, and 70% at level 2 give 1.65. Noul provides a yes probability, illustrated as 12% for an explicit refund request." src="../../assets/question-types.svg" width="600"/>
 <ul>
 <li><strong>Choice:</strong> which named alternative fits? Here, technical is most likely.</li>
@@ -7847,17 +7877,54 @@ Permissions remain separate: a refund prediction cannot authorize a payment.</p>
 <a href="https://docs.typesafe.ai/primitives/choice">Choice reference</a> ·
 <a href="https://docs.typesafe.ai/primitives/score">Score reference</a> ·
 <a href="https://docs.typesafe.ai/primitives/noul">Noul reference</a>.</p>
-<p><strong>Predict:</strong> would “Can you refund yesterday's duplicate charge?” ask a different Noul question
-from “Which support queue fits?” Explain the difference before reading the notebook.</p>
-<h2 id="Compare-predictions-with-outcomes">Compare predictions with outcomes<a class="anchor-link" href="#Compare-predictions-with-outcomes">¶</a></h2><p>An 80% estimate does not make any one outcome certain. Calibration concerns patterns across
+<p><strong>Predict:</strong> which answer type fits “Was a refund explicitly requested?” Which fits
+“Which support queue fits?” Use “Can you refund yesterday's duplicate charge?” as the evidence.</p>
+<details><summary>Check your answer</summary>
+<p>The refund-request question uses Noul because it asks for a yes/no judgment. The queue
+question uses Choice because it compares named alternatives. The message is evidence for both;
+it is not itself the question definition.</p>
+</details>
+<h2 id="compare-predictions-with-outcomes">Compare predictions with outcomes<a class="anchor-link" href="#compare-predictions-with-outcomes">¶</a></h2><p>An 80% estimate does not make any one outcome certain. Calibration concerns patterns across
 many predictions and their observed outcomes.</p>
 <img alt="Ten invented cases each receive a predicted yes probability of 80%. Eight are yes and two are no, so observed frequency is 8 divided by 10, or 80%. A single agreeing group does not prove calibration." src="../../assets/calibration-counts.svg" width="600"/>
 <p><strong>Predict:</strong> change one yes to no. The observed frequency becomes 70% while the predictions stay 80%.
 One finite group can fluctuate; evaluate many groups and their sample sizes before judging calibration.
 Continue with <a href="03_calibration_and_decisions.html">lesson 03</a>.</p>
-<h2 id="Know-when-you-understand">Know when you understand<a class="anchor-link" href="#Know-when-you-understand">¶</a></h2><p>You can separate the evidence, the question, the estimated answer, and the action.
+<h2 id="keep-fitting-tuning-and-testing-separate">Keep fitting, tuning, and testing separate<a class="anchor-link" href="#keep-fitting-tuning-and-testing-separate">¶</a></h2><p>The project uses <strong>billing, technical, and account</strong> as its three queue options. These differ
+from the opening illustration's options because we are asking a different question.
+The six stress examples include an out-of-domain <code>other</code> case; <code>other</code> is not a trained class.</p>
+<img alt="54 fictional tickets: 24 training examples fit vocabulary and weights; 12 validation examples choose temperature and review policy; 12 test examples assess the frozen system; 6 stress cases are inspected separately." src="../../assets/data-splits.svg" width="540"/>
+<p>The counts come from <a href="../../data/tickets.json">tickets.json</a>, not a measured Jev evaluation.
+Stress cases were chosen to expose weaknesses; combining them with test cases would change the
+meaning of the reported test result.</p>
+<p><strong>Predict:</strong> you see a test mistake and adjust the cutoff to fix it. Can the same test set still
+give an untouched assessment of that new policy?</p>
+<details><summary>Check your answer</summary>
+<p>No. You used its result to choose a setting. Record that change and assess the new frozen
+policy on fresh held-out examples. Do not move a difficult row out of test just to improve the score.</p>
+</details>
+<p>Continue with <a href="07_text_routing_capstone.html">lesson 07</a>.</p>
+<h2 id="see-what-word-order-changes">See what word order changes<a class="anchor-link" href="#see-what-word-order-changes">¶</a></h2><p>Both messages contain the same words. In one, payment failed; in the other, export failed.
+Our binary representation records which known words appear, losing their order and repetition.</p>
+<img alt="Message A: The payment failed, not the export; intended billing. Message B: The export failed, not the payment; intended technical. Both activate export, not, payment, and the. Failed is absent from the training vocabulary. Identical binary inputs force identical predictions from the same deterministic classifier." src="../../assets/word-order.svg" width="540"/>
+<p>The actual training vocabulary includes <code>export</code>, <code>not</code>, <code>payment</code>, and <code>the</code>; it does not include
+<code>failed</code>. All other feature columns are zero for this pair. Dropping <code>failed</code> is one limitation;
+adding it would still leave these two word-presence vectors identical.</p>
+<p><strong>Predict:</strong> could a different confidence threshold route A to billing and B to technical
+when their probability vectors are identical?</p>
+<details><summary>Check your answer</summary>
+<p>No. The same deterministic threshold rule sees the same probabilities. It must make the
+same decision for both. Review can avoid an automatic mistake, but it does not recover the
+missing meaning. To distinguish them automatically, preserve information such as word order
+and evaluate the changed system on held-out cases.</p>
+</details>
+<p>This demonstrates a limitation of the local baseline. It does not measure Jev or prove that
+any particular replacement handles every negation. Compare the local methods in
+<a href="09_related_models_lab.html">lesson 09</a>.</p>
+<h2 id="know-when-you-understand">Know when you understand<a class="anchor-link" href="#know-when-you-understand">¶</a></h2><p>You can separate the evidence, the question, the estimated answer, and the action.
 You can explain why changing an application rule does not change a model's estimate.
-You can name one result these illustrations do <strong>not</strong> establish.</p>
+You can name one result these illustrations do <strong>not</strong> establish.
+If you take the project path, you can explain why its data splits and its input representation matter.</p>
 <p><a href="PRACTICE.html">Try the practice questions</a> · <a href="COURSE.html">Choose your learning path</a></p>
 </div>
 </div>

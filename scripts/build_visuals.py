@@ -1,9 +1,14 @@
-"""Create self-contained vector artwork for the GitHub course landing page."""
+"""Create vector course artwork and portable PNGs for saved notebook outputs."""
+from collections import Counter
+import sys
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 from course_paths import ROOT
+
+sys.path.insert(0, str(ROOT / 'src'))
+from lab_core import WORD_ORDER_PAIR, load_tickets, tokenise, vocabulary
 
 ASSETS = ROOT / 'assets'
 INK, TEAL, VIOLET, CORAL = '#13243b', '#0d766f', '#6245b7', '#b7432b'
@@ -41,7 +46,9 @@ def save(fig, name, description=''):
     preview = ROOT / 'dist' / 'visual-previews'
     preview.mkdir(parents=True, exist_ok=True)
     fig.savefig(preview/f'{name}.png', dpi=150, facecolor=fig.get_facecolor())
-    if name.endswith('-mobile'):
+    if name in {'decision-flow', 'question-types', 'calibration-counts', 'data-splits', 'word-order'}:
+        fig.savefig(ASSETS/f'{name}.png', dpi=150, facecolor=fig.get_facecolor())
+    if name.endswith('-mobile') or name in {'data-splits', 'word-order'}:
         fig.savefig(preview/f'{name}-360.png', dpi=360/fig.get_figwidth(), facecolor=fig.get_facecolor())
     plt.close(fig)
 
@@ -112,6 +119,7 @@ def build_visuals():
     save(fig,'learning-path-mobile','Three learning paths and their prerequisites, stacked for narrow screens.')
 
     build_teaching_visuals()
+    build_project_visuals()
 
 
 def build_teaching_visuals():
@@ -174,6 +182,73 @@ def build_teaching_visuals():
     label(ax,24,73,'One agreeing group does not prove calibration.',12,VIOLET,'bold')
     label(ax,24,30,'Invented outcomes · circle Y = yes · cross N = no',10.5,'#405671')
     save(fig,'calibration-counts','Ten authored outcomes: eight yes and two no. Mean predicted probability is 80%; observed yes frequency is 8/10, or 80%. One group does not establish calibration.')
+
+
+def build_project_visuals():
+    rows = load_tickets()
+    counts = Counter(row['split'] for row in rows)
+    fig, ax = canvas(540, 892, '#f5f7fc')
+    label(ax, 24, 854, 'KEEP THE EXAMPLES SEPARATE', 16, INK, 'bold')
+    label(ax, 24, 809, 'Each group has a different job.', 14, '#405671')
+    stages = [
+        ('train', '01  TRAIN', 'Learn the vocabulary and weights.',
+         'Labels are targets, never text features.', TEAL, '#e5f6f2'),
+        ('validation', '02  VALIDATE', 'Choose temperature and review cutoff.',
+         'Freeze these choices before testing.', VIOLET, '#eee9fc'),
+        ('test', '03  TEST', 'Assess the frozen system once.',
+         'Tuning here uses up the test set.', CORAL, '#fceee9'),
+        ('stress', '04  STRESS', 'Inspect deliberately difficult cases.',
+         'Report separately from test accuracy.', INK, '#edf1f7'),
+    ]
+    for i, (split, title, purpose, note, color, fill) in enumerate(stages):
+        y = 610 - 170*i
+        box(ax, 22, y, 496, 147, 'white', '#d9e2f0')
+        box(ax, 38, y+93, 464, 38, fill)
+        label(ax, 50, y+112, title, 13, color, 'bold')
+        label(ax, 490, y+112, f'{counts[split]} cases', 13, color, 'bold', ha='right')
+        label(ax, 42, y+66, purpose, 13.5, INK)
+        label(ax, 42, y+29, note, 12.5, '#405671')
+        if i < 2:
+            ax.annotate('', xy=(270, y-20), xytext=(270, y-3),
+                        arrowprops={'arrowstyle': '->', 'color': '#405671', 'lw': 2})
+    label(ax, 24, 62, f'{len(rows)} fictional tickets. A learning exercise.', 13, INK, 'bold')
+    label(ax, 24, 27, 'Small authored sets do not establish reliability.', 12, '#405671')
+    save(fig, 'data-splits',
+         f"Counts from data/tickets.json: {dict(counts)}. Fit on training; choose settings on validation; assess a frozen system on test; inspect stress cases separately.")
+
+    # Use the same messages as lessons 07/09 and the vocabulary fitted on training only.
+    vocab = vocabulary([row['text'] for row in rows if row['split'] == 'train'])
+    bags = [set(tokenise(message)) for message, _ in WORD_ORDER_PAIR]
+    assert bags[0] == bags[1]
+    known = sorted(bags[0].intersection(vocab))
+    unseen = sorted(bags[0].difference(vocab))
+    fig, ax = canvas(540, 948, '#f5f7fc')
+    label(ax, 24, 910, 'WHEN WORD ORDER DISAPPEARS', 15.5, INK, 'bold')
+    label(ax, 24, 868, 'Same words. Different problems.', 14, '#405671')
+    for i, (message, reference) in enumerate(WORD_ORDER_PAIR):
+        y = 653-185*i
+        box(ax, 22, y, 496, 159, 'white', '#d9e2f0')
+        label(ax, 43, y+127, f'MESSAGE {"AB"[i]}', 12.5, TEAL if i == 0 else CORAL, 'bold')
+        first, second = message.split(', ')
+        label(ax, 43, y+78, first+',\n'+second, 16, INK, linespacing=1.45)
+        label(ax, 43, y+24, f'Intended primary queue: {reference}', 12.5, INK, 'bold')
+    box(ax, 22, 218, 496, 217, 'white', '#d9e2f0')
+    label(ax, 43, 403, 'COMPARE THE BINARY INPUTS', 13, VIOLET, 'bold')
+    positions = [140 + i*(320/max(len(known)-1, 1)) for i in range(len(known))]
+    for x, word in zip(positions, known):
+        label(ax, x, 359, word, 13, INK, 'bold', ha='center')
+        for y in (316, 276):
+            label(ax, x, y, '1', 17, VIOLET, 'bold', ha='center')
+    label(ax, 48, 316, 'A', 14, INK, 'bold')
+    label(ax, 48, 276, 'B', 14, INK, 'bold')
+    dropped = ', '.join(unseen)
+    label(ax, 42, 241, f'Unseen in training: {dropped}. These words are dropped.', 10.8, '#405671')
+    label(ax, 24, 170, 'Identical inputs → identical predictions.', 14, INK, 'bold')
+    label(ax, 24, 125, 'At least one primary queue must be wrong.', 13, CORAL, 'bold')
+    label(ax, 24, 77, 'A new threshold cannot restore missing word order.', 12, '#405671')
+    label(ax, 24, 32, 'A limitation of our local baseline; no Jev call.', 12, '#405671')
+    save(fig, 'word-order',
+         f'Authored messages: {WORD_ORDER_PAIR}. Both have active training-vocabulary words {known}; unseen words {unseen} are dropped. Identical binary features cannot yield different deterministic classifier outputs.')
 
 
 if __name__ == '__main__':

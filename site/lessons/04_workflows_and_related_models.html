@@ -7816,7 +7816,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a><a href="03_calibration_and_decisions.html">Previous lesson</a><a href="05_optional_real_jev_api.html">Next lesson →</a><a download="" href="../../notebooks/04_workflows_and_related_models.ipynb">Notebook ↓</a></nav><section aria-label="Reading controls" class="reader-tools">
 <label><input id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
-<details><summary>In this lesson</summary><ul><li><a href="#The-idea-before-the-code">The idea before the code</a></li><li><a href="#Goal">Goal</a></li><li><a href="#Setup">Setup</a></li><li><a href="#Steps">Steps</a></li><li><a href="#Checks">Checks</a></li><li><a href="#Next-Steps">Next Steps</a></li><li><a href="#Take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#Check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4e29984171a0-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7825,7 +7825,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a href="https://colab.research.google.com/github/Optimizer077/jev-learning-course/blob/main/notebooks/04_workflows_and_related_models.ipynb"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<h1 id="4-%C2%B7-Put-decisions-inside-a-software-workflow">4 · Put decisions inside a software workflow<a class="anchor-link" href="#4-%C2%B7-Put-decisions-inside-a-software-workflow">¶</a></h1><p><strong>Path:</strong> Beginner → builder<br/>
+<h1 id="4--put-decisions-inside-a-software-workflow">4 · Put decisions inside a software workflow<a class="anchor-link" href="#4--put-decisions-inside-a-software-workflow">¶</a></h1><p><strong>Path:</strong> Beginner → builder<br/>
 <strong>Before you start:</strong> Lesson 01; understand an if statement</p>
 <p><a href="README.html">Course home</a> · <a href="COURSE.html">Course outline</a> · <a href="SETUP.html">Setup help</a> · <a href="GLOSSARY.html">Glossary</a></p>
 </div>
@@ -7838,7 +7838,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="The-idea-before-the-code">The idea before the code<a class="anchor-link" href="#The-idea-before-the-code">¶</a></h2><p>Let the model make a small judgment. Let ordinary code combine judgments, check permissions, and choose the next step.</p>
+<h2 id="the-idea-before-the-code">The idea before the code<a class="anchor-link" href="#the-idea-before-the-code">¶</a></h2><p>Let the model make a small judgment. Let ordinary code combine judgments, check permissions, and choose the next step.</p>
 <p><strong>Your first pass:</strong> Work through the four fictional tickets. Then read the question rewrites and dependency example.</p>
 </div>
 </div>
@@ -7850,7 +7850,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Words-you-need-for-this-lesson">Words you need for this lesson<a class="anchor-link" href="#Words-you-need-for-this-lesson">¶</a></h3><table>
+<h3 id="words-you-need-for-this-lesson">Words you need for this lesson<a class="anchor-link" href="#words-you-need-for-this-lesson">¶</a></h3><table>
 <thead>
 <tr>
 <th>Word</th>
@@ -7882,11 +7882,11 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Goal">Goal<a class="anchor-link" href="#Goal">¶</a></h2><p>Combine narrow judgments with ordinary code, and understand how Jev relates to other model families.</p>
+<h2 id="goal">Goal<a class="anchor-link" href="#goal">¶</a></h2><p>Combine narrow judgments with ordinary code, and understand how Jev relates to other model families.</p>
 <p>TypeSafe documents evaluation of multiple questions against one shared state in parallel and isolation.
 This is an execution/interface property, <strong>not a guarantee that the real-world events are statistically
 independent</strong>. <a href="https://docs.typesafe.ai/introduction">Introduction</a>.</p>
-<h2 id="Setup">Setup<a class="anchor-link" href="#Setup">¶</a></h2><p>All answers below are invented. The code only returns route names; it does not send messages or execute actions.</p>
+<h2 id="setup">Setup<a class="anchor-link" href="#setup">¶</a></h2><p>All answers below are invented. The code only returns route names; it does not send messages or execute actions.</p>
 </div>
 </div>
 </div>
@@ -7901,7 +7901,9 @@ independent</strong>. <a href="https://docs.typesafe.ai/introduction">Introducti
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Find the included teaching helpers from the course folder.</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="n">REQUIRED_FILES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"src/lab_core.py"</span><span class="p">,</span> <span class="s2">"src/tutorial_utils.py"</span><span class="p">,</span> <span class="s2">"data/tickets.json"</span><span class="p">)</span>
+<span class="n">REQUIRED_FILES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"src/lab_core.py"</span><span class="p">,</span> <span class="s2">"src/tutorial_utils.py"</span><span class="p">,</span> <span class="s2">"data/tickets.json"</span><span class="p">,</span>
+                  <span class="s2">"assets/decision-flow.png"</span><span class="p">,</span> <span class="s2">"assets/question-types.png"</span><span class="p">,</span>
+                  <span class="s2">"assets/calibration-counts.png"</span><span class="p">,</span> <span class="s2">"assets/data-splits.png"</span><span class="p">,</span> <span class="s2">"assets/word-order.png"</span><span class="p">)</span>
 <span class="n">COURSE_ROOT</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">)</span>
                     <span class="k">if</span> <span class="nb">all</span><span class="p">((</span><span class="n">p</span> <span class="o">/</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">REQUIRED_FILES</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
 <span class="c1"># Colab opens a single notebook; fetch its companion code and fictional data.</span>
@@ -7940,7 +7942,7 @@ independent</strong>. <a href="https://docs.typesafe.ai/introduction">Introducti
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Steps">Steps<a class="anchor-link" href="#Steps">¶</a></h2><h3 id="1.-Decompose-a-broad-judgment">1. Decompose a broad judgment<a class="anchor-link" href="#1.-Decompose-a-broad-judgment">¶</a></h3><p>Instead of “handle this ticket,” ask separately about topic, blocking impact, and missing information.
+<h2 id="steps">Steps<a class="anchor-link" href="#steps">¶</a></h2><h3 id="1-decompose-a-broad-judgment">1. Decompose a broad judgment<a class="anchor-link" href="#1-decompose-a-broad-judgment">¶</a></h3><p>Instead of “handle this ticket,” ask separately about topic, blocking impact, and missing information.
 Then implement policy in code. A later question that needs an earlier answer requires another stage;
 putting it in the same parallel call does not create that dependency.</p>
 </div>
@@ -7996,7 +7998,7 @@ putting it in the same parallel call does not create that dependency.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2.-Do-not-multiply-unrelated-marginal-probabilities-blindly">2. Do not multiply unrelated marginal probabilities blindly<a class="anchor-link" href="#2.-Do-not-multiply-unrelated-marginal-probabilities-blindly">¶</a></h3><p>If $P(A)=0.8$ and $P(B)=0.7$, then $P(A\cap B)$ is between
+<h3 id="2-do-not-multiply-unrelated-marginal-probabilities-blindly">2. Do not multiply unrelated marginal probabilities blindly<a class="anchor-link" href="#2-do-not-multiply-unrelated-marginal-probabilities-blindly">¶</a></h3><p>If $P(A)=0.8$ and $P(B)=0.7$, then $P(A\cap B)$ is between
 $\max(0,P(A)+P(B)-1)$ and $\min(P(A),P(B))$. Multiplication gives 0.56 only under independence.
 Parallel model evaluation does not establish that assumption.</p>
 </div>
@@ -8040,7 +8042,7 @@ If independent: 0.56
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3.-Compare-related-approaches">3. Compare related approaches<a class="anchor-link" href="#3.-Compare-related-approaches">¶</a></h3><p>These are conceptual distinctions, not benchmark rankings.</p>
+<h3 id="3-compare-related-approaches">3. Compare related approaches<a class="anchor-link" href="#3-compare-related-approaches">¶</a></h3><p>These are conceptual distinctions, not benchmark rankings.</p>
 <table>
 <thead>
 <tr>
@@ -8092,7 +8094,7 @@ decoders already constrain outputs. Jev's claimed contribution combines a decisi
 training, and execution. The exact comparison needs task-matched measurements, not labels.</p>
 <p>An LLM can use constrained decoding and return valid JSON. That addresses syntax, not automatically
 truth or calibration. Conversely, a classifier's softmax numbers are not automatically calibrated.</p>
-<h3 id="4.-What-should-stay-in-code?">4. What should stay in code?<a class="anchor-link" href="#4.-What-should-stay-in-code?">¶</a></h3><p>TypeSafe lists weaknesses in exact arithmetic, long irrelevant context, adversarial text, and consistency
+<h3 id="4-what-should-stay-in-code">4. What should stay in code?<a class="anchor-link" href="#4-what-should-stay-in-code">¶</a></h3><p>TypeSafe lists weaknesses in exact arithmetic, long irrelevant context, adversarial text, and consistency
 between differently phrased questions. Use explicit criteria, filter evidence, and enforce required
 identities in software. It also warns against treating rubric scores as precise numerical reconstruction.
 <a href="https://docs.typesafe.ai/model-jaggedness/jev-1.13">Known limitations</a>.</p>
@@ -8155,7 +8157,7 @@ Complement computed in code: 0.28
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5.-Rewrite-vague-questions-into-testable-contracts">5. Rewrite vague questions into testable contracts<a class="anchor-link" href="#5.-Rewrite-vague-questions-into-testable-contracts">¶</a></h3><p>The criteria should tell a reader how to label a boundary case. These are authored examples;
+<h3 id="5-rewrite-vague-questions-into-testable-contracts">5. Rewrite vague questions into testable contracts<a class="anchor-link" href="#5-rewrite-vague-questions-into-testable-contracts">¶</a></h3><p>The criteria should tell a reader how to label a boundary case. These are authored examples;
 we are not claiming the rewrite improves Jev without running an evaluation.</p>
 <table>
 <thead>
@@ -8190,7 +8192,7 @@ we are not claiming the rewrite improves Jev without running an evaluation.</p>
 </table>
 <p>Write exclusions as well as inclusions. Keep each probability attached to its precise question;
 changing the definition changes what the number means.</p>
-<h3 id="6.-Demonstrate-an-order-sensitive-pipeline">6. Demonstrate an order-sensitive pipeline<a class="anchor-link" href="#6.-Demonstrate-an-order-sensitive-pipeline">¶</a></h3><p>In a two-stage workflow, the first answer can choose which evidence to retrieve for the second.
+<h3 id="6-demonstrate-an-order-sensitive-pipeline">6. Demonstrate an order-sensitive pipeline<a class="anchor-link" href="#6-demonstrate-an-order-sensitive-pipeline">¶</a></h3><p>In a two-stage workflow, the first answer can choose which evidence to retrieve for the second.
 Questions that depend on that retrieved evidence cannot be answered using the earlier, incomplete state.</p>
 </div>
 </div>
@@ -8237,7 +8239,7 @@ The second stage now has evidence that was absent from the first.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7.-Design-a-fair-comparison-before-collecting-results">7. Design a fair comparison before collecting results<a class="anchor-link" href="#7.-Design-a-fair-comparison-before-collecting-results">¶</a></h3><table>
+<h3 id="7-design-a-fair-comparison-before-collecting-results">7. Design a fair comparison before collecting results<a class="anchor-link" href="#7-design-a-fair-comparison-before-collecting-results">¶</a></h3><table>
 <thead>
 <tr>
 <th>Hold fixed</th>
@@ -8283,7 +8285,7 @@ Should the system act? Which part of the implementation should enforce the answe
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Checks">Checks<a class="anchor-link" href="#Checks">¶</a></h2>
+<h2 id="checks">Checks<a class="anchor-link" href="#checks">¶</a></h2>
 </div>
 </div>
 </div>
@@ -8325,7 +8327,7 @@ Should the system act? Which part of the implementation should enforce the answe
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Next-Steps">Next Steps<a class="anchor-link" href="#Next-Steps">¶</a></h2><p>Add a “security” topic. Decide which deterministic rule should force review regardless of probability.
+<h2 id="next-steps">Next Steps<a class="anchor-link" href="#next-steps">¶</a></h2><p>Add a “security” topic. Decide which deterministic rule should force review regardless of probability.
 Then write down examples where two topics overlap, and decide how your criteria resolve them.</p>
 <p>The final notebook translates these ideas into an <a href="05_optional_real_jev_api.html">optional official API call</a>.</p>
 </div>
@@ -8338,7 +8340,7 @@ Then write down examples where two topics overlap, and decide how your criteria 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Take-three-ideas-with-you">Take three ideas with you<a class="anchor-link" href="#Take-three-ideas-with-you">¶</a></h2><ul>
+<h2 id="take-three-ideas-with-you">Take three ideas with you<a class="anchor-link" href="#take-three-ideas-with-you">¶</a></h2><ul>
 <li>Ask focused questions with clear criteria.</li>
 <li>Use code for arithmetic, permissions, and combining results.</li>
 <li>Dependent stages need the right evidence before they can run.</li>
@@ -8354,7 +8356,7 @@ Then write down examples where two topics overlap, and decide how your criteria 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Check-your-understanding">Check your understanding<a class="anchor-link" href="#Check-your-understanding">¶</a></h2><p>Two questions run in parallel. Can I multiply their probabilities to get the probability that both are true?</p>
+<h2 id="check-your-understanding">Check your understanding<a class="anchor-link" href="#check-your-understanding">¶</a></h2><p>Two questions run in parallel. Can I multiply their probabilities to get the probability that both are true?</p>
 <p>Pause and explain your answer before opening the explanation.</p>
 <details>
 <summary>Show the explanation</summary>

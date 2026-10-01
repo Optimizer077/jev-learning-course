@@ -102,6 +102,21 @@ function costs(){const p=val('prob'),fp=val('fp'),fn=val('fn'),r=val('review');[
 def rewrite_local_references(html, source_path):
     """Resolve Markdown-relative links before placing the optional export in lessons/."""
     soup = BeautifulSoup(html, 'html.parser')
+    # Match GitHub section links and avoid percent-encoded characters in HTML IDs.
+    old_ids, seen = {}, {}
+    for heading in soup.select('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]'):
+        text = heading.get_text().rstrip('¶').strip().lower()
+        base = re.sub(r'[^\w -]', '', text).replace(' ', '-')
+        occurrence = seen.get(base, 0)
+        seen[base] = occurrence+1
+        new_id = base if occurrence == 0 else f'{base}-{occurrence}'
+        old_ids[heading['id']] = new_id
+        old_ids[unquote(heading['id'])] = new_id
+        heading['id'] = new_id
+    for anchor in soup.select('a[href^="#"]'):
+        fragment = unquote(anchor['href'][1:])
+        if fragment in old_ids:
+            anchor['href'] = '#'+old_ids[fragment]
     source_dir = (ROOT/source_path).parent
     pages = dict(SUPPORT_PAGES)
     def rewrite_url(value):
@@ -135,7 +150,7 @@ def rewrite_local_references(html, source_path):
     return str(soup)
 
 
-def style_lesson(html, stem, names, source_path=None):
+def style_lesson(html, stem, names, source_path=None, notebook=None):
     html = rewrite_local_references(html, source_path or 'notebooks/'+stem+'.ipynb')
     html=html.replace('<title>Notebook</title>',f'<title>{escape(stem.replace("_"," "))} · Jev learning lab</title>')
     links='<a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a>'
@@ -149,7 +164,15 @@ body{background:#f6f8fb!important;color:#182b41!important}.jp-Notebook{max-width
 </style>'''
     html=html.replace('</head>',css+'</head>')
     html=re.sub(r'(<body[^>]*>)',r'\1<nav class="course-nav">'+links+'</nav>',html,count=1)
-    return reader_view(html, stem in names)
+    descriptions = {}
+    if notebook is not None:
+        for cell in notebook.cells:
+            for output in cell.get('outputs', []):
+                if 'image/png' in output.get('data', {}):
+                    alt = output.get('metadata', {}).get('alt') or output.metadata.get('image/png', {}).get('alt')
+                    if alt:
+                        descriptions[output.data['image/png']] = alt
+    return reader_view(html, stem in names, descriptions)
 
 if __name__=='__main__':
     build_site()

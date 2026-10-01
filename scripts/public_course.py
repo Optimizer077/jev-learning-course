@@ -116,6 +116,8 @@ This is an **independent learning resource**, not official TypeSafe documentatio
 You do not need to know machine learning to start. The first path uses ordinary language and small examples.
 
 ## The idea in one minute
+![A message and a focused question lead to an illustrative estimate; application thresholds decide whether to route or review.](assets/decision-flow.svg)
+
 Imagine this support message: **“The export button crashes. I cannot finish my report.”**
 We want to decide which team should help. A decision model can estimate how well each allowed queue
 fits the message. Our software then chooses a queue or asks someone to review the case.
@@ -232,6 +234,8 @@ def prepare_public(name, cells, md, code):
 Our running message is **“The export button crashes. I cannot finish my report.”**
 Changing the question changes what the answer should describe.
 
+![Choice compares named queues; Score averages ordered levels; Noul estimates the positive answer to a yes/no question. All probabilities are authored illustrations.](assets/question-types.svg)
+
 | What do you need to know? | Type | How to read the result |
 |---|---|---|
 | Which queue best fits: technical, billing, or other? | **Choice** | A selected queue and probabilities over the queues |
@@ -283,6 +287,8 @@ Restart and Run All after trying it. This warm-up has its own variables and does
 
 Imagine ten cases, each predicted to be yes with probability 0.80. We invent eight yes outcomes
 and two no outcomes. The predicted frequency is 80%; the observed frequency is 8 ÷ 10 = 80%.
+
+![Eight yes circles and two no crosses illustrate ten outcomes. The observed frequency is 8/10, or 80%. One group does not establish calibration.](assets/calibration-counts.svg)
 
 That is agreement **for this one constructed group**. It does not establish calibration across
 other probabilities or future data. The larger experiment below shows why many cases and clear
@@ -344,6 +350,8 @@ Pause and explain your answer before opening the explanation.
 
 For a short next step, try the [practice questions](PRACTICE.md).
 For runnable exercises, use the [worked exercises](08_exercises_and_solutions.ipynb).
+
+If you are unsure where to go next, use [the course outline](COURSE.md).
 
 [Assignments](assignments/README.md) · [Quick reference](QUICK_REFERENCE.md) · [Course outline](COURSE.md)
 '''))

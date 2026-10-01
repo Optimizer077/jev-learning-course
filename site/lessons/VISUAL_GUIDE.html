@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SETUP · Jev learning lab</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>VISUAL GUIDE · Jev learning lab</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7815,125 +7815,50 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=72937027">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b4f1a134">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Read-first,-run-when-you-are-ready">Read first, run when you are ready<a class="anchor-link" href="#Read-first,-run-when-you-are-ready">¶</a></h1><h2 id="Option-A:-read-without-installation">Option A: read without installation<a class="anchor-link" href="#Option-A:-read-without-installation">¶</a></h2><ol>
-<li>Open <a href="README.html">README.md</a> in the GitHub repository.</li>
-<li>Start with <a href="00_start_here.html">00 · Start here</a>.</li>
-<li>Follow the beginner path: 00 → 01 → 04. Saved explanations, results, and figures are included.</li>
-</ol>
-<p>Use <a href="COURSE.html">COURSE.md</a> for checkpoints and <a href="PRACTICE.html">PRACTICE.md</a> for fold-open answers.
-GitHub's notebook viewer is a reading view; it does not run Python cells.</p>
-<h3 id="Optional-browser-version">Optional browser version<a class="anchor-link" href="#Optional-browser-version">¶</a></h3><p>Download and extract the whole course folder, then open <code>site/index.html</code> locally. GitHub displays
-HTML files as source, so use the notebook and Markdown links when reading the repository online.</p>
-<p>HTML lessons start in reading mode: explanations and saved results are visible, while Python code
-is hidden. Select <strong>Show Python code</strong> at the top to inspect it. Browser pages do not execute Python.
-The playground's sliders work in the browser and do not call any model.</p>
-<p>Figures are embedded in the pages. Math typesetting uses a MathJax CDN and may need internet;
-without it, equations may appear as LaTeX source. The home page and playground need no network.
-The optional playground and interactive practice also work after downloading the complete folder.</p>
-<h2 id="Option-B:-run-in-Google-Colab">Option B: run in Google Colab<a class="anchor-link" href="#Option-B:-run-in-Google-Colab">¶</a></h2><ol>
-<li>Choose a <strong>Colab</strong> link in <a href="notebooks.html">the lesson catalog</a>.</li>
-<li>Sign in to Google if Colab asks, and connect to a <strong>CPU runtime</strong>.</li>
-<li>Choose <strong>Runtime → Run all</strong>. The first cell clones the public course repository
-to fetch the included helpers and fictional data. No Jev key is requested.</li>
-<li>Read the outputs, change one value, and run the affected cell again.</li>
-<li>Save a copy to your own Drive if you want to keep edits. A new runtime may discard local files.</li>
-</ol>
-<p>Colab needs internet for the initial clone. NumPy, Matplotlib, and IPython are the notebook
-dependencies; if a runtime reports a missing package, run <code>%pip install numpy matplotlib ipython</code>
-in a new cell, then restart and run the lesson. No GPU or model download is necessary.
-The optional live API stays disabled in lesson 05.</p>
-<h2 id="Option-C:-run-and-change-the-examples-locally">Option C: run and change the examples locally<a class="anchor-link" href="#Option-C:-run-and-change-the-examples-locally">¶</a></h2><p>You need Python and internet access once to install packages. Python 3.11 or newer is recommended;
-the delivered notebooks were executed with <strong>Python 3.13.13 on Windows</strong>. The GitHub workflow
-also checks the course on Ubuntu with Python 3.13. macOS execution has not been tested.
-No GPU or API key is needed.</p>
-<h3 id="Windows-(PowerShell)">Windows (PowerShell)<a class="anchor-link" href="#Windows-(PowerShell)">¶</a></h3><p>Open PowerShell <strong>inside the extracted course folder</strong>, where <code>requirements.txt</code> is located.
-In File Explorer, open the folder, type <code>powershell</code> in the address bar, and press Enter.
-Run these commands one at a time:</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="p">-</span><span class="n">-version</span>
-<span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="p">.</span><span class="n">venv</span>
-<span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
-<span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">jupyter</span> <span class="n">lab</span>
-</pre></div>
-<p>If <code>python</code> is not found, install Python from <a href="https://www.python.org/downloads/">python.org</a>,
-enable its PATH option, and reopen PowerShell. If available, <code>py</code> can replace <code>python</code> in the
-first two commands. These instructions do not require activating the environment.</p>
-<h3 id="macOS-or-Linux-(Terminal)">macOS or Linux (Terminal)<a class="anchor-link" href="#macOS-or-Linux-(Terminal)">¶</a></h3><p>Open Terminal in the extracted course folder. Run:</p>
-<div class="highlight"><pre><span></span>python3<span class="w"> </span>--version
-python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-.venv/bin/python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-.venv/bin/python<span class="w"> </span>-m<span class="w"> </span>jupyter<span class="w"> </span>lab
-</pre></div>
-<p>Some Linux distributions provide <code>venv</code> separately; follow your distribution's instructions if
-Python reports that virtual-environment support is missing.</p>
-<h3 id="Your-first-run">Your first run<a class="anchor-link" href="#Your-first-run">¶</a></h3><ol>
-<li>JupyterLab opens in your browser. Open <code>notebooks/00_start_here.ipynb</code>.</li>
-<li>Select the Python kernel from this environment if prompted.</li>
-<li>Choose <strong>Kernel → Restart Kernel and Run All Cells</strong>. Confirm the restart if asked.</li>
-<li>Wait for the kernel to become idle. The routing example should print <code>technical</code>.</li>
-<li>Open lesson 01. Read its introduction, predict each result, then run a cell with <strong>Shift+Enter</strong>.</li>
-</ol>
-<p>A <strong>cell</strong> is one block of text or code; a <strong>kernel</strong> is the Python process holding your variables.
-Restarting clears those variables. Running top to bottom recreates them. Use Run All after edits
-if a result seems inconsistent.</p>
-<p>VS Code also works: install its Python and Jupyter extensions, open the whole folder, and choose
-<code>.venv</code> as the notebook kernel. Preserve the <code>notebooks/</code>, <code>src/</code>, and <code>data/</code> folders.</p>
-<h2 id="Common-problems">Common problems<a class="anchor-link" href="#Common-problems">¶</a></h2><table>
-<thead>
-<tr>
-<th>Symptom</th>
-<th>Try this</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>No module named numpy</code> or another package</td>
-<td>Run the install command; choose that same <code>.venv</code> as your kernel.</td>
-</tr>
-<tr>
-<td><code>No module named tutorial_utils</code> / <code>lab_core</code></td>
-<td>Keep <code>src/</code> in the course folder and run the first setup cell. In Colab, check that the clone completed.</td>
-</tr>
-<tr>
-<td>Colab says the cached course is incomplete</td>
-<td>Start a fresh Colab runtime and run all again. The setup will fetch a complete course; it does not overwrite the partial folder.</td>
-</tr>
-<tr>
-<td><code>FileNotFoundError</code> for tickets</td>
-<td>Keep <code>data/tickets.json</code> in the course folder; preserve the original folder structure.</td>
-</tr>
-<tr>
-<td>A variable is not defined</td>
-<td>Restart the kernel and run every cell in order.</td>
-</tr>
-<tr>
-<td>HTML shows old output after an edit</td>
-<td>HTML is a saved copy. Read current output in Jupyter or rebuild using the maintainer guide.</td>
-</tr>
-<tr>
-<td>An equation shows dollar signs or LaTeX</td>
-<td>Allow MathJax to load, or read the surrounding plain-language explanation.</td>
-</tr>
-<tr>
-<td>A check fails after an experiment</td>
-<td>Checks may describe original parameters. Undo the change or update the expected result deliberately.</td>
-</tr>
-<tr>
-<td>The optional API fails</td>
-<td>Local lessons still work. Check lesson 05 and the provider's current docs.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Optional:-real-Jev">Optional: real Jev<a class="anchor-link" href="#Optional:-real-Jev">¶</a></h2><p>Leave <code>RUN_LIVE = False</code> in lesson 05 to inspect the request without a key. To call the service,
-use your own TypeSafe account, set the flag to <code>True</code>, and provide your key through the hidden prompt
-or <code>TYPESAFE_API_KEY</code> environment variable. Usage may be billed. Do not save a key in code or output.
-The delivered outputs contain no live Jev results.</p>
-<p><a href="README.html">Course home</a> · <a href="FAQ.html">FAQ</a></p>
+<h1 id="See-the-idea-before-the-code">See the idea before the code<a class="anchor-link" href="#See-the-idea-before-the-code">¶</a></h1><p><a href="README.html">Course home</a> · <a href="00_start_here.html">Start lesson 00</a> · <a href="QUICK_REFERENCE.html">Quick reference</a></p>
+<p>These diagrams use invented examples. They describe the decision interface and application rules;
+they do not show Jev's proprietary architecture or measure its accuracy.</p>
+<h2 id="Follow-one-ticket">Follow one ticket<a class="anchor-link" href="#Follow-one-ticket">¶</a></h2><p>Give the message as <strong>evidence</strong>, then ask a <strong>question</strong> with clear <strong>criteria</strong>:
+technical means broken product behavior, billing means charges or invoices, and other means
+neither listed queue fits or the evidence is insufficient.</p>
+<img alt="Evidence: the export button crashes. Question: which queue fits? Invented probabilities: technical 90%, billing 6%, other 4%. A threshold of 0.85 routes to technical; 0.95 sends the same estimate to review." src="../../assets/decision-flow.svg" width="660"/>
+<p>Changing the threshold changes the action, while the estimate stays the same.
+The thresholds are teaching choices, not recommendations for a real support system.
+Permissions remain separate: a refund prediction cannot authorize a payment.</p>
+<p><strong>Predict:</strong> at threshold 0.92, what happens? Then explain why.</p>
+<details><summary>Check your answer</summary>
+<p>The case goes to review because 0.90 is below 0.92. Technical remains the most likely queue.</p>
+</details>
+<p>Continue with <a href="01_jev_basics.html">lesson 01</a>.</p>
+<h2 id="Ask-three-different-questions">Ask three different questions<a class="anchor-link" href="#Ask-three-different-questions">¶</a></h2><p>The same message can support several judgments. Choose the answer type to match the question.</p>
+<img alt="Choice selects among named queues with probabilities. Score averages ordered rubric levels: 5% at level 0, 25% at level 1, and 70% at level 2 give 1.65. Noul provides a yes probability, illustrated as 12% for an explicit refund request." src="../../assets/question-types.svg" width="600"/>
+<ul>
+<li><strong>Choice:</strong> which named alternative fits? Here, technical is most likely.</li>
+<li><strong>Score:</strong> where is the expected position on an ordered rubric? Here, 1.65 differs from the most likely level, 2.</li>
+<li><strong>Noul:</strong> how likely is the positive answer? Here, 12% is an estimate of an explicit refund request.</li>
+</ul>
+<p>The numbers are authored illustrations, not three outputs from a real Jev call.
+<a href="https://docs.typesafe.ai/primitives/choice">Choice reference</a> ·
+<a href="https://docs.typesafe.ai/primitives/score">Score reference</a> ·
+<a href="https://docs.typesafe.ai/primitives/noul">Noul reference</a>.</p>
+<p><strong>Predict:</strong> would “Can you refund yesterday's duplicate charge?” ask a different Noul question
+from “Which support queue fits?” Explain the difference before reading the notebook.</p>
+<h2 id="Compare-predictions-with-outcomes">Compare predictions with outcomes<a class="anchor-link" href="#Compare-predictions-with-outcomes">¶</a></h2><p>An 80% estimate does not make any one outcome certain. Calibration concerns patterns across
+many predictions and their observed outcomes.</p>
+<img alt="Ten invented cases each receive a predicted yes probability of 80%. Eight are yes and two are no, so observed frequency is 8 divided by 10, or 80%. A single agreeing group does not prove calibration." src="../../assets/calibration-counts.svg" width="600"/>
+<p><strong>Predict:</strong> change one yes to no. The observed frequency becomes 70% while the predictions stay 80%.
+One finite group can fluctuate; evaluate many groups and their sample sizes before judging calibration.
+Continue with <a href="03_calibration_and_decisions.html">lesson 03</a>.</p>
+<h2 id="Know-when-you-understand">Know when you understand<a class="anchor-link" href="#Know-when-you-understand">¶</a></h2><p>You can separate the evidence, the question, the estimated answer, and the action.
+You can explain why changing an application rule does not change a model's estimate.
+You can name one result these illustrations do <strong>not</strong> establish.</p>
+<p><a href="PRACTICE.html">Try the practice questions</a> · <a href="COURSE.html">Choose your learning path</a></p>
 </div>
 </div>
 </div>

@@ -11,6 +11,17 @@ SITE = ROOT / 'site'
 EXPORTS = SITE / 'lessons'
 
 
+def html_references(tag):
+    """Read ordinary image/link URLs and responsive picture sources."""
+    for attribute in ('href', 'src'):
+        if tag.has_attr(attribute):
+            yield tag[attribute]
+    if tag.has_attr('srcset') and not tag['srcset'].startswith('data:'):
+        for candidate in tag['srcset'].split(','):
+            if candidate.strip():
+                yield candidate.strip().split()[0]
+
+
 def legacy_location(name):
     """Resolve the original flat authoring links into the organized layout."""
     path = Path(name)
@@ -46,8 +57,9 @@ def rewrite_legacy_markdown(source, destination):
 NOTEBOOK_SETUP = '''# Find the included teaching helpers from the course folder.
 from pathlib import Path
 import sys
+REQUIRED_FILES = ("src/lab_core.py", "src/tutorial_utils.py", "data/tickets.json")
 COURSE_ROOT = next((p for p in (Path.cwd(), *Path.cwd().parents)
-                    if (p / "src" / "lab_core.py").is_file()), None)
+                    if all((p / name).is_file() for name in REQUIRED_FILES)), None)
 # Colab opens a single notebook; fetch its companion code and fictional data.
 if COURSE_ROOT is None:
     try:
@@ -57,7 +69,9 @@ if COURSE_ROOT is None:
     else:
         import subprocess
         COURSE_ROOT = Path("/content/jev-learning-course")
-        if not (COURSE_ROOT / "src" / "lab_core.py").is_file():
+        if COURSE_ROOT.exists() and not all((COURSE_ROOT / name).is_file() for name in REQUIRED_FILES):
+            raise FileNotFoundError("The cached Colab course is incomplete. Start a fresh runtime and run all again.")
+        if not COURSE_ROOT.exists():
             subprocess.run(["git", "clone", "--depth", "1",
                             "https://github.com/Optimizer077/jev-learning-course.git",
                             str(COURSE_ROOT)], check=True)

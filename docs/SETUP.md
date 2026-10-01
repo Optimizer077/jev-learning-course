@@ -95,6 +95,7 @@ VS Code also works: install its Python and Jupyter extensions, open the whole fo
 |---|---|
 | `No module named numpy` or another package | Run the install command; choose that same `.venv` as your kernel. |
 | `No module named tutorial_utils` / `lab_core` | Keep `src/` in the course folder and run the first setup cell. In Colab, check that the clone completed. |
+| Colab says the cached course is incomplete | Start a fresh Colab runtime and run all again. The setup will fetch a complete course; it does not overwrite the partial folder. |
 | `FileNotFoundError` for tickets | Keep `data/tickets.json` in the course folder; preserve the original folder structure. |
 | A variable is not defined | Restart the kernel and run every cell in order. |
 | HTML shows old output after an edit | HTML is a saved copy. Read current output in Jupyter or rebuild using the maintainer guide. |

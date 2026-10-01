@@ -31,7 +31,7 @@ jev-learning-course/
 | Course links and notebook environment setup | `scripts/course_paths.py` |
 | Numerical models and data loading | `src/lab_core.py` |
 | Notebook figures and table style | `src/tutorial_utils.py` |
-| Header and learning-path artwork | `scripts/build_visuals.py` |
+| Header, learning paths, and teaching illustrations | `scripts/build_visuals.py` |
 | Practice questions | `scripts/practice_questions.py` |
 | Optional HTML exports | `scripts/build_site.py`, `scripts/public_site.py`, `scripts/build_practice.py` |
 

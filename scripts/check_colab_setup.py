@@ -54,9 +54,23 @@ def check_colab_setup():
             spec.loader.exec_module(model)
             assert len(model.load_tickets()) == 54
             assert list(model.softmax([0.0, 0.0])) == [0.5, 0.5]
+            with patch.dict(sys.modules, {'google':google, 'google.colab':colab}), \
+                 patch('subprocess.run') as fetch:
+                exec(setup, {})
+            assert fetch.call_count == 0, 'An existing complete clone should be reused'
+            (clone/'data/tickets.json').unlink()
+            with patch.dict(sys.modules, {'google':google, 'google.colab':colab}), \
+                 patch('subprocess.run') as fetch:
+                try:
+                    exec(setup, {})
+                except FileNotFoundError as error:
+                    assert 'fresh runtime' in str(error)
+                else:
+                    raise AssertionError('An incomplete cached folder should get a clear setup error')
+            assert fetch.call_count == 0, 'Do not clone into or overwrite an incomplete folder'
         finally:
             sys.path[:] = original_path
-    print('Ten lesson entry points and simulated Colab companion setup passed. No browser opened.')
+    print('Ten entry points; fresh Colab download, cached reuse, and incomplete-cache error passed. No browser opened.')
 
 
 if __name__ == '__main__':

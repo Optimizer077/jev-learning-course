@@ -16,7 +16,7 @@ def homepage(lessons):
     )
     return '''<nav aria-label="Course navigation"><strong>LEARN JEV</strong>
 <a href="playground.html">Playground</a><a href="practice.html">Guided practice</a><a href="lessons/SETUP.html">Setup help</a>
-<a href="lessons/GLOSSARY.html">Glossary</a><a href="lessons/FAQ.html">FAQ</a></nav><main><section class="course-hero">
+<a href="lessons/VISUAL_GUIDE.html">Visual guide</a><a href="lessons/GLOSSARY.html">Glossary</a><a href="lessons/FAQ.html">FAQ</a></nav><main><section class="course-hero">
 <div class="eyebrow">An independent, practical introduction</div>
 <h1>Learn Jev,<br>one decision at a time.</h1>
 <p class="lead">How does a model turn evidence into a decision your software can use?
@@ -35,7 +35,8 @@ Which team should help: technical, billing, or another team?</p>
 <p class="small">Jev is TypeSafe AI's model for bounded judgments. The local examples in this course are teaching models;
 they do not reproduce Jev. <a href="lessons/SOURCES.html">Read the evidence and limits</a>.</p></section>
 <section class="section"><h2>Choose the path that fits you</h2>
-<img class="path-art" src="../assets/learning-path.svg" alt="Understand: 00, 01, 04. Experiment: 02, 03. Build: 07, 09."><div class="grid">
+<picture><source media="(max-width:650px)" srcset="../assets/learning-path-mobile.svg">
+<img class="path-art" src="../assets/learning-path.svg" alt="Understand: 00, 01, 04. Experiment: 02, 03 after 01. Build: 07, 09 after 02 and 03."></picture><div class="grid">
 <article class="card"><div class="number">FIRST / UNDERSTAND</div><h3>Just the main idea</h3>
 <p>Read 00 → 01 → 04. Skip code and equations on your first pass. Explain the distinction between a prediction and an action.</p>
 <a href="lessons/00_start_here.html">Begin without installation →</a><p class="small"><a href="lessons/LEARNING_GUIDE.html">Follow the short learning plan</a></p></article>
@@ -76,13 +77,13 @@ def reader_view(html, is_lesson):
 .reader-tools{max-width:1120px;margin:0 auto;padding:16px 28px;background:#eaf0f7;
 font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 .reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer}
-.reader-tools input{accent-color:#245ea0;margin-right:8px}
+.reader-tools input{accent-color:#0d766f;margin-right:8px}
 .reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650}
 .reader-tools ul{padding-left:22px;columns:2;column-gap:30px}.reader-tools li{break-inside:avoid;margin:5px 0}
-.reader-tools a{color:#245ea0}.reading-mode .jp-CodeCell .jp-InputArea,.reading-mode .jp-InputPrompt,
+.reader-tools a{color:#0d766f}.reading-mode .jp-CodeCell .jp-InputArea,.reading-mode .jp-InputPrompt,
 .reading-mode .jp-OutputPrompt,.reading-mode .jp-CodeCell.jp-mod-noOutputs{display:none!important}
 .jp-RenderedHTMLCommon details{background:#f0f5fb;border:1px solid #d9e2eb;border-radius:8px;padding:12px 16px;margin:16px 0}
-.jp-RenderedHTMLCommon summary{cursor:pointer;font-weight:650;color:#245ea0}
+.jp-RenderedHTMLCommon summary{cursor:pointer;font-weight:650;color:#0d766f}
 .jp-RenderedHTMLCommon blockquote{border-left:3px solid #ad5b20!important;background:#fff8f1;padding:8px 18px!important}
 .jp-RenderedHTMLCommon a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid #ad5b20;outline-offset:3px}
 .jp-RenderedHTMLCommon{overflow-wrap:anywhere}.jp-RenderedHTMLCommon pre{white-space:pre-wrap}

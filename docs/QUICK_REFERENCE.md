@@ -1,5 +1,7 @@
 # Keep this beside your notebook
 
+Prefer diagrams first? Use [the visual guide](VISUAL_GUIDE.md), then return here for exact formulas.
+
 ## One decision in four steps
 
 1. **Evidence:** what information should the judgment use?

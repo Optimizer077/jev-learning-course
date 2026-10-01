@@ -43,9 +43,10 @@ lose word order. These results are not a Jev benchmark or evidence of readiness 
 
 ## Do I need a Jev account, GPU, or internet connection?
 
-No account or GPU is needed for local lessons. Package installation requires internet; formulas
-may use a MathJax CDN. Only the optional live call in lesson 05 needs a key and network access.
-That call is disabled in the supplied notebook.
+No Jev account or GPU is needed for local lessons. Package installation requires internet; exported
+formulas may use a MathJax CDN. Colab needs a Google sign-in when prompted and internet for the initial
+course download. The optional live call in lesson 05 needs a Jev key and network access; it is disabled
+in the supplied notebook. See [setup](SETUP.md).
 
 ## How should I use the exercises?
 

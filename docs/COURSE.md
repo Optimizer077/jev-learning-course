@@ -18,7 +18,8 @@ By the end, you can:
 - Explain why a valid output can still be wrong.
 
 **Checkpoint:** complete [Assignment 1](../assignments/01_design_a_decision.md).
-Then attempt questions 1–8 in [the practice companion](PRACTICE.md).
+Then attempt questions 1–6 in [the practice companion](PRACTICE.md).
+Question 7 fits the workflow module; calibration and cost questions 8–9 follow module 2.
 
 ## Module 2 · Follow the calculations
 
@@ -36,6 +37,7 @@ By the end, you can:
 - Compare automatic actions with review using explicit costs and assumptions.
 
 **Checkpoint:** complete [Assignment 2](../assignments/02_probabilities_and_actions.md).
+Then try practice questions 8–9. Use [the visual guide](VISUAL_GUIDE.md) if probabilities still feel abstract.
 Temperature fitting and gradient checks can wait until a second pass.
 
 ## Module 3 · Build the workflow
@@ -53,6 +55,7 @@ By the end, you can:
 
 **Checkpoint:** draw a short workflow for your assignment-1 questions. Label which boxes are
 model judgments and which boxes are application rules. You can finish the beginner track here.
+Try practice question 7 before moving on.
 
 ## Module 4 · Build and evaluate a project
 
@@ -69,6 +72,7 @@ By the end, you can:
 
 **Checkpoint:** complete [Assignment 3](../assignments/03_evaluate_a_router.md).
 Include one limitation and one next evaluation step alongside your results.
+Then try practice questions 10–12.
 
 ## Module 5 · Choose a deeper topic
 

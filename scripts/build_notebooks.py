@@ -91,7 +91,7 @@ A Choice returns the highest-probability key and the distribution over the optio
 Options are relative alternatives; include an escape option when none may fit.
 [Choice reference](https://docs.typesafe.ai/primitives/choice).
 '''), code('''
-choice_probabilities = {'billing': 0.06, 'technical': 0.89, 'other': 0.05}
+choice_probabilities = {'billing': 0.06, 'technical': 0.90, 'other': 0.04}
 selected = max(choice_probabilities, key=choice_probabilities.get)
 fig, ax = plt.subplots()
 ax.barh(list(choice_probabilities), list(choice_probabilities.values()), color=BLUE)

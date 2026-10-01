@@ -9,6 +9,7 @@ import nbformat
 from bs4 import BeautifulSoup
 import xml.etree.ElementTree as ET
 from package_course import ROOT, validate
+from course_paths import html_references
 
 
 def markdown_urls(nodes):
@@ -17,8 +18,8 @@ def markdown_urls(nodes):
             yield node['attrs']['url']
         if node.get('type') in {'inline_html', 'block_html'}:
             fragment = BeautifulSoup(node.get('raw', ''), 'html.parser')
-            for tag in fragment.select('[href], [src]'):
-                yield tag.get('href', tag.get('src', ''))
+            for tag in fragment.select('[href], [src], [srcset]'):
+                yield from html_references(tag)
         yield from markdown_urls(node.get('children', []))
 
 

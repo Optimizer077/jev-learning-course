@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SETUP · Jev learning lab</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>SELF REVIEW · Jev learning lab</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7815,125 +7815,77 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=72937027">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=614a1334">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Read-first,-run-when-you-are-ready">Read first, run when you are ready<a class="anchor-link" href="#Read-first,-run-when-you-are-ready">¶</a></h1><h2 id="Option-A:-read-without-installation">Option A: read without installation<a class="anchor-link" href="#Option-A:-read-without-installation">¶</a></h2><ol>
-<li>Open <a href="README.html">README.md</a> in the GitHub repository.</li>
-<li>Start with <a href="00_start_here.html">00 · Start here</a>.</li>
-<li>Follow the beginner path: 00 → 01 → 04. Saved explanations, results, and figures are included.</li>
-</ol>
-<p>Use <a href="COURSE.html">COURSE.md</a> for checkpoints and <a href="PRACTICE.html">PRACTICE.md</a> for fold-open answers.
-GitHub's notebook viewer is a reading view; it does not run Python cells.</p>
-<h3 id="Optional-browser-version">Optional browser version<a class="anchor-link" href="#Optional-browser-version">¶</a></h3><p>Download and extract the whole course folder, then open <code>site/index.html</code> locally. GitHub displays
-HTML files as source, so use the notebook and Markdown links when reading the repository online.</p>
-<p>HTML lessons start in reading mode: explanations and saved results are visible, while Python code
-is hidden. Select <strong>Show Python code</strong> at the top to inspect it. Browser pages do not execute Python.
-The playground's sliders work in the browser and do not call any model.</p>
-<p>Figures are embedded in the pages. Math typesetting uses a MathJax CDN and may need internet;
-without it, equations may appear as LaTeX source. The home page and playground need no network.
-The optional playground and interactive practice also work after downloading the complete folder.</p>
-<h2 id="Option-B:-run-in-Google-Colab">Option B: run in Google Colab<a class="anchor-link" href="#Option-B:-run-in-Google-Colab">¶</a></h2><ol>
-<li>Choose a <strong>Colab</strong> link in <a href="notebooks.html">the lesson catalog</a>.</li>
-<li>Sign in to Google if Colab asks, and connect to a <strong>CPU runtime</strong>.</li>
-<li>Choose <strong>Runtime → Run all</strong>. The first cell clones the public course repository
-to fetch the included helpers and fictional data. No Jev key is requested.</li>
-<li>Read the outputs, change one value, and run the affected cell again.</li>
-<li>Save a copy to your own Drive if you want to keep edits. A new runtime may discard local files.</li>
-</ol>
-<p>Colab needs internet for the initial clone. NumPy, Matplotlib, and IPython are the notebook
-dependencies; if a runtime reports a missing package, run <code>%pip install numpy matplotlib ipython</code>
-in a new cell, then restart and run the lesson. No GPU or model download is necessary.
-The optional live API stays disabled in lesson 05.</p>
-<h2 id="Option-C:-run-and-change-the-examples-locally">Option C: run and change the examples locally<a class="anchor-link" href="#Option-C:-run-and-change-the-examples-locally">¶</a></h2><p>You need Python and internet access once to install packages. Python 3.11 or newer is recommended;
-the delivered notebooks were executed with <strong>Python 3.13.13 on Windows</strong>. The GitHub workflow
-also checks the course on Ubuntu with Python 3.13. macOS execution has not been tested.
-No GPU or API key is needed.</p>
-<h3 id="Windows-(PowerShell)">Windows (PowerShell)<a class="anchor-link" href="#Windows-(PowerShell)">¶</a></h3><p>Open PowerShell <strong>inside the extracted course folder</strong>, where <code>requirements.txt</code> is located.
-In File Explorer, open the folder, type <code>powershell</code> in the address bar, and press Enter.
-Run these commands one at a time:</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="p">-</span><span class="n">-version</span>
-<span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="p">.</span><span class="n">venv</span>
-<span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
-<span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">jupyter</span> <span class="n">lab</span>
-</pre></div>
-<p>If <code>python</code> is not found, install Python from <a href="https://www.python.org/downloads/">python.org</a>,
-enable its PATH option, and reopen PowerShell. If available, <code>py</code> can replace <code>python</code> in the
-first two commands. These instructions do not require activating the environment.</p>
-<h3 id="macOS-or-Linux-(Terminal)">macOS or Linux (Terminal)<a class="anchor-link" href="#macOS-or-Linux-(Terminal)">¶</a></h3><p>Open Terminal in the extracted course folder. Run:</p>
-<div class="highlight"><pre><span></span>python3<span class="w"> </span>--version
-python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-.venv/bin/python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-.venv/bin/python<span class="w"> </span>-m<span class="w"> </span>jupyter<span class="w"> </span>lab
-</pre></div>
-<p>Some Linux distributions provide <code>venv</code> separately; follow your distribution's instructions if
-Python reports that virtual-environment support is missing.</p>
-<h3 id="Your-first-run">Your first run<a class="anchor-link" href="#Your-first-run">¶</a></h3><ol>
-<li>JupyterLab opens in your browser. Open <code>notebooks/00_start_here.ipynb</code>.</li>
-<li>Select the Python kernel from this environment if prompted.</li>
-<li>Choose <strong>Kernel → Restart Kernel and Run All Cells</strong>. Confirm the restart if asked.</li>
-<li>Wait for the kernel to become idle. The routing example should print <code>technical</code>.</li>
-<li>Open lesson 01. Read its introduction, predict each result, then run a cell with <strong>Shift+Enter</strong>.</li>
-</ol>
-<p>A <strong>cell</strong> is one block of text or code; a <strong>kernel</strong> is the Python process holding your variables.
-Restarting clears those variables. Running top to bottom recreates them. Use Run All after edits
-if a result seems inconsistent.</p>
-<p>VS Code also works: install its Python and Jupyter extensions, open the whole folder, and choose
-<code>.venv</code> as the notebook kernel. Preserve the <code>notebooks/</code>, <code>src/</code>, and <code>data/</code> folders.</p>
-<h2 id="Common-problems">Common problems<a class="anchor-link" href="#Common-problems">¶</a></h2><table>
+<h1 id="Self-review-and-repairs">Self-review and repairs<a class="anchor-link" href="#Self-review-and-repairs">¶</a></h1><p>Reviewed on <strong>2026-10-02</strong> for a beginner reading on GitHub, a learner running in Colab,
+and a contributor rebuilding the course. <a href="README.html">Course home</a> · <a href="VISUAL_GUIDE.html">Visual guide</a></p>
+<h2 id="What-the-review-found">What the review found<a class="anchor-link" href="#What-the-review-found">¶</a></h2><table>
 <thead>
 <tr>
-<th>Symptom</th>
-<th>Try this</th>
+<th>Finding</th>
+<th>Repair</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>No module named numpy</code> or another package</td>
-<td>Run the install command; choose that same <code>.venv</code> as your kernel.</td>
+<td>The banner skipped the focused question and criteria.</td>
+<td>The header now names them; a four-step ticket diagram traces evidence, question, estimate, and action.</td>
 </tr>
 <tr>
-<td><code>No module named tutorial_utils</code> / <code>lab_core</code></td>
-<td>Keep <code>src/</code> in the course folder and run the first setup cell. In Colab, check that the clone completed.</td>
+<td>The horizontal path graphic became too small on a phone.</td>
+<td>Added stacked mobile graphics, stronger text contrast, and explicit prerequisites for the coding paths.</td>
 </tr>
 <tr>
-<td>Colab says the cached course is incomplete</td>
-<td>Start a fresh Colab runtime and run all again. The setup will fetch a complete course; it does not overwrite the partial folder.</td>
+<td>The first checkpoint included calibration before its lesson.</td>
+<td>Module 1 uses questions 1–6; workflow uses 7; calibration and costs use 8–9; the project uses 10–12.</td>
 </tr>
 <tr>
-<td><code>FileNotFoundError</code> for tickets</td>
-<td>Keep <code>data/tickets.json</code> in the course folder; preserve the original folder structure.</td>
+<td>The illustrative Choice distribution differed between the opening examples.</td>
+<td>The basic example now consistently uses 90% technical, 6% billing, and 4% other. These remain invented probabilities.</td>
 </tr>
 <tr>
-<td>A variable is not defined</td>
-<td>Restart the kernel and run every cell in order.</td>
+<td>The FAQ omitted Colab's download and sign-in requirements.</td>
+<td>Updated the FAQ and retained a separate local, offline reading path.</td>
 </tr>
 <tr>
-<td>HTML shows old output after an edit</td>
-<td>HTML is a saved copy. Read current output in Jupyter or rebuild using the maintainer guide.</td>
+<td>A partial Colab cache could produce a confusing clone failure.</td>
+<td>Check for all required companions, reuse a complete cache, and explain how to recover from an incomplete one.</td>
 </tr>
 <tr>
-<td>An equation shows dollar signs or LaTeX</td>
-<td>Allow MathJax to load, or read the surrounding plain-language explanation.</td>
+<td>Responsive image sources were outside the link checks.</td>
+<td>Validate and rewrite <code>srcset</code> references alongside ordinary image and page links.</td>
 </tr>
 <tr>
-<td>A check fails after an experiment</td>
-<td>Checks may describe original parameters. Undo the change or update the expected result deliberately.</td>
-</tr>
-<tr>
-<td>The optional API fails</td>
-<td>Local lessons still work. Check lesson 05 and the provider's current docs.</td>
+<td>GitHub checks used actions with a deprecated Node runtime.</td>
+<td>Updated the three actions to current releases checked through the official repositories.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="Optional:-real-Jev">Optional: real Jev<a class="anchor-link" href="#Optional:-real-Jev">¶</a></h2><p>Leave <code>RUN_LIVE = False</code> in lesson 05 to inspect the request without a key. To call the service,
-use your own TypeSafe account, set the flag to <code>True</code>, and provide your key through the hidden prompt
-or <code>TYPESAFE_API_KEY</code> environment variable. Usage may be billed. Do not save a key in code or output.
-The delivered outputs contain no live Jev results.</p>
-<p><a href="README.html">Course home</a> · <a href="FAQ.html">FAQ</a></p>
+<h2 id="What-was-checked">What was checked<a class="anchor-link" href="#What-was-checked">¶</a></h2><ul>
+<li>Notebook format and execution in fresh kernels.</li>
+<li>Local Markdown, notebook, HTML, and responsive-image links in the packaged course.</li>
+<li>Colab lesson destinations and a local simulation of fresh download, cached reuse, and incomplete-cache recovery.</li>
+<li>The exported SVGs and local raster previews, including the new mobile artwork, labels, values, and clipping. Track-label text has contrast of at least 4.5:1 against its card background.</li>
+<li>GitHub's Markdown renderer preserves both responsive picture elements; the mobile artwork was inspected at 360 pixels wide.</li>
+<li>Worked figures against their inputs: Choice sums to 1; Score is 1.65; eight yes outcomes out of ten give 80%.</li>
+<li>The repository still has five files at the root; backups, credentials, environments, and build output stay out of Git.</li>
+</ul>
+<p>Execution records are in <a href="../../docs/validation.json">validation.json</a>. The
+<a href="https://github.com/Optimizer077/jev-learning-course/actions/workflows/course.yml">GitHub workflow</a>
+records the separate Ubuntu checks and produces a checked archive.</p>
+<h2 id="Limits-of-this-review">Limits of this review<a class="anchor-link" href="#Limits-of-this-review">¶</a></h2><p>No webpages or hosted Colab runtimes were opened. The SVG artwork was inspected through local
+raster previews; browser layout and GitHub's image switching were not visually previewed.
+Local Colab simulation checks setup behavior, not Google's authentication or runtime availability.
+No live Jev call was made. The 54 authored messages remain a teaching dataset, not a benchmark.</p>
+<p>The review does not verify unpublished Jev internals or establish production reliability.
+Provider descriptions retain the source-check date in <a href="SOURCES.html">SOURCES.md</a>.</p>
+<p>Action release sources: <a href="https://github.com/actions/checkout/releases/tag/v7.0.1">checkout v7.0.1</a>,
+<a href="https://github.com/actions/setup-python/releases/tag/v7.0.0">setup-python v7.0.0</a>, and
+<a href="https://github.com/actions/upload-artifact/releases/tag/v7.0.1">upload-artifact v7.0.1</a>.</p>
 </div>
 </div>
 </div>

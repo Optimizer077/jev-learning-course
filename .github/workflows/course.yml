@@ -18,12 +18,12 @@ jobs:
       MPLBACKEND: Agg
     steps:
       - name: Check out the course
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7.0.0
         with:
           python-version: "3.13"
           cache: pip
@@ -51,7 +51,7 @@ jobs:
         run: python scripts/package_course.py
 
       - name: Save the GitHub course archive
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7.0.1
         with:
           name: jev-learning-course
           path: dist/jev-learning-github.zip

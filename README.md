@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="assets/course-banner.svg" alt="Jev learning course: turn evidence into typed answers, then apply an action rule. Ten notebooks, three assignments, CPU-friendly experiments." width="1200">
+  <picture>
+    <source media="(max-width: 650px)" srcset="assets/course-banner-mobile.svg">
+    <img src="assets/course-banner.svg" alt="Jev learning course: give evidence, a question, and criteria; read a typed estimate; apply an action rule. Ten notebooks and three assignments." width="1200">
+  </picture>
 </p>
 
 # Jev learning course
@@ -12,7 +15,7 @@
 Learn how **Jev from TypeSafe AI** turns evidence and a focused question into a typed answer.
 Read saved examples, predict what will change, then run small experiments that make the ideas visible.
 
-**[Start lesson 00 →](notebooks/00_start_here.ipynb)** · **[Full curriculum](docs/COURSE.md)** · **[Practice](docs/PRACTICE.md)**
+**[Start lesson 00 →](notebooks/00_start_here.ipynb)** · **[Visual guide](docs/VISUAL_GUIDE.md)** · **[Full curriculum](docs/COURSE.md)** · **[Practice](docs/PRACTICE.md)**
 
 ## Start in the way that suits you
 
@@ -25,7 +28,10 @@ Read saved examples, predict what will change, then run small experiments that m
 
 ## Choose your path
 
-![Three learning paths: Understand through lessons 00, 01, and 04; Experiment through 02 and 03; Build a text-routing project in 07, then compare methods in 09.](assets/learning-path.svg)
+<picture>
+  <source media="(max-width: 650px)" srcset="assets/learning-path-mobile.svg">
+  <img src="assets/learning-path.svg" alt="Understand: 00, 01, 04. Experiment: 02, 03 after 01. Build: 07, 09 after 02 and 03." width="1200">
+</picture>
 
 | Your goal | Next step |
 |---|---|

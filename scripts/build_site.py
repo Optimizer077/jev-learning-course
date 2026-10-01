@@ -11,7 +11,6 @@ from build_practice import build_practice
 
 from course_paths import ROOT, NOTEBOOKS, DOCS, SITE, EXPORTS, legacy_location
 STYLE = '''
-:root{--ink:#182b41;--muted:#526375;--blue:#245ea0;--warm:#ad5b20;--line:#d9e2eb;--paper:#f6f8fb}
 :root{--ink:#13243b;--muted:#405671;--blue:#0d766f;--warm:#7356cf;--line:#d9e2f0;--paper:#f5f7fc}
 *{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}
 a{color:var(--blue);text-underline-offset:3px}main{max-width:1100px;margin:auto;padding:46px 30px 70px}
@@ -44,6 +43,7 @@ SUPPORT_PAGES = [
 
 SUPPORT_PAGES = [(legacy_location(source), target) for source, target in SUPPORT_PAGES]
 SUPPORT_PAGES += [('docs/README.md', 'guides'), ('notebooks/README.md', 'notebooks')]
+SUPPORT_PAGES += [('docs/VISUAL_GUIDE.md', 'VISUAL_GUIDE'), ('docs/SELF_REVIEW.md', 'SELF_REVIEW')]
 
 LESSONS = [
 ('00_start_here','Start here','Choose a path, understand the evidence labels, and check your setup.'),
@@ -104,14 +104,13 @@ def rewrite_local_references(html, source_path):
     soup = BeautifulSoup(html, 'html.parser')
     source_dir = (ROOT/source_path).parent
     pages = dict(SUPPORT_PAGES)
-    for tag in soup.select('[href], [src]'):
-        attribute = 'href' if tag.has_attr('href') else 'src'
-        link = urlsplit(tag[attribute])
+    def rewrite_url(value):
+        link = urlsplit(value)
         if link.scheme or link.netloc or not link.path:
-            continue
+            return value
         target = (source_dir/unquote(link.path)).resolve()
         if not target.is_relative_to(ROOT):
-            continue
+            return value
         relative = target.relative_to(ROOT).as_posix()
         if target.suffix == '.ipynb' and target.parent == NOTEBOOKS:
             destination = target.stem+'.html'
@@ -119,7 +118,20 @@ def rewrite_local_references(html, source_path):
             destination = pages[relative]+'.html'
         else:
             destination = Path(os.path.relpath(target, EXPORTS)).as_posix()
-        tag[attribute] = urlunsplit(('', '', destination, link.query, link.fragment))
+        return urlunsplit(('', '', destination, link.query, link.fragment))
+
+    for tag in soup.select('[href], [src], [srcset]'):
+        for attribute in ('href', 'src'):
+            if tag.has_attr(attribute):
+                tag[attribute] = rewrite_url(tag[attribute])
+        if tag.has_attr('srcset') and not tag['srcset'].startswith('data:'):
+            candidates = []
+            for candidate in tag['srcset'].split(','):
+                fields = candidate.strip().split()
+                if fields:
+                    fields[0] = rewrite_url(fields[0])
+                    candidates.append(' '.join(fields))
+            tag['srcset'] = ', '.join(candidates)
     return str(soup)
 
 
@@ -133,7 +145,7 @@ def style_lesson(html, stem, names, source_path=None):
         if index<len(names)-1: links+=f'<a href="{names[index+1]}.html">Next lesson →</a>'
         links+=f'<a href="../../notebooks/{stem}.ipynb" download>Notebook ↓</a>'
     css='''<style>
-body{background:#f6f8fb!important;color:#182b41!important}.jp-Notebook{max-width:1120px;margin:0 auto;background:white;padding:30px 25px!important}.jp-RenderedHTMLCommon{font-family:system-ui,Segoe UI,sans-serif;font-size:16px!important;line-height:1.75!important}.jp-RenderedHTMLCommon h1{font-size:34px!important;line-height:1.2!important;color:#182b41}.jp-RenderedHTMLCommon h2{color:#245ea0;border-top:1px solid #dde5ee;padding-top:22px}.jp-RenderedHTMLCommon h3{font-size:20px!important}.jp-RenderedHTMLCommon table{font-size:14px!important;line-height:1.5!important}.jp-InputArea-editor{border-radius:7px;background:#f4f6f9!important}.jp-InputArea pre{font-size:13px!important;white-space:pre-wrap!important;overflow-wrap:anywhere}.jp-RenderedImage img{max-width:100%;height:auto}.course-nav{max-width:1120px;margin:auto;display:flex;flex-wrap:wrap;gap:20px;padding:20px 28px;font:14px system-ui}.course-nav a{color:#245ea0;text-decoration:none;font-weight:650}.jp-OutputArea-output{overflow-x:auto}.jp-Cell{margin-bottom:15px!important}@media(max-width:650px){.jp-Notebook{padding:20px 8px!important}.jp-RenderedHTMLCommon{font-size:15px!important}.jp-RenderedHTMLCommon h1{font-size:27px!important}.jp-InputPrompt,.jp-OutputPrompt{min-width:34px!important;width:34px!important}}
+body{background:#f6f8fb!important;color:#182b41!important}.jp-Notebook{max-width:1120px;margin:0 auto;background:white;padding:30px 25px!important}.jp-RenderedHTMLCommon{font-family:system-ui,Segoe UI,sans-serif;font-size:16px!important;line-height:1.75!important}.jp-RenderedHTMLCommon h1{font-size:34px!important;line-height:1.2!important;color:#182b41}.jp-RenderedHTMLCommon h2{color:#0d766f;border-top:1px solid #dde5ee;padding-top:22px}.jp-RenderedHTMLCommon h3{font-size:20px!important}.jp-RenderedHTMLCommon table{font-size:14px!important;line-height:1.5!important}.jp-InputArea-editor{border-radius:7px;background:#f4f6f9!important}.jp-InputArea pre{font-size:13px!important;white-space:pre-wrap!important;overflow-wrap:anywhere}.jp-RenderedImage img{max-width:100%;height:auto}.course-nav{max-width:1120px;margin:auto;display:flex;flex-wrap:wrap;gap:20px;padding:20px 28px;font:14px system-ui}.course-nav a{color:#0d766f;text-decoration:none;font-weight:650}.jp-OutputArea-output{overflow-x:auto}.jp-Cell{margin-bottom:15px!important}@media(max-width:650px){.jp-Notebook{padding:20px 8px!important}.jp-RenderedHTMLCommon{font-size:15px!important}.jp-RenderedHTMLCommon h1{font-size:27px!important}.jp-InputPrompt,.jp-OutputPrompt{min-width:34px!important;width:34px!important}}
 </style>'''
     html=html.replace('</head>',css+'</head>')
     html=re.sub(r'(<body[^>]*>)',r'\1<nav class="course-nav">'+links+'</nav>',html,count=1)

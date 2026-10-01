@@ -7,7 +7,7 @@ from zipfile import ZIP_DEFLATED, ZipFile
 import nbformat
 from bs4 import BeautifulSoup
 
-from course_paths import ROOT
+from course_paths import ROOT, html_references
 ROOT_FILES = ['README.md', 'requirements.txt', '.gitignore', '.gitattributes', '.editorconfig']
 PUBLIC_FOLDERS = {
     'notebooks': {'*.ipynb', '*.md'},
@@ -61,8 +61,7 @@ def validate(root=ROOT):
     pages = [p for p in files if p.suffix == '.html']
     for page in pages:
         soup = BeautifulSoup(page.read_text(encoding='utf-8'), 'html.parser')
-        for tag in soup.select('[href], [src]'):
-            value = tag.get('href', tag.get('src', ''))
+        for value in (url for tag in soup.select('[href], [src], [srcset]') for url in html_references(tag)):
             link = urlsplit(value)
             if link.scheme or link.netloc or not link.path:
                 continue

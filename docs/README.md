@@ -6,6 +6,7 @@
 
 | Guide | Use it when… |
 |---|---|
+| [Visual guide](VISUAL_GUIDE.md) | You want to see evidence, question types, and calibration before the code |
 | [Course outline](COURSE.md) | You want the modules, prerequisites, and checkpoints |
 | [Setup](SETUP.md) | You want to run in Colab or on your computer |
 | [Learning guide](LEARNING_GUIDE.md) | You want a short study schedule |
@@ -28,6 +29,7 @@
 - [Repository layout](REPOSITORY.md)
 - [Rebuild and share](SHARING.md)
 - [GitHub publication](GITHUB_PUBLISHING.md)
+- [Self-review and fixes](SELF_REVIEW.md)
 - [Recorded notebook execution](validation.json)
 - [Locally tested dependency versions](requirements-tested.txt)
 

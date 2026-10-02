@@ -65,3 +65,38 @@ The new diagrams were inspected as local raster previews, including 360-pixel co
 notebook outputs, image descriptions, Colab setup simulation, rebuilt exports, and archive links
 were checked again. Notebook execution records remain in [validation.json](validation.json).
 The browser and hosted-Colab limits described above still apply.
+
+## Third pass: three review agents and trained PyTorch models
+
+Three agents separately reviewed the learning flow, mathematical/evaluation correctness, and
+visual accessibility. Their repairs were integrated with a new executed PyTorch lesson.
+
+| Finding | Repair |
+|---|---|
+| The homepage paired lessons with a ten-item label list, silently dropping an added lesson. | Map labels by lesson ID and render every lesson; show dynamic catalogue counts. |
+| Learners needed a structured route from the NumPy project to neural model training. | Add an optional study session, experiment notes, six-model assignment, FAQ guidance, and lesson 10. |
+| Some guidance implied that GitHub notebooks had the offline HTML code toggle. | Clearly identify the optional HTML reader; improve keyboard links, touch targets, and no-JavaScript behavior. |
+| Model names and probability-loss conventions were easy to confuse. | Explain the acronyms, raw-logit cross-entropy, Brier scaling, denominators, metric rounding, and representation limits. |
+| Optional PyTorch installation appeared before environment creation. | State the setup order explicitly and keep PyTorch separate from beginner requirements. |
+| Training and validation loss were initially logged at different points in an update. | Evaluate both after the same update before plotting their curves. |
+| Whole-percent labels hid a small Transformer error in the comparison chart. | Use one decimal place and keep the exact per-seed case and pair counts beside the figure. |
+
+The new lab trains six implementations across three seeds on 864 generated sentences. Whole
+reversed pairs remain in one split: 520 train, 172 validation, 172 test. Vocabulary comes only
+from training. Checkpoints use validation loss; all 18 runs appear in the held-out results.
+The generated grammar and words are shared across splits and are not representative of real traffic.
+
+Independent checks cover finite outputs and gradients, padding masks and lengths, predictions
+independent of label fields, permutation invariance, separately recomputed probability losses,
+and validation checkpoint restoration. A fixture forces an early best checkpoint to verify actual
+rollback. The permanent checker is `scripts/check_torch_lab.py` and runs in GitHub's workflow.
+
+Saved diagrams and new plots were reviewed locally. Source and HTML structure checks cover the
+new catalogue, image descriptions, links, and reading controls; browser and assistive-technology
+behavior were not exercised. The trained-weight ZIP contains 18 small toy checkpoints and a
+manifest. All 18 archived checkpoints were reloaded with `weights_only=True`; their case counts,
+pair counts, rounded probability losses, vocabulary, labels, and selected epochs match the saved
+notebook results.
+
+No webpage, hosted Colab runtime, or live Jev request was opened. The PyTorch wheel index was
+accessed to install the CPU dependency. The course still does not reproduce or benchmark Jev.

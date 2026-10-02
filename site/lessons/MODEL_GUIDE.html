@@ -7798,12 +7798,18 @@ body{background:#f6f8fb!important;color:#182b41!important}.jp-Notebook{max-width
 </style><style>
 .reader-tools{max-width:1120px;margin:0 auto;padding:16px 28px;background:#eaf0f7;
 font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
-.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer}
+.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer;
+display:inline-flex;align-items:center;min-height:44px}
 .reader-tools input{accent-color:#0d766f;margin-right:8px}
-.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650}
+.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650;
+min-height:44px;padding:10px 0}
 .reader-tools ul{padding-left:22px;columns:2;column-gap:30px}.reader-tools li{break-inside:avoid;margin:5px 0}
 .reader-tools a{color:#0d766f}.reading-mode .jp-CodeCell .jp-InputArea,.reading-mode .jp-InputPrompt,
 .reading-mode .jp-OutputPrompt,.reading-mode .jp-CodeCell.jp-mod-noOutputs{display:none!important}
+.lesson-skip-link{position:fixed;top:8px;left:8px;z-index:1000;padding:12px 18px;
+background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
+.lesson-skip-link:focus{transform:translateY(0);outline:3px solid #70e0d1;outline-offset:3px}
+.jp-RenderedImage img,.jp-RenderedHTMLCommon img{max-width:100%;height:auto}
 .jp-RenderedHTMLCommon details{background:#f0f5fb;border:1px solid #d9e2eb;border-radius:8px;padding:12px 16px;margin:16px 0}
 .jp-RenderedHTMLCommon summary{cursor:pointer;font-weight:650;color:#0d766f}
 .jp-RenderedHTMLCommon blockquote{border-left:3px solid #ad5b20!important;background:#fff8f1;padding:8px 18px!important}
@@ -7811,11 +7817,11 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 .jp-RenderedHTMLCommon{overflow-wrap:anywhere}.jp-RenderedHTMLCommon pre{white-space:pre-wrap}
 @media(max-width:650px){.reader-tools{padding:16px 20px}.reader-tools ul{columns:1}
 .jp-InputPrompt,.jp-OutputPrompt{display:none!important}.jp-RenderedHTMLCommon table{display:block;overflow-x:auto}}
-@media print{.course-nav,.reader-tools{display:none!important}.jp-Notebook{max-width:none}}
+@media print{.course-nav,.reader-tools,.lesson-skip-link{display:none!important}.jp-Notebook{max-width:none}}
 </style></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
+<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9c0ce3de">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=86bce820">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7991,6 +7997,81 @@ on those cases</strong> and inspect concrete disagreements.</p>
 or a Jev benchmark. For a broader comparison, define the task, collect independently labeled
 examples, freeze settings before test, and measure the complete workflow. Lesson 04 lists what
 to hold fixed and what to record.</p>
+<h2 id="learn-pytorch-by-changing-the-information-a-model-can-use">Learn PyTorch by changing the information a model can use<a class="anchor-link" href="#learn-pytorch-by-changing-the-information-a-model-can-use">¶</a></h2><p>The <a href="10_pytorch_models_lab.html">PyTorch training lab</a> trains small models from scratch
+on an authored routing task. No pretrained language weights or Jev service are involved.
+Its useful question is: <strong>what happens when the answer depends on word order?</strong></p>
+<p>Read the bag-of-words baseline first. Then compare the sequence models. You do not need to
+understand all six architectures before running the lesson.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>How it represents a message</th>
+<th>What the comparison teaches</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bag-of-words linear</td>
+<td>One feature per known word, followed by a learned weighted sum</td>
+<td>A transparent baseline; changing order leaves its input unchanged</td>
+</tr>
+<tr>
+<td>Bag-of-words MLP</td>
+<td>The same word features, followed by nonlinear hidden layers</td>
+<td>More flexible scoring cannot restore discarded order</td>
+</tr>
+<tr>
+<td>Mean-embedding classifier</td>
+<td>Learned word vectors averaged over non-padding tokens</td>
+<td>Averaging also loses order; learning vectors does not remove that limitation</td>
+</tr>
+<tr>
+<td>Small CNN</td>
+<td>Learned filters over neighboring token vectors</td>
+<td>Local token arrangements can become features; the window size limits direct local context</td>
+</tr>
+<tr>
+<td>GRU</td>
+<td>A recurrent hidden state updated along the token sequence</td>
+<td>Sequence order can affect the representation; useful behavior still has to be learned</td>
+</tr>
+<tr>
+<td>Tiny Transformer</td>
+<td>Token and position embeddings processed with attention</td>
+<td>Attention with position information can distinguish order; a tiny trained model is not a pretrained language system</td>
+</tr>
+</tbody>
+</table>
+<p>The first three representations are unchanged when the same tokens are rearranged. If two such
+messages have different reference labels, those models must give the same distribution to both
+and therefore cannot get both labels right. Adding layers, training longer, or changing a threshold
+does not repair this representation collision. A CNN, GRU, or Transformer can distinguish the
+inputs, but that capability alone does not guarantee a correct learned answer.</p>
+<p>All six models still use a fixed three-label task head. They do not accept arbitrary new question
+descriptions in the way Jev's typed request interface does. PyTorch supplies tensor operations and
+automatic differentiation; using it does not make a model calibrated or reproduce RLCD.</p>
+<h2 id="read-a-training-result-without-overclaiming">Read a training result without overclaiming<a class="anchor-link" href="#read-a-training-result-without-overclaiming">¶</a></h2><ol>
+<li><strong>Check the split.</strong> Learn vocabulary and weights from training examples. Select checkpoints
+on validation examples. Keep both members of a reversed-message pair in the same split so a
+paired construction does not cross the boundary.</li>
+<li><strong>Read both loss curves.</strong> Falling training loss shows that the optimizer fits the training
+task. If validation loss rises while training loss falls, generalization on that split is getting
+worse; the final epoch need not be the best checkpoint.</li>
+<li><strong>Count ordinary and paired mistakes.</strong> Report correct labels / test messages, then pairs
+where both labels are correct / test pairs. One correct member does not resolve the pair.</li>
+<li><strong>Compare every seed.</strong> Different initial weights can produce different learned behavior.
+Report all fixed runs rather than selecting the most flattering test result. Variation across
+seeds measures training variability on this fixed task, not uncertainty about real traffic.</li>
+<li><strong>State the task's boundary.</strong> A generated dataset can reuse vocabulary, grammar, and templates
+across splits. Separate examples under the same construction test that synthetic distribution;
+they do not establish understanding of unfamiliar language or customer messages.</li>
+</ol>
+<p>The models have different parameter counts and computation costs. An equal epoch budget keeps
+the exercise bounded; it does not make this a controlled comparison of whole architecture families.</p>
+<p>The multiclass log loss and Brier score assess probability quality. They are not pure calibration
+metrics, and a lower loss is not proof of calibration. Inspect reliability, subgroup errors, and
+out-of-domain cases on suitable separate data before choosing a real automation policy.</p>
 <p><a href="09_related_models_lab.html">Try the comparison lab</a> · <a href="QUICK_REFERENCE.html">Quick reference</a> · <a href="SOURCES.html">Sources</a></p>
 </div>
 </div>

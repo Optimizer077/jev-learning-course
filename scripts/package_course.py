@@ -9,13 +9,13 @@ from zipfile import ZIP_DEFLATED, ZipFile
 import nbformat
 from bs4 import BeautifulSoup
 
-from course_paths import ROOT, html_references
+from course_paths import ROOT, NOTEBOOK_COUNT, html_references
 ROOT_FILES = ['README.md', 'requirements.txt', '.gitignore', '.gitattributes', '.editorconfig']
 PUBLIC_FOLDERS = {
     'notebooks': {'*.ipynb', '*.md'},
-    'docs': {'*.md', 'validation.json', 'requirements-tested.txt'},
+    'docs': {'*.md', 'validation.json', 'requirements-*.txt'},
     'assignments': {'*.md'},
-    'data': {'*.md', 'tickets.json'},
+    'data': {'*.md', 'tickets.json', 'torch_toy.json'},
     'src': {'*.py'},
     'scripts': {'*.py', '*.md'},
     'assets': {'*.svg', '*.png'},
@@ -39,8 +39,8 @@ def validate(root=ROOT):
     files = public_files(root)
     included = {p.resolve() for p in files}
     notebooks = sorted((root/'notebooks').glob('[0-9][0-9]_*.ipynb'))
-    if len(notebooks) != 10:
-        raise ValueError(f'Expected ten lessons, found {len(notebooks)}.')
+    if len(notebooks) != NOTEBOOK_COUNT:
+        raise ValueError(f'Expected {NOTEBOOK_COUNT} lessons, found {len(notebooks)}.')
     code_cells = figures = diagrams = 0
     expected_artwork = []
     for path in notebooks:

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="475.2pt" height="614.88pt" viewBox="0 0 475.2 614.88" xmlns="http://www.w3.org/2000/svg" version="1.1">
- <title>decision flow</title>
- <desc>Invented probabilities: technical 90%, billing 6%, other 4%. Thresholds 0.85 and 0.95 produce routing and review. A model estimate does not grant permission.</desc>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="475.2pt" height="614.88pt" viewBox="0 0 475.2 614.88" xmlns="http://www.w3.org/2000/svg" version="1.1" role="img" aria-labelledby="decision-flow-title decision-flow-description">
+ <title id="decision-flow-title">decision flow</title>
+ <desc id="decision-flow-description">Invented probabilities: technical 90%, billing 6%, other 4%. Thresholds 0.85 and 0.95 produce routing and review. A model estimate does not grant permission.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

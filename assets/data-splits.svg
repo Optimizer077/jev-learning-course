@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="388.8pt" height="642.24pt" viewBox="0 0 388.8 642.24" xmlns="http://www.w3.org/2000/svg" version="1.1">
- <title>data splits</title>
- <desc>Counts from data/tickets.json: {&#x27;train&#x27;: 24, &#x27;validation&#x27;: 12, &#x27;test&#x27;: 12, &#x27;stress&#x27;: 6}. Fit on training; choose settings on validation; assess a frozen system on test; inspect stress cases separately.</desc>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="388.8pt" height="642.24pt" viewBox="0 0 388.8 642.24" xmlns="http://www.w3.org/2000/svg" version="1.1" role="img" aria-labelledby="data-splits-title data-splits-description">
+ <title id="data-splits-title">data splits</title>
+ <desc id="data-splits-description">Counts from data/tickets.json: {&#x27;train&#x27;: 24, &#x27;validation&#x27;: 12, &#x27;test&#x27;: 12, &#x27;stress&#x27;: 6}. Fit on training; choose settings on validation; assess a frozen system on test; inspect stress cases separately.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

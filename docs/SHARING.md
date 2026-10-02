@@ -26,6 +26,8 @@ For personal study, edit the notebooks. For maintained editions, edit their sour
 | `scripts/lesson_upgrades.py` | Additional experiments for lessons 01–05 |
 | `scripts/extra_lessons.py` | Lessons 06–08; original 00 scaffold |
 | `scripts/related_lessons.py` | Optional lesson 09: local rules, lexical prototypes, and a learned classifier |
+| `scripts/torch_lessons.py` / `src/torch_lab.py` | Optional lesson 10: six PyTorch models, training, evaluation, and checkpoint export |
+| `scripts/build_torch_dataset.py` | Recreate the separate authored, paired sentence dataset |
 | `scripts/public_course.py` | Public welcome lesson, reader guides, recaps, and self-checks |
 | `src/lab_core.py` | NumPy teaching model and evaluation functions |
 | `src/tutorial_utils.py` | Plot and table helpers |
@@ -43,15 +45,21 @@ Use the Python executable from your course environment. Replace `python` below w
 `.\.venv\Scripts\python.exe` on Windows or `.venv/bin/python` on macOS/Linux.
 
 ```bash
+python -m pip install -r docs/requirements-torch.txt
 python scripts/build_visuals.py
+python scripts/build_torch_dataset.py
 python scripts/build_notebooks.py
 python scripts/execute_notebooks.py
 python scripts/check_colab_setup.py
+python scripts/check_torch_lab.py
 python scripts/validate_course.py
 python scripts/package_course.py
 ```
 
 The executor runs each notebook in a fresh kernel, saves results, and rebuilds HTML.
+Rebuilding all eleven lessons requires the optional PyTorch dependency. Lesson 10 also writes
+18 tiny checkpoints and `dist/toy-pytorch-models.zip`; the workflow uploads that ZIP as a separate
+artifact. Checkpoints stay outside the repository and the ordinary course archive.
 The optional API flag stays off by default. `docs/validation.json` records execution;
 `docs/requirements-tested.txt` records exact package versions. `python scripts/build_site.py` rebuilds only
 the home, playground, and support pages; lesson exports require the executor.

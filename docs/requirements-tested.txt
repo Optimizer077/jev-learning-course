@@ -7,3 +7,4 @@ ipykernel==7.3.0
 jupyterlab==4.6.4
 beautifulsoup4==4.15.0
 mistune==3.3.4
+torch==2.14.1+cpu

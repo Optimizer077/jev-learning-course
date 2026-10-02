@@ -7798,12 +7798,18 @@ body{background:#f6f8fb!important;color:#182b41!important}.jp-Notebook{max-width
 </style><style>
 .reader-tools{max-width:1120px;margin:0 auto;padding:16px 28px;background:#eaf0f7;
 font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
-.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer}
+.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer;
+display:inline-flex;align-items:center;min-height:44px}
 .reader-tools input{accent-color:#0d766f;margin-right:8px}
-.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650}
+.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650;
+min-height:44px;padding:10px 0}
 .reader-tools ul{padding-left:22px;columns:2;column-gap:30px}.reader-tools li{break-inside:avoid;margin:5px 0}
 .reader-tools a{color:#0d766f}.reading-mode .jp-CodeCell .jp-InputArea,.reading-mode .jp-InputPrompt,
 .reading-mode .jp-OutputPrompt,.reading-mode .jp-CodeCell.jp-mod-noOutputs{display:none!important}
+.lesson-skip-link{position:fixed;top:8px;left:8px;z-index:1000;padding:12px 18px;
+background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
+.lesson-skip-link:focus{transform:translateY(0);outline:3px solid #70e0d1;outline-offset:3px}
+.jp-RenderedImage img,.jp-RenderedHTMLCommon img{max-width:100%;height:auto}
 .jp-RenderedHTMLCommon details{background:#f0f5fb;border:1px solid #d9e2eb;border-radius:8px;padding:12px 16px;margin:16px 0}
 .jp-RenderedHTMLCommon summary{cursor:pointer;font-weight:650;color:#0d766f}
 .jp-RenderedHTMLCommon blockquote{border-left:3px solid #ad5b20!important;background:#fff8f1;padding:8px 18px!important}
@@ -7811,11 +7817,11 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 .jp-RenderedHTMLCommon{overflow-wrap:anywhere}.jp-RenderedHTMLCommon pre{white-space:pre-wrap}
 @media(max-width:650px){.reader-tools{padding:16px 20px}.reader-tools ul{columns:1}
 .jp-InputPrompt,.jp-OutputPrompt{display:none!important}.jp-RenderedHTMLCommon table{display:block;overflow-x:auto}}
-@media print{.course-nav,.reader-tools{display:none!important}.jp-Notebook{max-width:none}}
+@media print{.course-nav,.reader-tools,.lesson-skip-link{display:none!important}.jp-Notebook{max-width:none}}
 </style></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
+<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bf6c8f12">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ad4e791f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7885,6 +7891,51 @@ estimates; routing or review is an application action.</p>
 </tbody>
 </table>
 <p>A single group agreeing with its predicted frequency does not establish calibration across a population.</p>
+<h2 id="train-a-small-model-in-pytorch">Train a small model in PyTorch<a class="anchor-link" href="#train-a-small-model-in-pytorch">¶</a></h2><p>The <a href="10_pytorch_models_lab.html">PyTorch lab</a> makes this loop visible:</p>
+<p><strong>message → features or token IDs → logits → loss → gradients → updated weights</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What to inspect</th>
+<th>Common mistake</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prepare input</td>
+<td>Vocabulary learned from training text; padding excluded where needed</td>
+<td>Learning preprocessing from validation or test data</td>
+</tr>
+<tr>
+<td>Predict</td>
+<td>One raw logit per class; shape <code>[batch, 3]</code> for this task</td>
+<td>Treating logits as probabilities</td>
+</tr>
+<tr>
+<td>Compute loss</td>
+<td><code>CrossEntropyLoss(logits, labels)</code> with integer class labels</td>
+<td>Applying softmax before this loss, which already combines log-softmax and negative log likelihood</td>
+</tr>
+<tr>
+<td>Update</td>
+<td>Clear old gradients, call <code>loss.backward()</code>, then <code>optimizer.step()</code></td>
+<td>Accidentally accumulating gradients across independent steps</td>
+</tr>
+<tr>
+<td>Validate</td>
+<td><code>model.eval()</code> with gradient tracking disabled</td>
+<td>Leaving dropout active or choosing an epoch using test loss</td>
+</tr>
+<tr>
+<td>Evaluate</td>
+<td>Load the validation-selected checkpoint and assess the frozen system</td>
+<td>Keeping the seed or model settings with the best test result</td>
+</tr>
+</tbody>
+</table>
+<p>Use softmax when displaying the predicted distribution, after computing raw logits. A training
+loss curve shows fit; it does not by itself establish test accuracy or calibration.</p>
 <h2 id="choose-an-action-using-costs">Choose an action using costs<a class="anchor-link" href="#choose-an-action-using-costs">¶</a></h2><p>In the binary teaching example, correct actions cost zero and review is perfectly accurate.
 If <code>p</code> is the calibrated probability of yes:</p>
 <table>
@@ -7964,16 +8015,26 @@ Real review can make mistakes; evaluate that behavior before using the same rule
 </tbody>
 </table>
 <h2 id="evaluate-with-explicit-denominators">Evaluate with explicit denominators<a class="anchor-link" href="#evaluate-with-explicit-denominators">¶</a></h2><ul>
-<li><strong>Accuracy:</strong> correct labels / evaluated cases.</li>
+<li><strong>Label accuracy:</strong> correct classifier labels / evaluated cases, before applying a review policy.</li>
 <li><strong>Automatic coverage:</strong> automatic cases / all cases.</li>
 <li><strong>Selective error:</strong> wrong automatic cases / automatic cases.</li>
 <li><strong>Review rate:</strong> reviewed cases / all cases.</li>
+<li><strong>Both-correct pair rate:</strong> pairs with both labels correct / evaluated pairs.</li>
 </ul>
 <p>When there are no automatic cases, selective error is undefined, rather than evidence of zero
 error. A tiny authored test set can illustrate calculations but cannot establish broad reliability.</p>
+<p><strong>Probability losses have their own definitions:</strong> log loss averages <code>−log(p of the reference class)</code>
+over cases. The binary Brier score averages <code>(p − y)²</code> and ranges from 0 to 1. The multiclass
+Brier convention in our labs sums squared errors across classes before averaging over cases,
+so its range is 0 to 2. Do not compare these raw Brier values as though the conventions were equal.
+Both losses measure probabilistic prediction quality, including factors beyond calibration.</p>
+<p>For several random seeds, show each result and a summary across those runs. That spread describes
+training variability on the fixed dataset; it is not a confidence interval for future accuracy.
+Once test results guide another change, that test set has become development data. Reserve fresh
+examples for the next independent assessment.</p>
 <h2 id="study-without-getting-lost">Study without getting lost<a class="anchor-link" href="#study-without-getting-lost">¶</a></h2><p>Start with <strong>00 → 01 → 04</strong> for the main idea. Use <strong>02 → 03 → 07</strong> to build a local system.
-Try <strong>09</strong> when you want to compare mechanisms. Use the browser's code toggle to read explanations
-first, then inspect the Python when ready.</p>
+Try <strong>09</strong> to compare mechanisms, then <strong>10</strong> to train small PyTorch models. In the optional HTML
+exports, use the code toggle to read explanations first, then inspect the Python when ready.</p>
 <p>For an experiment: <strong>predict → change one thing → restart and run → explain → state a limitation</strong>.</p>
 <p><a href="README.html">Course home</a> · <a href="PRACTICE.html">Guided practice</a> · <a href="MODEL_GUIDE.html">Model guide</a> · <a href="GLOSSARY.html">Glossary</a></p>
 </div>

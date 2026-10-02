@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="388.8pt" height="682.56pt" viewBox="0 0 388.8 682.56" xmlns="http://www.w3.org/2000/svg" version="1.1">
- <title>word order</title>
- <desc>Authored messages: ((&#x27;The payment failed, not the export.&#x27;, &#x27;billing&#x27;), (&#x27;The export failed, not the payment.&#x27;, &#x27;technical&#x27;)). Both have active training-vocabulary words [&#x27;export&#x27;, &#x27;not&#x27;, &#x27;payment&#x27;, &#x27;the&#x27;]; unseen words [&#x27;failed&#x27;] are dropped. Identical binary features cannot yield different deterministic classifier outputs.</desc>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="388.8pt" height="682.56pt" viewBox="0 0 388.8 682.56" xmlns="http://www.w3.org/2000/svg" version="1.1" role="img" aria-labelledby="word-order-title word-order-description">
+ <title id="word-order-title">word order</title>
+ <desc id="word-order-description">Authored messages: ((&#x27;The payment failed, not the export.&#x27;, &#x27;billing&#x27;), (&#x27;The export failed, not the payment.&#x27;, &#x27;technical&#x27;)). Both have active training-vocabulary words [&#x27;export&#x27;, &#x27;not&#x27;, &#x27;payment&#x27;, &#x27;the&#x27;]; unseen words [&#x27;failed&#x27;] are dropped. Identical binary features cannot yield different deterministic classifier outputs.</desc>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>

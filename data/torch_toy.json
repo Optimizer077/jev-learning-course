@@ -1,0 +1,6914 @@
+[
+  {
+    "id": "pair-000-a",
+    "pair_id": "pair-000",
+    "text": "The payment failed, not the export.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-000-b",
+    "pair_id": "pair-000",
+    "text": "The export failed, not the payment.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-001-a",
+    "pair_id": "pair-001",
+    "text": "Customer says: The payment failed, not the export.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-001-b",
+    "pair_id": "pair-001",
+    "text": "Customer says: The export failed, not the payment.",
+    "label": "technical",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-002-a",
+    "pair_id": "pair-002",
+    "text": "Today: The payment failed, not the export.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-002-b",
+    "pair_id": "pair-002",
+    "text": "Today: The export failed, not the payment.",
+    "label": "technical",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-003-a",
+    "pair_id": "pair-003",
+    "text": "Please help: The payment failed, not the export.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-003-b",
+    "pair_id": "pair-003",
+    "text": "Please help: The export failed, not the payment.",
+    "label": "technical",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-004-a",
+    "pair_id": "pair-004",
+    "text": "My payment is broken; my export is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-004-b",
+    "pair_id": "pair-004",
+    "text": "My export is broken; my payment is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-005-a",
+    "pair_id": "pair-005",
+    "text": "Customer says: My payment is broken; my export is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-005-b",
+    "pair_id": "pair-005",
+    "text": "Customer says: My export is broken; my payment is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-006-a",
+    "pair_id": "pair-006",
+    "text": "Today: My payment is broken; my export is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-006-b",
+    "pair_id": "pair-006",
+    "text": "Today: My export is broken; my payment is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-007-a",
+    "pair_id": "pair-007",
+    "text": "Please help: My payment is broken; my export is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-007-b",
+    "pair_id": "pair-007",
+    "text": "Please help: My export is broken; my payment is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-008-a",
+    "pair_id": "pair-008",
+    "text": "It is payment that fails, not export.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-008-b",
+    "pair_id": "pair-008",
+    "text": "It is export that fails, not payment.",
+    "label": "technical",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-009-a",
+    "pair_id": "pair-009",
+    "text": "Customer says: It is payment that fails, not export.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-009-b",
+    "pair_id": "pair-009",
+    "text": "Customer says: It is export that fails, not payment.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-010-a",
+    "pair_id": "pair-010",
+    "text": "Today: It is payment that fails, not export.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-010-b",
+    "pair_id": "pair-010",
+    "text": "Today: It is export that fails, not payment.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-011-a",
+    "pair_id": "pair-011",
+    "text": "Please help: It is payment that fails, not export.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-011-b",
+    "pair_id": "pair-011",
+    "text": "Please help: It is export that fails, not payment.",
+    "label": "technical",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-012-a",
+    "pair_id": "pair-012",
+    "text": "export works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-012-b",
+    "pair_id": "pair-012",
+    "text": "payment works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-013-a",
+    "pair_id": "pair-013",
+    "text": "Customer says: export works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-013-b",
+    "pair_id": "pair-013",
+    "text": "Customer says: payment works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-014-a",
+    "pair_id": "pair-014",
+    "text": "Today: export works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-014-b",
+    "pair_id": "pair-014",
+    "text": "Today: payment works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-015-a",
+    "pair_id": "pair-015",
+    "text": "Please help: export works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-015-b",
+    "pair_id": "pair-015",
+    "text": "Please help: payment works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-016-a",
+    "pair_id": "pair-016",
+    "text": "The payment failed, not the upload.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-016-b",
+    "pair_id": "pair-016",
+    "text": "The upload failed, not the payment.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-017-a",
+    "pair_id": "pair-017",
+    "text": "Customer says: The payment failed, not the upload.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-017-b",
+    "pair_id": "pair-017",
+    "text": "Customer says: The upload failed, not the payment.",
+    "label": "technical",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-018-a",
+    "pair_id": "pair-018",
+    "text": "Today: The payment failed, not the upload.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-018-b",
+    "pair_id": "pair-018",
+    "text": "Today: The upload failed, not the payment.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-019-a",
+    "pair_id": "pair-019",
+    "text": "Please help: The payment failed, not the upload.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-019-b",
+    "pair_id": "pair-019",
+    "text": "Please help: The upload failed, not the payment.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-020-a",
+    "pair_id": "pair-020",
+    "text": "My payment is broken; my upload is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-020-b",
+    "pair_id": "pair-020",
+    "text": "My upload is broken; my payment is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-021-a",
+    "pair_id": "pair-021",
+    "text": "Customer says: My payment is broken; my upload is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-021-b",
+    "pair_id": "pair-021",
+    "text": "Customer says: My upload is broken; my payment is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-022-a",
+    "pair_id": "pair-022",
+    "text": "Today: My payment is broken; my upload is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-022-b",
+    "pair_id": "pair-022",
+    "text": "Today: My upload is broken; my payment is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-023-a",
+    "pair_id": "pair-023",
+    "text": "Please help: My payment is broken; my upload is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-023-b",
+    "pair_id": "pair-023",
+    "text": "Please help: My upload is broken; my payment is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-024-a",
+    "pair_id": "pair-024",
+    "text": "It is payment that fails, not upload.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-024-b",
+    "pair_id": "pair-024",
+    "text": "It is upload that fails, not payment.",
+    "label": "technical",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-025-a",
+    "pair_id": "pair-025",
+    "text": "Customer says: It is payment that fails, not upload.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-025-b",
+    "pair_id": "pair-025",
+    "text": "Customer says: It is upload that fails, not payment.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-026-a",
+    "pair_id": "pair-026",
+    "text": "Today: It is payment that fails, not upload.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-026-b",
+    "pair_id": "pair-026",
+    "text": "Today: It is upload that fails, not payment.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-027-a",
+    "pair_id": "pair-027",
+    "text": "Please help: It is payment that fails, not upload.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-027-b",
+    "pair_id": "pair-027",
+    "text": "Please help: It is upload that fails, not payment.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-028-a",
+    "pair_id": "pair-028",
+    "text": "upload works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-028-b",
+    "pair_id": "pair-028",
+    "text": "payment works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-029-a",
+    "pair_id": "pair-029",
+    "text": "Customer says: upload works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-029-b",
+    "pair_id": "pair-029",
+    "text": "Customer says: payment works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-030-a",
+    "pair_id": "pair-030",
+    "text": "Today: upload works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-030-b",
+    "pair_id": "pair-030",
+    "text": "Today: payment works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-031-a",
+    "pair_id": "pair-031",
+    "text": "Please help: upload works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-031-b",
+    "pair_id": "pair-031",
+    "text": "Please help: payment works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-032-a",
+    "pair_id": "pair-032",
+    "text": "The payment failed, not the download.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-032-b",
+    "pair_id": "pair-032",
+    "text": "The download failed, not the payment.",
+    "label": "technical",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-033-a",
+    "pair_id": "pair-033",
+    "text": "Customer says: The payment failed, not the download.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-033-b",
+    "pair_id": "pair-033",
+    "text": "Customer says: The download failed, not the payment.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-034-a",
+    "pair_id": "pair-034",
+    "text": "Today: The payment failed, not the download.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-034-b",
+    "pair_id": "pair-034",
+    "text": "Today: The download failed, not the payment.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-035-a",
+    "pair_id": "pair-035",
+    "text": "Please help: The payment failed, not the download.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-035-b",
+    "pair_id": "pair-035",
+    "text": "Please help: The download failed, not the payment.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-036-a",
+    "pair_id": "pair-036",
+    "text": "My payment is broken; my download is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-036-b",
+    "pair_id": "pair-036",
+    "text": "My download is broken; my payment is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-037-a",
+    "pair_id": "pair-037",
+    "text": "Customer says: My payment is broken; my download is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-037-b",
+    "pair_id": "pair-037",
+    "text": "Customer says: My download is broken; my payment is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-038-a",
+    "pair_id": "pair-038",
+    "text": "Today: My payment is broken; my download is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-038-b",
+    "pair_id": "pair-038",
+    "text": "Today: My download is broken; my payment is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-039-a",
+    "pair_id": "pair-039",
+    "text": "Please help: My payment is broken; my download is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-039-b",
+    "pair_id": "pair-039",
+    "text": "Please help: My download is broken; my payment is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-040-a",
+    "pair_id": "pair-040",
+    "text": "It is payment that fails, not download.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-040-b",
+    "pair_id": "pair-040",
+    "text": "It is download that fails, not payment.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-041-a",
+    "pair_id": "pair-041",
+    "text": "Customer says: It is payment that fails, not download.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-041-b",
+    "pair_id": "pair-041",
+    "text": "Customer says: It is download that fails, not payment.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-042-a",
+    "pair_id": "pair-042",
+    "text": "Today: It is payment that fails, not download.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-042-b",
+    "pair_id": "pair-042",
+    "text": "Today: It is download that fails, not payment.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-043-a",
+    "pair_id": "pair-043",
+    "text": "Please help: It is payment that fails, not download.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-043-b",
+    "pair_id": "pair-043",
+    "text": "Please help: It is download that fails, not payment.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-044-a",
+    "pair_id": "pair-044",
+    "text": "download works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-044-b",
+    "pair_id": "pair-044",
+    "text": "payment works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-045-a",
+    "pair_id": "pair-045",
+    "text": "Customer says: download works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-045-b",
+    "pair_id": "pair-045",
+    "text": "Customer says: payment works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-046-a",
+    "pair_id": "pair-046",
+    "text": "Today: download works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-046-b",
+    "pair_id": "pair-046",
+    "text": "Today: payment works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-047-a",
+    "pair_id": "pair-047",
+    "text": "Please help: download works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-047-b",
+    "pair_id": "pair-047",
+    "text": "Please help: payment works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-048-a",
+    "pair_id": "pair-048",
+    "text": "The invoice failed, not the export.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-048-b",
+    "pair_id": "pair-048",
+    "text": "The export failed, not the invoice.",
+    "label": "technical",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-049-a",
+    "pair_id": "pair-049",
+    "text": "Customer says: The invoice failed, not the export.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-049-b",
+    "pair_id": "pair-049",
+    "text": "Customer says: The export failed, not the invoice.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-050-a",
+    "pair_id": "pair-050",
+    "text": "Today: The invoice failed, not the export.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-050-b",
+    "pair_id": "pair-050",
+    "text": "Today: The export failed, not the invoice.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-051-a",
+    "pair_id": "pair-051",
+    "text": "Please help: The invoice failed, not the export.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-051-b",
+    "pair_id": "pair-051",
+    "text": "Please help: The export failed, not the invoice.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-052-a",
+    "pair_id": "pair-052",
+    "text": "My invoice is broken; my export is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-052-b",
+    "pair_id": "pair-052",
+    "text": "My export is broken; my invoice is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-053-a",
+    "pair_id": "pair-053",
+    "text": "Customer says: My invoice is broken; my export is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-053-b",
+    "pair_id": "pair-053",
+    "text": "Customer says: My export is broken; my invoice is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-054-a",
+    "pair_id": "pair-054",
+    "text": "Today: My invoice is broken; my export is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-054-b",
+    "pair_id": "pair-054",
+    "text": "Today: My export is broken; my invoice is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-055-a",
+    "pair_id": "pair-055",
+    "text": "Please help: My invoice is broken; my export is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-055-b",
+    "pair_id": "pair-055",
+    "text": "Please help: My export is broken; my invoice is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-056-a",
+    "pair_id": "pair-056",
+    "text": "It is invoice that fails, not export.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-056-b",
+    "pair_id": "pair-056",
+    "text": "It is export that fails, not invoice.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-057-a",
+    "pair_id": "pair-057",
+    "text": "Customer says: It is invoice that fails, not export.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-057-b",
+    "pair_id": "pair-057",
+    "text": "Customer says: It is export that fails, not invoice.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-058-a",
+    "pair_id": "pair-058",
+    "text": "Today: It is invoice that fails, not export.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-058-b",
+    "pair_id": "pair-058",
+    "text": "Today: It is export that fails, not invoice.",
+    "label": "technical",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-059-a",
+    "pair_id": "pair-059",
+    "text": "Please help: It is invoice that fails, not export.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-059-b",
+    "pair_id": "pair-059",
+    "text": "Please help: It is export that fails, not invoice.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-060-a",
+    "pair_id": "pair-060",
+    "text": "export works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-060-b",
+    "pair_id": "pair-060",
+    "text": "invoice works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-061-a",
+    "pair_id": "pair-061",
+    "text": "Customer says: export works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-061-b",
+    "pair_id": "pair-061",
+    "text": "Customer says: invoice works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-062-a",
+    "pair_id": "pair-062",
+    "text": "Today: export works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-062-b",
+    "pair_id": "pair-062",
+    "text": "Today: invoice works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-063-a",
+    "pair_id": "pair-063",
+    "text": "Please help: export works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-063-b",
+    "pair_id": "pair-063",
+    "text": "Please help: invoice works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-064-a",
+    "pair_id": "pair-064",
+    "text": "The invoice failed, not the upload.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-064-b",
+    "pair_id": "pair-064",
+    "text": "The upload failed, not the invoice.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-065-a",
+    "pair_id": "pair-065",
+    "text": "Customer says: The invoice failed, not the upload.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-065-b",
+    "pair_id": "pair-065",
+    "text": "Customer says: The upload failed, not the invoice.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-066-a",
+    "pair_id": "pair-066",
+    "text": "Today: The invoice failed, not the upload.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-066-b",
+    "pair_id": "pair-066",
+    "text": "Today: The upload failed, not the invoice.",
+    "label": "technical",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-067-a",
+    "pair_id": "pair-067",
+    "text": "Please help: The invoice failed, not the upload.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-067-b",
+    "pair_id": "pair-067",
+    "text": "Please help: The upload failed, not the invoice.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-068-a",
+    "pair_id": "pair-068",
+    "text": "My invoice is broken; my upload is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-068-b",
+    "pair_id": "pair-068",
+    "text": "My upload is broken; my invoice is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-069-a",
+    "pair_id": "pair-069",
+    "text": "Customer says: My invoice is broken; my upload is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-069-b",
+    "pair_id": "pair-069",
+    "text": "Customer says: My upload is broken; my invoice is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-070-a",
+    "pair_id": "pair-070",
+    "text": "Today: My invoice is broken; my upload is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-070-b",
+    "pair_id": "pair-070",
+    "text": "Today: My upload is broken; my invoice is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-071-a",
+    "pair_id": "pair-071",
+    "text": "Please help: My invoice is broken; my upload is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-071-b",
+    "pair_id": "pair-071",
+    "text": "Please help: My upload is broken; my invoice is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-072-a",
+    "pair_id": "pair-072",
+    "text": "It is invoice that fails, not upload.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-072-b",
+    "pair_id": "pair-072",
+    "text": "It is upload that fails, not invoice.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-073-a",
+    "pair_id": "pair-073",
+    "text": "Customer says: It is invoice that fails, not upload.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-073-b",
+    "pair_id": "pair-073",
+    "text": "Customer says: It is upload that fails, not invoice.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-074-a",
+    "pair_id": "pair-074",
+    "text": "Today: It is invoice that fails, not upload.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-074-b",
+    "pair_id": "pair-074",
+    "text": "Today: It is upload that fails, not invoice.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-075-a",
+    "pair_id": "pair-075",
+    "text": "Please help: It is invoice that fails, not upload.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-075-b",
+    "pair_id": "pair-075",
+    "text": "Please help: It is upload that fails, not invoice.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-076-a",
+    "pair_id": "pair-076",
+    "text": "upload works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-076-b",
+    "pair_id": "pair-076",
+    "text": "invoice works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-077-a",
+    "pair_id": "pair-077",
+    "text": "Customer says: upload works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-077-b",
+    "pair_id": "pair-077",
+    "text": "Customer says: invoice works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-078-a",
+    "pair_id": "pair-078",
+    "text": "Today: upload works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-078-b",
+    "pair_id": "pair-078",
+    "text": "Today: invoice works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-079-a",
+    "pair_id": "pair-079",
+    "text": "Please help: upload works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-079-b",
+    "pair_id": "pair-079",
+    "text": "Please help: invoice works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-080-a",
+    "pair_id": "pair-080",
+    "text": "The invoice failed, not the download.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-080-b",
+    "pair_id": "pair-080",
+    "text": "The download failed, not the invoice.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-081-a",
+    "pair_id": "pair-081",
+    "text": "Customer says: The invoice failed, not the download.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-081-b",
+    "pair_id": "pair-081",
+    "text": "Customer says: The download failed, not the invoice.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-082-a",
+    "pair_id": "pair-082",
+    "text": "Today: The invoice failed, not the download.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-082-b",
+    "pair_id": "pair-082",
+    "text": "Today: The download failed, not the invoice.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-083-a",
+    "pair_id": "pair-083",
+    "text": "Please help: The invoice failed, not the download.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-083-b",
+    "pair_id": "pair-083",
+    "text": "Please help: The download failed, not the invoice.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-084-a",
+    "pair_id": "pair-084",
+    "text": "My invoice is broken; my download is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-084-b",
+    "pair_id": "pair-084",
+    "text": "My download is broken; my invoice is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-085-a",
+    "pair_id": "pair-085",
+    "text": "Customer says: My invoice is broken; my download is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-085-b",
+    "pair_id": "pair-085",
+    "text": "Customer says: My download is broken; my invoice is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-086-a",
+    "pair_id": "pair-086",
+    "text": "Today: My invoice is broken; my download is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-086-b",
+    "pair_id": "pair-086",
+    "text": "Today: My download is broken; my invoice is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-087-a",
+    "pair_id": "pair-087",
+    "text": "Please help: My invoice is broken; my download is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-087-b",
+    "pair_id": "pair-087",
+    "text": "Please help: My download is broken; my invoice is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-088-a",
+    "pair_id": "pair-088",
+    "text": "It is invoice that fails, not download.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-088-b",
+    "pair_id": "pair-088",
+    "text": "It is download that fails, not invoice.",
+    "label": "technical",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-089-a",
+    "pair_id": "pair-089",
+    "text": "Customer says: It is invoice that fails, not download.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-089-b",
+    "pair_id": "pair-089",
+    "text": "Customer says: It is download that fails, not invoice.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-090-a",
+    "pair_id": "pair-090",
+    "text": "Today: It is invoice that fails, not download.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-090-b",
+    "pair_id": "pair-090",
+    "text": "Today: It is download that fails, not invoice.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-091-a",
+    "pair_id": "pair-091",
+    "text": "Please help: It is invoice that fails, not download.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-091-b",
+    "pair_id": "pair-091",
+    "text": "Please help: It is download that fails, not invoice.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-092-a",
+    "pair_id": "pair-092",
+    "text": "download works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-092-b",
+    "pair_id": "pair-092",
+    "text": "invoice works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-093-a",
+    "pair_id": "pair-093",
+    "text": "Customer says: download works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-093-b",
+    "pair_id": "pair-093",
+    "text": "Customer says: invoice works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-094-a",
+    "pair_id": "pair-094",
+    "text": "Today: download works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-094-b",
+    "pair_id": "pair-094",
+    "text": "Today: invoice works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-095-a",
+    "pair_id": "pair-095",
+    "text": "Please help: download works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-095-b",
+    "pair_id": "pair-095",
+    "text": "Please help: invoice works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-096-a",
+    "pair_id": "pair-096",
+    "text": "The charge failed, not the export.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-096-b",
+    "pair_id": "pair-096",
+    "text": "The export failed, not the charge.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-097-a",
+    "pair_id": "pair-097",
+    "text": "Customer says: The charge failed, not the export.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-097-b",
+    "pair_id": "pair-097",
+    "text": "Customer says: The export failed, not the charge.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-098-a",
+    "pair_id": "pair-098",
+    "text": "Today: The charge failed, not the export.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-098-b",
+    "pair_id": "pair-098",
+    "text": "Today: The export failed, not the charge.",
+    "label": "technical",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-099-a",
+    "pair_id": "pair-099",
+    "text": "Please help: The charge failed, not the export.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-099-b",
+    "pair_id": "pair-099",
+    "text": "Please help: The export failed, not the charge.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-100-a",
+    "pair_id": "pair-100",
+    "text": "My charge is broken; my export is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-100-b",
+    "pair_id": "pair-100",
+    "text": "My export is broken; my charge is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-101-a",
+    "pair_id": "pair-101",
+    "text": "Customer says: My charge is broken; my export is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-101-b",
+    "pair_id": "pair-101",
+    "text": "Customer says: My export is broken; my charge is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-102-a",
+    "pair_id": "pair-102",
+    "text": "Today: My charge is broken; my export is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-102-b",
+    "pair_id": "pair-102",
+    "text": "Today: My export is broken; my charge is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-103-a",
+    "pair_id": "pair-103",
+    "text": "Please help: My charge is broken; my export is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-103-b",
+    "pair_id": "pair-103",
+    "text": "Please help: My export is broken; my charge is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-104-a",
+    "pair_id": "pair-104",
+    "text": "It is charge that fails, not export.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-104-b",
+    "pair_id": "pair-104",
+    "text": "It is export that fails, not charge.",
+    "label": "technical",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-105-a",
+    "pair_id": "pair-105",
+    "text": "Customer says: It is charge that fails, not export.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-105-b",
+    "pair_id": "pair-105",
+    "text": "Customer says: It is export that fails, not charge.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-106-a",
+    "pair_id": "pair-106",
+    "text": "Today: It is charge that fails, not export.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-106-b",
+    "pair_id": "pair-106",
+    "text": "Today: It is export that fails, not charge.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-107-a",
+    "pair_id": "pair-107",
+    "text": "Please help: It is charge that fails, not export.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-107-b",
+    "pair_id": "pair-107",
+    "text": "Please help: It is export that fails, not charge.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-108-a",
+    "pair_id": "pair-108",
+    "text": "export works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-108-b",
+    "pair_id": "pair-108",
+    "text": "charge works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-109-a",
+    "pair_id": "pair-109",
+    "text": "Customer says: export works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-109-b",
+    "pair_id": "pair-109",
+    "text": "Customer says: charge works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-110-a",
+    "pair_id": "pair-110",
+    "text": "Today: export works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-110-b",
+    "pair_id": "pair-110",
+    "text": "Today: charge works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-111-a",
+    "pair_id": "pair-111",
+    "text": "Please help: export works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-111-b",
+    "pair_id": "pair-111",
+    "text": "Please help: charge works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-112-a",
+    "pair_id": "pair-112",
+    "text": "The charge failed, not the upload.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-112-b",
+    "pair_id": "pair-112",
+    "text": "The upload failed, not the charge.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-113-a",
+    "pair_id": "pair-113",
+    "text": "Customer says: The charge failed, not the upload.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-113-b",
+    "pair_id": "pair-113",
+    "text": "Customer says: The upload failed, not the charge.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-114-a",
+    "pair_id": "pair-114",
+    "text": "Today: The charge failed, not the upload.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-114-b",
+    "pair_id": "pair-114",
+    "text": "Today: The upload failed, not the charge.",
+    "label": "technical",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-115-a",
+    "pair_id": "pair-115",
+    "text": "Please help: The charge failed, not the upload.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-115-b",
+    "pair_id": "pair-115",
+    "text": "Please help: The upload failed, not the charge.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-116-a",
+    "pair_id": "pair-116",
+    "text": "My charge is broken; my upload is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-116-b",
+    "pair_id": "pair-116",
+    "text": "My upload is broken; my charge is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-117-a",
+    "pair_id": "pair-117",
+    "text": "Customer says: My charge is broken; my upload is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-117-b",
+    "pair_id": "pair-117",
+    "text": "Customer says: My upload is broken; my charge is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-118-a",
+    "pair_id": "pair-118",
+    "text": "Today: My charge is broken; my upload is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-118-b",
+    "pair_id": "pair-118",
+    "text": "Today: My upload is broken; my charge is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-119-a",
+    "pair_id": "pair-119",
+    "text": "Please help: My charge is broken; my upload is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-119-b",
+    "pair_id": "pair-119",
+    "text": "Please help: My upload is broken; my charge is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-120-a",
+    "pair_id": "pair-120",
+    "text": "It is charge that fails, not upload.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-120-b",
+    "pair_id": "pair-120",
+    "text": "It is upload that fails, not charge.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-121-a",
+    "pair_id": "pair-121",
+    "text": "Customer says: It is charge that fails, not upload.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-121-b",
+    "pair_id": "pair-121",
+    "text": "Customer says: It is upload that fails, not charge.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-122-a",
+    "pair_id": "pair-122",
+    "text": "Today: It is charge that fails, not upload.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-122-b",
+    "pair_id": "pair-122",
+    "text": "Today: It is upload that fails, not charge.",
+    "label": "technical",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-123-a",
+    "pair_id": "pair-123",
+    "text": "Please help: It is charge that fails, not upload.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-123-b",
+    "pair_id": "pair-123",
+    "text": "Please help: It is upload that fails, not charge.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-124-a",
+    "pair_id": "pair-124",
+    "text": "upload works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-124-b",
+    "pair_id": "pair-124",
+    "text": "charge works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-125-a",
+    "pair_id": "pair-125",
+    "text": "Customer says: upload works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-125-b",
+    "pair_id": "pair-125",
+    "text": "Customer says: charge works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-126-a",
+    "pair_id": "pair-126",
+    "text": "Today: upload works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-126-b",
+    "pair_id": "pair-126",
+    "text": "Today: charge works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-127-a",
+    "pair_id": "pair-127",
+    "text": "Please help: upload works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-127-b",
+    "pair_id": "pair-127",
+    "text": "Please help: charge works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-128-a",
+    "pair_id": "pair-128",
+    "text": "The charge failed, not the download.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-128-b",
+    "pair_id": "pair-128",
+    "text": "The download failed, not the charge.",
+    "label": "technical",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-129-a",
+    "pair_id": "pair-129",
+    "text": "Customer says: The charge failed, not the download.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-129-b",
+    "pair_id": "pair-129",
+    "text": "Customer says: The download failed, not the charge.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-130-a",
+    "pair_id": "pair-130",
+    "text": "Today: The charge failed, not the download.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-130-b",
+    "pair_id": "pair-130",
+    "text": "Today: The download failed, not the charge.",
+    "label": "technical",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-131-a",
+    "pair_id": "pair-131",
+    "text": "Please help: The charge failed, not the download.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-131-b",
+    "pair_id": "pair-131",
+    "text": "Please help: The download failed, not the charge.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-132-a",
+    "pair_id": "pair-132",
+    "text": "My charge is broken; my download is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-132-b",
+    "pair_id": "pair-132",
+    "text": "My download is broken; my charge is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-133-a",
+    "pair_id": "pair-133",
+    "text": "Customer says: My charge is broken; my download is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-133-b",
+    "pair_id": "pair-133",
+    "text": "Customer says: My download is broken; my charge is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-134-a",
+    "pair_id": "pair-134",
+    "text": "Today: My charge is broken; my download is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-134-b",
+    "pair_id": "pair-134",
+    "text": "Today: My download is broken; my charge is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-135-a",
+    "pair_id": "pair-135",
+    "text": "Please help: My charge is broken; my download is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-135-b",
+    "pair_id": "pair-135",
+    "text": "Please help: My download is broken; my charge is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-136-a",
+    "pair_id": "pair-136",
+    "text": "It is charge that fails, not download.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-136-b",
+    "pair_id": "pair-136",
+    "text": "It is download that fails, not charge.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-137-a",
+    "pair_id": "pair-137",
+    "text": "Customer says: It is charge that fails, not download.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-137-b",
+    "pair_id": "pair-137",
+    "text": "Customer says: It is download that fails, not charge.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-138-a",
+    "pair_id": "pair-138",
+    "text": "Today: It is charge that fails, not download.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-138-b",
+    "pair_id": "pair-138",
+    "text": "Today: It is download that fails, not charge.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-139-a",
+    "pair_id": "pair-139",
+    "text": "Please help: It is charge that fails, not download.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-139-b",
+    "pair_id": "pair-139",
+    "text": "Please help: It is download that fails, not charge.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-140-a",
+    "pair_id": "pair-140",
+    "text": "download works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-140-b",
+    "pair_id": "pair-140",
+    "text": "charge works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-141-a",
+    "pair_id": "pair-141",
+    "text": "Customer says: download works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-141-b",
+    "pair_id": "pair-141",
+    "text": "Customer says: charge works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-142-a",
+    "pair_id": "pair-142",
+    "text": "Today: download works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-142-b",
+    "pair_id": "pair-142",
+    "text": "Today: charge works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-143-a",
+    "pair_id": "pair-143",
+    "text": "Please help: download works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-143-b",
+    "pair_id": "pair-143",
+    "text": "Please help: charge works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-144-a",
+    "pair_id": "pair-144",
+    "text": "The payment failed, not the login.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-144-b",
+    "pair_id": "pair-144",
+    "text": "The login failed, not the payment.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-145-a",
+    "pair_id": "pair-145",
+    "text": "Customer says: The payment failed, not the login.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-145-b",
+    "pair_id": "pair-145",
+    "text": "Customer says: The login failed, not the payment.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-146-a",
+    "pair_id": "pair-146",
+    "text": "Today: The payment failed, not the login.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-146-b",
+    "pair_id": "pair-146",
+    "text": "Today: The login failed, not the payment.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-147-a",
+    "pair_id": "pair-147",
+    "text": "Please help: The payment failed, not the login.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-147-b",
+    "pair_id": "pair-147",
+    "text": "Please help: The login failed, not the payment.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-148-a",
+    "pair_id": "pair-148",
+    "text": "My payment is broken; my login is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-148-b",
+    "pair_id": "pair-148",
+    "text": "My login is broken; my payment is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-149-a",
+    "pair_id": "pair-149",
+    "text": "Customer says: My payment is broken; my login is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-149-b",
+    "pair_id": "pair-149",
+    "text": "Customer says: My login is broken; my payment is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-150-a",
+    "pair_id": "pair-150",
+    "text": "Today: My payment is broken; my login is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-150-b",
+    "pair_id": "pair-150",
+    "text": "Today: My login is broken; my payment is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-151-a",
+    "pair_id": "pair-151",
+    "text": "Please help: My payment is broken; my login is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-151-b",
+    "pair_id": "pair-151",
+    "text": "Please help: My login is broken; my payment is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-152-a",
+    "pair_id": "pair-152",
+    "text": "It is payment that fails, not login.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-152-b",
+    "pair_id": "pair-152",
+    "text": "It is login that fails, not payment.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-153-a",
+    "pair_id": "pair-153",
+    "text": "Customer says: It is payment that fails, not login.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-153-b",
+    "pair_id": "pair-153",
+    "text": "Customer says: It is login that fails, not payment.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-154-a",
+    "pair_id": "pair-154",
+    "text": "Today: It is payment that fails, not login.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-154-b",
+    "pair_id": "pair-154",
+    "text": "Today: It is login that fails, not payment.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-155-a",
+    "pair_id": "pair-155",
+    "text": "Please help: It is payment that fails, not login.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-155-b",
+    "pair_id": "pair-155",
+    "text": "Please help: It is login that fails, not payment.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-156-a",
+    "pair_id": "pair-156",
+    "text": "login works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-156-b",
+    "pair_id": "pair-156",
+    "text": "payment works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-157-a",
+    "pair_id": "pair-157",
+    "text": "Customer says: login works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-157-b",
+    "pair_id": "pair-157",
+    "text": "Customer says: payment works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-158-a",
+    "pair_id": "pair-158",
+    "text": "Today: login works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-158-b",
+    "pair_id": "pair-158",
+    "text": "Today: payment works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-159-a",
+    "pair_id": "pair-159",
+    "text": "Please help: login works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-159-b",
+    "pair_id": "pair-159",
+    "text": "Please help: payment works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-160-a",
+    "pair_id": "pair-160",
+    "text": "The payment failed, not the password.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-160-b",
+    "pair_id": "pair-160",
+    "text": "The password failed, not the payment.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-161-a",
+    "pair_id": "pair-161",
+    "text": "Customer says: The payment failed, not the password.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-161-b",
+    "pair_id": "pair-161",
+    "text": "Customer says: The password failed, not the payment.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-162-a",
+    "pair_id": "pair-162",
+    "text": "Today: The payment failed, not the password.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-162-b",
+    "pair_id": "pair-162",
+    "text": "Today: The password failed, not the payment.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-163-a",
+    "pair_id": "pair-163",
+    "text": "Please help: The payment failed, not the password.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-163-b",
+    "pair_id": "pair-163",
+    "text": "Please help: The password failed, not the payment.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-164-a",
+    "pair_id": "pair-164",
+    "text": "My payment is broken; my password is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-164-b",
+    "pair_id": "pair-164",
+    "text": "My password is broken; my payment is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-165-a",
+    "pair_id": "pair-165",
+    "text": "Customer says: My payment is broken; my password is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-165-b",
+    "pair_id": "pair-165",
+    "text": "Customer says: My password is broken; my payment is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-166-a",
+    "pair_id": "pair-166",
+    "text": "Today: My payment is broken; my password is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-166-b",
+    "pair_id": "pair-166",
+    "text": "Today: My password is broken; my payment is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-167-a",
+    "pair_id": "pair-167",
+    "text": "Please help: My payment is broken; my password is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-167-b",
+    "pair_id": "pair-167",
+    "text": "Please help: My password is broken; my payment is not.",
+    "label": "account",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-168-a",
+    "pair_id": "pair-168",
+    "text": "It is payment that fails, not password.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-168-b",
+    "pair_id": "pair-168",
+    "text": "It is password that fails, not payment.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-169-a",
+    "pair_id": "pair-169",
+    "text": "Customer says: It is payment that fails, not password.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-169-b",
+    "pair_id": "pair-169",
+    "text": "Customer says: It is password that fails, not payment.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-170-a",
+    "pair_id": "pair-170",
+    "text": "Today: It is payment that fails, not password.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-170-b",
+    "pair_id": "pair-170",
+    "text": "Today: It is password that fails, not payment.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-171-a",
+    "pair_id": "pair-171",
+    "text": "Please help: It is payment that fails, not password.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-171-b",
+    "pair_id": "pair-171",
+    "text": "Please help: It is password that fails, not payment.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-172-a",
+    "pair_id": "pair-172",
+    "text": "password works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-172-b",
+    "pair_id": "pair-172",
+    "text": "payment works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-173-a",
+    "pair_id": "pair-173",
+    "text": "Customer says: password works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-173-b",
+    "pair_id": "pair-173",
+    "text": "Customer says: payment works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-174-a",
+    "pair_id": "pair-174",
+    "text": "Today: password works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-174-b",
+    "pair_id": "pair-174",
+    "text": "Today: payment works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-175-a",
+    "pair_id": "pair-175",
+    "text": "Please help: password works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-175-b",
+    "pair_id": "pair-175",
+    "text": "Please help: payment works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-176-a",
+    "pair_id": "pair-176",
+    "text": "The payment failed, not the signin.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-176-b",
+    "pair_id": "pair-176",
+    "text": "The signin failed, not the payment.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-177-a",
+    "pair_id": "pair-177",
+    "text": "Customer says: The payment failed, not the signin.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-177-b",
+    "pair_id": "pair-177",
+    "text": "Customer says: The signin failed, not the payment.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-178-a",
+    "pair_id": "pair-178",
+    "text": "Today: The payment failed, not the signin.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-178-b",
+    "pair_id": "pair-178",
+    "text": "Today: The signin failed, not the payment.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-179-a",
+    "pair_id": "pair-179",
+    "text": "Please help: The payment failed, not the signin.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-179-b",
+    "pair_id": "pair-179",
+    "text": "Please help: The signin failed, not the payment.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-180-a",
+    "pair_id": "pair-180",
+    "text": "My payment is broken; my signin is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-180-b",
+    "pair_id": "pair-180",
+    "text": "My signin is broken; my payment is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-181-a",
+    "pair_id": "pair-181",
+    "text": "Customer says: My payment is broken; my signin is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-181-b",
+    "pair_id": "pair-181",
+    "text": "Customer says: My signin is broken; my payment is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-182-a",
+    "pair_id": "pair-182",
+    "text": "Today: My payment is broken; my signin is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-182-b",
+    "pair_id": "pair-182",
+    "text": "Today: My signin is broken; my payment is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-183-a",
+    "pair_id": "pair-183",
+    "text": "Please help: My payment is broken; my signin is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-183-b",
+    "pair_id": "pair-183",
+    "text": "Please help: My signin is broken; my payment is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-184-a",
+    "pair_id": "pair-184",
+    "text": "It is payment that fails, not signin.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-184-b",
+    "pair_id": "pair-184",
+    "text": "It is signin that fails, not payment.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-185-a",
+    "pair_id": "pair-185",
+    "text": "Customer says: It is payment that fails, not signin.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-185-b",
+    "pair_id": "pair-185",
+    "text": "Customer says: It is signin that fails, not payment.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-186-a",
+    "pair_id": "pair-186",
+    "text": "Today: It is payment that fails, not signin.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-186-b",
+    "pair_id": "pair-186",
+    "text": "Today: It is signin that fails, not payment.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-187-a",
+    "pair_id": "pair-187",
+    "text": "Please help: It is payment that fails, not signin.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-187-b",
+    "pair_id": "pair-187",
+    "text": "Please help: It is signin that fails, not payment.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-188-a",
+    "pair_id": "pair-188",
+    "text": "signin works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-188-b",
+    "pair_id": "pair-188",
+    "text": "payment works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-189-a",
+    "pair_id": "pair-189",
+    "text": "Customer says: signin works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-189-b",
+    "pair_id": "pair-189",
+    "text": "Customer says: payment works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-190-a",
+    "pair_id": "pair-190",
+    "text": "Today: signin works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-190-b",
+    "pair_id": "pair-190",
+    "text": "Today: payment works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-191-a",
+    "pair_id": "pair-191",
+    "text": "Please help: signin works fine, but payment does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-191-b",
+    "pair_id": "pair-191",
+    "text": "Please help: payment works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-192-a",
+    "pair_id": "pair-192",
+    "text": "The invoice failed, not the login.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-192-b",
+    "pair_id": "pair-192",
+    "text": "The login failed, not the invoice.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-193-a",
+    "pair_id": "pair-193",
+    "text": "Customer says: The invoice failed, not the login.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-193-b",
+    "pair_id": "pair-193",
+    "text": "Customer says: The login failed, not the invoice.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-194-a",
+    "pair_id": "pair-194",
+    "text": "Today: The invoice failed, not the login.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-194-b",
+    "pair_id": "pair-194",
+    "text": "Today: The login failed, not the invoice.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-195-a",
+    "pair_id": "pair-195",
+    "text": "Please help: The invoice failed, not the login.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-195-b",
+    "pair_id": "pair-195",
+    "text": "Please help: The login failed, not the invoice.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-196-a",
+    "pair_id": "pair-196",
+    "text": "My invoice is broken; my login is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-196-b",
+    "pair_id": "pair-196",
+    "text": "My login is broken; my invoice is not.",
+    "label": "account",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-197-a",
+    "pair_id": "pair-197",
+    "text": "Customer says: My invoice is broken; my login is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-197-b",
+    "pair_id": "pair-197",
+    "text": "Customer says: My login is broken; my invoice is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-198-a",
+    "pair_id": "pair-198",
+    "text": "Today: My invoice is broken; my login is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-198-b",
+    "pair_id": "pair-198",
+    "text": "Today: My login is broken; my invoice is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-199-a",
+    "pair_id": "pair-199",
+    "text": "Please help: My invoice is broken; my login is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-199-b",
+    "pair_id": "pair-199",
+    "text": "Please help: My login is broken; my invoice is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-200-a",
+    "pair_id": "pair-200",
+    "text": "It is invoice that fails, not login.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-200-b",
+    "pair_id": "pair-200",
+    "text": "It is login that fails, not invoice.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-201-a",
+    "pair_id": "pair-201",
+    "text": "Customer says: It is invoice that fails, not login.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-201-b",
+    "pair_id": "pair-201",
+    "text": "Customer says: It is login that fails, not invoice.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-202-a",
+    "pair_id": "pair-202",
+    "text": "Today: It is invoice that fails, not login.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-202-b",
+    "pair_id": "pair-202",
+    "text": "Today: It is login that fails, not invoice.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-203-a",
+    "pair_id": "pair-203",
+    "text": "Please help: It is invoice that fails, not login.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-203-b",
+    "pair_id": "pair-203",
+    "text": "Please help: It is login that fails, not invoice.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-204-a",
+    "pair_id": "pair-204",
+    "text": "login works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-204-b",
+    "pair_id": "pair-204",
+    "text": "invoice works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-205-a",
+    "pair_id": "pair-205",
+    "text": "Customer says: login works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-205-b",
+    "pair_id": "pair-205",
+    "text": "Customer says: invoice works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-206-a",
+    "pair_id": "pair-206",
+    "text": "Today: login works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-206-b",
+    "pair_id": "pair-206",
+    "text": "Today: invoice works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-207-a",
+    "pair_id": "pair-207",
+    "text": "Please help: login works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-207-b",
+    "pair_id": "pair-207",
+    "text": "Please help: invoice works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-208-a",
+    "pair_id": "pair-208",
+    "text": "The invoice failed, not the password.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-208-b",
+    "pair_id": "pair-208",
+    "text": "The password failed, not the invoice.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-209-a",
+    "pair_id": "pair-209",
+    "text": "Customer says: The invoice failed, not the password.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-209-b",
+    "pair_id": "pair-209",
+    "text": "Customer says: The password failed, not the invoice.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-210-a",
+    "pair_id": "pair-210",
+    "text": "Today: The invoice failed, not the password.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-210-b",
+    "pair_id": "pair-210",
+    "text": "Today: The password failed, not the invoice.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-211-a",
+    "pair_id": "pair-211",
+    "text": "Please help: The invoice failed, not the password.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-211-b",
+    "pair_id": "pair-211",
+    "text": "Please help: The password failed, not the invoice.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-212-a",
+    "pair_id": "pair-212",
+    "text": "My invoice is broken; my password is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-212-b",
+    "pair_id": "pair-212",
+    "text": "My password is broken; my invoice is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-213-a",
+    "pair_id": "pair-213",
+    "text": "Customer says: My invoice is broken; my password is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-213-b",
+    "pair_id": "pair-213",
+    "text": "Customer says: My password is broken; my invoice is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-214-a",
+    "pair_id": "pair-214",
+    "text": "Today: My invoice is broken; my password is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-214-b",
+    "pair_id": "pair-214",
+    "text": "Today: My password is broken; my invoice is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-215-a",
+    "pair_id": "pair-215",
+    "text": "Please help: My invoice is broken; my password is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-215-b",
+    "pair_id": "pair-215",
+    "text": "Please help: My password is broken; my invoice is not.",
+    "label": "account",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-216-a",
+    "pair_id": "pair-216",
+    "text": "It is invoice that fails, not password.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-216-b",
+    "pair_id": "pair-216",
+    "text": "It is password that fails, not invoice.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-217-a",
+    "pair_id": "pair-217",
+    "text": "Customer says: It is invoice that fails, not password.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-217-b",
+    "pair_id": "pair-217",
+    "text": "Customer says: It is password that fails, not invoice.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-218-a",
+    "pair_id": "pair-218",
+    "text": "Today: It is invoice that fails, not password.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-218-b",
+    "pair_id": "pair-218",
+    "text": "Today: It is password that fails, not invoice.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-219-a",
+    "pair_id": "pair-219",
+    "text": "Please help: It is invoice that fails, not password.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-219-b",
+    "pair_id": "pair-219",
+    "text": "Please help: It is password that fails, not invoice.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-220-a",
+    "pair_id": "pair-220",
+    "text": "password works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-220-b",
+    "pair_id": "pair-220",
+    "text": "invoice works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-221-a",
+    "pair_id": "pair-221",
+    "text": "Customer says: password works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-221-b",
+    "pair_id": "pair-221",
+    "text": "Customer says: invoice works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-222-a",
+    "pair_id": "pair-222",
+    "text": "Today: password works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-222-b",
+    "pair_id": "pair-222",
+    "text": "Today: invoice works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-223-a",
+    "pair_id": "pair-223",
+    "text": "Please help: password works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-223-b",
+    "pair_id": "pair-223",
+    "text": "Please help: invoice works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-224-a",
+    "pair_id": "pair-224",
+    "text": "The invoice failed, not the signin.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-224-b",
+    "pair_id": "pair-224",
+    "text": "The signin failed, not the invoice.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-225-a",
+    "pair_id": "pair-225",
+    "text": "Customer says: The invoice failed, not the signin.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-225-b",
+    "pair_id": "pair-225",
+    "text": "Customer says: The signin failed, not the invoice.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-226-a",
+    "pair_id": "pair-226",
+    "text": "Today: The invoice failed, not the signin.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-226-b",
+    "pair_id": "pair-226",
+    "text": "Today: The signin failed, not the invoice.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-227-a",
+    "pair_id": "pair-227",
+    "text": "Please help: The invoice failed, not the signin.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-227-b",
+    "pair_id": "pair-227",
+    "text": "Please help: The signin failed, not the invoice.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-228-a",
+    "pair_id": "pair-228",
+    "text": "My invoice is broken; my signin is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-228-b",
+    "pair_id": "pair-228",
+    "text": "My signin is broken; my invoice is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-229-a",
+    "pair_id": "pair-229",
+    "text": "Customer says: My invoice is broken; my signin is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-229-b",
+    "pair_id": "pair-229",
+    "text": "Customer says: My signin is broken; my invoice is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-230-a",
+    "pair_id": "pair-230",
+    "text": "Today: My invoice is broken; my signin is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-230-b",
+    "pair_id": "pair-230",
+    "text": "Today: My signin is broken; my invoice is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-231-a",
+    "pair_id": "pair-231",
+    "text": "Please help: My invoice is broken; my signin is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-231-b",
+    "pair_id": "pair-231",
+    "text": "Please help: My signin is broken; my invoice is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-232-a",
+    "pair_id": "pair-232",
+    "text": "It is invoice that fails, not signin.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-232-b",
+    "pair_id": "pair-232",
+    "text": "It is signin that fails, not invoice.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-233-a",
+    "pair_id": "pair-233",
+    "text": "Customer says: It is invoice that fails, not signin.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-233-b",
+    "pair_id": "pair-233",
+    "text": "Customer says: It is signin that fails, not invoice.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-234-a",
+    "pair_id": "pair-234",
+    "text": "Today: It is invoice that fails, not signin.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-234-b",
+    "pair_id": "pair-234",
+    "text": "Today: It is signin that fails, not invoice.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-235-a",
+    "pair_id": "pair-235",
+    "text": "Please help: It is invoice that fails, not signin.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-235-b",
+    "pair_id": "pair-235",
+    "text": "Please help: It is signin that fails, not invoice.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-236-a",
+    "pair_id": "pair-236",
+    "text": "signin works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-236-b",
+    "pair_id": "pair-236",
+    "text": "invoice works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-237-a",
+    "pair_id": "pair-237",
+    "text": "Customer says: signin works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-237-b",
+    "pair_id": "pair-237",
+    "text": "Customer says: invoice works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-238-a",
+    "pair_id": "pair-238",
+    "text": "Today: signin works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-238-b",
+    "pair_id": "pair-238",
+    "text": "Today: invoice works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-239-a",
+    "pair_id": "pair-239",
+    "text": "Please help: signin works fine, but invoice does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-239-b",
+    "pair_id": "pair-239",
+    "text": "Please help: invoice works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-240-a",
+    "pair_id": "pair-240",
+    "text": "The charge failed, not the login.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-240-b",
+    "pair_id": "pair-240",
+    "text": "The login failed, not the charge.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-241-a",
+    "pair_id": "pair-241",
+    "text": "Customer says: The charge failed, not the login.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-241-b",
+    "pair_id": "pair-241",
+    "text": "Customer says: The login failed, not the charge.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-242-a",
+    "pair_id": "pair-242",
+    "text": "Today: The charge failed, not the login.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-242-b",
+    "pair_id": "pair-242",
+    "text": "Today: The login failed, not the charge.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-243-a",
+    "pair_id": "pair-243",
+    "text": "Please help: The charge failed, not the login.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-243-b",
+    "pair_id": "pair-243",
+    "text": "Please help: The login failed, not the charge.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-244-a",
+    "pair_id": "pair-244",
+    "text": "My charge is broken; my login is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-244-b",
+    "pair_id": "pair-244",
+    "text": "My login is broken; my charge is not.",
+    "label": "account",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-245-a",
+    "pair_id": "pair-245",
+    "text": "Customer says: My charge is broken; my login is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-245-b",
+    "pair_id": "pair-245",
+    "text": "Customer says: My login is broken; my charge is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-246-a",
+    "pair_id": "pair-246",
+    "text": "Today: My charge is broken; my login is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-246-b",
+    "pair_id": "pair-246",
+    "text": "Today: My login is broken; my charge is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-247-a",
+    "pair_id": "pair-247",
+    "text": "Please help: My charge is broken; my login is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-247-b",
+    "pair_id": "pair-247",
+    "text": "Please help: My login is broken; my charge is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-248-a",
+    "pair_id": "pair-248",
+    "text": "It is charge that fails, not login.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-248-b",
+    "pair_id": "pair-248",
+    "text": "It is login that fails, not charge.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-249-a",
+    "pair_id": "pair-249",
+    "text": "Customer says: It is charge that fails, not login.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-249-b",
+    "pair_id": "pair-249",
+    "text": "Customer says: It is login that fails, not charge.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-250-a",
+    "pair_id": "pair-250",
+    "text": "Today: It is charge that fails, not login.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-250-b",
+    "pair_id": "pair-250",
+    "text": "Today: It is login that fails, not charge.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-251-a",
+    "pair_id": "pair-251",
+    "text": "Please help: It is charge that fails, not login.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-251-b",
+    "pair_id": "pair-251",
+    "text": "Please help: It is login that fails, not charge.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-252-a",
+    "pair_id": "pair-252",
+    "text": "login works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-252-b",
+    "pair_id": "pair-252",
+    "text": "charge works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-253-a",
+    "pair_id": "pair-253",
+    "text": "Customer says: login works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-253-b",
+    "pair_id": "pair-253",
+    "text": "Customer says: charge works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-254-a",
+    "pair_id": "pair-254",
+    "text": "Today: login works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-254-b",
+    "pair_id": "pair-254",
+    "text": "Today: charge works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-255-a",
+    "pair_id": "pair-255",
+    "text": "Please help: login works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-255-b",
+    "pair_id": "pair-255",
+    "text": "Please help: charge works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-256-a",
+    "pair_id": "pair-256",
+    "text": "The charge failed, not the password.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-256-b",
+    "pair_id": "pair-256",
+    "text": "The password failed, not the charge.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-257-a",
+    "pair_id": "pair-257",
+    "text": "Customer says: The charge failed, not the password.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-257-b",
+    "pair_id": "pair-257",
+    "text": "Customer says: The password failed, not the charge.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-258-a",
+    "pair_id": "pair-258",
+    "text": "Today: The charge failed, not the password.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-258-b",
+    "pair_id": "pair-258",
+    "text": "Today: The password failed, not the charge.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-259-a",
+    "pair_id": "pair-259",
+    "text": "Please help: The charge failed, not the password.",
+    "label": "billing",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-259-b",
+    "pair_id": "pair-259",
+    "text": "Please help: The password failed, not the charge.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-260-a",
+    "pair_id": "pair-260",
+    "text": "My charge is broken; my password is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-260-b",
+    "pair_id": "pair-260",
+    "text": "My password is broken; my charge is not.",
+    "label": "account",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-261-a",
+    "pair_id": "pair-261",
+    "text": "Customer says: My charge is broken; my password is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-261-b",
+    "pair_id": "pair-261",
+    "text": "Customer says: My password is broken; my charge is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-262-a",
+    "pair_id": "pair-262",
+    "text": "Today: My charge is broken; my password is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-262-b",
+    "pair_id": "pair-262",
+    "text": "Today: My password is broken; my charge is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-263-a",
+    "pair_id": "pair-263",
+    "text": "Please help: My charge is broken; my password is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-263-b",
+    "pair_id": "pair-263",
+    "text": "Please help: My password is broken; my charge is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-264-a",
+    "pair_id": "pair-264",
+    "text": "It is charge that fails, not password.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-264-b",
+    "pair_id": "pair-264",
+    "text": "It is password that fails, not charge.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-265-a",
+    "pair_id": "pair-265",
+    "text": "Customer says: It is charge that fails, not password.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-265-b",
+    "pair_id": "pair-265",
+    "text": "Customer says: It is password that fails, not charge.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-266-a",
+    "pair_id": "pair-266",
+    "text": "Today: It is charge that fails, not password.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-266-b",
+    "pair_id": "pair-266",
+    "text": "Today: It is password that fails, not charge.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-267-a",
+    "pair_id": "pair-267",
+    "text": "Please help: It is charge that fails, not password.",
+    "label": "billing",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-267-b",
+    "pair_id": "pair-267",
+    "text": "Please help: It is password that fails, not charge.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-268-a",
+    "pair_id": "pair-268",
+    "text": "password works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-268-b",
+    "pair_id": "pair-268",
+    "text": "charge works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-269-a",
+    "pair_id": "pair-269",
+    "text": "Customer says: password works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-269-b",
+    "pair_id": "pair-269",
+    "text": "Customer says: charge works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-270-a",
+    "pair_id": "pair-270",
+    "text": "Today: password works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-270-b",
+    "pair_id": "pair-270",
+    "text": "Today: charge works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-271-a",
+    "pair_id": "pair-271",
+    "text": "Please help: password works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-271-b",
+    "pair_id": "pair-271",
+    "text": "Please help: charge works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-272-a",
+    "pair_id": "pair-272",
+    "text": "The charge failed, not the signin.",
+    "label": "billing",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-272-b",
+    "pair_id": "pair-272",
+    "text": "The signin failed, not the charge.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-273-a",
+    "pair_id": "pair-273",
+    "text": "Customer says: The charge failed, not the signin.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-273-b",
+    "pair_id": "pair-273",
+    "text": "Customer says: The signin failed, not the charge.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-274-a",
+    "pair_id": "pair-274",
+    "text": "Today: The charge failed, not the signin.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-274-b",
+    "pair_id": "pair-274",
+    "text": "Today: The signin failed, not the charge.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-275-a",
+    "pair_id": "pair-275",
+    "text": "Please help: The charge failed, not the signin.",
+    "label": "billing",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-275-b",
+    "pair_id": "pair-275",
+    "text": "Please help: The signin failed, not the charge.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-276-a",
+    "pair_id": "pair-276",
+    "text": "My charge is broken; my signin is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-276-b",
+    "pair_id": "pair-276",
+    "text": "My signin is broken; my charge is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-277-a",
+    "pair_id": "pair-277",
+    "text": "Customer says: My charge is broken; my signin is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-277-b",
+    "pair_id": "pair-277",
+    "text": "Customer says: My signin is broken; my charge is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-278-a",
+    "pair_id": "pair-278",
+    "text": "Today: My charge is broken; my signin is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-278-b",
+    "pair_id": "pair-278",
+    "text": "Today: My signin is broken; my charge is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-279-a",
+    "pair_id": "pair-279",
+    "text": "Please help: My charge is broken; my signin is not.",
+    "label": "billing",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-279-b",
+    "pair_id": "pair-279",
+    "text": "Please help: My signin is broken; my charge is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-280-a",
+    "pair_id": "pair-280",
+    "text": "It is charge that fails, not signin.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-280-b",
+    "pair_id": "pair-280",
+    "text": "It is signin that fails, not charge.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-281-a",
+    "pair_id": "pair-281",
+    "text": "Customer says: It is charge that fails, not signin.",
+    "label": "billing",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-281-b",
+    "pair_id": "pair-281",
+    "text": "Customer says: It is signin that fails, not charge.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-282-a",
+    "pair_id": "pair-282",
+    "text": "Today: It is charge that fails, not signin.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-282-b",
+    "pair_id": "pair-282",
+    "text": "Today: It is signin that fails, not charge.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-283-a",
+    "pair_id": "pair-283",
+    "text": "Please help: It is charge that fails, not signin.",
+    "label": "billing",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-283-b",
+    "pair_id": "pair-283",
+    "text": "Please help: It is signin that fails, not charge.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-284-a",
+    "pair_id": "pair-284",
+    "text": "signin works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-284-b",
+    "pair_id": "pair-284",
+    "text": "charge works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-285-a",
+    "pair_id": "pair-285",
+    "text": "Customer says: signin works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-285-b",
+    "pair_id": "pair-285",
+    "text": "Customer says: charge works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-286-a",
+    "pair_id": "pair-286",
+    "text": "Today: signin works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-286-b",
+    "pair_id": "pair-286",
+    "text": "Today: charge works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-287-a",
+    "pair_id": "pair-287",
+    "text": "Please help: signin works fine, but charge does not.",
+    "label": "billing",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-287-b",
+    "pair_id": "pair-287",
+    "text": "Please help: charge works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-288-a",
+    "pair_id": "pair-288",
+    "text": "The export failed, not the login.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-288-b",
+    "pair_id": "pair-288",
+    "text": "The login failed, not the export.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-289-a",
+    "pair_id": "pair-289",
+    "text": "Customer says: The export failed, not the login.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-289-b",
+    "pair_id": "pair-289",
+    "text": "Customer says: The login failed, not the export.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-290-a",
+    "pair_id": "pair-290",
+    "text": "Today: The export failed, not the login.",
+    "label": "technical",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-290-b",
+    "pair_id": "pair-290",
+    "text": "Today: The login failed, not the export.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-291-a",
+    "pair_id": "pair-291",
+    "text": "Please help: The export failed, not the login.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-291-b",
+    "pair_id": "pair-291",
+    "text": "Please help: The login failed, not the export.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-292-a",
+    "pair_id": "pair-292",
+    "text": "My export is broken; my login is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-292-b",
+    "pair_id": "pair-292",
+    "text": "My login is broken; my export is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-293-a",
+    "pair_id": "pair-293",
+    "text": "Customer says: My export is broken; my login is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-293-b",
+    "pair_id": "pair-293",
+    "text": "Customer says: My login is broken; my export is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-294-a",
+    "pair_id": "pair-294",
+    "text": "Today: My export is broken; my login is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-294-b",
+    "pair_id": "pair-294",
+    "text": "Today: My login is broken; my export is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-295-a",
+    "pair_id": "pair-295",
+    "text": "Please help: My export is broken; my login is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-295-b",
+    "pair_id": "pair-295",
+    "text": "Please help: My login is broken; my export is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-296-a",
+    "pair_id": "pair-296",
+    "text": "It is export that fails, not login.",
+    "label": "technical",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-296-b",
+    "pair_id": "pair-296",
+    "text": "It is login that fails, not export.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-297-a",
+    "pair_id": "pair-297",
+    "text": "Customer says: It is export that fails, not login.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-297-b",
+    "pair_id": "pair-297",
+    "text": "Customer says: It is login that fails, not export.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-298-a",
+    "pair_id": "pair-298",
+    "text": "Today: It is export that fails, not login.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-298-b",
+    "pair_id": "pair-298",
+    "text": "Today: It is login that fails, not export.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-299-a",
+    "pair_id": "pair-299",
+    "text": "Please help: It is export that fails, not login.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-299-b",
+    "pair_id": "pair-299",
+    "text": "Please help: It is login that fails, not export.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-300-a",
+    "pair_id": "pair-300",
+    "text": "login works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-300-b",
+    "pair_id": "pair-300",
+    "text": "export works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-301-a",
+    "pair_id": "pair-301",
+    "text": "Customer says: login works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-301-b",
+    "pair_id": "pair-301",
+    "text": "Customer says: export works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-302-a",
+    "pair_id": "pair-302",
+    "text": "Today: login works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-302-b",
+    "pair_id": "pair-302",
+    "text": "Today: export works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-303-a",
+    "pair_id": "pair-303",
+    "text": "Please help: login works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-303-b",
+    "pair_id": "pair-303",
+    "text": "Please help: export works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-304-a",
+    "pair_id": "pair-304",
+    "text": "The export failed, not the password.",
+    "label": "technical",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-304-b",
+    "pair_id": "pair-304",
+    "text": "The password failed, not the export.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-305-a",
+    "pair_id": "pair-305",
+    "text": "Customer says: The export failed, not the password.",
+    "label": "technical",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-305-b",
+    "pair_id": "pair-305",
+    "text": "Customer says: The password failed, not the export.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-306-a",
+    "pair_id": "pair-306",
+    "text": "Today: The export failed, not the password.",
+    "label": "technical",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-306-b",
+    "pair_id": "pair-306",
+    "text": "Today: The password failed, not the export.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-307-a",
+    "pair_id": "pair-307",
+    "text": "Please help: The export failed, not the password.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-307-b",
+    "pair_id": "pair-307",
+    "text": "Please help: The password failed, not the export.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-308-a",
+    "pair_id": "pair-308",
+    "text": "My export is broken; my password is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-308-b",
+    "pair_id": "pair-308",
+    "text": "My password is broken; my export is not.",
+    "label": "account",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-309-a",
+    "pair_id": "pair-309",
+    "text": "Customer says: My export is broken; my password is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-309-b",
+    "pair_id": "pair-309",
+    "text": "Customer says: My password is broken; my export is not.",
+    "label": "account",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-310-a",
+    "pair_id": "pair-310",
+    "text": "Today: My export is broken; my password is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-310-b",
+    "pair_id": "pair-310",
+    "text": "Today: My password is broken; my export is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-311-a",
+    "pair_id": "pair-311",
+    "text": "Please help: My export is broken; my password is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-311-b",
+    "pair_id": "pair-311",
+    "text": "Please help: My password is broken; my export is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-312-a",
+    "pair_id": "pair-312",
+    "text": "It is export that fails, not password.",
+    "label": "technical",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-312-b",
+    "pair_id": "pair-312",
+    "text": "It is password that fails, not export.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-313-a",
+    "pair_id": "pair-313",
+    "text": "Customer says: It is export that fails, not password.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-313-b",
+    "pair_id": "pair-313",
+    "text": "Customer says: It is password that fails, not export.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-314-a",
+    "pair_id": "pair-314",
+    "text": "Today: It is export that fails, not password.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-314-b",
+    "pair_id": "pair-314",
+    "text": "Today: It is password that fails, not export.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-315-a",
+    "pair_id": "pair-315",
+    "text": "Please help: It is export that fails, not password.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-315-b",
+    "pair_id": "pair-315",
+    "text": "Please help: It is password that fails, not export.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-316-a",
+    "pair_id": "pair-316",
+    "text": "password works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-316-b",
+    "pair_id": "pair-316",
+    "text": "export works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-317-a",
+    "pair_id": "pair-317",
+    "text": "Customer says: password works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-317-b",
+    "pair_id": "pair-317",
+    "text": "Customer says: export works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-318-a",
+    "pair_id": "pair-318",
+    "text": "Today: password works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-318-b",
+    "pair_id": "pair-318",
+    "text": "Today: export works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-319-a",
+    "pair_id": "pair-319",
+    "text": "Please help: password works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-319-b",
+    "pair_id": "pair-319",
+    "text": "Please help: export works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-320-a",
+    "pair_id": "pair-320",
+    "text": "The export failed, not the signin.",
+    "label": "technical",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-320-b",
+    "pair_id": "pair-320",
+    "text": "The signin failed, not the export.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-321-a",
+    "pair_id": "pair-321",
+    "text": "Customer says: The export failed, not the signin.",
+    "label": "technical",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-321-b",
+    "pair_id": "pair-321",
+    "text": "Customer says: The signin failed, not the export.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-322-a",
+    "pair_id": "pair-322",
+    "text": "Today: The export failed, not the signin.",
+    "label": "technical",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-322-b",
+    "pair_id": "pair-322",
+    "text": "Today: The signin failed, not the export.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-323-a",
+    "pair_id": "pair-323",
+    "text": "Please help: The export failed, not the signin.",
+    "label": "technical",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-323-b",
+    "pair_id": "pair-323",
+    "text": "Please help: The signin failed, not the export.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-324-a",
+    "pair_id": "pair-324",
+    "text": "My export is broken; my signin is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-324-b",
+    "pair_id": "pair-324",
+    "text": "My signin is broken; my export is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-325-a",
+    "pair_id": "pair-325",
+    "text": "Customer says: My export is broken; my signin is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-325-b",
+    "pair_id": "pair-325",
+    "text": "Customer says: My signin is broken; my export is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-326-a",
+    "pair_id": "pair-326",
+    "text": "Today: My export is broken; my signin is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-326-b",
+    "pair_id": "pair-326",
+    "text": "Today: My signin is broken; my export is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-327-a",
+    "pair_id": "pair-327",
+    "text": "Please help: My export is broken; my signin is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-327-b",
+    "pair_id": "pair-327",
+    "text": "Please help: My signin is broken; my export is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-328-a",
+    "pair_id": "pair-328",
+    "text": "It is export that fails, not signin.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-328-b",
+    "pair_id": "pair-328",
+    "text": "It is signin that fails, not export.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-329-a",
+    "pair_id": "pair-329",
+    "text": "Customer says: It is export that fails, not signin.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-329-b",
+    "pair_id": "pair-329",
+    "text": "Customer says: It is signin that fails, not export.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-330-a",
+    "pair_id": "pair-330",
+    "text": "Today: It is export that fails, not signin.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-330-b",
+    "pair_id": "pair-330",
+    "text": "Today: It is signin that fails, not export.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-331-a",
+    "pair_id": "pair-331",
+    "text": "Please help: It is export that fails, not signin.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-331-b",
+    "pair_id": "pair-331",
+    "text": "Please help: It is signin that fails, not export.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-332-a",
+    "pair_id": "pair-332",
+    "text": "signin works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-332-b",
+    "pair_id": "pair-332",
+    "text": "export works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-333-a",
+    "pair_id": "pair-333",
+    "text": "Customer says: signin works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-333-b",
+    "pair_id": "pair-333",
+    "text": "Customer says: export works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-334-a",
+    "pair_id": "pair-334",
+    "text": "Today: signin works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-334-b",
+    "pair_id": "pair-334",
+    "text": "Today: export works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-335-a",
+    "pair_id": "pair-335",
+    "text": "Please help: signin works fine, but export does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-335-b",
+    "pair_id": "pair-335",
+    "text": "Please help: export works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-336-a",
+    "pair_id": "pair-336",
+    "text": "The upload failed, not the login.",
+    "label": "technical",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-336-b",
+    "pair_id": "pair-336",
+    "text": "The login failed, not the upload.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-337-a",
+    "pair_id": "pair-337",
+    "text": "Customer says: The upload failed, not the login.",
+    "label": "technical",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-337-b",
+    "pair_id": "pair-337",
+    "text": "Customer says: The login failed, not the upload.",
+    "label": "account",
+    "template": 0,
+    "split": "test"
+  },
+  {
+    "id": "pair-338-a",
+    "pair_id": "pair-338",
+    "text": "Today: The upload failed, not the login.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-338-b",
+    "pair_id": "pair-338",
+    "text": "Today: The login failed, not the upload.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-339-a",
+    "pair_id": "pair-339",
+    "text": "Please help: The upload failed, not the login.",
+    "label": "technical",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-339-b",
+    "pair_id": "pair-339",
+    "text": "Please help: The login failed, not the upload.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-340-a",
+    "pair_id": "pair-340",
+    "text": "My upload is broken; my login is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-340-b",
+    "pair_id": "pair-340",
+    "text": "My login is broken; my upload is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-341-a",
+    "pair_id": "pair-341",
+    "text": "Customer says: My upload is broken; my login is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-341-b",
+    "pair_id": "pair-341",
+    "text": "Customer says: My login is broken; my upload is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-342-a",
+    "pair_id": "pair-342",
+    "text": "Today: My upload is broken; my login is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-342-b",
+    "pair_id": "pair-342",
+    "text": "Today: My login is broken; my upload is not.",
+    "label": "account",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-343-a",
+    "pair_id": "pair-343",
+    "text": "Please help: My upload is broken; my login is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-343-b",
+    "pair_id": "pair-343",
+    "text": "Please help: My login is broken; my upload is not.",
+    "label": "account",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-344-a",
+    "pair_id": "pair-344",
+    "text": "It is upload that fails, not login.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-344-b",
+    "pair_id": "pair-344",
+    "text": "It is login that fails, not upload.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-345-a",
+    "pair_id": "pair-345",
+    "text": "Customer says: It is upload that fails, not login.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-345-b",
+    "pair_id": "pair-345",
+    "text": "Customer says: It is login that fails, not upload.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-346-a",
+    "pair_id": "pair-346",
+    "text": "Today: It is upload that fails, not login.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-346-b",
+    "pair_id": "pair-346",
+    "text": "Today: It is login that fails, not upload.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-347-a",
+    "pair_id": "pair-347",
+    "text": "Please help: It is upload that fails, not login.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-347-b",
+    "pair_id": "pair-347",
+    "text": "Please help: It is login that fails, not upload.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-348-a",
+    "pair_id": "pair-348",
+    "text": "login works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-348-b",
+    "pair_id": "pair-348",
+    "text": "upload works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-349-a",
+    "pair_id": "pair-349",
+    "text": "Customer says: login works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-349-b",
+    "pair_id": "pair-349",
+    "text": "Customer says: upload works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-350-a",
+    "pair_id": "pair-350",
+    "text": "Today: login works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-350-b",
+    "pair_id": "pair-350",
+    "text": "Today: upload works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-351-a",
+    "pair_id": "pair-351",
+    "text": "Please help: login works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-351-b",
+    "pair_id": "pair-351",
+    "text": "Please help: upload works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-352-a",
+    "pair_id": "pair-352",
+    "text": "The upload failed, not the password.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-352-b",
+    "pair_id": "pair-352",
+    "text": "The password failed, not the upload.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-353-a",
+    "pair_id": "pair-353",
+    "text": "Customer says: The upload failed, not the password.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-353-b",
+    "pair_id": "pair-353",
+    "text": "Customer says: The password failed, not the upload.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-354-a",
+    "pair_id": "pair-354",
+    "text": "Today: The upload failed, not the password.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-354-b",
+    "pair_id": "pair-354",
+    "text": "Today: The password failed, not the upload.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-355-a",
+    "pair_id": "pair-355",
+    "text": "Please help: The upload failed, not the password.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-355-b",
+    "pair_id": "pair-355",
+    "text": "Please help: The password failed, not the upload.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-356-a",
+    "pair_id": "pair-356",
+    "text": "My upload is broken; my password is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-356-b",
+    "pair_id": "pair-356",
+    "text": "My password is broken; my upload is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-357-a",
+    "pair_id": "pair-357",
+    "text": "Customer says: My upload is broken; my password is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-357-b",
+    "pair_id": "pair-357",
+    "text": "Customer says: My password is broken; my upload is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-358-a",
+    "pair_id": "pair-358",
+    "text": "Today: My upload is broken; my password is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-358-b",
+    "pair_id": "pair-358",
+    "text": "Today: My password is broken; my upload is not.",
+    "label": "account",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-359-a",
+    "pair_id": "pair-359",
+    "text": "Please help: My upload is broken; my password is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-359-b",
+    "pair_id": "pair-359",
+    "text": "Please help: My password is broken; my upload is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-360-a",
+    "pair_id": "pair-360",
+    "text": "It is upload that fails, not password.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-360-b",
+    "pair_id": "pair-360",
+    "text": "It is password that fails, not upload.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-361-a",
+    "pair_id": "pair-361",
+    "text": "Customer says: It is upload that fails, not password.",
+    "label": "technical",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-361-b",
+    "pair_id": "pair-361",
+    "text": "Customer says: It is password that fails, not upload.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-362-a",
+    "pair_id": "pair-362",
+    "text": "Today: It is upload that fails, not password.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-362-b",
+    "pair_id": "pair-362",
+    "text": "Today: It is password that fails, not upload.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-363-a",
+    "pair_id": "pair-363",
+    "text": "Please help: It is upload that fails, not password.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-363-b",
+    "pair_id": "pair-363",
+    "text": "Please help: It is password that fails, not upload.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-364-a",
+    "pair_id": "pair-364",
+    "text": "password works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-364-b",
+    "pair_id": "pair-364",
+    "text": "upload works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-365-a",
+    "pair_id": "pair-365",
+    "text": "Customer says: password works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-365-b",
+    "pair_id": "pair-365",
+    "text": "Customer says: upload works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-366-a",
+    "pair_id": "pair-366",
+    "text": "Today: password works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-366-b",
+    "pair_id": "pair-366",
+    "text": "Today: upload works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-367-a",
+    "pair_id": "pair-367",
+    "text": "Please help: password works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-367-b",
+    "pair_id": "pair-367",
+    "text": "Please help: upload works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-368-a",
+    "pair_id": "pair-368",
+    "text": "The upload failed, not the signin.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-368-b",
+    "pair_id": "pair-368",
+    "text": "The signin failed, not the upload.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-369-a",
+    "pair_id": "pair-369",
+    "text": "Customer says: The upload failed, not the signin.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-369-b",
+    "pair_id": "pair-369",
+    "text": "Customer says: The signin failed, not the upload.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-370-a",
+    "pair_id": "pair-370",
+    "text": "Today: The upload failed, not the signin.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-370-b",
+    "pair_id": "pair-370",
+    "text": "Today: The signin failed, not the upload.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-371-a",
+    "pair_id": "pair-371",
+    "text": "Please help: The upload failed, not the signin.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-371-b",
+    "pair_id": "pair-371",
+    "text": "Please help: The signin failed, not the upload.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-372-a",
+    "pair_id": "pair-372",
+    "text": "My upload is broken; my signin is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-372-b",
+    "pair_id": "pair-372",
+    "text": "My signin is broken; my upload is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-373-a",
+    "pair_id": "pair-373",
+    "text": "Customer says: My upload is broken; my signin is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-373-b",
+    "pair_id": "pair-373",
+    "text": "Customer says: My signin is broken; my upload is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-374-a",
+    "pair_id": "pair-374",
+    "text": "Today: My upload is broken; my signin is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-374-b",
+    "pair_id": "pair-374",
+    "text": "Today: My signin is broken; my upload is not.",
+    "label": "account",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-375-a",
+    "pair_id": "pair-375",
+    "text": "Please help: My upload is broken; my signin is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-375-b",
+    "pair_id": "pair-375",
+    "text": "Please help: My signin is broken; my upload is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-376-a",
+    "pair_id": "pair-376",
+    "text": "It is upload that fails, not signin.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-376-b",
+    "pair_id": "pair-376",
+    "text": "It is signin that fails, not upload.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-377-a",
+    "pair_id": "pair-377",
+    "text": "Customer says: It is upload that fails, not signin.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-377-b",
+    "pair_id": "pair-377",
+    "text": "Customer says: It is signin that fails, not upload.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-378-a",
+    "pair_id": "pair-378",
+    "text": "Today: It is upload that fails, not signin.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-378-b",
+    "pair_id": "pair-378",
+    "text": "Today: It is signin that fails, not upload.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-379-a",
+    "pair_id": "pair-379",
+    "text": "Please help: It is upload that fails, not signin.",
+    "label": "technical",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-379-b",
+    "pair_id": "pair-379",
+    "text": "Please help: It is signin that fails, not upload.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-380-a",
+    "pair_id": "pair-380",
+    "text": "signin works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-380-b",
+    "pair_id": "pair-380",
+    "text": "upload works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-381-a",
+    "pair_id": "pair-381",
+    "text": "Customer says: signin works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-381-b",
+    "pair_id": "pair-381",
+    "text": "Customer says: upload works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-382-a",
+    "pair_id": "pair-382",
+    "text": "Today: signin works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-382-b",
+    "pair_id": "pair-382",
+    "text": "Today: upload works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-383-a",
+    "pair_id": "pair-383",
+    "text": "Please help: signin works fine, but upload does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-383-b",
+    "pair_id": "pair-383",
+    "text": "Please help: upload works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-384-a",
+    "pair_id": "pair-384",
+    "text": "The download failed, not the login.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-384-b",
+    "pair_id": "pair-384",
+    "text": "The login failed, not the download.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-385-a",
+    "pair_id": "pair-385",
+    "text": "Customer says: The download failed, not the login.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-385-b",
+    "pair_id": "pair-385",
+    "text": "Customer says: The login failed, not the download.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-386-a",
+    "pair_id": "pair-386",
+    "text": "Today: The download failed, not the login.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-386-b",
+    "pair_id": "pair-386",
+    "text": "Today: The login failed, not the download.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-387-a",
+    "pair_id": "pair-387",
+    "text": "Please help: The download failed, not the login.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-387-b",
+    "pair_id": "pair-387",
+    "text": "Please help: The login failed, not the download.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-388-a",
+    "pair_id": "pair-388",
+    "text": "My download is broken; my login is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-388-b",
+    "pair_id": "pair-388",
+    "text": "My login is broken; my download is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-389-a",
+    "pair_id": "pair-389",
+    "text": "Customer says: My download is broken; my login is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-389-b",
+    "pair_id": "pair-389",
+    "text": "Customer says: My login is broken; my download is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-390-a",
+    "pair_id": "pair-390",
+    "text": "Today: My download is broken; my login is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-390-b",
+    "pair_id": "pair-390",
+    "text": "Today: My login is broken; my download is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-391-a",
+    "pair_id": "pair-391",
+    "text": "Please help: My download is broken; my login is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-391-b",
+    "pair_id": "pair-391",
+    "text": "Please help: My login is broken; my download is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-392-a",
+    "pair_id": "pair-392",
+    "text": "It is download that fails, not login.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-392-b",
+    "pair_id": "pair-392",
+    "text": "It is login that fails, not download.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-393-a",
+    "pair_id": "pair-393",
+    "text": "Customer says: It is download that fails, not login.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-393-b",
+    "pair_id": "pair-393",
+    "text": "Customer says: It is login that fails, not download.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-394-a",
+    "pair_id": "pair-394",
+    "text": "Today: It is download that fails, not login.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-394-b",
+    "pair_id": "pair-394",
+    "text": "Today: It is login that fails, not download.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-395-a",
+    "pair_id": "pair-395",
+    "text": "Please help: It is download that fails, not login.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-395-b",
+    "pair_id": "pair-395",
+    "text": "Please help: It is login that fails, not download.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-396-a",
+    "pair_id": "pair-396",
+    "text": "login works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-396-b",
+    "pair_id": "pair-396",
+    "text": "download works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-397-a",
+    "pair_id": "pair-397",
+    "text": "Customer says: login works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-397-b",
+    "pair_id": "pair-397",
+    "text": "Customer says: download works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-398-a",
+    "pair_id": "pair-398",
+    "text": "Today: login works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-398-b",
+    "pair_id": "pair-398",
+    "text": "Today: download works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-399-a",
+    "pair_id": "pair-399",
+    "text": "Please help: login works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-399-b",
+    "pair_id": "pair-399",
+    "text": "Please help: download works fine, but login does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-400-a",
+    "pair_id": "pair-400",
+    "text": "The download failed, not the password.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-400-b",
+    "pair_id": "pair-400",
+    "text": "The password failed, not the download.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-401-a",
+    "pair_id": "pair-401",
+    "text": "Customer says: The download failed, not the password.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-401-b",
+    "pair_id": "pair-401",
+    "text": "Customer says: The password failed, not the download.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-402-a",
+    "pair_id": "pair-402",
+    "text": "Today: The download failed, not the password.",
+    "label": "technical",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-402-b",
+    "pair_id": "pair-402",
+    "text": "Today: The password failed, not the download.",
+    "label": "account",
+    "template": 0,
+    "split": "validation"
+  },
+  {
+    "id": "pair-403-a",
+    "pair_id": "pair-403",
+    "text": "Please help: The download failed, not the password.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-403-b",
+    "pair_id": "pair-403",
+    "text": "Please help: The password failed, not the download.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-404-a",
+    "pair_id": "pair-404",
+    "text": "My download is broken; my password is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-404-b",
+    "pair_id": "pair-404",
+    "text": "My password is broken; my download is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-405-a",
+    "pair_id": "pair-405",
+    "text": "Customer says: My download is broken; my password is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-405-b",
+    "pair_id": "pair-405",
+    "text": "Customer says: My password is broken; my download is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-406-a",
+    "pair_id": "pair-406",
+    "text": "Today: My download is broken; my password is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-406-b",
+    "pair_id": "pair-406",
+    "text": "Today: My password is broken; my download is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-407-a",
+    "pair_id": "pair-407",
+    "text": "Please help: My download is broken; my password is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-407-b",
+    "pair_id": "pair-407",
+    "text": "Please help: My password is broken; my download is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-408-a",
+    "pair_id": "pair-408",
+    "text": "It is download that fails, not password.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-408-b",
+    "pair_id": "pair-408",
+    "text": "It is password that fails, not download.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-409-a",
+    "pair_id": "pair-409",
+    "text": "Customer says: It is download that fails, not password.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-409-b",
+    "pair_id": "pair-409",
+    "text": "Customer says: It is password that fails, not download.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-410-a",
+    "pair_id": "pair-410",
+    "text": "Today: It is download that fails, not password.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-410-b",
+    "pair_id": "pair-410",
+    "text": "Today: It is password that fails, not download.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-411-a",
+    "pair_id": "pair-411",
+    "text": "Please help: It is download that fails, not password.",
+    "label": "technical",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-411-b",
+    "pair_id": "pair-411",
+    "text": "Please help: It is password that fails, not download.",
+    "label": "account",
+    "template": 2,
+    "split": "validation"
+  },
+  {
+    "id": "pair-412-a",
+    "pair_id": "pair-412",
+    "text": "password works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-412-b",
+    "pair_id": "pair-412",
+    "text": "download works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-413-a",
+    "pair_id": "pair-413",
+    "text": "Customer says: password works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-413-b",
+    "pair_id": "pair-413",
+    "text": "Customer says: download works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-414-a",
+    "pair_id": "pair-414",
+    "text": "Today: password works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-414-b",
+    "pair_id": "pair-414",
+    "text": "Today: download works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-415-a",
+    "pair_id": "pair-415",
+    "text": "Please help: password works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-415-b",
+    "pair_id": "pair-415",
+    "text": "Please help: download works fine, but password does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-416-a",
+    "pair_id": "pair-416",
+    "text": "The download failed, not the signin.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-416-b",
+    "pair_id": "pair-416",
+    "text": "The signin failed, not the download.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-417-a",
+    "pair_id": "pair-417",
+    "text": "Customer says: The download failed, not the signin.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-417-b",
+    "pair_id": "pair-417",
+    "text": "Customer says: The signin failed, not the download.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-418-a",
+    "pair_id": "pair-418",
+    "text": "Today: The download failed, not the signin.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-418-b",
+    "pair_id": "pair-418",
+    "text": "Today: The signin failed, not the download.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-419-a",
+    "pair_id": "pair-419",
+    "text": "Please help: The download failed, not the signin.",
+    "label": "technical",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-419-b",
+    "pair_id": "pair-419",
+    "text": "Please help: The signin failed, not the download.",
+    "label": "account",
+    "template": 0,
+    "split": "train"
+  },
+  {
+    "id": "pair-420-a",
+    "pair_id": "pair-420",
+    "text": "My download is broken; my signin is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-420-b",
+    "pair_id": "pair-420",
+    "text": "My signin is broken; my download is not.",
+    "label": "account",
+    "template": 1,
+    "split": "test"
+  },
+  {
+    "id": "pair-421-a",
+    "pair_id": "pair-421",
+    "text": "Customer says: My download is broken; my signin is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-421-b",
+    "pair_id": "pair-421",
+    "text": "Customer says: My signin is broken; my download is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-422-a",
+    "pair_id": "pair-422",
+    "text": "Today: My download is broken; my signin is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-422-b",
+    "pair_id": "pair-422",
+    "text": "Today: My signin is broken; my download is not.",
+    "label": "account",
+    "template": 1,
+    "split": "validation"
+  },
+  {
+    "id": "pair-423-a",
+    "pair_id": "pair-423",
+    "text": "Please help: My download is broken; my signin is not.",
+    "label": "technical",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-423-b",
+    "pair_id": "pair-423",
+    "text": "Please help: My signin is broken; my download is not.",
+    "label": "account",
+    "template": 1,
+    "split": "train"
+  },
+  {
+    "id": "pair-424-a",
+    "pair_id": "pair-424",
+    "text": "It is download that fails, not signin.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-424-b",
+    "pair_id": "pair-424",
+    "text": "It is signin that fails, not download.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-425-a",
+    "pair_id": "pair-425",
+    "text": "Customer says: It is download that fails, not signin.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-425-b",
+    "pair_id": "pair-425",
+    "text": "Customer says: It is signin that fails, not download.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-426-a",
+    "pair_id": "pair-426",
+    "text": "Today: It is download that fails, not signin.",
+    "label": "technical",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-426-b",
+    "pair_id": "pair-426",
+    "text": "Today: It is signin that fails, not download.",
+    "label": "account",
+    "template": 2,
+    "split": "test"
+  },
+  {
+    "id": "pair-427-a",
+    "pair_id": "pair-427",
+    "text": "Please help: It is download that fails, not signin.",
+    "label": "technical",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-427-b",
+    "pair_id": "pair-427",
+    "text": "Please help: It is signin that fails, not download.",
+    "label": "account",
+    "template": 2,
+    "split": "train"
+  },
+  {
+    "id": "pair-428-a",
+    "pair_id": "pair-428",
+    "text": "signin works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-428-b",
+    "pair_id": "pair-428",
+    "text": "download works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "train"
+  },
+  {
+    "id": "pair-429-a",
+    "pair_id": "pair-429",
+    "text": "Customer says: signin works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-429-b",
+    "pair_id": "pair-429",
+    "text": "Customer says: download works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "test"
+  },
+  {
+    "id": "pair-430-a",
+    "pair_id": "pair-430",
+    "text": "Today: signin works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-430-b",
+    "pair_id": "pair-430",
+    "text": "Today: download works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-431-a",
+    "pair_id": "pair-431",
+    "text": "Please help: signin works fine, but download does not.",
+    "label": "technical",
+    "template": 3,
+    "split": "validation"
+  },
+  {
+    "id": "pair-431-b",
+    "pair_id": "pair-431",
+    "text": "Please help: download works fine, but signin does not.",
+    "label": "account",
+    "template": 3,
+    "split": "validation"
+  }
+]

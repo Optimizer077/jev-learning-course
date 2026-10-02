@@ -63,6 +63,12 @@ GUIDES = {
         'You can distinguish rules, similarities, and probabilities, and explain why the local comparison says little about a model family as a whole.',
         ('A cosine similarity is 0.80. Does that mean the selected queue has an 80% probability of being correct?',
          'No. Similarity measures how closely two vectors align. A probability interpretation requires a suitable probabilistic model and evaluation; the number alone does not provide it.')),
+ '10': ('Optional PyTorch builder', 'Lessons 02 and 07; basic Python; PyTorch only for running',
+        'Train six real, small neural models. A model can learn only from the information its input preserves. Compare both ordinary accuracy and whether it gets both reversed sentences right.',
+        'Read the input-format and model tables, trace one update, then inspect the saved curves and paired results. Training and checkpoint code can wait for your second pass.',
+        'You can explain an update, identify lost word order, and report all seeds with their test denominators.',
+        ('A larger MLP receives the same word-presence vector for two opposite-label sentences. Can extra layers recover their original word order?',
+         'No. The representation already removed it. A deterministic network receiving the same vector produces the same result. Preserve the relevant information before asking training to use it.')),
 }
 
 RECAPS = {
@@ -85,6 +91,9 @@ RECAPS = {
  '09': ['Hold the task, examples, and label definitions fixed when comparing methods.',
         'A similarity score and a normalized probability have different meanings.',
         'If a representation drops the information needed to distinguish cases, a later decision rule cannot restore it.'],
+ '10': ['PyTorch separates scores, loss, gradients, and weight updates.',
+        'Averaging embeddings and adding more layers to word-presence inputs still discard order.',
+        'Choose checkpoints on validation, report every seed, and judge paired failures as well as aggregate accuracy.'],
 }
 
 WORDS = {
@@ -107,6 +116,10 @@ WORDS = {
  '09': [('Prototype', 'A representative vector built from examples in a class.'),
         ('Cosine similarity', 'How closely the directions of two numerical vectors align.'),
         ('Abstention', 'Choosing review instead of an automatic answer.')],
+ '10': [('Tensor', 'An array PyTorch can use in calculations and gradient tracking.'),
+        ('Gradient', 'How a small weight change affects the loss.'),
+        ('Checkpoint', 'A saved set of model weights.'),
+        ('Embedding', 'A learned numerical vector representing a token.')],
 }
 
 def welcome(md, code):
@@ -150,9 +163,10 @@ queue stays `technical`. A real model's prediction can still be wrong.
 | Learn how a small model is trained | [02 · From scratch](02_decision_model_from_scratch.ipynb) | Lesson 06 until later |
 | Build a complete local project | 02 → 03 → [07 · Text routing](07_text_routing_capstone.ipynb) | The live API lesson |
 | Call real Jev | 01 → [05 · Optional API](05_optional_real_jev_api.ipynb) | The architecture lab |
+| Train several small neural models | 02 → 07 → [10 · PyTorch lab](10_pytorch_models_lab.ipynb) | Live API access and a GPU |
 
 The lesson numbers are reference labels, not a requirement to finish every lesson in sequence.
-There are ten notebooks, including this welcome, the [worked solutions](08_exercises_and_solutions.ipynb),
+There are eleven notebooks, including this welcome, the [worked solutions](08_exercises_and_solutions.ipynb),
 and an optional [related-models lab](09_related_models_lab.ipynb).
 
 ## Read first; run when ready

@@ -7798,12 +7798,18 @@ body{background:#f6f8fb!important;color:#182b41!important}.jp-Notebook{max-width
 </style><style>
 .reader-tools{max-width:1120px;margin:0 auto;padding:16px 28px;background:#eaf0f7;
 font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
-.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer}
+.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer;
+display:inline-flex;align-items:center;min-height:44px}
 .reader-tools input{accent-color:#0d766f;margin-right:8px}
-.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650}
+.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650;
+min-height:44px;padding:10px 0}
 .reader-tools ul{padding-left:22px;columns:2;column-gap:30px}.reader-tools li{break-inside:avoid;margin:5px 0}
 .reader-tools a{color:#0d766f}.reading-mode .jp-CodeCell .jp-InputArea,.reading-mode .jp-InputPrompt,
 .reading-mode .jp-OutputPrompt,.reading-mode .jp-CodeCell.jp-mod-noOutputs{display:none!important}
+.lesson-skip-link{position:fixed;top:8px;left:8px;z-index:1000;padding:12px 18px;
+background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
+.lesson-skip-link:focus{transform:translateY(0);outline:3px solid #70e0d1;outline-offset:3px}
+.jp-RenderedImage img,.jp-RenderedHTMLCommon img{max-width:100%;height:auto}
 .jp-RenderedHTMLCommon details{background:#f0f5fb;border:1px solid #d9e2eb;border-radius:8px;padding:12px 16px;margin:16px 0}
 .jp-RenderedHTMLCommon summary{cursor:pointer;font-weight:650;color:#0d766f}
 .jp-RenderedHTMLCommon blockquote{border-left:3px solid #ad5b20!important;background:#fff8f1;padding:8px 18px!important}
@@ -7811,11 +7817,11 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 .jp-RenderedHTMLCommon{overflow-wrap:anywhere}.jp-RenderedHTMLCommon pre{white-space:pre-wrap}
 @media(max-width:650px){.reader-tools{padding:16px 20px}.reader-tools ul{columns:1}
 .jp-InputPrompt,.jp-OutputPrompt{display:none!important}.jp-RenderedHTMLCommon table{display:block;overflow-x:auto}}
-@media print{.course-nav,.reader-tools{display:none!important}.jp-Notebook{max-width:none}}
+@media print{.course-nav,.reader-tools,.lesson-skip-link{display:none!important}.jp-Notebook{max-width:none}}
 </style></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
+<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6a017587">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12b215d1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7823,7 +7829,9 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="course-outline">Course outline<a class="anchor-link" href="#course-outline">¶</a></h1><p><a href="README.html">Course home</a> · <a href="SETUP.html">Setup</a> · <a href="assignments_README.html">Assignments</a> · <a href="QUICK_REFERENCE.html">Reference</a></p>
 <p>Read the beginner modules first. Add the coding and advanced modules according to your goal.
-Each checkpoint describes something you should be able to explain or demonstrate.</p>
+Each checkpoint describes something you should be able to explain or demonstrate.
+Numbers identify lessons; they are not a requirement to complete every lesson in numerical order.
+Use <a href="LEARNING_GUIDE.html">the short study plan</a> when you prefer sessions with clear stopping points.</p>
 <h2 id="module-1--understand-the-interface">Module 1 · Understand the interface<a class="anchor-link" href="#module-1--understand-the-interface">¶</a></h2><p><strong>Lessons:</strong> <a href="00_start_here.html">00 · Start here</a>, <a href="01_jev_basics.html">01 · Jev basics</a></p>
 <p><strong>Before you start:</strong> no machine-learning background. Read saved outputs; code is optional.</p>
 <p>By the end, you can:</p>
@@ -7897,10 +7905,24 @@ Then try practice questions 10–12.</p>
 <td>Compare rules, similarities, and probabilities on fixed cases</td>
 <td>Lesson 07; basic arrays</td>
 </tr>
+<tr>
+<td><a href="10_pytorch_models_lab.html">10 · PyTorch models</a></td>
+<td>Train six small models and explain representation limits using a controlled toy task</td>
+<td>Lessons 02 and 07; basic Python; PyTorch for running</td>
+</tr>
 </tbody>
 </table>
 <p>Lesson 05 can be read and run offline with its fixture. Only enable the live flag when you intend
-to call the provider. Lesson 09 measures local examples, not Jev or other neural model families.</p>
+to call the provider. Lesson 09 measures local examples, not Jev or other neural model families.
+Lesson 10 trains small CPU models from scratch on separate, authored synthetic sentences.
+Its linear classifier, MLP, averaged embeddings, CNN, GRU, and tiny Transformer are learning
+experiments; their results do not implement or benchmark Jev.</p>
+<h3 id="a-checkpoint-for-the-pytorch-lab">A checkpoint for the PyTorch lab<a class="anchor-link" href="#a-checkpoint-for-the-pytorch-lab">¶</a></h3><p>Complete <a href="assignments_04_compare_torch_models.html">Assignment 4</a>. Explain what changes between
+models and what remains fixed: the question, reference labels, split assignment, and evaluation
+procedure. Report every model's result and the variation across seeds. State which comparisons
+are limited by the small data generator and chosen training budget.</p>
+<p>Train/validation loss curves help you inspect learning. They do not replace the held-out result,
+and a test score should not decide the next checkpoint or training setting.</p>
 <p>Use <a href="08_exercises_and_solutions.html">08 · Exercises and solutions</a> throughout the course.
 Attempt an exercise before reading its solution.</p>
 <h2 id="your-course-checklist">Your course checklist<a class="anchor-link" href="#your-course-checklist">¶</a></h2><ul>
@@ -7912,6 +7934,7 @@ Attempt an exercise before reading its solution.</p>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can justify an action using costs and permissions.</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can keep fitting, tuning, and testing separate.</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>I can state a representation failure and an evaluation limitation.</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"/>If I choose the PyTorch lab, I can explain a training update and compare all models without test-set tuning.</li>
 </ul>
 <p>Copy this checklist into your own notes to track progress. No account, submission, or certificate
 is required to use the course.</p>

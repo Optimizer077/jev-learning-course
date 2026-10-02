@@ -7798,12 +7798,18 @@ body{background:#f6f8fb!important;color:#182b41!important}.jp-Notebook{max-width
 </style><style>
 .reader-tools{max-width:1120px;margin:0 auto;padding:16px 28px;background:#eaf0f7;
 font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
-.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer}
+.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer;
+display:inline-flex;align-items:center;min-height:44px}
 .reader-tools input{accent-color:#0d766f;margin-right:8px}
-.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650}
+.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650;
+min-height:44px;padding:10px 0}
 .reader-tools ul{padding-left:22px;columns:2;column-gap:30px}.reader-tools li{break-inside:avoid;margin:5px 0}
 .reader-tools a{color:#0d766f}.reading-mode .jp-CodeCell .jp-InputArea,.reading-mode .jp-InputPrompt,
 .reading-mode .jp-OutputPrompt,.reading-mode .jp-CodeCell.jp-mod-noOutputs{display:none!important}
+.lesson-skip-link{position:fixed;top:8px;left:8px;z-index:1000;padding:12px 18px;
+background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
+.lesson-skip-link:focus{transform:translateY(0);outline:3px solid #70e0d1;outline-offset:3px}
+.jp-RenderedImage img,.jp-RenderedHTMLCommon img{max-width:100%;height:auto}
 .jp-RenderedHTMLCommon details{background:#f0f5fb;border:1px solid #d9e2eb;border-radius:8px;padding:12px 16px;margin:16px 0}
 .jp-RenderedHTMLCommon summary{cursor:pointer;font-weight:650;color:#0d766f}
 .jp-RenderedHTMLCommon blockquote{border-left:3px solid #ad5b20!important;background:#fff8f1;padding:8px 18px!important}
@@ -7811,11 +7817,11 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 .jp-RenderedHTMLCommon{overflow-wrap:anywhere}.jp-RenderedHTMLCommon pre{white-space:pre-wrap}
 @media(max-width:650px){.reader-tools{padding:16px 20px}.reader-tools ul{columns:1}
 .jp-InputPrompt,.jp-OutputPrompt{display:none!important}.jp-RenderedHTMLCommon table{display:block;overflow-x:auto}}
-@media print{.course-nav,.reader-tools{display:none!important}.jp-Notebook{max-width:none}}
+@media print{.course-nav,.reader-tools,.lesson-skip-link{display:none!important}.jp-Notebook{max-width:none}}
 </style></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
+<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d955a2e1">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5d85b77d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7823,6 +7829,42 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="a-learning-plan-you-can-finish-in-small-sessions">A learning plan you can finish in small sessions<a class="anchor-link" href="#a-learning-plan-you-can-finish-in-small-sessions">¶</a></h1><p>Choose the first session for an introduction. Add the next two when you want to understand the
 calculations or build something. Times below are study estimates; take longer when an idea is new.</p>
+<p>The lesson numbers are reference labels: you do not need to finish every notebook in order.
+Start with one outcome and stop when you can explain it in your own words.</p>
+<table>
+<thead>
+<tr>
+<th>Your goal today</th>
+<th>Follow this route</th>
+<th>You have finished when…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Understand Jev without coding</td>
+<td>Session 1</td>
+<td>You can separate a question, an estimate, and an action.</td>
+</tr>
+<tr>
+<td>Understand probabilities and training</td>
+<td>Sessions 1–2</td>
+<td>You can trace one prediction and explain a probability's limits.</td>
+</tr>
+<tr>
+<td>Build a small text router</td>
+<td>Sessions 1–3</td>
+<td>You can report a held-out result and explain one failure.</td>
+</tr>
+<tr>
+<td>Train several PyTorch models</td>
+<td>Session 4 after lessons 02 and 07</td>
+<td>You can compare models without tuning on the test set.</td>
+</tr>
+</tbody>
+</table>
+<p>Reading the saved outputs counts as learning. Running the code is a separate choice; use
+<a href="SETUP.html">setup help</a> when you are ready. Keep the <a href="VISUAL_GUIDE.html">visual guide</a> beside
+the lesson if the written explanation feels abstract.</p>
 <h2 id="session-1-explain-one-decision">Session 1: explain one decision<a class="anchor-link" href="#session-1-explain-one-decision">¶</a></h2><p><strong>Suggested time: 15–25 minutes. No coding required.</strong></p>
 <ol>
 <li>Read <a href="00_start_here.html">00 · Start here</a>. Explain the difference between an estimate and an action.</li>
@@ -7874,6 +7916,59 @@ using the system on real messages. Include the test denominator when mentioning 
 For a real request, continue to <a href="05_optional_real_jev_api.html">05 · Optional API</a>.
 For a side-by-side local comparison, continue to <a href="09_related_models_lab.html">09 · Related-models lab</a>.
 Use the <a href="QUICK_REFERENCE.html">quick reference</a> for definitions, calculations, and common confusions.</p>
+<h2 id="session-4-train-several-models-and-compare-fairly">Session 4: train several models and compare fairly<a class="anchor-link" href="#session-4-train-several-models-and-compare-fairly">¶</a></h2><p><strong>Suggested time: 45–75 minutes. Optional. Basic Python and lessons 02 and 07 help.</strong>
+Reading the saved comparison is enough for the core questions. PyTorch is required to run training;
+a CPU is sufficient. These experiments start with small randomly initialized models, not downloaded
+language-model weights.</p>
+<ol>
+<li>Open <a href="10_pytorch_models_lab.html">10 · PyTorch models lab</a>. Read the task and
+source label first: its authored synthetic sentences are a new dataset, separate from the 54 tickets.</li>
+<li>Read one reversed sentence pair. Predict which models can distinguish it before looking at results.</li>
+<li>Inspect the split checks. Vocabulary comes from training; reversed pairs stay in the same split.
+Validation selects training checkpoints; the frozen comparison uses test data afterward.</li>
+<li>Follow one training loop: input → scores → loss → gradients → weight update.
+You can skip the deeper layer code on your first pass.</li>
+<li>Compare all six models and all reported seeds. Read accuracy with the test denominator,
+inspect the pair result, and explain what the loss curves show.</li>
+<li>Complete <a href="assignments_04_compare_torch_models.html">Assignment 4 · Compare PyTorch models</a>.</li>
+</ol>
+<p><strong>Your checkpoint:</strong> explain why adding a nonlinear layer to the same word-presence features
+cannot recover lost word order, and why a high score on generated sentences is not evidence of
+general language understanding.</p>
+<p>The six models serve different teaching purposes: two use bag-of-words features, one averages
+token embeddings, and three preserve sequence information through a CNN, GRU, or Transformer
+with position embeddings. Access to word order helps only if the training procedure learns to use it.
+Do not assume a model will succeed just because its architecture can represent the distinction.</p>
+<h2 id="keep-a-four-line-experiment-note">Keep a four-line experiment note<a class="anchor-link" href="#keep-a-four-line-experiment-note">¶</a></h2><p>First run or read the delivered settings. Then choose <strong>one</strong> change and predict its effect.
+Keep the original test results as a reference; use validation to investigate a changed setting.</p>
+<table>
+<thead>
+<tr>
+<th>Write down…</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>My change</td>
+<td>Reduce the training examples; leave the model and split seed fixed.</td>
+</tr>
+<tr>
+<td>My prediction</td>
+<td>Validation loss may increase because the model sees fewer examples.</td>
+</tr>
+<tr>
+<td>What happened</td>
+<td>Copy the observed value, seed, split, and denominator.</td>
+</tr>
+<tr>
+<td>My explanation and limit</td>
+<td>Describe the pattern; a single run is not a general model ranking.</td>
+</tr>
+</tbody>
+</table>
+<p>If you use a test result to decide the next change, that test has become development data.
+Record that explicitly and reserve fresh held-out cases for a later assessment.</p>
 <h2 id="when-an-idea-feels-difficult">When an idea feels difficult<a class="anchor-link" href="#when-an-idea-feels-difficult">¶</a></h2><table>
 <thead>
 <tr>
@@ -7888,7 +7983,7 @@ Use the <a href="QUICK_REFERENCE.html">quick reference</a> for definitions, calc
 </tr>
 <tr>
 <td>The code</td>
-<td>Hide it in the browser and inspect the saved result first.</td>
+<td>Read the paragraph and saved result first; use the optional HTML copy's code toggle if helpful.</td>
 </tr>
 <tr>
 <td>An incorrect practice answer</td>
@@ -7902,6 +7997,10 @@ Use the <a href="QUICK_REFERENCE.html">quick reference</a> for definitions, calc
 <td>Which model did what</td>
 <td>Label the claim: documented Jev behavior, general ML mechanism, or invented teaching example.</td>
 </tr>
+<tr>
+<td>A model-comparison table</td>
+<td>Find the task, data source, split, denominator, training budget, and seeds before choosing a favorite.</td>
+</tr>
 </tbody>
 </table>
 <p>You are making progress when you can predict a small change and explain a limitation. Rerunning
@@ -7912,6 +8011,9 @@ and “Which part is our application rule?” throughout the support-message exa
 <p>For the numeric lab, have learners calculate one score on paper before revealing the table.
 For the project, discuss the word-order failure even when time is too short to run training.
 Let learners finish at a checkpoint instead of rushing through every notebook.</p>
+<p>For the PyTorch lab, assign one model to each pair of learners. Have them explain what information
+their model receives, then compare the saved results together. Ask “Could this model represent the
+distinction?” before “Did this training run learn it?” Keep those two questions separate.</p>
 <p><a href="README.html">Course home</a> · <a href="PRACTICE.html">Guided practice</a> · <a href="GLOSSARY.html">Glossary</a></p>
 </div>
 </div>

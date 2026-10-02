@@ -7798,12 +7798,18 @@ body{background:#f6f8fb!important;color:#182b41!important}.jp-Notebook{max-width
 </style><style>
 .reader-tools{max-width:1120px;margin:0 auto;padding:16px 28px;background:#eaf0f7;
 font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
-.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer}
+.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer;
+display:inline-flex;align-items:center;min-height:44px}
 .reader-tools input{accent-color:#0d766f;margin-right:8px}
-.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650}
+.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650;
+min-height:44px;padding:10px 0}
 .reader-tools ul{padding-left:22px;columns:2;column-gap:30px}.reader-tools li{break-inside:avoid;margin:5px 0}
 .reader-tools a{color:#0d766f}.reading-mode .jp-CodeCell .jp-InputArea,.reading-mode .jp-InputPrompt,
 .reading-mode .jp-OutputPrompt,.reading-mode .jp-CodeCell.jp-mod-noOutputs{display:none!important}
+.lesson-skip-link{position:fixed;top:8px;left:8px;z-index:1000;padding:12px 18px;
+background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
+.lesson-skip-link:focus{transform:translateY(0);outline:3px solid #70e0d1;outline-offset:3px}
+.jp-RenderedImage img,.jp-RenderedHTMLCommon img{max-width:100%;height:auto}
 .jp-RenderedHTMLCommon details{background:#f0f5fb;border:1px solid #d9e2eb;border-radius:8px;padding:12px 16px;margin:16px 0}
 .jp-RenderedHTMLCommon summary{cursor:pointer;font-weight:650;color:#0d766f}
 .jp-RenderedHTMLCommon blockquote{border-left:3px solid #ad5b20!important;background:#fff8f1;padding:8px 18px!important}
@@ -7811,11 +7817,11 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 .jp-RenderedHTMLCommon{overflow-wrap:anywhere}.jp-RenderedHTMLCommon pre{white-space:pre-wrap}
 @media(max-width:650px){.reader-tools{padding:16px 20px}.reader-tools ul{columns:1}
 .jp-InputPrompt,.jp-OutputPrompt{display:none!important}.jp-RenderedHTMLCommon table{display:block;overflow-x:auto}}
-@media print{.course-nav,.reader-tools{display:none!important}.jp-Notebook{max-width:none}}
+@media print{.course-nav,.reader-tools,.lesson-skip-link{display:none!important}.jp-Notebook{max-width:none}}
 </style></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
+<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=81c987a0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e6a2fc2d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7836,6 +7842,21 @@ words make it deliberately approachable, while unseen wording exposes the baseli
 Do not use its accuracy to compare Jev with any other model.</p>
 <p>See <a href="VISUAL_GUIDE.html#keep-fitting-tuning-and-testing-separate">the split diagram</a>
 before running the project. The figure's counts are read from this JSON file when rebuilt.</p>
+<h2 id="separate-pytorch-toy-task">Separate PyTorch toy task<a class="anchor-link" href="#separate-pytorch-toy-task">¶</a></h2><p><code>torch_toy.json</code> contains <strong>864 authored synthetic sentences</strong> for lesson 10: <strong>520 train,
+172 validation, and 172 test</strong>. These are generated learning inputs, separate from <code>tickets.json</code>.
+There are 432 reversed sentence pairs. Both partners stay in the same split and have different
+reference queues. Training uses 260 pairs; validation and test use 86 each.</p>
+<p>The task identifies the issue described as failing, using three billing terms, three technical
+terms, three account terms, four grammatical templates, and four prefixes. Swapping the two issue
+terms changes the reference label while preserving the complete token counts. The split is fixed
+with seed 314 at the pair level. Vocabulary fitting uses training text only; labels and split IDs
+are never text features. The checked generator is <code>scripts/build_torch_dataset.py</code>, with its
+construction and models in <code>src/torch_lab.py</code>.</p>
+<p>Templates and issue words are shared across splits. This tests held-out combinations within an
+authored grammar, not unseen grammar or realistic support traffic. No real customer records,
+Jev responses, pretrained weights, or external corpus are included. Perfect toy-task accuracy
+would not establish general language understanding. See <a href="10_pytorch_models_lab.html">lesson 10</a>
+and <a href="assignments_04_compare_torch_models.html">Assignment 4</a>.</p>
 </div>
 </div>
 </div>

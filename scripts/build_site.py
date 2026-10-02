@@ -39,6 +39,7 @@ SUPPORT_PAGES = [
     ('assignments/01_design_a_decision.md','assignments_01_design_a_decision'),
     ('assignments/02_probabilities_and_actions.md','assignments_02_probabilities_and_actions'),
     ('assignments/03_evaluate_a_router.md','assignments_03_evaluate_a_router'),
+    ('assignments/04_compare_torch_models.md','assignments_04_compare_torch_models'),
 ]
 
 SUPPORT_PAGES = [(legacy_location(source), target) for source, target in SUPPORT_PAGES]
@@ -56,6 +57,7 @@ LESSONS = [
 ('07_text_routing_capstone','Build the complete system','Train a local text router on fictional tickets, then inspect held-out results and failures.'),
 ('08_exercises_and_solutions','Check your understanding','Worked answers with runnable checks, from softmax to label leakage.'),
 ('09_related_models_lab','Compare related approaches','Try rules, lexical prototypes, and a learned classifier on the same fictional messages.'),
+('10_pytorch_models_lab','Train six PyTorch models','Trace updates, compare word-order representations, and evaluate three seeds on a paired toy task.'),
 ]
 
 def document(title, body, script=''):

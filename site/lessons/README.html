@@ -7798,12 +7798,18 @@ body{background:#f6f8fb!important;color:#182b41!important}.jp-Notebook{max-width
 </style><style>
 .reader-tools{max-width:1120px;margin:0 auto;padding:16px 28px;background:#eaf0f7;
 font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
-.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer}
+.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer;
+display:inline-flex;align-items:center;min-height:44px}
 .reader-tools input{accent-color:#0d766f;margin-right:8px}
-.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650}
+.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650;
+min-height:44px;padding:10px 0}
 .reader-tools ul{padding-left:22px;columns:2;column-gap:30px}.reader-tools li{break-inside:avoid;margin:5px 0}
 .reader-tools a{color:#0d766f}.reading-mode .jp-CodeCell .jp-InputArea,.reading-mode .jp-InputPrompt,
 .reading-mode .jp-OutputPrompt,.reading-mode .jp-CodeCell.jp-mod-noOutputs{display:none!important}
+.lesson-skip-link{position:fixed;top:8px;left:8px;z-index:1000;padding:12px 18px;
+background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
+.lesson-skip-link:focus{transform:translateY(0);outline:3px solid #70e0d1;outline-offset:3px}
+.jp-RenderedImage img,.jp-RenderedHTMLCommon img{max-width:100%;height:auto}
 .jp-RenderedHTMLCommon details{background:#f0f5fb;border:1px solid #d9e2eb;border-radius:8px;padding:12px 16px;margin:16px 0}
 .jp-RenderedHTMLCommon summary{cursor:pointer;font-weight:650;color:#0d766f}
 .jp-RenderedHTMLCommon blockquote{border-left:3px solid #ad5b20!important;background:#fff8f1;padding:8px 18px!important}
@@ -7811,11 +7817,11 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 .jp-RenderedHTMLCommon{overflow-wrap:anywhere}.jp-RenderedHTMLCommon pre{white-space:pre-wrap}
 @media(max-width:650px){.reader-tools{padding:16px 20px}.reader-tools ul{columns:1}
 .jp-InputPrompt,.jp-OutputPrompt{display:none!important}.jp-RenderedHTMLCommon table{display:block;overflow-x:auto}}
-@media print{.course-nav,.reader-tools{display:none!important}.jp-Notebook{max-width:none}}
+@media print{.course-nav,.reader-tools,.lesson-skip-link{display:none!important}.jp-Notebook{max-width:none}}
 </style></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
+<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d15cdb28">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4ae2742a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7824,7 +7830,7 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 <p align="center">
 <picture>
 <source media="(max-width: 650px)" srcset="../../assets/course-banner-mobile.svg"/>
-<img alt="Jev learning course: give evidence, a question, and criteria; read a typed estimate; apply an action rule. Ten notebooks and three assignments." src="../../assets/course-banner.svg" width="1200"/>
+<img alt="Jev learning course: give evidence, a question, and criteria; read a typed estimate; apply an action rule. Eleven notebooks and four assignments." src="../../assets/course-banner.svg" width="1200"/>
 </picture>
 </p>
 <h1 id="jev-learning-course">Jev learning course<a class="anchor-link" href="#jev-learning-course">¶</a></h1><p align="center">
@@ -7881,7 +7887,9 @@ New to machine learning? Read <strong>00 → 01 → 04</strong>, then try <a hre
 </tbody>
 </table>
 <p>Each lesson has a <strong>Colab button</strong>, a goal, a worked example, and a self-check.
-<a href="notebooks.html">Browse all ten lessons</a>, including optional API and architecture labs.</p>
+<a href="notebooks.html">Browse all eleven lessons</a>, including optional API and architecture labs.
+Want hands-on neural training? <a href="10_pytorch_models_lab.html">Lesson 10</a> trains <strong>six small PyTorch models</strong>
+on a paired toy task, with saved curves, three seeds, and reloadable checkpoints. PyTorch is optional.</p>
 <h2 id="find-what-you-need">Find what you need<a class="anchor-link" href="#find-what-you-need">¶</a></h2><table>
 <thead>
 <tr>
@@ -7892,7 +7900,7 @@ New to machine learning? Read <strong>00 → 01 → 04</strong>, then try <a hre
 <tbody>
 <tr>
 <td><a href="notebooks.html">notebooks/</a></td>
-<td>Ten runnable lessons, saved results, and Colab links</td>
+<td>Eleven runnable lessons, saved results, and Colab links</td>
 </tr>
 <tr>
 <td><a href="guides.html">docs/</a></td>
@@ -7900,18 +7908,18 @@ New to machine learning? Read <strong>00 → 01 → 04</strong>, then try <a hre
 </tr>
 <tr>
 <td><a href="assignments_README.html">assignments/</a></td>
-<td>Three guided tasks with success criteria</td>
+<td>Four guided tasks with success criteria</td>
 </tr>
 <tr>
 <td><a href="data_README.html">data/</a></td>
-<td>54 fictional tickets with fixed train, validation, test, and stress splits</td>
+<td>54 fictional tickets and 864 synthetic sentences with fixed splits</td>
 </tr>
 </tbody>
 </table>
 <p>Teaching code lives in <code>src/</code>, rebuild tools in <code>scripts/</code>, and visual assets in <code>assets/</code>.
 The optional offline playground is in <code>site/</code>; download the course and open <code>site/index.html</code> locally.
 See <a href="REPOSITORY.html">repository layout</a> or <a href="CONTRIBUTING.html">contributing</a> for maintenance.</p>
-<h2 id="know-what-the-examples-establish">Know what the examples establish<a class="anchor-link" href="#know-what-the-examples-establish">¶</a></h2><p>The NumPy models illustrate general mechanisms; they do not reproduce Jev's proprietary model.
+<h2 id="know-what-the-examples-establish">Know what the examples establish<a class="anchor-link" href="#know-what-the-examples-establish">¶</a></h2><p>The NumPy and PyTorch models illustrate general mechanisms; they do not reproduce Jev's proprietary model.
 The fictional dataset is a teaching example, not a production benchmark. Lesson 05 is the only
 optional live integration and is <strong>disabled by default</strong>. <a href="SOURCES.html">Sources and evidence labels</a>.</p>
 <p>Independent educational course. Also learning about diffusion?

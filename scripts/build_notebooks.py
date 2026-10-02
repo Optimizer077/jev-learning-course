@@ -743,4 +743,6 @@ from extra_lessons import build_extra
 build_extra(save, md, code, SETUP)
 from related_lessons import build_related
 build_related(save, md, code, SETUP)
+from torch_lessons import build_torch
+build_torch(save, md, code)
 print('Created the expanded notebook course in', ROOT)

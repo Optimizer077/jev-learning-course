@@ -81,4 +81,56 @@ or a Jev benchmark. For a broader comparison, define the task, collect independe
 examples, freeze settings before test, and measure the complete workflow. Lesson 04 lists what
 to hold fixed and what to record.
 
+## Learn PyTorch by changing the information a model can use
+
+The [PyTorch training lab](../notebooks/10_pytorch_models_lab.ipynb) trains small models from scratch
+on an authored routing task. No pretrained language weights or Jev service are involved.
+Its useful question is: **what happens when the answer depends on word order?**
+
+Read the bag-of-words baseline first. Then compare the sequence models. You do not need to
+understand all six architectures before running the lesson.
+
+| Model | How it represents a message | What the comparison teaches |
+|---|---|---|
+| Bag-of-words linear | One feature per known word, followed by a learned weighted sum | A transparent baseline; changing order leaves its input unchanged |
+| Bag-of-words MLP | The same word features, followed by nonlinear hidden layers | More flexible scoring cannot restore discarded order |
+| Mean-embedding classifier | Learned word vectors averaged over non-padding tokens | Averaging also loses order; learning vectors does not remove that limitation |
+| Small CNN | Learned filters over neighboring token vectors | Local token arrangements can become features; the window size limits direct local context |
+| GRU | A recurrent hidden state updated along the token sequence | Sequence order can affect the representation; useful behavior still has to be learned |
+| Tiny Transformer | Token and position embeddings processed with attention | Attention with position information can distinguish order; a tiny trained model is not a pretrained language system |
+
+The first three representations are unchanged when the same tokens are rearranged. If two such
+messages have different reference labels, those models must give the same distribution to both
+and therefore cannot get both labels right. Adding layers, training longer, or changing a threshold
+does not repair this representation collision. A CNN, GRU, or Transformer can distinguish the
+inputs, but that capability alone does not guarantee a correct learned answer.
+
+All six models still use a fixed three-label task head. They do not accept arbitrary new question
+descriptions in the way Jev's typed request interface does. PyTorch supplies tensor operations and
+automatic differentiation; using it does not make a model calibrated or reproduce RLCD.
+
+## Read a training result without overclaiming
+
+1. **Check the split.** Learn vocabulary and weights from training examples. Select checkpoints
+   on validation examples. Keep both members of a reversed-message pair in the same split so a
+   paired construction does not cross the boundary.
+2. **Read both loss curves.** Falling training loss shows that the optimizer fits the training
+   task. If validation loss rises while training loss falls, generalization on that split is getting
+   worse; the final epoch need not be the best checkpoint.
+3. **Count ordinary and paired mistakes.** Report correct labels / test messages, then pairs
+   where both labels are correct / test pairs. One correct member does not resolve the pair.
+4. **Compare every seed.** Different initial weights can produce different learned behavior.
+   Report all fixed runs rather than selecting the most flattering test result. Variation across
+   seeds measures training variability on this fixed task, not uncertainty about real traffic.
+5. **State the task's boundary.** A generated dataset can reuse vocabulary, grammar, and templates
+   across splits. Separate examples under the same construction test that synthetic distribution;
+   they do not establish understanding of unfamiliar language or customer messages.
+
+The models have different parameter counts and computation costs. An equal epoch budget keeps
+the exercise bounded; it does not make this a controlled comparison of whole architecture families.
+
+The multiclass log loss and Brier score assess probability quality. They are not pure calibration
+metrics, and a lower loss is not proof of calibration. Inspect reliability, subgroup errors, and
+out-of-domain cases on suitable separate data before choosing a real automation policy.
+
 [Try the comparison lab](../notebooks/09_related_models_lab.ipynb) · [Quick reference](QUICK_REFERENCE.md) · [Sources](SOURCES.md)

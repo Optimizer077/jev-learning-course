@@ -4,6 +4,8 @@
 
 Read the beginner modules first. Add the coding and advanced modules according to your goal.
 Each checkpoint describes something you should be able to explain or demonstrate.
+Numbers identify lessons; they are not a requirement to complete every lesson in numerical order.
+Use [the short study plan](LEARNING_GUIDE.md) when you prefer sessions with clear stopping points.
 
 ## Module 1 · Understand the interface
 
@@ -81,9 +83,23 @@ Then try practice questions 10–12.
 | [05 · Real API](../notebooks/05_optional_real_jev_api.ipynb) | Identify the request, validate a response, and plan a real evaluation | Lessons 01 and 04; Python dictionaries |
 | [06 · Mechanisms](../notebooks/06_architecture_and_training_lab.ipynb) | Trace generic scoring and attention while distinguishing the demo from Jev | Lesson 02; arrays and softmax |
 | [09 · Related approaches](../notebooks/09_related_models_lab.ipynb) | Compare rules, similarities, and probabilities on fixed cases | Lesson 07; basic arrays |
+| [10 · PyTorch models](../notebooks/10_pytorch_models_lab.ipynb) | Train six small models and explain representation limits using a controlled toy task | Lessons 02 and 07; basic Python; PyTorch for running |
 
 Lesson 05 can be read and run offline with its fixture. Only enable the live flag when you intend
 to call the provider. Lesson 09 measures local examples, not Jev or other neural model families.
+Lesson 10 trains small CPU models from scratch on separate, authored synthetic sentences.
+Its linear classifier, MLP, averaged embeddings, CNN, GRU, and tiny Transformer are learning
+experiments; their results do not implement or benchmark Jev.
+
+### A checkpoint for the PyTorch lab
+
+Complete [Assignment 4](../assignments/04_compare_torch_models.md). Explain what changes between
+models and what remains fixed: the question, reference labels, split assignment, and evaluation
+procedure. Report every model's result and the variation across seeds. State which comparisons
+are limited by the small data generator and chosen training budget.
+
+Train/validation loss curves help you inspect learning. They do not replace the held-out result,
+and a test score should not decide the next checkpoint or training setting.
 
 Use [08 · Exercises and solutions](../notebooks/08_exercises_and_solutions.ipynb) throughout the course.
 Attempt an exercise before reading its solution.
@@ -98,6 +114,7 @@ Attempt an exercise before reading its solution.
 - [ ] I can justify an action using costs and permissions.
 - [ ] I can keep fitting, tuning, and testing separate.
 - [ ] I can state a representation failure and an evaluation limitation.
+- [ ] If I choose the PyTorch lab, I can explain a training update and compare all models without test-set tuning.
 
 Copy this checklist into your own notes to track progress. No account, submission, or certificate
 is required to use the course.

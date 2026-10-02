@@ -26,3 +26,21 @@ All datasets, toy logits, timing constants, and workflow answers in this folder 
 
 The research papers describe related methods and do not establish Jev's unpublished implementation.
 Probability bounds, expected-cost thresholds, and the Brier-loss minimum are derived in the notebooks.
+
+## PyTorch lab references
+
+Lesson 10 was exercised locally with **PyTorch 2.14.1+cpu**, installed from the official CPU
+wheel index on **2026-10-02**. Installed API documentation and executable checks support the
+implementation. The links below are reference destinations; their webpages were not reopened.
+
+| Primary reference | Used for |
+|---|---|
+| [CrossEntropyLoss](https://docs.pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) | Raw class logits and integer targets |
+| [Embedding](https://docs.pytorch.org/docs/stable/generated/torch.nn.Embedding.html) | Learned token vectors and padding |
+| [Conv1d](https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv1d.html) | Three-token local filters |
+| [GRU](https://docs.pytorch.org/docs/stable/generated/torch.nn.GRU.html) | Recurrent sequence encoder |
+| [Packed sequences](https://docs.pytorch.org/docs/stable/generated/torch.nn.utils.rnn.pack_padded_sequence.html) | Ignore padded suffixes in the GRU |
+| [TransformerEncoder](https://docs.pytorch.org/docs/stable/generated/torch.nn.TransformerEncoder.html) | Masked attention with supplied position vectors |
+
+The 864 sentences, fixed experiment, and six model classes are authored course material.
+Neither the installed library nor these references establish anything about Jev's internals.

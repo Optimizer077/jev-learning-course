@@ -40,7 +40,11 @@ def save(fig, name, description=''):
     from html import escape
     source = vector.read_text(encoding='utf-8')
     position = source.index('>', source.index('<svg '))+1
-    source = source[:position]+f'\n <title>{escape(name.replace("-", " "))}</title>\n <desc>{escape(description)}</desc>'+source[position:]
+    # Keep vector graphics understandable when opened directly, as well as embedded.
+    title_id, description_id = f'{name}-title', f'{name}-description'
+    source = (source[:position-1]+f' role="img" aria-labelledby="{title_id} {description_id}">'+
+              f'\n <title id="{title_id}">{escape(name.replace("-", " "))}</title>\n'
+              f' <desc id="{description_id}">{escape(description)}</desc>'+source[position:])
     vector.write_text('\n'.join(line.rstrip() for line in source.splitlines())+'\n', encoding='utf-8')
     # A local raster preview permits inspection without opening a webpage.
     preview = ROOT / 'dist' / 'visual-previews'
@@ -48,7 +52,7 @@ def save(fig, name, description=''):
     fig.savefig(preview/f'{name}.png', dpi=150, facecolor=fig.get_facecolor())
     if name in {'decision-flow', 'question-types', 'calibration-counts', 'data-splits', 'word-order'}:
         fig.savefig(ASSETS/f'{name}.png', dpi=150, facecolor=fig.get_facecolor())
-    if name.endswith('-mobile') or name in {'data-splits', 'word-order'}:
+    if name.endswith('-mobile') or name in {'decision-flow', 'question-types', 'calibration-counts', 'data-splits', 'word-order'}:
         fig.savefig(preview/f'{name}-360.png', dpi=360/fig.get_figwidth(), facecolor=fig.get_facecolor())
     plt.close(fig)
 
@@ -60,8 +64,8 @@ def build_visuals():
     label(ax, 48, 287, 'Learn Jev.', 43, 'white', 'bold')
     label(ax, 48, 224, 'One focused decision at a time.', 21, '#e1e9f4')
     label(ax, 48, 174, 'Read the evidence. Predict. Run. Explain.', 15, '#afc4df')
-    for x, width, text, fill in [(48, 176, '10 notebooks', '#235557'),
-                                (238, 180, '3 assignments', '#493e72'),
+    for x, width, text, fill in [(48, 176, '11 notebooks', '#235557'),
+                                (238, 180, '4 assignments', '#493e72'),
                                 (432, 192, 'CPU-friendly labs', '#553c3b')]:
         box(ax, x, 64, width, 49, fill)
         label(ax, x+width/2, 89, text, 11.5, 'white', 'bold', ha='center')
@@ -81,7 +85,7 @@ def build_visuals():
     label(ax,30,477,'AN INDEPENDENT LEARNING COURSE',10.5,'#70e0d1','bold')
     label(ax,30,419,'Learn Jev.',35,'white','bold')
     label(ax,30,371,'One decision at a time.',19,'#e1e9f4')
-    label(ax,30,333,'10 notebooks · 3 assignments · CPU labs',11.5,'#afc4df')
+    label(ax,30,333,'11 notebooks · 4 assignments · CPU labs',11.5,'#afc4df')
     for y, title, subtitle, color in [(230,'EVIDENCE + QUESTION','A message and clear criteria','#70e0d1'),
                                      (132,'TYPED ANSWER','Choice · Score · Noul','#c2afff'),
                                      (34,'YOUR ACTION RULE','Route or ask for review','#ffb29e')]:
@@ -94,7 +98,7 @@ def build_visuals():
     tracks = [
         ('01  UNDERSTAND', '00 → 01 → 04', 'Evidence, answer types, workflows', TEAL, '#e5f6f2'),
         ('02  EXPERIMENT', '02 → 03', 'Training, probabilities, review costs', VIOLET, '#eee9fc'),
-        ('03  BUILD', '07 → 09', 'Route text, evaluate, compare', CORAL, '#fceee9'),
+        ('03  BUILD', '07 → 09', 'Optional 10: train with PyTorch', CORAL, '#fceee9'),
     ]
     for i, (title, lessons, subtitle, color, fill) in enumerate(tracks):
         x = 22 + 397*i
@@ -105,7 +109,7 @@ def build_visuals():
         label(ax, x+24, 87, subtitle, 11.2, '#405671')
         label(ax, x+24, 49, ['Explain a decision', 'After lesson 01', 'After lessons 02 and 03'][i],
               10.5, color, 'bold')
-    save(fig, 'learning-path', 'Understand: 00, 01, 04. Experiment: 02, 03 after 01. Build: 07, 09 after 02 and 03.')
+    save(fig, 'learning-path', 'Understand: 00, 01, 04. Experiment: 02, 03 after 01. Build: 07, 09 after 02 and 03. Add optional lesson 10 to train small models with PyTorch.')
     fig, ax = canvas(440, 735, '#f5f7fc')
     for i, (title, lessons, subtitle, color, fill) in enumerate(tracks):
         y = 503-240*i
@@ -113,10 +117,10 @@ def build_visuals():
         box(ax,34,y+155,372,40,fill)
         label(ax,49,y+175,title,13,color,'bold')
         label(ax,42,y+110,lessons,27,INK,'bold')
-        short = ['Evidence, types, workflows','Training, probabilities, costs','Route, evaluate, compare'][i]
+        short = ['Evidence, types, workflows','Training, probabilities, costs','Optional 10: PyTorch models'][i]
         label(ax,42,y+62,short,13,'#405671')
         label(ax,42,y+29,['No coding needed','After lesson 01','After lessons 02 and 03'][i],12,color,'bold')
-    save(fig,'learning-path-mobile','Three learning paths and their prerequisites, stacked for narrow screens.')
+    save(fig,'learning-path-mobile','Three learning paths and their prerequisites, stacked for narrow screens. Optional lesson 10 adds PyTorch training after 07 and 09.')
 
     build_teaching_visuals()
     build_project_visuals()

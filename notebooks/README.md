@@ -18,8 +18,10 @@ No GPU or Jev key is needed for the local examples.
 | [07 · Build the complete system](07_text_routing_capstone.ipynb) | Train a local text router on fictional tickets, then inspect held-out results and failures. | [Colab](https://colab.research.google.com/github/Optimizer077/jev-learning-course/blob/main/notebooks/07_text_routing_capstone.ipynb) |
 | [08 · Check your understanding](08_exercises_and_solutions.ipynb) | Worked answers with runnable checks, from softmax to label leakage. | [Colab](https://colab.research.google.com/github/Optimizer077/jev-learning-course/blob/main/notebooks/08_exercises_and_solutions.ipynb) |
 | [09 · Compare related approaches](09_related_models_lab.ipynb) | Try rules, lexical prototypes, and a learned classifier on the same fictional messages. | [Colab](https://colab.research.google.com/github/Optimizer077/jev-learning-course/blob/main/notebooks/09_related_models_lab.ipynb) |
+| [10 · Train six PyTorch models](10_pytorch_models_lab.ipynb) | Trace updates, compare order-sensitive inputs, evaluate all three seeds, and reload small checkpoints. | [Colab](https://colab.research.google.com/github/Optimizer077/jev-learning-course/blob/main/notebooks/10_pytorch_models_lab.ipynb) |
 
 Each notebook runs independently. Choose a **CPU runtime**; a GPU is unnecessary.
 Teaching diagrams are saved inside the notebook, so you can inspect them before running anything.
 Colab needs internet access for the initial repository clone. A local checkout needs no clone.
 See [the setup guide](../docs/SETUP.md) for prerequisites and troubleshooting.
+Lesson 10 needs PyTorch only when you run it. Its saved figures and results can be read without installing anything.

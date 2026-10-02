@@ -79,7 +79,7 @@ def check_colab_setup():
             assert fetch.call_count == 0, 'Do not clone into or overwrite an incomplete folder'
         finally:
             sys.path[:] = original_path
-    print('Ten entry points; fresh Colab download with embedded artwork, cached reuse, and incomplete-cache error passed. No browser opened.')
+    print(f'{len(list(NOTEBOOKS.glob("*.ipynb")))} entry points; fresh Colab download with embedded artwork, cached reuse, and incomplete-cache error passed. No browser opened.')
 
 
 if __name__ == '__main__':

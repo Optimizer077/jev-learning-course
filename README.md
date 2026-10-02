@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(max-width: 650px)" srcset="assets/course-banner-mobile.svg">
-    <img src="assets/course-banner.svg" alt="Jev learning course: give evidence, a question, and criteria; read a typed estimate; apply an action rule. Ten notebooks and three assignments." width="1200">
+    <img src="assets/course-banner.svg" alt="Jev learning course: give evidence, a question, and criteria; read a typed estimate; apply an action rule. Eleven notebooks and four assignments." width="1200">
   </picture>
 </p>
 
@@ -40,16 +40,18 @@ Read saved examples, predict what will change, then run small experiments that m
 | **Build** · evaluate a local text-routing system | [Project](notebooks/07_text_routing_capstone.ipynb) → [Compare methods](notebooks/09_related_models_lab.ipynb) |
 
 Each lesson has a **Colab button**, a goal, a worked example, and a self-check.
-[Browse all ten lessons](notebooks/README.md), including optional API and architecture labs.
+[Browse all eleven lessons](notebooks/README.md), including optional API and architecture labs.
+Want hands-on neural training? [Lesson 10](notebooks/10_pytorch_models_lab.ipynb) trains **six small PyTorch models**
+on a paired toy task, with saved curves, three seeds, and reloadable checkpoints. PyTorch is optional.
 
 ## Find what you need
 
 | Folder | What's inside |
 |---|---|
-| [notebooks/](notebooks/README.md) | Ten runnable lessons, saved results, and Colab links |
+| [notebooks/](notebooks/README.md) | Eleven runnable lessons, saved results, and Colab links |
 | [docs/](docs/README.md) | Curriculum, setup, glossary, references, and maintainer guides |
-| [assignments/](assignments/README.md) | Three guided tasks with success criteria |
-| [data/](data/README.md) | 54 fictional tickets with fixed train, validation, test, and stress splits |
+| [assignments/](assignments/README.md) | Four guided tasks with success criteria |
+| [data/](data/README.md) | 54 fictional tickets and 864 synthetic sentences with fixed splits |
 
 Teaching code lives in `src/`, rebuild tools in `scripts/`, and visual assets in `assets/`.
 The optional offline playground is in `site/`; download the course and open `site/index.html` locally.
@@ -57,7 +59,7 @@ See [repository layout](docs/REPOSITORY.md) or [contributing](docs/CONTRIBUTING.
 
 ## Know what the examples establish
 
-The NumPy models illustrate general mechanisms; they do not reproduce Jev's proprietary model.
+The NumPy and PyTorch models illustrate general mechanisms; they do not reproduce Jev's proprietary model.
 The fictional dataset is a teaching example, not a production benchmark. Lesson 05 is the only
 optional live integration and is **disabled by default**. [Sources and evidence labels](docs/SOURCES.md).
 

@@ -7798,12 +7798,18 @@ body{background:#f6f8fb!important;color:#182b41!important}.jp-Notebook{max-width
 </style><style>
 .reader-tools{max-width:1120px;margin:0 auto;padding:16px 28px;background:#eaf0f7;
 font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
-.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer}
+.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer;
+display:inline-flex;align-items:center;min-height:44px}
 .reader-tools input{accent-color:#0d766f;margin-right:8px}
-.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650}
+.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650;
+min-height:44px;padding:10px 0}
 .reader-tools ul{padding-left:22px;columns:2;column-gap:30px}.reader-tools li{break-inside:avoid;margin:5px 0}
 .reader-tools a{color:#0d766f}.reading-mode .jp-CodeCell .jp-InputArea,.reading-mode .jp-InputPrompt,
 .reading-mode .jp-OutputPrompt,.reading-mode .jp-CodeCell.jp-mod-noOutputs{display:none!important}
+.lesson-skip-link{position:fixed;top:8px;left:8px;z-index:1000;padding:12px 18px;
+background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
+.lesson-skip-link:focus{transform:translateY(0);outline:3px solid #70e0d1;outline-offset:3px}
+.jp-RenderedImage img,.jp-RenderedHTMLCommon img{max-width:100%;height:auto}
 .jp-RenderedHTMLCommon details{background:#f0f5fb;border:1px solid #d9e2eb;border-radius:8px;padding:12px 16px;margin:16px 0}
 .jp-RenderedHTMLCommon summary{cursor:pointer;font-weight:650;color:#0d766f}
 .jp-RenderedHTMLCommon blockquote{border-left:3px solid #ad5b20!important;background:#fff8f1;padding:8px 18px!important}
@@ -7811,11 +7817,11 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 .jp-RenderedHTMLCommon{overflow-wrap:anywhere}.jp-RenderedHTMLCommon pre{white-space:pre-wrap}
 @media(max-width:650px){.reader-tools{padding:16px 20px}.reader-tools ul{columns:1}
 .jp-InputPrompt,.jp-OutputPrompt{display:none!important}.jp-RenderedHTMLCommon table{display:block;overflow-x:auto}}
-@media print{.course-nav,.reader-tools{display:none!important}.jp-Notebook{max-width:none}}
+@media print{.course-nav,.reader-tools,.lesson-skip-link{display:none!important}.jp-Notebook{max-width:none}}
 </style></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
+<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e4568f7d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=95860708">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7932,6 +7938,62 @@ their word-presence vectors identical.</p>
 notebook outputs, image descriptions, Colab setup simulation, rebuilt exports, and archive links
 were checked again. Notebook execution records remain in <a href="../../docs/validation.json">validation.json</a>.
 The browser and hosted-Colab limits described above still apply.</p>
+<h2 id="third-pass-three-review-agents-and-trained-pytorch-models">Third pass: three review agents and trained PyTorch models<a class="anchor-link" href="#third-pass-three-review-agents-and-trained-pytorch-models">¶</a></h2><p>Three agents separately reviewed the learning flow, mathematical/evaluation correctness, and
+visual accessibility. Their repairs were integrated with a new executed PyTorch lesson.</p>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Repair</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The homepage paired lessons with a ten-item label list, silently dropping an added lesson.</td>
+<td>Map labels by lesson ID and render every lesson; show dynamic catalogue counts.</td>
+</tr>
+<tr>
+<td>Learners needed a structured route from the NumPy project to neural model training.</td>
+<td>Add an optional study session, experiment notes, six-model assignment, FAQ guidance, and lesson 10.</td>
+</tr>
+<tr>
+<td>Some guidance implied that GitHub notebooks had the offline HTML code toggle.</td>
+<td>Clearly identify the optional HTML reader; improve keyboard links, touch targets, and no-JavaScript behavior.</td>
+</tr>
+<tr>
+<td>Model names and probability-loss conventions were easy to confuse.</td>
+<td>Explain the acronyms, raw-logit cross-entropy, Brier scaling, denominators, metric rounding, and representation limits.</td>
+</tr>
+<tr>
+<td>Optional PyTorch installation appeared before environment creation.</td>
+<td>State the setup order explicitly and keep PyTorch separate from beginner requirements.</td>
+</tr>
+<tr>
+<td>Training and validation loss were initially logged at different points in an update.</td>
+<td>Evaluate both after the same update before plotting their curves.</td>
+</tr>
+<tr>
+<td>Whole-percent labels hid a small Transformer error in the comparison chart.</td>
+<td>Use one decimal place and keep the exact per-seed case and pair counts beside the figure.</td>
+</tr>
+</tbody>
+</table>
+<p>The new lab trains six implementations across three seeds on 864 generated sentences. Whole
+reversed pairs remain in one split: 520 train, 172 validation, 172 test. Vocabulary comes only
+from training. Checkpoints use validation loss; all 18 runs appear in the held-out results.
+The generated grammar and words are shared across splits and are not representative of real traffic.</p>
+<p>Independent checks cover finite outputs and gradients, padding masks and lengths, predictions
+independent of label fields, permutation invariance, separately recomputed probability losses,
+and validation checkpoint restoration. A fixture forces an early best checkpoint to verify actual
+rollback. The permanent checker is <code>scripts/check_torch_lab.py</code> and runs in GitHub's workflow.</p>
+<p>Saved diagrams and new plots were reviewed locally. Source and HTML structure checks cover the
+new catalogue, image descriptions, links, and reading controls; browser and assistive-technology
+behavior were not exercised. The trained-weight ZIP contains 18 small toy checkpoints and a
+manifest. All 18 archived checkpoints were reloaded with <code>weights_only=True</code>; their case counts,
+pair counts, rounded probability losses, vocabulary, labels, and selected epochs match the saved
+notebook results.</p>
+<p>No webpage, hosted Colab runtime, or live Jev request was opened. The PyTorch wheel index was
+accessed to install the CPU dependency. The course still does not reproduce or benchmark Jev.</p>
 </div>
 </div>
 </div>

@@ -29,14 +29,19 @@ jobs:
           cache: pip
 
       - name: Install course requirements
-        run: python -m pip install -r requirements.txt
+        run: |
+          python -m pip install -r requirements.txt
+          python -m pip install -r docs/requirements-torch.txt
 
       - name: Check committed course files and links
-        run: python scripts/validate_course.py
+        run: |
+          python scripts/check_torch_lab.py
+          python scripts/validate_course.py
 
       - name: Rebuild maintained lessons
         run: |
           python scripts/build_visuals.py
+          python scripts/build_torch_dataset.py
           python scripts/build_notebooks.py
 
       - name: Execute notebooks in fresh kernels
@@ -55,4 +60,11 @@ jobs:
         with:
           name: jev-learning-course
           path: dist/jev-learning-github.zip
+          if-no-files-found: error
+
+      - name: Save the tiny trained PyTorch models
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: toy-pytorch-models
+          path: dist/toy-pytorch-models.zip
           if-no-files-found: error

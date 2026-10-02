@@ -45,6 +45,31 @@ the delivered notebooks were executed with **Python 3.13.13 on Windows**. The Gi
 also checks the course on Ubuntu with Python 3.13. macOS execution has not been tested.
 No GPU or API key is needed.
 
+### Optional PyTorch lab
+
+Lessons 00–09 use the core requirements. To run [lesson 10](../notebooks/10_pytorch_models_lab.ipynb),
+first create the environment using the platform commands below, then install PyTorch in that
+same environment before opening lesson 10. The separate requirement file uses official CPU
+wheels for Windows and Linux, with a fixed version for reproducible course builds.
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r docs/requirements-torch.txt
+```
+
+On Linux use `.venv/bin/python -m pip install -r docs/requirements-torch.txt`.
+On macOS use `.venv/bin/python -m pip install torch`; the CPU-wheel index above is intended for
+Windows and Linux. macOS execution has not been tested. In Colab, use its installed PyTorch or
+`%pip install torch` if absent, then restart and Run All. The lab explicitly runs on CPU.
+
+The course uses PyTorch **2.14.1+cpu** in its local Windows checks. It trains six small models
+from random weights on 864 authored sentences; it does not download a pretrained language model.
+The first ten lessons remain available without PyTorch.
+
+Running the last lab creates `dist/toy-pytorch-models.zip`: 18 tiny checkpoints from six models
+and three seeds. It shows how to reload a checkpoint and verify the prediction. Public workflow
+runs also offer a **toy-pytorch-models** artifact; GitHub may ask you to sign in to download it.
+The ordinary course archive contains the runnable lesson, data, and model definitions.
+
 ### Windows (PowerShell)
 
 Open PowerShell **inside the extracted course folder**, where `requirements.txt` is located.

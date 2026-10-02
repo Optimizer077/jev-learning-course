@@ -1,0 +1,3 @@
+# Optional lesson 10. Official CPU wheels for Windows and Linux; no pretrained model download.
+--index-url https://download.pytorch.org/whl/cpu
+torch==2.14.1

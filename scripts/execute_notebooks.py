@@ -33,6 +33,6 @@ for path in paths:
     results.append(result)
     print(result, flush=True)
 (DOCS / 'validation.json').write_text(json.dumps(results, indent=2), encoding='utf-8')
-packages = ['numpy', 'matplotlib', 'nbformat', 'nbclient', 'nbconvert', 'ipykernel', 'jupyterlab', 'beautifulsoup4', 'mistune']
+packages = ['numpy', 'matplotlib', 'nbformat', 'nbclient', 'nbconvert', 'ipykernel', 'jupyterlab', 'beautifulsoup4', 'mistune', 'torch']
 (DOCS / 'requirements-tested.txt').write_text('\n'.join(f'{p}=={importlib.metadata.version(p)}' for p in packages) + '\n', encoding='utf-8')
 build_site()

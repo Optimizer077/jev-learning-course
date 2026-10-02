@@ -9,10 +9,10 @@ Learners can start without browsing the implementation files.
 jev-learning-course/
 ├── README.md           Course landing page
 ├── requirements.txt    Local Python dependencies
-├── notebooks/          Ten lessons and their Colab links
+├── notebooks/          Eleven lessons and their Colab links
 ├── docs/               Curriculum, references, and maintainer guides
-├── assignments/        Three self-study tasks
-├── data/               Authored tickets and provenance
+├── assignments/        Four self-study tasks
+├── data/               Authored tickets, synthetic sentences, and provenance
 ├── assets/             Course graphics and exported figures
 ├── src/                Local teaching models and plotting helpers
 ├── scripts/            Build, execute, validate, and package tools
@@ -28,8 +28,10 @@ jev-learning-course/
 | Extensions and guided explanations | `scripts/lesson_upgrades.py`, `scripts/public_course.py` |
 | Lessons 00 and 06–08 | `scripts/extra_lessons.py` |
 | Lesson 09 | `scripts/related_lessons.py` |
+| Lesson 10 | `scripts/torch_lessons.py` |
 | Course links and notebook environment setup | `scripts/course_paths.py` |
 | Numerical models and data loading | `src/lab_core.py` |
+| Six PyTorch models, paired data, and training | `src/torch_lab.py`, `scripts/build_torch_dataset.py` |
 | Notebook figures and table style | `src/tutorial_utils.py` |
 | Header, learning paths, and teaching illustrations | `scripts/build_visuals.py` |
 | Practice questions | `scripts/practice_questions.py` |

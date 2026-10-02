@@ -7798,12 +7798,18 @@ body{background:#f6f8fb!important;color:#182b41!important}.jp-Notebook{max-width
 </style><style>
 .reader-tools{max-width:1120px;margin:0 auto;padding:16px 28px;background:#eaf0f7;
 font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
-.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer}
+.reader-tools p{margin:6px 0}.reader-tools label{font-weight:650;cursor:pointer;
+display:inline-flex;align-items:center;min-height:44px}
 .reader-tools input{accent-color:#0d766f;margin-right:8px}
-.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650}
+.reader-tools details{margin-top:12px}.reader-tools summary{cursor:pointer;font-weight:650;
+min-height:44px;padding:10px 0}
 .reader-tools ul{padding-left:22px;columns:2;column-gap:30px}.reader-tools li{break-inside:avoid;margin:5px 0}
 .reader-tools a{color:#0d766f}.reading-mode .jp-CodeCell .jp-InputArea,.reading-mode .jp-InputPrompt,
 .reading-mode .jp-OutputPrompt,.reading-mode .jp-CodeCell.jp-mod-noOutputs{display:none!important}
+.lesson-skip-link{position:fixed;top:8px;left:8px;z-index:1000;padding:12px 18px;
+background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
+.lesson-skip-link:focus{transform:translateY(0);outline:3px solid #70e0d1;outline-offset:3px}
+.jp-RenderedImage img,.jp-RenderedHTMLCommon img{max-width:100%;height:auto}
 .jp-RenderedHTMLCommon details{background:#f0f5fb;border:1px solid #d9e2eb;border-radius:8px;padding:12px 16px;margin:16px 0}
 .jp-RenderedHTMLCommon summary{cursor:pointer;font-weight:650;color:#0d766f}
 .jp-RenderedHTMLCommon blockquote{border-left:3px solid #ad5b20!important;background:#fff8f1;padding:8px 18px!important}
@@ -7811,11 +7817,11 @@ font:15px/1.55 system-ui,Segoe UI,sans-serif;color:#182b41}
 .jp-RenderedHTMLCommon{overflow-wrap:anywhere}.jp-RenderedHTMLCommon pre{white-space:pre-wrap}
 @media(max-width:650px){.reader-tools{padding:16px 20px}.reader-tools ul{columns:1}
 .jp-InputPrompt,.jp-OutputPrompt{display:none!important}.jp-RenderedHTMLCommon table{display:block;overflow-x:auto}}
-@media print{.course-nav,.reader-tools{display:none!important}.jp-Notebook{max-width:none}}
+@media print{.course-nav,.reader-tools,.lesson-skip-link{display:none!important}.jp-Notebook{max-width:none}}
 </style></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light"><nav class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
+<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=778f6898">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0720ea5a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7854,6 +7860,23 @@ a single notebook; rerunning them loads the accompanying PNGs from the cloned co
 the delivered notebooks were executed with <strong>Python 3.13.13 on Windows</strong>. The GitHub workflow
 also checks the course on Ubuntu with Python 3.13. macOS execution has not been tested.
 No GPU or API key is needed.</p>
+<h3 id="optional-pytorch-lab">Optional PyTorch lab<a class="anchor-link" href="#optional-pytorch-lab">¶</a></h3><p>Lessons 00–09 use the core requirements. To run <a href="10_pytorch_models_lab.html">lesson 10</a>,
+first create the environment using the platform commands below, then install PyTorch in that
+same environment before opening lesson 10. The separate requirement file uses official CPU
+wheels for Windows and Linux, with a fixed version for reproducible course builds.</p>
+<div class="highlight"><pre><span></span><span class="p">.\.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">python</span><span class="p">.</span><span class="n">exe</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">docs</span><span class="p">/</span><span class="n">requirements-torch</span><span class="p">.</span><span class="n">txt</span>
+</pre></div>
+<p>On Linux use <code>.venv/bin/python -m pip install -r docs/requirements-torch.txt</code>.
+On macOS use <code>.venv/bin/python -m pip install torch</code>; the CPU-wheel index above is intended for
+Windows and Linux. macOS execution has not been tested. In Colab, use its installed PyTorch or
+<code>%pip install torch</code> if absent, then restart and Run All. The lab explicitly runs on CPU.</p>
+<p>The course uses PyTorch <strong>2.14.1+cpu</strong> in its local Windows checks. It trains six small models
+from random weights on 864 authored sentences; it does not download a pretrained language model.
+The first ten lessons remain available without PyTorch.</p>
+<p>Running the last lab creates <code>dist/toy-pytorch-models.zip</code>: 18 tiny checkpoints from six models
+and three seeds. It shows how to reload a checkpoint and verify the prediction. Public workflow
+runs also offer a <strong>toy-pytorch-models</strong> artifact; GitHub may ask you to sign in to download it.
+The ordinary course archive contains the runnable lesson, data, and model definitions.</p>
 <h3 id="windows-powershell">Windows (PowerShell)<a class="anchor-link" href="#windows-powershell">¶</a></h3><p>Open PowerShell <strong>inside the extracted course folder</strong>, where <code>requirements.txt</code> is located.
 In File Explorer, open the folder, type <code>powershell</code> in the address bar, and press Enter.
 Run these commands one at a time:</p>

@@ -7823,7 +7823,7 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 <label><input aria-controls="lesson-content" disabled="" id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
 <noscript><p>Python code stays visible when JavaScript is unavailable. You can still read all explanations and saved results.</p></noscript>
-<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li><li><a href="#paper-references">Paper references</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d227a4d135e9-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8103,6 +8103,23 @@ Options are relative alternatives; include an escape option when none may fit.
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-01-0-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · choosing from a distribution</strong></p>
+<p>$$\hat{k}\in\operatorname*{arg\,max}_{k\in\{0,\ldots,K-1\}}p_k.$$
+$K$ is the number of options, $p_k$ the probability of option $k$, and $\hat{k}$ an
+index with the largest probability; map it back to the option key.
+The set notation allows ties. In our Python illustration, <code>max</code> retains the first
+encountered key in a tie; this is not a claim about an undocumented API tie rule.
+The selected probability is $p_{\hat{k}}$, not Jev's separate <code>confidence</code> field.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=abed4445576c-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8157,6 +8174,20 @@ $$\text{score}=\sum_{k=0}^{K-1} k\,p(k).$$
 This is a rubric position, not an exact measurement of an underlying physical quantity.
 <a href="https://docs.typesafe.ai/primitives/score">Score reference</a>.</p>
 <p><strong>In everyday words:</strong> multiply each level by its probability, then add. A 70% chance of level 2 contributes 1.4 to the final score. You can follow the worked numbers without memorizing the formula.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-01-1-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · read the existing expectation equation</strong></p>
+<p>In the equation above, $K$ is the number of rubric levels, $k$ their zero-based index,
+and $p(k)$ the probability of level $k$. The result weights each index by its probability.
+Here $K=3$ and $0(0.05)+1(0.25)+2(0.70)=1.65$; it is an expected index, not a new level.</p>
 </div>
 </div>
 </div>
@@ -8215,6 +8246,24 @@ Split across extremes: 1.0
 <h3 id="4-noul-a-yesno-probability">4. Noul: a yes/no probability<a class="anchor-link" href="#4-noul-a-yesno-probability">¶</a></h3><p>A Noul returns a number from 0 to 1 representing the probability of “yes.” It is not
 itself a Boolean; your code selects an action threshold.
 <a href="https://docs.typesafe.ai/primitives/noul">Noul reference</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-01-2-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · a probability and an action are different objects</strong></p>
+<p>$$P(Y=1)=p,\qquad P(Y=0)=1-p,\qquad
+\text{our action}=\mathbf{1}[p\geq\tau].$$
+$Y=1$ means “yes,” $p$ is the Noul result, $\tau$ is our chosen policy threshold,
+and $\mathbf{1}[\cdot]$ is 1 when its condition holds and 0 otherwise.
+At $p=0.12$ and $\tau=0.80$, the probability remains 0.12 while the policy returns false.
+Probability-forecast evaluation goes back to <a href="https://doi.org/10.1175/1520-0493(1950)078%3C0001:VOFEIT%3E2.0.CO;2">Brier (1950)</a>;
+it does not determine this application's threshold.</p>
 </div>
 </div>
 </div>
@@ -8547,6 +8596,24 @@ Predict the new score before running the cell: it should decrease from 1.65 to 1
 For runnable exercises, use the <a href="08_exercises_and_solutions.html">worked exercises</a>.</p>
 <p>If you are unsure where to go next, use <a href="COURSE.html">the course outline</a>.</p>
 <p><a href="assignments_README.html">Assignments</a> · <a href="QUICK_REFERENCE.html">Quick reference</a> · <a href="COURSE.html">Course outline</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-01-papers">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="paper-references">Paper references<a class="anchor-link" href="#paper-references">¶</a></h2><p>Read these for the general methods used or contrasted in this lesson. They do not establish Jev’s unpublished architecture or RLCD algorithm. The formulas above are code-matched teaching notation unless explicitly attributed.</p>
+<ul>
+<li><p><strong>Guo et al. (2017).</strong> <a href="https://proceedings.mlr.press/v70/guo17a.html">On Calibration of Modern Neural Networks</a>. ICML, PMLR 70:1321–1330. Temperature scaling and the difference between accuracy and calibration.</p>
+</li>
+<li><p><strong>Brier (1950).</strong> <a href="https://doi.org/10.1175/1520-0493(1950)078%3C0001:VOFEIT%3E2.0.CO;2">Verification of Forecasts Expressed in Terms of Probability</a>. Monthly Weather Review 78(1):1–3. The original probability-forecast scoring paper; this course states its binary and multiclass conventions explicitly.</p>
+</li>
+</ul>
+<p><a href="PAPER_GUIDE.html">Paper reading guide and equation map</a> · <a href="SOURCES.html">Jev documentation and source limits</a>.</p>
 </div>
 </div>
 </div>

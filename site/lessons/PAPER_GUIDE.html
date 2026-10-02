@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>QUICK REFERENCE · Jev learning lab</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>PAPER GUIDE · Jev learning lab</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7821,222 +7821,155 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 </style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1079ea32">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1f39c684">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="keep-this-beside-your-notebook">Keep this beside your notebook<a class="anchor-link" href="#keep-this-beside-your-notebook">¶</a></h1><p>Prefer diagrams first? Use <a href="VISUAL_GUIDE.html">the visual guide</a>, then return here for exact formulas.</p>
-<h2 id="one-decision-in-four-steps">One decision in four steps<a class="anchor-link" href="#one-decision-in-four-steps">¶</a></h2><ol>
-<li><strong>Evidence:</strong> what information should the judgment use?</li>
-<li><strong>Question:</strong> what exactly are we asking, and what do the allowed answers mean?</li>
-<li><strong>Estimate:</strong> what output did the model or scoring rule produce?</li>
-<li><strong>Action:</strong> what does our program do, given costs, uncertainty, and permissions?</li>
+<h1 id="read-the-equations-then-choose-a-paper">Read the equations, then choose a paper<a class="anchor-link" href="#read-the-equations-then-choose-a-paper">¶</a></h1><p><a href="README.html">Course home</a> · <a href="notebooks.html">Notebook catalog</a> · <a href="SOURCES.html">Source evidence</a></p>
+<p>Every notebook includes <strong>math companions beside the examples</strong> and a <strong>Paper references</strong>
+section. You can finish a first reading without studying every equation or reading every paper.
+Choose one formula that explains a result you already saw, then follow its source.</p>
+<h2 id="a-small-symbol-key">A small symbol key<a class="anchor-link" href="#a-small-symbol-key">¶</a></h2><table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning in this course</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$N$, $K$</td>
+<td>Number of cases, number of answer classes</td>
+</tr>
+<tr>
+<td>$x$, $X$</td>
+<td>One feature vector, the matrix of feature vectors</td>
+</tr>
+<tr>
+<td>$W$, $b$, $\theta$</td>
+<td>Learned weights, bias, all model parameters</td>
+</tr>
+<tr>
+<td>$z$, $p$</td>
+<td>Raw class scores (logits), probabilities after normalization</td>
+</tr>
+<tr>
+<td>$y$, $Y$</td>
+<td>Reference class index, matrix of one-hot reference labels</td>
+</tr>
+<tr>
+<td>$L$, $\eta$ or $\alpha$</td>
+<td>Mean loss, learning rate</td>
+</tr>
+<tr>
+<td>$T$, $c$ or $\tau$</td>
+<td>Temperature, a cutoff used by an application policy</td>
+</tr>
+<tr>
+<td>$\mathbf{1}[\cdot]$</td>
+<td>1 if the condition holds, otherwise 0</td>
+</tr>
+<tr>
+<td>$\odot$, $\lVert\cdot\rVert_2$</td>
+<td>Elementwise multiplication, Euclidean vector length</td>
+</tr>
+<tr>
+<td>$\nabla$, $\partial$, $\leftarrow$</td>
+<td>Gradient, partial derivative, assign the updated value</td>
+</tr>
+</tbody>
+</table>
+<p>Symbols are also defined locally. In the neural sequence lab, $\ell$ is the real token count;
+it is separate from loss $L$. Indices start at zero for answer classes. The row-vector formulas
+use the transpose of PyTorch's stored <code>nn.Linear.weight</code>.</p>
+<h2 id="find-the-equation-that-answers-your-question">Find the equation that answers your question<a class="anchor-link" href="#find-the-equation-that-answers-your-question">¶</a></h2><table>
+<thead>
+<tr>
+<th>Notebook</th>
+<th>Equations beside the worked examples</th>
+<th>Read first</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="00_start_here.html">00 · Start here</a></td>
+<td>Probability sums and bounds</td>
+<td>Guo 2017 when you reach calibration</td>
+</tr>
+<tr>
+<td><a href="01_jev_basics.html">01 · Jev basics</a></td>
+<td>Choice selection, expected rubric score, yes/no probability and threshold</td>
+<td>Provider documentation for the API; Guo for evaluation</td>
+</tr>
+<tr>
+<td><a href="02_decision_model_from_scratch.html">02 · From scratch</a></td>
+<td>Softmax, cross-entropy, weight updates, finite differences</td>
+<td>Rumelhart 1986; Gneiting 2007</td>
+</tr>
+<tr>
+<td><a href="03_calibration_and_decisions.html">03 · Calibration</a></td>
+<td>Reliability bins, binary Brier, temperature, costs, bootstrap means</td>
+<td>Guo 2017; Efron 1979</td>
+</tr>
+<tr>
+<td><a href="04_workflows_and_related_models.html">04 · Workflows</a></td>
+<td>Conditional probability, joint bounds, allowed actions and expected cost</td>
+<td>Chow 1970 for rejection decisions</td>
+</tr>
+<tr>
+<td><a href="05_optional_real_jev_api.html">05 · Optional API</a></td>
+<td>Probability and score validity checks</td>
+<td>Provider documentation for the contract</td>
+</tr>
+<tr>
+<td><a href="06_architecture_and_training_lab.html">06 · Architecture</a></td>
+<td>Attention and masks, shared work, proper-loss derivative</td>
+<td>Vaswani 2017; Gneiting 2007</td>
+</tr>
+<tr>
+<td><a href="07_text_routing_capstone.html">07 · Project</a></td>
+<td>Regularized training, validation searches, multiclass Brier, selective error</td>
+<td>Guo 2017; Chow 1970</td>
+</tr>
+<tr>
+<td><a href="08_exercises_and_solutions.html">08 · Solutions</a></td>
+<td>Softmax shift cancellation, review interval, work-sharing limit</td>
+<td>Revisit the paper for the exercise you attempted</td>
+</tr>
+<tr>
+<td><a href="09_related_models_lab.html">09 · Related methods</a></td>
+<td>Smoothed IDF, normalized prototypes, cosine, route accounting</td>
+<td>Salton 1988 for term weighting</td>
+</tr>
+<tr>
+<td><a href="10_pytorch_models_lab.html">10 · PyTorch</a></td>
+<td>Linear/MLP, mean pooling, CNN, GRU, attention, Adam, case and pair metrics</td>
+<td>One architecture paper matching the model you inspect</td>
+</tr>
+</tbody>
+</table>
+<p>The notebooks contain complete titles, publication years, source links, and a sentence explaining
+each reference's role. <strong>BERT is background reading; the course does not train or download BERT.</strong></p>
+<h2 id="how-to-read-one-equation">How to read one equation<a class="anchor-link" href="#how-to-read-one-equation">¶</a></h2><ol>
+<li>Say what it computes in ordinary words: a probability, a loss, an update, or an action.</li>
+<li>Locate its inputs in the nearby code. Check the shapes and the denominator.</li>
+<li>Substitute the lesson's numbers: for example, $(0.8-1)^2=0.04$ for a binary Brier contribution.</li>
+<li>Predict a change before rerunning: does it alter the representation, weights, probability, or policy?</li>
+<li>Read the paper's method section and compare its settings with this course's smaller implementation.</li>
 </ol>
-<p>Running example: an export crash is evidence; “Which queue?” is a question; probabilities are
-estimates; routing or review is an application action.</p>
-<h2 id="choose-a-question-type">Choose a question type<a class="anchor-link" href="#choose-a-question-type">¶</a></h2><table>
-<thead>
-<tr>
-<th>Need</th>
-<th>Type</th>
-<th>Remember</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>One category from named alternatives</td>
-<td>Choice</td>
-<td>The output includes a selected option and probabilities over the options.</td>
-</tr>
-<tr>
-<td>A position on an ordered rubric</td>
-<td>Score</td>
-<td>The expected level can lie between rubric levels.</td>
-</tr>
-<tr>
-<td>Whether a statement is true</td>
-<td>Noul</td>
-<td>The output is a probability for the positive answer.</td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://docs.typesafe.ai/primitives/choice">Choice</a> · <a href="https://docs.typesafe.ai/primitives/score">Score</a> ·
-<a href="https://docs.typesafe.ai/primitives/noul">Noul</a>. Examples and formulas in this reference are teaching examples.</p>
-<h2 id="read-three-calculations">Read three calculations<a class="anchor-link" href="#read-three-calculations">¶</a></h2><table>
-<thead>
-<tr>
-<th>Calculation</th>
-<th>Plain-language reading</th>
-<th>Worked example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Score = sum of level × probability</td>
-<td>Average the possible levels using their probabilities.</td>
-<td>0 × 0.05 + 1 × 0.25 + 2 × 0.70 = <strong>1.65</strong></td>
-</tr>
-<tr>
-<td>Logit = sum of feature × weight + bias</td>
-<td>Add the contributions to an option's score.</td>
-<td>2 × 0.8 + 1 × (−0.2) + 0.1 = <strong>1.5</strong></td>
-</tr>
-<tr>
-<td>Observed yes frequency = yes outcomes / cases</td>
-<td>Count how often yes happened in that group.</td>
-<td>8 / 10 = <strong>80%</strong></td>
-</tr>
-</tbody>
-</table>
-<p>A single group agreeing with its predicted frequency does not establish calibration across a population.</p>
-<h2 id="train-a-small-model-in-pytorch">Train a small model in PyTorch<a class="anchor-link" href="#train-a-small-model-in-pytorch">¶</a></h2><p>The <a href="10_pytorch_models_lab.html">PyTorch lab</a> makes this loop visible:</p>
-<p><strong>message → features or token IDs → logits → loss → gradients → updated weights</strong>.</p>
-<table>
-<thead>
-<tr>
-<th>Step</th>
-<th>What to inspect</th>
-<th>Common mistake</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Prepare input</td>
-<td>Vocabulary learned from training text; padding excluded where needed</td>
-<td>Learning preprocessing from validation or test data</td>
-</tr>
-<tr>
-<td>Predict</td>
-<td>One raw logit per class; shape <code>[batch, 3]</code> for this task</td>
-<td>Treating logits as probabilities</td>
-</tr>
-<tr>
-<td>Compute loss</td>
-<td><code>CrossEntropyLoss(logits, labels)</code> with integer class labels</td>
-<td>Applying softmax before this loss, which already combines log-softmax and negative log likelihood</td>
-</tr>
-<tr>
-<td>Update</td>
-<td>Clear old gradients, call <code>loss.backward()</code>, then <code>optimizer.step()</code></td>
-<td>Accidentally accumulating gradients across independent steps</td>
-</tr>
-<tr>
-<td>Validate</td>
-<td><code>model.eval()</code> with gradient tracking disabled</td>
-<td>Leaving dropout active or choosing an epoch using test loss</td>
-</tr>
-<tr>
-<td>Evaluate</td>
-<td>Load the validation-selected checkpoint and assess the frozen system</td>
-<td>Keeping the seed or model settings with the best test result</td>
-</tr>
-</tbody>
-</table>
-<p>Use softmax when displaying the predicted distribution, after computing raw logits. A training
-loss curve shows fit; it does not by itself establish test accuracy or calibration.</p>
-<h2 id="choose-an-action-using-costs">Choose an action using costs<a class="anchor-link" href="#choose-an-action-using-costs">¶</a></h2><p>In the binary teaching example, correct actions cost zero and review is perfectly accurate.
-If <code>p</code> is the calibrated probability of yes:</p>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Expected cost</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Act yes</td>
-<td>(1 − p) × false-positive cost</td>
-</tr>
-<tr>
-<td>Act no</td>
-<td>p × false-negative cost</td>
-</tr>
-<tr>
-<td>Review</td>
-<td>Review cost</td>
-</tr>
-</tbody>
-</table>
-<p>At p = 0.90, false-positive cost = 4, false-negative cost = 1, and review cost = 0.20,
-the costs are <strong>0.40</strong>, <strong>0.90</strong>, and <strong>0.20</strong>. Review is cheapest under these assumptions.
-Real review can make mistakes; evaluate that behavior before using the same rule.</p>
-<h2 id="keep-these-distinctions-clear">Keep these distinctions clear<a class="anchor-link" href="#keep-these-distinctions-clear">¶</a></h2><table>
-<thead>
-<tr>
-<th>Common confusion</th>
-<th>What to say instead</th>
-<th>Revisit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>The output is allowed, so it is right.</td>
-<td>Validity checks the form; accuracy checks the judgment.</td>
-<td>01, 04</td>
-</tr>
-<tr>
-<td>The largest probability grants permission.</td>
-<td>The application enforces permissions separately.</td>
-<td>04</td>
-</tr>
-<tr>
-<td>A normalized distribution is calibrated.</td>
-<td>Calibration requires comparison with outcomes.</td>
-<td>03</td>
-</tr>
-<tr>
-<td>A similarity of 0.80 means 80% correct.</td>
-<td>Similarity is a geometric score with a different meaning.</td>
-<td>09</td>
-</tr>
-<tr>
-<td>Review makes error vanish.</td>
-<td>Review is an action with its own accuracy and cost.</td>
-<td>03</td>
-</tr>
-<tr>
-<td>Parallel evaluation makes events independent.</td>
-<td>Scheduling and statistical independence are different.</td>
-<td>04, 06</td>
-</tr>
-<tr>
-<td>Better-looking test results justify more tuning.</td>
-<td>Use validation for tuning; assess a frozen system on fresh test data.</td>
-<td>07</td>
-</tr>
-<tr>
-<td>The toy reveals Jev's architecture.</td>
-<td>The toy establishes a property of our constructed example.</td>
-<td>06, 09</td>
-</tr>
-</tbody>
-</table>
-<h2 id="evaluate-with-explicit-denominators">Evaluate with explicit denominators<a class="anchor-link" href="#evaluate-with-explicit-denominators">¶</a></h2><ul>
-<li><strong>Label accuracy:</strong> correct classifier labels / evaluated cases, before applying a review policy.</li>
-<li><strong>Automatic coverage:</strong> automatic cases / all cases.</li>
-<li><strong>Selective error:</strong> wrong automatic cases / automatic cases.</li>
-<li><strong>Review rate:</strong> reviewed cases / all cases.</li>
-<li><strong>Both-correct pair rate:</strong> pairs with both labels correct / evaluated pairs.</li>
-</ul>
-<p>When there are no automatic cases, selective error is undefined, rather than evidence of zero
-error. A tiny authored test set can illustrate calculations but cannot establish broad reliability.</p>
-<p><strong>Probability losses have their own definitions:</strong> log loss averages <code>−log(p of the reference class)</code>
-over cases. The binary Brier score averages <code>(p − y)²</code> and ranges from 0 to 1. The multiclass
-Brier convention in our labs sums squared errors across classes before averaging over cases,
-so its range is 0 to 2. Do not compare these raw Brier values as though the conventions were equal.
-Both losses measure probabilistic prediction quality, including factors beyond calibration.</p>
-<p>For several random seeds, show each result and a summary across those runs. That spread describes
-training variability on the fixed dataset; it is not a confidence interval for future accuracy.
-Once test results guide another change, that test set has become development data. Reserve fresh
-examples for the next independent assessment.</p>
-<h2 id="study-without-getting-lost">Study without getting lost<a class="anchor-link" href="#study-without-getting-lost">¶</a></h2><p>Start with <strong>00 → 01 → 04</strong> for the main idea. Use <strong>02 → 03 → 07</strong> to build a local system.
-Try <strong>09</strong> to compare mechanisms, then <strong>10</strong> to train small PyTorch models. In the optional HTML
-exports, use the code toggle to read explanations first, then inspect the Python when ready.</p>
-<p>For an experiment: <strong>predict → change one thing → restart and run → explain → state a limitation</strong>.</p>
-<p><a href="README.html">Course home</a> · <a href="PRACTICE.html">Guided practice</a> · <a href="MODEL_GUIDE.html">Model guide</a> · <a href="GLOSSARY.html">Glossary</a></p>
+<p>The code uses a <strong>mean</strong> loss over cases; some papers write a sum. Binary one-probability Brier
+and summed multiclass Brier have different scales. PyTorch's GRU resets after the hidden affine
+map, while Cho's original equation resets before the projection. The tiny Transformer uses learned
+positions, two small heads, and one encoder layer. These distinctions are written beside the formulas.</p>
+<h2 id="what-a-citation-establishes">What a citation establishes<a class="anchor-link" href="#what-a-citation-establishes">¶</a></h2><p>A paper supports the method it actually studies. It does not establish that Jev uses that method,
+that our toy implementations reproduce the paper's experiment, or that success on authored sentences
+predicts real-world performance. The exact smoothing, masks, cost grids, data, and small-model settings
+in this course are identified as implementation choices.</p>
+<p>Paper verification is recorded in <a href="SOURCES.html">SOURCES.md</a>. Primary PDFs and bibliographic APIs were
+accessed without opening browser webpages. The paper list is a reading path, not a new Jev bibliography
+claiming publication of proprietary internals.</p>
 </div>
 </div>
 </div>

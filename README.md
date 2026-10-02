@@ -39,7 +39,7 @@ Read saved examples, predict what will change, then run small experiments that m
 | **Experiment** · training, probabilities, and review costs | [Build from scratch](notebooks/02_decision_model_from_scratch.ipynb) → [Calibration](notebooks/03_calibration_and_decisions.ipynb) |
 | **Build** · evaluate a local text-routing system | [Project](notebooks/07_text_routing_capstone.ipynb) → [Compare methods](notebooks/09_related_models_lab.ipynb) |
 
-Each lesson has a **Colab button**, a goal, a worked example, and a self-check.
+Each lesson has a **Colab button**, worked examples, optional equations, paper references, and a self-check.
 [Browse all eleven lessons](notebooks/README.md), including optional API and architecture labs.
 Want hands-on neural training? [Lesson 10](notebooks/10_pytorch_models_lab.ipynb) trains **six small PyTorch models**
 on a paired toy task, with saved curves, three seeds, and reloadable checkpoints. PyTorch is optional.

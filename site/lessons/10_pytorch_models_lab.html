@@ -7823,7 +7823,7 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 <label><input aria-controls="lesson-content" disabled="" id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
 <noscript><p>Python code stays visible when JavaScript is unavailable. You can still read all explanations and saved results.</p></noscript>
-<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li><li><a href="#paper-references">Paper references</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2fefc1fe0b50-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8149,6 +8149,24 @@ log-softmax internally. Give it the logits and integer reference labels; do not 
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-10-0-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · the loss used by <code>CrossEntropyLoss</code></strong></p>
+<p>$$p_{ik}=\frac{e^{z_{ik}}}{\sum_j e^{z_{ij}}},\qquad
+L=-\frac1N\sum_{i=1}^{N}\log p_{i,y_i}.$$
+$z_{ik}$ is the raw logit for case $i$ and class $k$; $y_i$ is the reference class index.
+$N$ is the current batch size and $p_{ik}$ is its predicted class probability.
+The library combines log-softmax with this loss numerically. Pass raw logits into the loss;
+use softmax probabilities for reporting. This PyTorch experiment uses no L2 penalty.
+Log loss is a proper scoring rule; see <a href="https://doi.org/10.1198/016214506000001437">Gneiting and Raftery (2007)</a>.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e21d8051cfa3-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8248,6 +8266,119 @@ that a particular training run learns it. The table below exposes different para
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-10-1-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · how each <code>nn.Module</code> computes its scores</strong></p>
+<p>You can read one model at a time. Here $x$ is a row vector of word-presence features,
+$e_t$ a learned 16-dimensional vector for token position $t$, and $\ell$ the number of
+real tokens. Each $W$ and $b$ is a learned weight matrix or bias with compatible dimensions.
+These equations use row vectors. PyTorch stores <code>nn.Linear.weight</code> as output-by-input,
+so the mathematical $W$ is the transpose of that stored weight.
+Every pooled representation below is passed through a learned linear head to get three logits.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-10-1-1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Linear and MLP:</strong> the hidden layer in this implementation uses <code>Tanh</code>.
+$$z=xW+b,\qquad
+z_{MLP}=\tanh(xW_1+b_1)W_2+b_2.$$
+Identical word-presence vectors remain identical through either deterministic network.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-10-1-2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Mean embeddings:</strong> exclude padding from the sum and the denominator.
+$$\bar e=\frac1\ell\sum_{t=1}^{\ell}e_t,\qquad z=\bar eW+b.$$
+The average retains word multiplicity but discards order. Reordering the same tokens does not
+change its value, apart from floating-point summation noise.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-10-1-3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>CNN:</strong> 24 three-token filters create 24 local features, followed by ReLU and max pooling.
+$$f_t=\operatorname{ReLU}\!\left(b_c+\sum_{\Delta=-1}^{1}e_{t+\Delta}U_\Delta\right),
+\qquad h_j=\max_{1\leq t\leq\ell}f_{tj}.$$
+$\Delta$ is a filter offset; $U_\Delta$ is its weight matrix, $b_c$ the convolution bias,
+$f_t$ the local feature vector, $j$ a feature index, and $h_j$ its pooled feature.
+Vectors outside the real sequence are zero. PyTorch <code>Conv1d</code> performs this cross-correlation;
+pooling includes only real-token centers. <a href="https://aclanthology.org/D14-1181/">Kim (2014)</a>
+provides the sentence-CNN background; our dimensions and training setup differ.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-10-1-4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>GRU:</strong> let $a_r,a_u,a_n$ map the current token vector and $b_r,b_u,b_n$ map the previous
+hidden state. All six functions are separate learned affine maps, including biases.
+$$\begin{aligned}
+r_t&amp;=\sigma(a_r(e_t)+b_r(h_{t-1})),\\
+u_t&amp;=\sigma(a_u(e_t)+b_u(h_{t-1})),\\
+\tilde h_t&amp;=\tanh(a_n(e_t)+r_t\odot b_n(h_{t-1})),\\
+h_t&amp;=(1-u_t)\odot\tilde h_t+u_t\odot h_{t-1}.
+\end{aligned}$$
+$r_t$ is a reset gate, $u_t$ an update gate, $\sigma$ the sigmoid, and $\odot$ elementwise
+multiplication. $h_t$ is the hidden-state vector after token $t$, with initial $h_0=0$ here.
+The packed GRU uses $h_\ell$, not a state after padding. These equations match
+<a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.GRU.html">PyTorch's GRU variant</a>.
+In <a href="https://aclanthology.org/D14-1179/">Cho et al. (2014)</a>, the reset is applied before the
+hidden-state projection; PyTorch applies it after that affine map. This lab is not an exact
+reproduction of that paper.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-10-1-5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Transformer:</strong> add learned position vectors, then contextualize with the encoder.
+$$H=\operatorname{Encoder}(E+P_{position},M),\qquad
+h=\frac1\ell\sum_{t=1}^{\ell}H_t.$$
+Within each attention head,
+$$\operatorname{Attention}(Q,K,V)=
+\operatorname{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}+M\right)V.$$
+$E$ is the token-embedding matrix, $P_{position}$ the learned position matrix, and
+$H$ the contextualized token vectors; $h$ is their masked average.
+$Q,K,V$ are projected queries, keys, and values; $d_k=8$ per head here.
+The additive mask $M$ is zero for permitted keys and $-\infty$ for padded keys. The PyTorch
+Boolean padding mask uses <code>True</code> for <strong>blocked</strong>, unlike the allowed-connection mask in lesson 06.
+The encoder also includes two heads, a GELU feedforward block, residual connections, and layer
+normalization; attention alone is not the whole encoder. <a href="https://arxiv.org/abs/1706.03762">Vaswani et al. (2017)</a>
+introduce the Transformer. Our one-layer classifier uses learned positions and different dimensions
+from their translation model. It does not reproduce or establish Jev's unpublished architecture.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0c3f0f5b04f4-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8289,6 +8420,30 @@ with the lowest <strong>validation</strong> loss, using the earlier epoch for ex
 passed to the trainer. Validation evaluates weights without gradient updates.</p>
 <p>An equal epoch budget is not equal capacity or computation. This is a comparison of six small
 implementations under a stated protocol, not a fair ranking of entire model families.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-10-2-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · what Adam updates</strong></p>
+<p>With loss gradient $g_t=\nabla_\theta L_t$ and initial $m_0=v_0=0$,
+$$m_t=\beta_1m_{t-1}+(1-\beta_1)g_t,\qquad
+v_t=\beta_2v_{t-1}+(1-\beta_2)g_t^2.$$
+$$\hat m_t=\frac{m_t}{1-\beta_1^t},\qquad
+\hat v_t=\frac{v_t}{1-\beta_2^t},\qquad
+\theta_t=\theta_{t-1}-\alpha\frac{\hat m_t}{\sqrt{\hat v_t}+\epsilon}.$$
+$\theta$ collects all trainable parameters, $t$ numbers optimizer updates, $m_t$ smooths
+gradients, and $v_t$ smooths squared gradients. $\beta_1,\beta_2$ control that smoothing.
+All operations are elementwise. The defaults used here are $\beta_1=0.9$, $\beta_2=0.999$,
+$\epsilon=10^{-8}$, with $\alpha=0.01$, zero weight decay, and no AMSGrad.
+The epsilon is <strong>outside</strong> the square root. The moving moments adapt the update size;
+the bias corrections account for starting at zero. See <a href="https://arxiv.org/abs/1412.6980">Kingma and Ba (2015)</a>,
+Algorithm 1. Our full-batch toy task is separate from the paper's experiments.</p>
 </div>
 </div>
 </div>
@@ -8428,6 +8583,29 @@ Order-blind models cannot get both members right, even if their ordinary accurac
 The <strong>Brier score</strong> is a squared probability error. Multiclass Brier here sums squared errors
 across three classes, then averages cases (range 0–2). Neither metric alone proves calibration.
 Losses are rounded to three decimals; a displayed <code>0.000</code> can be a small positive value.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-10-3-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · sentence and pair accuracy measure different things</strong></p>
+<p>$$\operatorname{accuracy}=\frac1N\sum_{i=1}^{N}\mathbf{1}[\hat y_i=y_i].$$
+$$\operatorname{pair\ accuracy}=\frac1{N_{pairs}}\sum_{j=1}^{N_{pairs}}
+\mathbf{1}[\hat y_{j,a}=y_{j,a}\ \text{and}\ \hat y_{j,b}=y_{j,b}].$$
+$N=172$ sentences and $N_{pairs}=86$ reversed pairs in the test set.
+$\hat y$ is a prediction, $y$ a reference label, $j$ indexes a pair, and $a,b$ identify its two members.
+A pair with one wrong prediction contributes zero to pair accuracy, even when its other member is right.
+Probability quality uses the mean NLL above and the summed multiclass Brier convention:
+$$\operatorname{BS}_{multi}=\frac1N\sum_i\sum_{k=0}^{2}
+\left(p_{ik}-\mathbf{1}[y_i=k]\right)^2.$$
+For identical deterministic inputs with opposite reference labels, at most one member per pair
+can be right: $\operatorname{accuracy}\leq1/2$ and $\operatorname{pair\ accuracy}=0$.
+This is an information limitation, not a statement that all sequence models must succeed.</p>
 </div>
 </div>
 </div>
@@ -8795,6 +8973,32 @@ Local implementation and execution records are inspectable; no provider model wa
 For runnable exercises, use the <a href="08_exercises_and_solutions.html">worked exercises</a>.</p>
 <p>If you are unsure where to go next, use <a href="COURSE.html">the course outline</a>.</p>
 <p><a href="assignments_README.html">Assignments</a> · <a href="QUICK_REFERENCE.html">Quick reference</a> · <a href="COURSE.html">Course outline</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-10-papers">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="paper-references">Paper references<a class="anchor-link" href="#paper-references">¶</a></h2><p>Read these for the general methods used or contrasted in this lesson. They do not establish Jev’s unpublished architecture or RLCD algorithm. The formulas above are code-matched teaching notation unless explicitly attributed.</p>
+<ul>
+<li><p><strong>Kim (2014).</strong> <a href="https://aclanthology.org/D14-1181/">Convolutional Neural Networks for Sentence Classification</a>. EMNLP:1746–1751. Local convolutional features and max pooling for sentence classification; our tiny CNN uses different settings.</p>
+</li>
+<li><p><strong>Cho et al. (2014).</strong> <a href="https://aclanthology.org/D14-1179/">Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation</a>. EMNLP:1724–1734. Historical gated recurrent units; the PyTorch reset-gate variant is identified beside our equations.</p>
+</li>
+<li><p><strong>Vaswani et al. (2017).</strong> <a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>. Advances in Neural Information Processing Systems 30. Scaled dot-product attention and the need to supply position information.</p>
+</li>
+<li><p><strong>Kingma and Ba (2015).</strong> <a href="https://arxiv.org/abs/1412.6980">Adam: A Method for Stochastic Optimization</a>. ICLR; arXiv preprint first posted in 2014. Adaptive moment estimates, bias correction, and the optimizer used in lesson 10.</p>
+</li>
+<li><p><strong>Brier (1950).</strong> <a href="https://doi.org/10.1175/1520-0493(1950)078%3C0001:VOFEIT%3E2.0.CO;2">Verification of Forecasts Expressed in Terms of Probability</a>. Monthly Weather Review 78(1):1–3. The original probability-forecast scoring paper; this course states its binary and multiclass conventions explicitly.</p>
+</li>
+<li><p><strong>Gneiting and Raftery (2007).</strong> <a href="https://doi.org/10.1198/016214506000001437">Strictly Proper Scoring Rules, Prediction, and Estimation</a>. Journal of the American Statistical Association 102(477):359–378. Why proper probability losses reward honest probability forecasts.</p>
+</li>
+</ul>
+<p><a href="PAPER_GUIDE.html">Paper reading guide and equation map</a> · <a href="SOURCES.html">Jev documentation and source limits</a>.</p>
 </div>
 </div>
 </div>

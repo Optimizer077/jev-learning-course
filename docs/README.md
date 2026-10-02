@@ -21,6 +21,7 @@
 | [Model guide](MODEL_GUIDE.md) | How related approaches connect |
 | [FAQ](FAQ.md) | Common learning and setup questions |
 | [Sources](SOURCES.md) | Which statements come from documentation or research |
+| [Paper reading guide](PAPER_GUIDE.md) | Which papers explain each lesson's equations and methods |
 
 <details>
 <summary>Maintaining or contributing to the course?</summary>

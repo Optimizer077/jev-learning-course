@@ -7823,7 +7823,7 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 <label><input aria-controls="lesson-content" disabled="" id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
 <noscript><p>Python code stays visible when JavaScript is unavailable. You can still read all explanations and saved results.</p></noscript>
-<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li><li><a href="#paper-references">Paper references</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=52278afbf311-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8073,6 +8073,24 @@ causal mask instead allows each position to read only earlier positions and itse
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-06-0-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · dimensions and the paper connection</strong></p>
+<p>In this single-head toy, $Q,K,V$ each have shape $n\times d$, with $n=8$ positions
+and $d=6$ features. Thus $QK^\top$ and mask $M$ have shape $n\times n$, and the
+attention output has shape $n\times d$. Softmax normalizes each query row over keys.
+The factor $\sqrt d$ rescales dot-product scores. The scaled-attention expression follows
+<a href="https://arxiv.org/abs/1706.03762">Vaswani et al. (2017), section 3.2.1</a>.
+Our isolated-question mask is authored course material, not a mask specified in that paper
+or a disclosed Jev architecture. Every row must allow at least one key.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=55501ddc391b-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8249,6 +8267,24 @@ It helps explain the motivation for calibrated prediction, but does not reveal t
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-06-1-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · show why the minimum is honest</strong></p>
+<p>Differentiating the expected binary Brier loss shown above gives
+$$\frac{dL}{dp}=2(p-q),\qquad \frac{d^2L}{dp^2}=2&gt;0.$$
+Here $q$ is the true positive-outcome rate and $p$ is the reported probability.
+The unique minimum occurs at $p=q$, including boundary rates 0 and 1.
+For $q=0.7$, the minimum is $q(1-q)=0.21$; irreducible outcome randomness leaves positive
+expected loss. This is a worked example of strict propriety, as discussed by
+<a href="https://doi.org/10.1198/016214506000001437">Gneiting and Raftery (2007)</a>, not the RLCD reward.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=71512f1331a9-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8382,6 +8418,26 @@ Why should you avoid interpreting that limit as a promised wall-clock speedup?</
 For runnable exercises, use the <a href="08_exercises_and_solutions.html">worked exercises</a>.</p>
 <p>If you are unsure where to go next, use <a href="COURSE.html">the course outline</a>.</p>
 <p><a href="assignments_README.html">Assignments</a> · <a href="QUICK_REFERENCE.html">Quick reference</a> · <a href="COURSE.html">Course outline</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-06-papers">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="paper-references">Paper references<a class="anchor-link" href="#paper-references">¶</a></h2><p>Read these for the general methods used or contrasted in this lesson. They do not establish Jev’s unpublished architecture or RLCD algorithm. The formulas above are code-matched teaching notation unless explicitly attributed.</p>
+<ul>
+<li><p><strong>Vaswani et al. (2017).</strong> <a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>. Advances in Neural Information Processing Systems 30. Scaled dot-product attention and the need to supply position information.</p>
+</li>
+<li><p><strong>Devlin et al. (2019).</strong> <a href="https://aclanthology.org/N19-1423/">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a>. NAACL-HLT:4171–4186. Contextual language representations and downstream classification; BERT is not run in this course.</p>
+</li>
+<li><p><strong>Gneiting and Raftery (2007).</strong> <a href="https://doi.org/10.1198/016214506000001437">Strictly Proper Scoring Rules, Prediction, and Estimation</a>. Journal of the American Statistical Association 102(477):359–378. Why proper probability losses reward honest probability forecasts.</p>
+</li>
+</ul>
+<p><a href="PAPER_GUIDE.html">Paper reading guide and equation map</a> · <a href="SOURCES.html">Jev documentation and source limits</a>.</p>
 </div>
 </div>
 </div>

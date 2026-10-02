@@ -7823,7 +7823,7 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 <label><input aria-controls="lesson-content" disabled="" id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
 <noscript><p>Python code stays visible when JavaScript is unavailable. You can still read all explanations and saved results.</p></noscript>
-<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li><li><a href="#paper-references">Paper references</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=87c08bdf5f30-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8053,6 +8053,30 @@ the question ID is a lookup key, not a substitute for asking the question.</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="2-check-the-response-where-it-enters-your-application">2. Check the response where it enters your application<a class="anchor-link" href="#2-check-the-response-where-it-enters-your-application">¶</a></h3><p>The following checks cover the fields this tutorial uses. They check structure and arithmetic,
 not whether a judgment is correct. The tolerance allows minor floating-point differences.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-05-0-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · what the validator can establish</strong></p>
+<p>For a Choice or Score distribution, the numeric checks require
+$$0\leq p_k\leq1,\qquad
+\left|\sum_{k=0}^{K-1}p_k-1\right|\leq\delta.$$
+For an ordered Score, they also compare the returned score with
+$$s_{expected}=\sum_{k=0}^{K-1}k\,p_k;$$
+for a Noul they require $0\leq p\leq1$. $K$ is the number of options or levels, and
+$p_k$ is the probability of option or level $k$. Here $\delta=10^{-5}$ is the absolute
+probability-sum tolerance. The Python validator also uses <code>math.isclose</code>'s small default
+relative tolerance when comparing numeric results. Ordered indices start at zero.
+For $(0.05,0.25,0.70)$, the expected score is 1.65. These invariants follow the
+<a href="https://docs.typesafe.ai/primitives/score">documented primitives</a>; passing them does not
+establish accuracy or calibration. See <a href="https://proceedings.mlr.press/v70/guo17a.html">Guo et al. (2017)</a>
+for that separate empirical question. There is no published confidence formula asserted here.</p>
 </div>
 </div>
 </div>
@@ -8525,6 +8549,24 @@ action permissions in code. Return to <a href="README.html">README</a> for the f
 For runnable exercises, use the <a href="08_exercises_and_solutions.html">worked exercises</a>.</p>
 <p>If you are unsure where to go next, use <a href="COURSE.html">the course outline</a>.</p>
 <p><a href="assignments_README.html">Assignments</a> · <a href="QUICK_REFERENCE.html">Quick reference</a> · <a href="COURSE.html">Course outline</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-05-papers">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="paper-references">Paper references<a class="anchor-link" href="#paper-references">¶</a></h2><p>Read these for the general methods used or contrasted in this lesson. They do not establish Jev’s unpublished architecture or RLCD algorithm. The formulas above are code-matched teaching notation unless explicitly attributed.</p>
+<ul>
+<li><p><strong>Guo et al. (2017).</strong> <a href="https://proceedings.mlr.press/v70/guo17a.html">On Calibration of Modern Neural Networks</a>. ICML, PMLR 70:1321–1330. Temperature scaling and the difference between accuracy and calibration.</p>
+</li>
+<li><p><strong>Brier (1950).</strong> <a href="https://doi.org/10.1175/1520-0493(1950)078%3C0001:VOFEIT%3E2.0.CO;2">Verification of Forecasts Expressed in Terms of Probability</a>. Monthly Weather Review 78(1):1–3. The original probability-forecast scoring paper; this course states its binary and multiclass conventions explicitly.</p>
+</li>
+</ul>
+<p><a href="PAPER_GUIDE.html">Paper reading guide and equation map</a> · <a href="SOURCES.html">Jev documentation and source limits</a>.</p>
 </div>
 </div>
 </div>

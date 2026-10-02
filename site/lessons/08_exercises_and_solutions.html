@@ -7823,7 +7823,7 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 <label><input aria-controls="lesson-content" disabled="" id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
 <noscript><p>Python code stays visible when JavaScript is unavailable. You can still read all explanations and saved results.</p></noscript>
-<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li><li><a href="#paper-references">Paper references</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=703c7713c0e4-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7927,6 +7927,25 @@ multiplier would reverse ranking; multiplying by zero gives a uniform distributi
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-08-0-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · write out the cancellation</strong></p>
+<p>For one common constant $c$,
+$$\frac{e^{z_k+c}}{\sum_j e^{z_j+c}}
+=\frac{e^c e^{z_k}}{e^c\sum_j e^{z_j}}
+=\frac{e^{z_k}}{\sum_j e^{z_j}}.$$
+This explains the stable-softmax subtraction in the code. Positive scaling $a$ instead gives
+$\operatorname{softmax}(az)=\operatorname{softmax}(z/T)$ with $T=1/a$.
+It preserves ranking, not probabilities. Compare with the temperature-scaling method in
+<a href="https://proceedings.mlr.press/v70/guo17a.html">Guo et al. (2017)</a>.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f9069d493aaf-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7969,6 +7988,27 @@ multiplier would reverse ranking; multiplying by zero gives a uniform distributi
 Thus choose no below 0.2, review between 0.2 and 0.95, and yes above 0.95. At boundaries either tied
 action has equal modeled cost. If review costs 0.8, the review region disappears except a three-way
 tie at $p=0.8$: the best binary action already costs at most 0.8.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-08-1-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · find the review interval from costs</strong></p>
+<p>Perfect review beats both automatic actions when
+$$C_R\leq pC_{FN},\qquad C_R\leq(1-p)C_{FP}.$$
+For positive error costs, this gives
+$$\frac{C_R}{C_{FN}}\leq p\leq1-\frac{C_R}{C_{FP}},$$
+intersected with $[0,1]$. With $(C_{FP},C_{FN},C_R)=(4,1,0.2)$ the interval is
+$[0.2,0.95]$, including cost ties. If the lower endpoint exceeds the upper endpoint,
+review is never cheapest. The code resolves ties by its stated action order.
+$C_{FP}$ is false-positive cost, $C_{FN}$ false-negative cost, and $C_R$ perfect-review cost.
+This is our cost-based derivation in the rejection setting studied by
+<a href="https://doi.org/10.1109/TIT.1970.1054406">Chow (1970)</a>.</p>
 </div>
 </div>
 </div>
@@ -8267,6 +8307,26 @@ when you want to measure Jev, and keep the model's predictions separate from you
 For runnable exercises, use the <a href="08_exercises_and_solutions.html">worked exercises</a>.</p>
 <p>If you are unsure where to go next, use <a href="COURSE.html">the course outline</a>.</p>
 <p><a href="assignments_README.html">Assignments</a> · <a href="QUICK_REFERENCE.html">Quick reference</a> · <a href="COURSE.html">Course outline</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-08-papers">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="paper-references">Paper references<a class="anchor-link" href="#paper-references">¶</a></h2><p>Read these for the general methods used or contrasted in this lesson. They do not establish Jev’s unpublished architecture or RLCD algorithm. The formulas above are code-matched teaching notation unless explicitly attributed.</p>
+<ul>
+<li><p><strong>Guo et al. (2017).</strong> <a href="https://proceedings.mlr.press/v70/guo17a.html">On Calibration of Modern Neural Networks</a>. ICML, PMLR 70:1321–1330. Temperature scaling and the difference between accuracy and calibration.</p>
+</li>
+<li><p><strong>Chow (1970).</strong> <a href="https://doi.org/10.1109/TIT.1970.1054406">On Optimum Recognition Error and Reject Tradeoff</a>. IEEE Transactions on Information Theory 16(1):41–46. The recognition-versus-rejection problem; our review costs and policy are authored teaching choices.</p>
+</li>
+<li><p><strong>Vaswani et al. (2017).</strong> <a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>. Advances in Neural Information Processing Systems 30. Scaled dot-product attention and the need to supply position information.</p>
+</li>
+</ul>
+<p><a href="PAPER_GUIDE.html">Paper reading guide and equation map</a> · <a href="SOURCES.html">Jev documentation and source limits</a>.</p>
 </div>
 </div>
 </div>

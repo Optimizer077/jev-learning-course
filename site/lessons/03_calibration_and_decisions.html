@@ -7823,7 +7823,7 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 <label><input aria-controls="lesson-content" disabled="" id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
 <noscript><p>Python code stays visible when JavaScript is unavailable. You can still read all explanations and saved results.</p></noscript>
-<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#begin-with-ten-outcomes">Begin with ten outcomes</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#begin-with-ten-outcomes">Begin with ten outcomes</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li><li><a href="#paper-references">Paper references</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=da9b47a67737-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8104,6 +8104,31 @@ probabilistic prediction quality, including calibration and discrimination, rath
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-03-0-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · define the plotted quantities</strong></p>
+<p>For a nonempty bin $B_m$ of predictions,
+$$\bar p_m=\frac{1}{|B_m|}\sum_{i\in B_m}p_i,\qquad
+\bar y_m=\frac{1}{|B_m|}\sum_{i\in B_m}y_i.$$
+The plot compares mean prediction $\bar p_m$ with observed positive frequency $\bar y_m$.
+Here $y_i\in\{0,1\}$, $m$ indexes a bin, and $|B_m|$ is its number of cases;
+empty bins are omitted. $N$ is the total number of evaluated cases.
+For the binary outcome probability, this course uses
+$$\operatorname{BS}_{binary}=\frac{1}{N}\sum_{i=1}^{N}(p_i-y_i)^2.$$
+It ranges from 0 to 1. A single forecast $p=0.8$ followed by $y=1$ contributes 0.04.
+<a href="https://doi.org/10.1175/1520-0493(1950)078%3C0001:VOFEIT%3E2.0.CO;2">Brier (1950)</a>
+introduced probability scoring. A two-category squared-error sum gives twice this
+one-probability score: $(p-y)^2+((1-p)-(1-y))^2=2(p-y)^2$.
+<a href="https://proceedings.mlr.press/v70/guo17a.html">Guo et al. (2017)</a>
+discuss modern calibration. The Brier score is not a calibration-only metric.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6ac7fa5eed03-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8316,6 +8341,27 @@ It is not RLCD and not a Jev API parameter. A positive $T$ preserves the class r
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-03-1-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · the temperature search actually used here</strong></p>
+<p>$$p_i(T)=\sigma(z_i/T),\qquad \sigma(u)=\frac{1}{1+e^{-u}}.$$
+$$T^*=\operatorname*{arg\,min}_{T\in\mathcal T}
+-\frac{1}{N_{cal}}\sum_{i\in cal}
+\left[y_i\log p_i(T)+(1-y_i)\log(1-p_i(T))\right].$$
+$z_i$ is the overconfident binary logit, $N_{cal}$ is the number of calibration cases,
+the index set $cal$ contains those cases, and $\mathcal T$ is this notebook's
+121-point logarithmic grid from 0.25 to 6.
+The code clips probabilities when taking logs for numerical safety. It searches a finite
+grid; it does not train the classifier or optimize temperature on the held-out evaluation set.
+This adapts the temperature-scaling idea in <a href="https://proceedings.mlr.press/v70/guo17a.html">Guo et al. (2017)</a>.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a83aa644946a-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8395,6 +8441,26 @@ with one parameter. Sparse bins and changing populations can also mislead a reli
 <h3 id="6-an-uncertainty-interval-and-a-distribution-shift">6. An uncertainty interval and a distribution shift<a class="anchor-link" href="#6-an-uncertainty-interval-and-a-distribution-shift">¶</a></h3><p>Estimate uncertainty in the held-out <strong>mean Brier score</strong> by resampling cases with replacement.
 The 95% percentile bootstrap interval assumes the sampled cases are independent and representative.
 It is not a probability interval for one model answer.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-03-2-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · what is resampled</strong></p>
+<p>For each bootstrap replicate $b$, sample $N$ case indices $I_{b,1},\ldots,I_{b,N}$
+independently with replacement from $\{1,\ldots,N\}$, then compute
+$$\widehat{\operatorname{BS}}^{(b)}=\frac1N\sum_{j=1}^{N}
+\left(p_{I_{b,j}}-y_{I_{b,j}}\right)^2.$$
+The plotted 95% percentile interval is the 2.5th–97.5th percentile range of the replicate means.
+$N$ is the held-out sample size, not the number of bootstrap replicates. This interval estimates
+sampling variation of a mean under the stated independent-case assumption; it does not cover
+unknown distribution shifts or give an interval for a single prediction.
+<a href="https://doi.org/10.1214/aos/1176344552">Efron (1979)</a> introduces the bootstrap framework.</p>
 </div>
 </div>
 </div>
@@ -8597,6 +8663,28 @@ accuracy from this synthetic experiment. Continue to <a href="04_workflows_and_r
 For runnable exercises, use the <a href="08_exercises_and_solutions.html">worked exercises</a>.</p>
 <p>If you are unsure where to go next, use <a href="COURSE.html">the course outline</a>.</p>
 <p><a href="assignments_README.html">Assignments</a> · <a href="QUICK_REFERENCE.html">Quick reference</a> · <a href="COURSE.html">Course outline</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-03-papers">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="paper-references">Paper references<a class="anchor-link" href="#paper-references">¶</a></h2><p>Read these for the general methods used or contrasted in this lesson. They do not establish Jev’s unpublished architecture or RLCD algorithm. The formulas above are code-matched teaching notation unless explicitly attributed.</p>
+<ul>
+<li><p><strong>Guo et al. (2017).</strong> <a href="https://proceedings.mlr.press/v70/guo17a.html">On Calibration of Modern Neural Networks</a>. ICML, PMLR 70:1321–1330. Temperature scaling and the difference between accuracy and calibration.</p>
+</li>
+<li><p><strong>Brier (1950).</strong> <a href="https://doi.org/10.1175/1520-0493(1950)078%3C0001:VOFEIT%3E2.0.CO;2">Verification of Forecasts Expressed in Terms of Probability</a>. Monthly Weather Review 78(1):1–3. The original probability-forecast scoring paper; this course states its binary and multiclass conventions explicitly.</p>
+</li>
+<li><p><strong>Chow (1970).</strong> <a href="https://doi.org/10.1109/TIT.1970.1054406">On Optimum Recognition Error and Reject Tradeoff</a>. IEEE Transactions on Information Theory 16(1):41–46. The recognition-versus-rejection problem; our review costs and policy are authored teaching choices.</p>
+</li>
+<li><p><strong>Efron (1979).</strong> <a href="https://doi.org/10.1214/aos/1176344552">Bootstrap Methods: Another Look at the Jackknife</a>. The Annals of Statistics 7(1):1–26. Resampling with replacement; the lesson explicitly uses a percentile interval rather than claiming all bootstrap methods are the same.</p>
+</li>
+</ul>
+<p><a href="PAPER_GUIDE.html">Paper reading guide and equation map</a> · <a href="SOURCES.html">Jev documentation and source limits</a>.</p>
 </div>
 </div>
 </div>

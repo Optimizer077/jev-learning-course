@@ -7823,7 +7823,7 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 <label><input aria-controls="lesson-content" disabled="" id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
 <noscript><p>Python code stays visible when JavaScript is unavailable. You can still read all explanations and saved results.</p></noscript>
-<details><summary>In this lesson</summary><ul><li><a href="#the-idea-in-one-minute">The idea in one minute</a></li><li><a href="#try-one-decision--no-model-call">Try one decision — no model call</a></li><li><a href="#choose-your-starting-path">Choose your starting path</a></li><li><a href="#read-first-run-when-ready">Read first; run when ready</a></li><li><a href="#how-to-study-a-lesson">How to study a lesson</a></li><li><a href="#three-labels-that-keep-the-course-honest">Three labels that keep the course honest</a></li><li><a href="#a-tiny-python-reading-guide">A tiny Python reading guide</a></li><li><a href="#ready-for-lesson-01">Ready for lesson 01?</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-in-one-minute">The idea in one minute</a></li><li><a href="#try-one-decision--no-model-call">Try one decision — no model call</a></li><li><a href="#choose-your-starting-path">Choose your starting path</a></li><li><a href="#read-first-run-when-ready">Read first; run when ready</a></li><li><a href="#how-to-study-a-lesson">How to study a lesson</a></li><li><a href="#three-labels-that-keep-the-course-honest">Three labels that keep the course honest</a></li><li><a href="#a-tiny-python-reading-guide">A tiny Python reading guide</a></li><li><a href="#ready-for-lesson-01">Ready for lesson 01?</a></li><li><a href="#check-your-understanding">Check your understanding</a></li><li><a href="#paper-references">Paper references</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=39733cc1fab8-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7921,6 +7921,24 @@ fits the message. Our software then chooses a queue or asks someone to review th
 Its output is designed for software to use. <a href="https://docs.typesafe.ai/introduction">Official introduction</a>.</p>
 <h2 id="try-one-decision--no-model-call">Try one decision — no model call<a class="anchor-link" href="#try-one-decision--no-model-call">¶</a></h2><p>The probabilities below are invented for teaching. “0.90” means 90%. Our example rule uses a
 threshold of 0.85. Before running, predict whether the message will be routed or reviewed.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-00-0-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · optional first look</strong></p>
+<p>For $K$ mutually exclusive answers, a probability vector satisfies
+$$p_k\geq0,\qquad \sum_{k=0}^{K-1}p_k=1.$$
+Here $k$ is an answer index and $p_k$ is its probability. A larger value means more
+probability on that answer. This equation checks accounting, not truth or calibration.
+For example, $(0.06,0.90,0.04)$ sums to one but can still predict the wrong queue.
+The distinction between accurate labels and calibrated probabilities is studied by
+<a href="https://proceedings.mlr.press/v70/guo17a.html">Guo et al. (2017)</a>.</p>
 </div>
 </div>
 </div>
@@ -8113,6 +8131,24 @@ You do not need to understand matrices, attention, or training yet.</p>
 For runnable exercises, use the <a href="08_exercises_and_solutions.html">worked exercises</a>.</p>
 <p>If you are unsure where to go next, use <a href="COURSE.html">the course outline</a>.</p>
 <p><a href="assignments_README.html">Assignments</a> · <a href="QUICK_REFERENCE.html">Quick reference</a> · <a href="COURSE.html">Course outline</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-00-papers">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="paper-references">Paper references<a class="anchor-link" href="#paper-references">¶</a></h2><p>Read these for the general methods used or contrasted in this lesson. They do not establish Jev’s unpublished architecture or RLCD algorithm. The formulas above are code-matched teaching notation unless explicitly attributed.</p>
+<ul>
+<li><p><strong>Guo et al. (2017).</strong> <a href="https://proceedings.mlr.press/v70/guo17a.html">On Calibration of Modern Neural Networks</a>. ICML, PMLR 70:1321–1330. Temperature scaling and the difference between accuracy and calibration.</p>
+</li>
+<li><p><strong>Brier (1950).</strong> <a href="https://doi.org/10.1175/1520-0493(1950)078%3C0001:VOFEIT%3E2.0.CO;2">Verification of Forecasts Expressed in Terms of Probability</a>. Monthly Weather Review 78(1):1–3. The original probability-forecast scoring paper; this course states its binary and multiclass conventions explicitly.</p>
+</li>
+</ul>
+<p><a href="PAPER_GUIDE.html">Paper reading guide and equation map</a> · <a href="SOURCES.html">Jev documentation and source limits</a>.</p>
 </div>
 </div>
 </div>

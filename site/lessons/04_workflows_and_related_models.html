@@ -7823,7 +7823,7 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 <label><input aria-controls="lesson-content" disabled="" id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
 <noscript><p>Python code stays visible when JavaScript is unavailable. You can still read all explanations and saved results.</p></noscript>
-<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li><li><a href="#paper-references">Paper references</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4e29984171a0-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8012,6 +8012,24 @@ Parallel model evaluation does not establish that assumption.</p>
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-04-0-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · dependence has a precise place</strong></p>
+<p>$$P(A\cap B)=P(A)P(B\mid A),\qquad P(A)&gt;0.$$
+$A$ and $B$ are two events; $P(B\mid A)$ is the chance of $B$ among cases where $A$ occurs.
+Independence would require $P(B\mid A)=P(B)$. Without it,
+$$\max(0,P(A)+P(B)-1)\leq P(A\cap B)\leq\min(P(A),P(B)).$$
+For 0.8 and 0.7, the valid intersection range is 0.5–0.7. The bounds follow from
+$P(A\cup B)\leq1$ and $A\cap B\subseteq A,B$; they are elementary probability identities,
+not evidence about how Jev batches questions.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=feaa2c736a6e-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8106,6 +8124,25 @@ truth or calibration. Conversely, a classifier's softmax numbers are not automat
 between differently phrased questions. Use explicit criteria, filter evidence, and enforce required
 identities in software. It also warns against treating rubric scores as precise numerical reconstruction.
 <a href="https://docs.typesafe.ai/model-jaggedness/jev-1.13">Known limitations</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-04-1-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · choose an allowed action by modeled cost</strong></p>
+<p>$$a^*\in\operatorname*{arg\,min}_{a\in\mathcal A(s)}
+\sum_y C(a,y)\,p(y\mid s).$$
+$s$ is the supplied state, $\mathcal A(s)$ is the set of actions allowed by explicit
+permissions, $C(a,y)$ is the cost of action $a$ when outcome $y$ occurs, and
+$p(y\mid s)$ is the probability of outcome $y$ given state $s$.
+The sum is expected cost. A probability does not add a forbidden action to $\mathcal A(s)$.
+This is a general decision-theory view; <a href="https://doi.org/10.1109/TIT.1970.1054406">Chow (1970)</a>
+studies rejection alongside recognition. It does not specify our workflow or permissions.</p>
 </div>
 </div>
 </div>
@@ -8374,6 +8411,24 @@ Then write down examples where two topics overlap, and decide how your criteria 
 For runnable exercises, use the <a href="08_exercises_and_solutions.html">worked exercises</a>.</p>
 <p>If you are unsure where to go next, use <a href="COURSE.html">the course outline</a>.</p>
 <p><a href="assignments_README.html">Assignments</a> · <a href="QUICK_REFERENCE.html">Quick reference</a> · <a href="COURSE.html">Course outline</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-04-papers">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="paper-references">Paper references<a class="anchor-link" href="#paper-references">¶</a></h2><p>Read these for the general methods used or contrasted in this lesson. They do not establish Jev’s unpublished architecture or RLCD algorithm. The formulas above are code-matched teaching notation unless explicitly attributed.</p>
+<ul>
+<li><p><strong>Chow (1970).</strong> <a href="https://doi.org/10.1109/TIT.1970.1054406">On Optimum Recognition Error and Reject Tradeoff</a>. IEEE Transactions on Information Theory 16(1):41–46. The recognition-versus-rejection problem; our review costs and policy are authored teaching choices.</p>
+</li>
+<li><p><strong>Devlin et al. (2019).</strong> <a href="https://aclanthology.org/N19-1423/">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a>. NAACL-HLT:4171–4186. Contextual language representations and downstream classification; BERT is not run in this course.</p>
+</li>
+</ul>
+<p><a href="PAPER_GUIDE.html">Paper reading guide and equation map</a> · <a href="SOURCES.html">Jev documentation and source limits</a>.</p>
 </div>
 </div>
 </div>

@@ -100,3 +100,23 @@ notebook results.
 
 No webpage, hosted Colab runtime, or live Jev request was opened. The PyTorch wheel index was
 accessed to install the CPU dependency. The course still does not reproduce or benchmark Jev.
+
+## Fourth pass: equations and primary papers
+
+All eleven notebooks now contain math companions beside their worked examples and a primary-paper
+reading section. A shared [paper guide](PAPER_GUIDE.md) supplies a symbol key and lesson map.
+The learning and technical agents reviewed placement, definitions, formula conventions, and
+bibliographic scope. A third agent verified twelve bibliographies and read eight primary papers.
+
+The review corrected a welcome-page anchor, undefined symbols, the stored-versus-mathematical
+orientation of PyTorch weights, and a dense six-model math block. It explicitly distinguishes
+PyTorch's GRU reset order from Cho's original equation, mean from summed loss, binary from
+multiclass Brier, and the course's IDF smoothing from historical retrieval methods.
+
+Adam, cross-entropy, and GRU formulas were checked independently against numerical PyTorch
+operations. The Markdown update preserves existing executed code and outputs; the maintained
+builder also includes the additions so regeneration cannot drop them. Paper access and remaining
+full-text gaps are recorded in [SOURCES.md](SOURCES.md). All 302 inline and display expressions
+were rendered locally with MathJax without TeX errors, including 48 display-equation blocks.
+Six local equation-preview sheets were inspected for legibility and clipping. This checks the
+math artwork rather than browser page layout. Browser and hosted-Colab limits still apply.

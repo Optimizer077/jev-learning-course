@@ -7823,7 +7823,7 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 <label><input aria-controls="lesson-content" disabled="" id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
 <noscript><p>Python code stays visible when JavaScript is unavailable. You can still read all explanations and saved results.</p></noscript>
-<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#begin-with-numbers-you-can-calculate-by-hand">Begin with numbers you can calculate by hand</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#begin-with-numbers-you-can-calculate-by-hand">Begin with numbers you can calculate by hand</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li><li><a href="#paper-references">Paper references</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ed379ce23a4c-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8150,6 +8150,28 @@ of RLCD; TypeSafe describes RLCD's objective at a high level as calibrated decis
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-02-0-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · connect the loss to the update</strong></p>
+<p>With training temperature $T=1$, let $P$ be the $N\times K$ predicted-probability
+matrix and $Y$ the one-hot target matrix. For the mean cross-entropy $L$ above,
+$$\nabla_W L=X^\top(P-Y)/N,\qquad
+\nabla_b L=\frac{1}{N}\sum_{i=1}^{N}(P_i-Y_i).$$
+$$W\leftarrow W-\eta\nabla_W L,\qquad b\leftarrow b-\eta\nabla_b L.$$
+$X$ contains $N$ examples and $D$ features, $W$ has shape $D\times K$, $b$ has
+$K$ entries, and $\eta&gt;0$ is the learning rate. This notebook uses no weight penalty.
+At a different fixed temperature, the logit derivative also includes a factor $1/T$.
+These are supervised classifier equations, not RLCD. <a href="https://doi.org/10.1038/323533a0">Rumelhart, Hinton, and Williams (1986)</a>
+provide historical backpropagation background. Log loss belongs to the proper-scoring
+framework discussed by <a href="https://doi.org/10.1198/016214506000001437">Gneiting and Raftery (2007)</a>.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0b547be76045-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8432,6 +8454,23 @@ This is an independent numerical check of the analytic update used above, not a 
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-02-1-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · an independent slope estimate</strong></p>
+<p>$$\frac{\partial L}{\partial W_{jk}}\approx
+\frac{L(W+\varepsilon E_{jk})-L(W-\varepsilon E_{jk})}{2\varepsilon}.$$
+$E_{jk}$ is zero except for a 1 at weight $(j,k)$; $\varepsilon$ is a small positive
+perturbation. The code compares this finite-difference slope with the analytic gradient.
+An excessively small perturbation amplifies floating-point noise; this is a numerical
+check of our implementation, not a formula quoted from a Jev paper.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=58a6999edafa-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8575,6 +8614,26 @@ That is why accuracy alone is insufficient. Continue to <a href="03_calibration_
 For runnable exercises, use the <a href="08_exercises_and_solutions.html">worked exercises</a>.</p>
 <p>If you are unsure where to go next, use <a href="COURSE.html">the course outline</a>.</p>
 <p><a href="assignments_README.html">Assignments</a> · <a href="QUICK_REFERENCE.html">Quick reference</a> · <a href="COURSE.html">Course outline</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-02-papers">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="paper-references">Paper references<a class="anchor-link" href="#paper-references">¶</a></h2><p>Read these for the general methods used or contrasted in this lesson. They do not establish Jev’s unpublished architecture or RLCD algorithm. The formulas above are code-matched teaching notation unless explicitly attributed.</p>
+<ul>
+<li><p><strong>Rumelhart, Hinton, and Williams (1986).</strong> <a href="https://doi.org/10.1038/323533a0">Learning representations by back-propagating errors</a>. Nature 323:533–536. Historical background for learning weights through propagated derivatives; our linear gradient is derived in the lesson.</p>
+</li>
+<li><p><strong>Guo et al. (2017).</strong> <a href="https://proceedings.mlr.press/v70/guo17a.html">On Calibration of Modern Neural Networks</a>. ICML, PMLR 70:1321–1330. Temperature scaling and the difference between accuracy and calibration.</p>
+</li>
+<li><p><strong>Gneiting and Raftery (2007).</strong> <a href="https://doi.org/10.1198/016214506000001437">Strictly Proper Scoring Rules, Prediction, and Estimation</a>. Journal of the American Statistical Association 102(477):359–378. Why proper probability losses reward honest probability forecasts.</p>
+</li>
+</ul>
+<p><a href="PAPER_GUIDE.html">Paper reading guide and equation map</a> · <a href="SOURCES.html">Jev documentation and source limits</a>.</p>
 </div>
 </div>
 </div>

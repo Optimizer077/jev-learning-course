@@ -7823,7 +7823,7 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 <label><input aria-controls="lesson-content" disabled="" id="show-code" type="checkbox"/>Show Python code</label>
 <p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
 <noscript><p>Python code stays visible when JavaScript is unavailable. You can still read all explanations and saved results.</p></noscript>
-<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li></ul></details></section>
+<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li><li><a href="#paper-references">Paper references</a></li></ul></details></section>
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a24bb4384fec-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8129,6 +8129,34 @@ for TF–IDF conventions. The implementation below uses NumPy, not scikit-learn.
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-09-0-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · follow the exact vector pipeline</strong></p>
+<p>Let $x_{dw}=\mathbf{1}[\text{word }w\text{ occurs in document }d]$.
+With the smoothed training IDF above and $\epsilon=10^{-12}$, define
+$$u_d=x_d\odot\operatorname{idf},\qquad
+v_d=\frac{u_d}{\max(\lVert u_d\rVert_2,\epsilon)}.$$
+For the training documents $D_k$ in class $k$,
+$$\bar v_k=\frac1{|D_k|}\sum_{d\in D_k}v_d,\qquad
+c_k=\frac{\bar v_k}{\max(\lVert\bar v_k\rVert_2,\epsilon)},\qquad s_{dk}=v_d^\top c_k.$$
+$\odot$ means elementwise multiplication, $\lVert\cdot\rVert_2$ Euclidean vector length,
+$c_k$ the normalized class prototype, and $s_{dk}$ its similarity to document $d$.
+The code normalizes individual documents
+<strong>before</strong> averaging and then normalizes each prototype. For nonzero unit vectors,
+the dot product is cosine similarity. With our nonnegative lexical features it lies in 0–1;
+general cosine similarity can be negative. Zero inputs produce zero scores by this explicit
+implementation rule; mathematical cosine is undefined for a zero vector.
+<a href="https://doi.org/10.1016/0306-4573(88)90021-0">Salton and Buckley (1988)</a> discuss term weighting.
+Our exact smoothed binary IDF convention is from the linked feature-extraction documentation,
+not an equation claimed to be identical to the paper's weighting schemes.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=118852b0404b-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8244,6 +8272,25 @@ review policy in lesson 07 is a separate experiment.</p>
 <p>Report automatic coverage and the fraction correct <strong>among automatic routes</strong>, with both denominators.
 For the count chart, every test case appears exactly once as correct, wrong, or reviewed.
 There is no measured Jev, BERT, or generative-model result in this comparison.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-09-1-0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Math companion · account for every case</strong></p>
+<p>$$N=N_{correct}+N_{wrong}+N_{review},\qquad
+\operatorname{coverage}=\frac{N_{correct}+N_{wrong}}N.$$
+$$\operatorname{automatic\ accuracy}=\frac{N_{correct}}{N_{correct}+N_{wrong}}.$$
+$N_{correct}$ and $N_{wrong}$ count <strong>automatically routed</strong> cases; $N_{review}$ counts reviewed cases.
+The accuracy denominator excludes reviewed cases and is undefined if all cases are reviewed.
+This is accounting for the authored experiment, not a model-family benchmark.
+Keyword ties lead to review. Positive lexical-similarity ties instead follow <code>argmax</code>'s
+first-class ordering; the two implementations deliberately have different tie rules.</p>
 </div>
 </div>
 </div>
@@ -8560,6 +8607,26 @@ For real Jev behavior, use lesson 05 and a separately designed evaluation.</p>
 For runnable exercises, use the <a href="08_exercises_and_solutions.html">worked exercises</a>.</p>
 <p>If you are unsure where to go next, use <a href="COURSE.html">the course outline</a>.</p>
 <p><a href="assignments_README.html">Assignments</a> · <a href="QUICK_REFERENCE.html">Quick reference</a> · <a href="COURSE.html">Course outline</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-09-papers">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="paper-references">Paper references<a class="anchor-link" href="#paper-references">¶</a></h2><p>Read these for the general methods used or contrasted in this lesson. They do not establish Jev’s unpublished architecture or RLCD algorithm. The formulas above are code-matched teaching notation unless explicitly attributed.</p>
+<ul>
+<li><p><strong>Salton and Buckley (1988).</strong> <a href="https://doi.org/10.1016/0306-4573(88)90021-0">Term-weighting approaches in automatic text retrieval</a>. Information Processing &amp; Management 24(5):513–523. Term weighting and vector-space retrieval; our exact smoothed binary variant is an implementation convention.</p>
+</li>
+<li><p><strong>Devlin et al. (2019).</strong> <a href="https://aclanthology.org/N19-1423/">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a>. NAACL-HLT:4171–4186. Contextual language representations and downstream classification; BERT is not run in this course.</p>
+</li>
+<li><p><strong>Chow (1970).</strong> <a href="https://doi.org/10.1109/TIT.1970.1054406">On Optimum Recognition Error and Reject Tradeoff</a>. IEEE Transactions on Information Theory 16(1):41–46. The recognition-versus-rejection problem; our review costs and policy are authored teaching choices.</p>
+</li>
+</ul>
+<p><a href="PAPER_GUIDE.html">Paper reading guide and equation map</a> · <a href="SOURCES.html">Jev documentation and source limits</a>.</p>
 </div>
 </div>
 </div>

@@ -7821,7 +7821,7 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 </style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5722e08c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9111747d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8023,6 +8023,11 @@ no fabricated model outputs or accuracy ranking.</p>
 included in the Colab companion checks. Primary-paper access and limits remain in <a href="SOURCES.html">SOURCES.md</a>.
 The desktop timeline and the mobile version at a 360-pixel reading width were inspected locally
 for clipping, spacing, and legible labels.</p>
+<p>The downloaded GitHub artifact exposed a headless-rendering problem: plot files existed, but
+the Agg backend did not embed their images in notebook outputs. The shared plotting helper now
+displays the saved PNG explicitly and closes its figure. Package checks require each experiment
+chart to match its notebook and HTML image, with a description, alongside the existing diagram
+checks. The complete course is exercised with Agg locally and in GitHub's workflow.</p>
 </div>
 </div>
 </div>

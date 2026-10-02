@@ -12,12 +12,20 @@ def setup():
                          'axes.spines.right': False, 'axes.grid': False,
                          'figure.constrained_layout.use': True})
 
-def show_figure(name):
+def show_figure(name, description=None):
+    """Save and embed a chart, including when a headless backend is active."""
     figures = Path(__file__).resolve().parents[1] / 'assets' / 'figures'
     figures.mkdir(parents=True, exist_ok=True)
-    plt.gcf().savefig(figures / f'{name}.png', bbox_inches='tight')
-    plt.show()
-    plt.close()
+    figure = plt.gcf()
+    image = figures / f'{name}.png'
+    try:
+        figure.savefig(image, bbox_inches='tight')
+        if description is None:
+            titles = [text.get_text() for text in figure.texts] + [axis.get_title() for axis in figure.axes]
+            description = '; '.join(dict.fromkeys(title for title in titles if title)) or name.replace('_', ' ')
+        display(Image(filename=str(image), embed=True, alt=description), metadata={'alt': description})
+    finally:
+        plt.close(figure)
 
 
 def show_diagram(name, description):
@@ -40,7 +48,7 @@ def flow_diagram(labels, name, title):
             ax.annotate('', xy=(i+1.1,.5), xytext=(i+.88,.5),
                         arrowprops=dict(arrowstyle='->',color=GREY,lw=1.5))
     ax.set_title(title, pad=12)
-    show_figure(name)
+    show_figure(name, title + ': ' + ' → '.join(label.replace('\n', ' ') for label in labels))
 
 def table(headers, rows):
     head = ''.join(f'<th style="text-align:left;padding:8px">{escape(str(x))}</th>' for x in headers)

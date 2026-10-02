@@ -11,7 +11,7 @@
     "notebook": "01_jev_basics.ipynb",
     "code_cells": 10,
     "executed": true,
-    "seconds": 2.01,
+    "seconds": 1.87,
     "figures": 3,
     "live_api": "not used"
   },
@@ -19,7 +19,7 @@
     "notebook": "02_decision_model_from_scratch.ipynb",
     "code_cells": 11,
     "executed": true,
-    "seconds": 3.21,
+    "seconds": 2.41,
     "figures": 4,
     "live_api": "not used"
   },
@@ -27,7 +27,7 @@
     "notebook": "03_calibration_and_decisions.ipynb",
     "code_cells": 11,
     "executed": true,
-    "seconds": 2.86,
+    "seconds": 2.43,
     "figures": 5,
     "live_api": "not used"
   },
@@ -35,7 +35,7 @@
     "notebook": "04_workflows_and_related_models.ipynb",
     "code_cells": 6,
     "executed": true,
-    "seconds": 1.72,
+    "seconds": 4.35,
     "figures": 0,
     "live_api": "not used"
   },
@@ -43,7 +43,7 @@
     "notebook": "05_optional_real_jev_api.ipynb",
     "code_cells": 9,
     "executed": true,
-    "seconds": 1.9,
+    "seconds": 1.85,
     "figures": 0,
     "live_api": "skipped"
   },
@@ -51,7 +51,7 @@
     "notebook": "06_architecture_and_training_lab.ipynb",
     "code_cells": 8,
     "executed": true,
-    "seconds": 2.67,
+    "seconds": 2.37,
     "figures": 3,
     "live_api": "not used"
   },
@@ -59,7 +59,7 @@
     "notebook": "07_text_routing_capstone.ipynb",
     "code_cells": 13,
     "executed": true,
-    "seconds": 2.28,
+    "seconds": 2.21,
     "figures": 4,
     "live_api": "not used"
   },
@@ -67,7 +67,7 @@
     "notebook": "08_exercises_and_solutions.ipynb",
     "code_cells": 8,
     "executed": true,
-    "seconds": 1.95,
+    "seconds": 1.72,
     "figures": 0,
     "live_api": "not used"
   },
@@ -75,7 +75,7 @@
     "notebook": "09_related_models_lab.ipynb",
     "code_cells": 11,
     "executed": true,
-    "seconds": 3.07,
+    "seconds": 2.26,
     "figures": 4,
     "live_api": "not used"
   },
@@ -83,7 +83,7 @@
     "notebook": "10_pytorch_models_lab.ipynb",
     "code_cells": 13,
     "executed": true,
-    "seconds": 18.14,
+    "seconds": 17.94,
     "figures": 3,
     "live_api": "not used"
   }

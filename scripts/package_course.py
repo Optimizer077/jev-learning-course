@@ -41,7 +41,7 @@ def validate(root=ROOT):
     notebooks = sorted((root/'notebooks').glob('[0-9][0-9]_*.ipynb'))
     if len(notebooks) != NOTEBOOK_COUNT:
         raise ValueError(f'Expected {NOTEBOOK_COUNT} lessons, found {len(notebooks)}.')
-    code_cells = figures = diagrams = 0
+    code_cells = figures = diagrams = charts = 0
     expected_artwork = []
     for path in notebooks:
         nb = nbformat.read(path, as_version=4)
@@ -55,11 +55,11 @@ def validate(root=ROOT):
             if any(out.output_type == 'error' for out in cell.outputs):
                 raise ValueError(f'{path.name}: saved error in {cell.id}')
             figures += sum('image/png' in out.get('data', {}) for out in cell.outputs)
-            if 'show_diagram(' in cell.source:
-                calls = [node for node in ast.walk(ast.parse(cell.source))
-                         if isinstance(node, ast.Call) and isinstance(node.func, ast.Name)
-                         and node.func.id == 'show_diagram']
-                for call in calls:
+            artwork_calls = [node for node in ast.walk(ast.parse(cell.source))
+                             if isinstance(node, ast.Call) and isinstance(node.func, ast.Name)
+                             and node.func.id in {'show_diagram', 'show_figure', 'flow_diagram'}]
+            for call in artwork_calls:
+                if call.func.id == 'show_diagram':
                     name, description = [ast.literal_eval(argument) for argument in call.args]
                     asset = root/'assets'/f'{name}.png'
                     if asset.resolve() not in included:
@@ -71,6 +71,19 @@ def validate(root=ROOT):
                         raise ValueError(f'{path.name}: saved diagram or image description missing: {name}')
                     diagrams += 1
                     expected_artwork.append((path.stem, asset.read_bytes(), description))
+                else:
+                    name = ast.literal_eval(call.args[0 if call.func.id == 'show_figure' else 1])
+                    asset = root/'assets'/'figures'/f'{name}.png'
+                    if asset.resolve() not in included:
+                        raise ValueError(f'{path.name}: saved chart file missing: {name}')
+                    descriptions = [out.metadata.get('image/png', {}).get('alt')
+                                    for out in cell.outputs if 'image/png' in out.get('data', {})
+                                    and base64.b64decode(out.data['image/png']) == asset.read_bytes()]
+                    descriptions = [text for text in descriptions if isinstance(text, str) and text.strip()]
+                    if not descriptions:
+                        raise ValueError(f'{path.name}: saved chart output or description missing: {name}')
+                    charts += 1
+                    expected_artwork.append((path.stem, asset.read_bytes(), descriptions[0]))
         if path.name.startswith('05'):
             live_cells = [c.source for c in nb.cells if c.cell_type == 'code' and 'RUN_LIVE =' in c.source]
             if not any('RUN_LIVE = False' in source for source in live_cells):
@@ -110,6 +123,7 @@ def validate(root=ROOT):
     return files, {'notebooks': len(notebooks), 'executed_code_cells': code_cells,
                    'saved_figures': figures, 'html_pages': len(pages),
                    'embedded_teaching_diagrams': diagrams,
+                   'embedded_experiment_charts': charts,
                    'checked_local_links': checked_links, 'checked_section_links': checked_sections,
                    'live_api': 'disabled'}
 

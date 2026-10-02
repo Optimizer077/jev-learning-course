@@ -139,3 +139,9 @@ The history figure is embedded in saved notebook output with a description, and 
 included in the Colab companion checks. Primary-paper access and limits remain in [SOURCES.md](SOURCES.md).
 The desktop timeline and the mobile version at a 360-pixel reading width were inspected locally
 for clipping, spacing, and legible labels.
+
+The downloaded GitHub artifact exposed a headless-rendering problem: plot files existed, but
+the Agg backend did not embed their images in notebook outputs. The shared plotting helper now
+displays the saved PNG explicitly and closes its figure. Package checks require each experiment
+chart to match its notebook and HTML image, with a description, alongside the existing diagram
+checks. The complete course is exercised with Agg locally and in GitHub's workflow.

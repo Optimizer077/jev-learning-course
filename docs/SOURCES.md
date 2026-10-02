@@ -57,6 +57,24 @@ cost bounds, case accounting, and pair-accuracy ceiling are course derivations. 
 one-probability Brier and full-category Brier have different scales, stated beside their formulas.
 None of the cited papers independently reproduces Jev or validates this course's toy results.
 
+## Model history and nearby research directions
+
+Four additional primary papers were read on **2026-10-02** through command-line PDF and
+bibliography downloads. Their history, methods, and comparison limits appear in
+[MODEL_HISTORY.md](MODEL_HISTORY.md) and the optional reading sections in lessons 06, 09, and 10.
+
+| Primary paper | Sections read | Used for and implementation limits |
+|---|---|---|
+| [Reimers and Gurevych (2019), Sentence-BERT](https://aclanthology.org/D19-1410/) | Sections 3 and 3.1; ACL bibliography | Shared contextual encoders, pooling, paired/triplet training; our random mean-embedding toy is not SBERT |
+| [Yin, Hay, and Roth (2019), Benchmarking Zero-shot Text Classification](https://aclanthology.org/D19-1404/) | Definitions and section 5; ACL bibliography | Labels become hypotheses; the paper's source-trained binary entailment/non-entailment models differ from a modern three-class pipeline |
+| [Tunstall et al. (2022), Efficient Few-Shot Learning Without Prompts](https://arxiv.org/abs/2209.11055) | Introduction, sections 3.1 and 4.2 | SetFit's contrastive sentence-encoder adaptation and logistic-regression head; reused training pairs are not independent new labeled examples |
+| [Liu et al. (2019), RoBERTa](https://arxiv.org/abs/1907.11692) | Model/training changes and pretraining design comparisons | Improved BERT training recipe; the small attention classifier does not reproduce its tokenizer, pretraining, scale, or results |
+
+The course now links sixteen research papers, twelve of which were read in primary full text.
+The four historical full-text gaps in the earlier table remain. No pretrained weights were downloaded
+or evaluated for these reading comparisons, and no source establishes Jev's internal lineage.
+The timeline uses selected publication dates, not first-invention dates or a measured chronology of Jev.
+
 ## PyTorch lab references
 
 Lesson 10 was exercised locally with **PyTorch 2.14.1+cpu**, installed from the official CPU

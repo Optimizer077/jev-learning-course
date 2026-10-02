@@ -7928,7 +7928,8 @@ fixed for this teaching demonstration, not optimized on test outcomes.</p>
 <span class="n">REQUIRED_FILES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"src/lab_core.py"</span><span class="p">,</span> <span class="s2">"src/tutorial_utils.py"</span><span class="p">,</span> <span class="s2">"src/torch_lab.py"</span><span class="p">,</span>
                   <span class="s2">"data/tickets.json"</span><span class="p">,</span> <span class="s2">"data/torch_toy.json"</span><span class="p">,</span>
                   <span class="s2">"assets/decision-flow.png"</span><span class="p">,</span> <span class="s2">"assets/question-types.png"</span><span class="p">,</span>
-                  <span class="s2">"assets/calibration-counts.png"</span><span class="p">,</span> <span class="s2">"assets/data-splits.png"</span><span class="p">,</span> <span class="s2">"assets/word-order.png"</span><span class="p">)</span>
+                  <span class="s2">"assets/calibration-counts.png"</span><span class="p">,</span> <span class="s2">"assets/data-splits.png"</span><span class="p">,</span> <span class="s2">"assets/word-order.png"</span><span class="p">,</span>
+                  <span class="s2">"assets/model-history-mobile.png"</span><span class="p">)</span>
 <span class="n">COURSE_ROOT</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">)</span>
                     <span class="k">if</span> <span class="nb">all</span><span class="p">((</span><span class="n">p</span> <span class="o">/</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">REQUIRED_FILES</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
 <span class="c1"># Colab opens a single notebook; fetch its companion code and fictional data.</span>
@@ -8267,6 +8268,27 @@ that a particular training run learns it. The table below exposes different para
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=history-10-reading">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Paper connection · small random models versus pretrained encoders</strong></p>
+<p>The CNN, GRU, and attention ideas have published antecedents in the 2014 and 2017 papers
+linked below. Our small classifiers start from random weights and learn the authored toy task.
+<a href="https://aclanthology.org/N19-1423/">BERT</a> and <a href="https://arxiv.org/abs/1907.11692">RoBERTa</a>
+instead pretrain contextual language representations before task adaptation.</p>
+<p>Mean pooling alone does not make our toy a <a href="https://aclanthology.org/D19-1410/">Sentence-BERT model</a>.
+Our token vector depends only on the word, so rearranging the same tokens leaves its mean unchanged.
+A contextual encoder's token vectors depend on the sequence and positions <strong>before</strong> pooling;
+their mean need not have that invariance. Whether an unexecuted model answers the reversed pair
+correctly remains a question for an actual evaluation.</p>
+<p>Read the optional <a href="MODEL_HISTORY.html">method history</a> after inspecting one trained model.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-10-1-0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8481,7 +8503,13 @@ Algorithm 1. Our full-batch toy task is separate from the paper's experiments.</
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>BoW MLP: completed all 3 training seeds.
+<pre>BoW MLP: completed all 3 training seeds.</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
 </pre>
 </div>
 </div>
@@ -8996,6 +9024,12 @@ For runnable exercises, use the <a href="08_exercises_and_solutions.html">worked
 <li><p><strong>Brier (1950).</strong> <a href="https://doi.org/10.1175/1520-0493(1950)078%3C0001:VOFEIT%3E2.0.CO;2">Verification of Forecasts Expressed in Terms of Probability</a>. Monthly Weather Review 78(1):1–3. The original probability-forecast scoring paper; this course states its binary and multiclass conventions explicitly.</p>
 </li>
 <li><p><strong>Gneiting and Raftery (2007).</strong> <a href="https://doi.org/10.1198/016214506000001437">Strictly Proper Scoring Rules, Prediction, and Estimation</a>. Journal of the American Statistical Association 102(477):359–378. Why proper probability losses reward honest probability forecasts.</p>
+</li>
+<li><p><strong>Devlin et al. (2019).</strong> <a href="https://aclanthology.org/N19-1423/">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a>. NAACL-HLT:4171–4186. Contextual language representations and downstream classification; BERT is not run in this course.</p>
+</li>
+<li><p><strong>Liu et al. (2019).</strong> <a href="https://arxiv.org/abs/1907.11692">RoBERTa: A Robustly Optimized BERT Pretraining Approach</a>. arXiv preprint 1907.11692. Changes to BERT pretraining; a research comparison, not a model executed here.</p>
+</li>
+<li><p><strong>Reimers and Gurevych (2019).</strong> <a href="https://aclanthology.org/D19-1410/">Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</a>. EMNLP-IJCNLP:3982–3992. Trained contextual sentence embeddings; mean pooling alone does not reproduce Sentence-BERT.</p>
 </li>
 </ul>
 <p><a href="PAPER_GUIDE.html">Paper reading guide and equation map</a> · <a href="SOURCES.html">Jev documentation and source limits</a>.</p>

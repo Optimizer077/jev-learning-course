@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>04 workflows and related models · Jev learning lab</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>MODEL HISTORY · Jev learning lab</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7819,624 +7819,210 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 .jp-InputPrompt,.jp-OutputPrompt{display:none!important}.jp-RenderedHTMLCommon table{display:block;overflow-x:auto}}
 @media print{.course-nav,.reader-tools,.lesson-skip-link{display:none!important}.jp-Notebook{max-width:none}}
 </style></head>
-<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a><a href="03_calibration_and_decisions.html">Previous lesson</a><a href="05_optional_real_jev_api.html">Next lesson →</a><a download="" href="../../notebooks/04_workflows_and_related_models.ipynb">Notebook ↓</a></nav><section aria-label="Reading controls" class="reader-tools">
-<label><input aria-controls="lesson-content" disabled="" id="show-code" type="checkbox"/>Show Python code</label>
-<p>Reading mode keeps the saved results visible. Open the notebook in Jupyter to run or change code.</p>
-<noscript><p>Python code stays visible when JavaScript is unavailable. You can still read all explanations and saved results.</p></noscript>
-<details><summary>In this lesson</summary><ul><li><a href="#the-idea-before-the-code">The idea before the code</a></li><li><a href="#goal">Goal</a></li><li><a href="#setup">Setup</a></li><li><a href="#steps">Steps</a></li><li><a href="#checks">Checks</a></li><li><a href="#next-steps">Next Steps</a></li><li><a href="#take-three-ideas-with-you">Take three ideas with you</a></li><li><a href="#check-your-understanding">Check your understanding</a></li><li><a href="#paper-references">Paper references</a></li></ul></details></section>
+<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4e29984171a0-0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2f7d1114">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="https://colab.research.google.com/github/Optimizer077/jev-learning-course/blob/main/notebooks/04_workflows_and_related_models.ipynb"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<h1 id="4--put-decisions-inside-a-software-workflow">4 · Put decisions inside a software workflow<a class="anchor-link" href="#4--put-decisions-inside-a-software-workflow">¶</a></h1><p><strong>Path:</strong> Beginner → builder<br/>
-<strong>Before you start:</strong> Lesson 01; understand an if statement</p>
-<p><a href="README.html">Course home</a> · <a href="COURSE.html">Course outline</a> · <a href="SETUP.html">Setup help</a> · <a href="GLOSSARY.html">Glossary</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d67fb38ebfd2-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="the-idea-before-the-code">The idea before the code<a class="anchor-link" href="#the-idea-before-the-code">¶</a></h2><p>Let the model make a small judgment. Let ordinary code combine judgments, check permissions, and choose the next step.</p>
-<p><strong>Your first pass:</strong> Work through the four fictional tickets. Then read the question rewrites and dependency example.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ddb63d8a2596-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="words-you-need-for-this-lesson">Words you need for this lesson<a class="anchor-link" href="#words-you-need-for-this-lesson">¶</a></h3><table>
-<thead>
-<tr>
-<th>Word</th>
-<th>Everyday meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Workflow</strong></td>
-<td>The sequence of judgments and actions in a program.</td>
-</tr>
-<tr>
-<td><strong>Permission</strong></td>
-<td>Whether the program is allowed to perform an action.</td>
-</tr>
-<tr>
-<td><strong>Dependency</strong></td>
-<td>Information one step must receive from another step.</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dc85eca384fe-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="goal">Goal<a class="anchor-link" href="#goal">¶</a></h2><p>Combine narrow judgments with ordinary code, and understand how Jev relates to other model families.</p>
-<p>TypeSafe documents evaluation of multiple questions against one shared state in parallel and isolation.
-This is an execution/interface property, <strong>not a guarantee that the real-world events are statistically
-independent</strong>. <a href="https://docs.typesafe.ai/introduction">Introduction</a>.</p>
-<h2 id="setup">Setup<a class="anchor-link" href="#setup">¶</a></h2><p>All answers below are invented. The code only returns route names; it does not send messages or execute actions.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=67e7e591f1a1-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Find the included teaching helpers from the course folder.</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="n">REQUIRED_FILES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"src/lab_core.py"</span><span class="p">,</span> <span class="s2">"src/tutorial_utils.py"</span><span class="p">,</span> <span class="s2">"src/torch_lab.py"</span><span class="p">,</span>
-                  <span class="s2">"data/tickets.json"</span><span class="p">,</span> <span class="s2">"data/torch_toy.json"</span><span class="p">,</span>
-                  <span class="s2">"assets/decision-flow.png"</span><span class="p">,</span> <span class="s2">"assets/question-types.png"</span><span class="p">,</span>
-                  <span class="s2">"assets/calibration-counts.png"</span><span class="p">,</span> <span class="s2">"assets/data-splits.png"</span><span class="p">,</span> <span class="s2">"assets/word-order.png"</span><span class="p">,</span>
-                  <span class="s2">"assets/model-history-mobile.png"</span><span class="p">)</span>
-<span class="n">COURSE_ROOT</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="nb">all</span><span class="p">((</span><span class="n">p</span> <span class="o">/</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">REQUIRED_FILES</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
-<span class="c1"># Colab opens a single notebook; fetch its companion code and fictional data.</span>
-<span class="k">if</span> <span class="n">COURSE_ROOT</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="kn">import</span><span class="w"> </span><span class="nn">google.colab</span>
-    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-        <span class="k">pass</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
-        <span class="n">COURSE_ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"/content/jev-learning-course"</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">COURSE_ROOT</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">((</span><span class="n">COURSE_ROOT</span> <span class="o">/</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">REQUIRED_FILES</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">"The cached Colab course is incomplete. Start a fresh runtime and run all again."</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">COURSE_ROOT</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
-            <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">"git"</span><span class="p">,</span> <span class="s2">"clone"</span><span class="p">,</span> <span class="s2">"--depth"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">,</span>
-                            <span class="s2">"https://github.com/Optimizer077/jev-learning-course.git"</span><span class="p">,</span>
-                            <span class="nb">str</span><span class="p">(</span><span class="n">COURSE_ROOT</span><span class="p">)],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">COURSE_ROOT</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">"Extract the complete course and open it from its folder."</span><span class="p">)</span>
-<span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">COURSE_ROOT</span> <span class="o">/</span> <span class="s2">"src"</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">COURSE_ROOT</span> <span class="o">/</span> <span class="s2">"src"</span><span class="p">))</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">tutorial_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">show_figure</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">BLUE</span><span class="p">,</span> <span class="n">ORANGE</span><span class="p">,</span> <span class="n">GREY</span>
-<span class="n">setup</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=41f7fc09ea3d-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="steps">Steps<a class="anchor-link" href="#steps">¶</a></h2><h3 id="1-decompose-a-broad-judgment">1. Decompose a broad judgment<a class="anchor-link" href="#1-decompose-a-broad-judgment">¶</a></h3><p>Instead of “handle this ticket,” ask separately about topic, blocking impact, and missing information.
-Then implement policy in code. A later question that needs an earlier answer requires another stage;
-putting it in the same parallel call does not create that dependency.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8e1cb5ed9a1c-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">tickets</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="s1">'A'</span><span class="p">,</span> <span class="s1">'queue'</span><span class="p">:</span> <span class="s1">'technical'</span><span class="p">,</span> <span class="s1">'topic_max_p'</span><span class="p">:</span> <span class="mf">0.94</span><span class="p">,</span> <span class="s1">'blocked_p'</span><span class="p">:</span> <span class="mf">0.90</span><span class="p">,</span> <span class="s1">'missing_p'</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">},</span>
-    <span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'queue'</span><span class="p">:</span> <span class="s1">'billing'</span><span class="p">,</span> <span class="s1">'topic_max_p'</span><span class="p">:</span> <span class="mf">0.91</span><span class="p">,</span> <span class="s1">'blocked_p'</span><span class="p">:</span> <span class="mf">0.10</span><span class="p">,</span> <span class="s1">'missing_p'</span><span class="p">:</span> <span class="mf">0.10</span><span class="p">},</span>
-    <span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="s1">'C'</span><span class="p">,</span> <span class="s1">'queue'</span><span class="p">:</span> <span class="s1">'technical'</span><span class="p">,</span> <span class="s1">'topic_max_p'</span><span class="p">:</span> <span class="mf">0.52</span><span class="p">,</span> <span class="s1">'blocked_p'</span><span class="p">:</span> <span class="mf">0.70</span><span class="p">,</span> <span class="s1">'missing_p'</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">},</span>
-    <span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="s1">'D'</span><span class="p">,</span> <span class="s1">'queue'</span><span class="p">:</span> <span class="s1">'other'</span><span class="p">,</span> <span class="s1">'topic_max_p'</span><span class="p">:</span> <span class="mf">0.88</span><span class="p">,</span> <span class="s1">'blocked_p'</span><span class="p">:</span> <span class="mf">0.20</span><span class="p">,</span> <span class="s1">'missing_p'</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">},</span>
-<span class="p">]</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">route</span><span class="p">(</span><span class="n">ticket</span><span class="p">):</span>
-    <span class="c1"># These arbitrary teaching thresholds use probabilities, not API confidence.</span>
-    <span class="k">if</span> <span class="n">ticket</span><span class="p">[</span><span class="s1">'missing_p'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.60</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">'collect_more_information'</span>
-    <span class="k">if</span> <span class="n">ticket</span><span class="p">[</span><span class="s1">'topic_max_p'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.85</span> <span class="ow">or</span> <span class="n">ticket</span><span class="p">[</span><span class="s1">'queue'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'other'</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">'human_review'</span>
-    <span class="k">if</span> <span class="n">ticket</span><span class="p">[</span><span class="s1">'queue'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'technical'</span> <span class="ow">and</span> <span class="n">ticket</span><span class="p">[</span><span class="s1">'blocked_p'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.80</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s1">'priority_technical_queue'</span>
-    <span class="k">return</span> <span class="n">ticket</span><span class="p">[</span><span class="s1">'queue'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'_queue'</span>
-
-<span class="n">table</span><span class="p">([</span><span class="s1">'Ticket'</span><span class="p">,</span> <span class="s1">'Suggested route'</span><span class="p">],</span> <span class="p">[(</span><span class="n">ticket</span><span class="p">[</span><span class="s1">'id'</span><span class="p">],</span> <span class="n">route</span><span class="p">(</span><span class="n">ticket</span><span class="p">))</span> <span class="k">for</span> <span class="n">ticket</span> <span class="ow">in</span> <span class="n">tickets</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<table><thead><tr><th style="text-align:left;padding:8px">Ticket</th><th style="text-align:left;padding:8px">Suggested route</th></tr></thead><tbody><tr><td style="text-align:left;padding:8px;border-top:1px solid #ddd">A</td><td style="text-align:left;padding:8px;border-top:1px solid #ddd">priority_technical_queue</td></tr><tr><td style="text-align:left;padding:8px;border-top:1px solid #ddd">B</td><td style="text-align:left;padding:8px;border-top:1px solid #ddd">billing_queue</td></tr><tr><td style="text-align:left;padding:8px;border-top:1px solid #ddd">C</td><td style="text-align:left;padding:8px;border-top:1px solid #ddd">human_review</td></tr><tr><td style="text-align:left;padding:8px;border-top:1px solid #ddd">D</td><td style="text-align:left;padding:8px;border-top:1px solid #ddd">collect_more_information</td></tr></tbody></table>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2d7d9340e81f-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="2-do-not-multiply-unrelated-marginal-probabilities-blindly">2. Do not multiply unrelated marginal probabilities blindly<a class="anchor-link" href="#2-do-not-multiply-unrelated-marginal-probabilities-blindly">¶</a></h3><p>If $P(A)=0.8$ and $P(B)=0.7$, then $P(A\cap B)$ is between
-$\max(0,P(A)+P(B)-1)$ and $\min(P(A),P(B))$. Multiplication gives 0.56 only under independence.
-Parallel model evaluation does not establish that assumption.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-04-0-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Math companion · dependence has a precise place</strong></p>
-<p>$$P(A\cap B)=P(A)P(B\mid A),\qquad P(A)&gt;0.$$
-$A$ and $B$ are two events; $P(B\mid A)$ is the chance of $B$ among cases where $A$ occurs.
-Independence would require $P(B\mid A)=P(B)$. Without it,
-$$\max(0,P(A)+P(B)-1)\leq P(A\cap B)\leq\min(P(A),P(B)).$$
-For 0.8 and 0.7, the valid intersection range is 0.5–0.7. The bounds follow from
-$P(A\cup B)\leq1$ and $A\cap B\subseteq A,B$; they are elementary probability identities,
-not evidence about how Jev batches questions.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=feaa2c736a6e-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">p_a</span><span class="p">,</span> <span class="n">p_b</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.7</span>
-<span class="n">lower</span><span class="p">,</span> <span class="n">upper</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">p_a</span> <span class="o">+</span> <span class="n">p_b</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">p_a</span><span class="p">,</span> <span class="n">p_b</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Possible joint probability: </span><span class="si">{</span><span class="n">lower</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">upper</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'If independent: </span><span class="si">{</span><span class="n">p_a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">p_b</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Possible joint probability: 0.50 to 0.70
-If independent: 0.56
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7d2c5e5d490c-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="3-compare-related-approaches">3. Compare related approaches<a class="anchor-link" href="#3-compare-related-approaches">¶</a></h3><p>These are conceptual distinctions, not benchmark rankings.</p>
+<h1 id="a-short-history-and-four-nearby-research-directions">A short history, and four nearby research directions<a class="anchor-link" href="#a-short-history-and-four-nearby-research-directions">¶</a></h1><p><a href="README.html">Course home</a> · <a href="notebooks.html">Notebook catalog</a> · <a href="09_related_models_lab.html">Related-methods notebook</a> · <a href="PAPER_GUIDE.html">Paper guide</a></p>
+<p>Start with three questions: <strong>how is text represented, how do labels enter, and how should the
+result be evaluated?</strong> The papers below developed different answers to these questions.
+Read one method at a time, then compare it with the small models you already ran.</p>
+<p>This is a history of selected published methods relevant to the course. It is not a documented
+Jev ancestry. TypeSafe's <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">announcement</a>
+and <a href="https://docs.typesafe.ai/concepts/system-one">System One definition</a> are the sources for Jev's
+product description; the papers here do not disclose its private architecture or RLCD recipe.</p>
+<h2 id="follow-three-threads">Follow three threads<a class="anchor-link" href="#follow-three-threads">¶</a></h2><picture>
+<source media="(max-width: 650px)" srcset="../../assets/model-history-mobile.svg"/>
+<img alt="Selected publication milestones grouped by probability evaluation, representation, and task adaptation. Dates label papers; Jev's internal lineage is unspecified." src="../../assets/model-history.svg" width="1200"/>
+</picture>
+<p>The dates below identify particular publications. Backpropagation, term weighting, and attention
+have earlier histories; these papers should not be treated as their first invention dates.</p>
 <table>
 <thead>
 <tr>
-<th>Approach</th>
-<th>Typical input → output</th>
-<th>Relationship to this lesson</th>
+<th>Publication</th>
+<th>What to learn from it</th>
+<th>Course connection</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Deterministic rules</td>
-<td>Explicit fields → computed result</td>
-<td>Best for exact arithmetic, permissions, and known conditions</td>
+<td><strong>1950 · <a href="https://doi.org/10.1175/1520-0493(1950)078%3C0001:VOFEIT%3E2.0.CO;2">Brier</a></strong></td>
+<td>Evaluate probability forecasts against outcomes</td>
+<td>Binary and multiclass scores in 03 and 07</td>
 </tr>
 <tr>
-<td>Supervised classifier</td>
-<td>Features/text → fixed training labels</td>
-<td>Notebook 2; new classes normally require adapting training or the head</td>
+<td><strong>1970 · <a href="https://doi.org/10.1109/TIT.1970.1054406">Chow</a></strong></td>
+<td>Balance recognition errors against rejection</td>
+<td>Review costs and automation coverage</td>
 </tr>
 <tr>
-<td>Encoder with a classification head</td>
-<td>Text representation → labels</td>
-<td>Can also score categories directly without generating prose</td>
+<td><strong>1979 · <a href="https://doi.org/10.1214/aos/1176344552">Efron</a></strong></td>
+<td>Resample observed cases to study sampling variation</td>
+<td>The bootstrap interval in 03</td>
 </tr>
 <tr>
-<td>Embeddings and similarity</td>
-<td>Text → vectors → similarity</td>
-<td>Useful for retrieval; cosine similarity is not automatically a probability</td>
+<td><strong>1986 · <a href="https://doi.org/10.1038/323533a0">Rumelhart, Hinton, and Williams</a></strong></td>
+<td>Propagate derivatives to learn layered representations</td>
+<td>Weight updates in 02 and 10</td>
 </tr>
 <tr>
-<td>Pairwise/cross-encoder scorer</td>
-<td>Query and candidate → relevance score</td>
-<td>Useful for reranking; score calibration requires separate evaluation</td>
+<td><strong>1988 · <a href="https://doi.org/10.1016/0306-4573(88)90021-0">Salton and Buckley</a></strong></td>
+<td>Study useful word-weighting choices for retrieval</td>
+<td>The lexical matching baseline in 09</td>
 </tr>
 <tr>
-<td>Generative language model</td>
-<td>Context → token sequence</td>
-<td>Can generate text and code; constrained decoding can enforce output schemas</td>
+<td><strong>2007 · <a href="https://doi.org/10.1198/016214506000001437">Gneiting and Raftery</a></strong></td>
+<td>Proper scores reward honest distributions in expectation</td>
+<td>Why log loss and Brier care about probabilities</td>
+</tr>
+<tr>
+<td><strong>2014 · <a href="https://aclanthology.org/D14-1181/">Kim</a> and <a href="https://aclanthology.org/D14-1179/">Cho et al.</a></strong></td>
+<td>Learn local sentence features or gated recurrent state</td>
+<td>The tiny CNN and GRU in 10; implementation differences are stated</td>
+</tr>
+<tr>
+<td><strong>2015 · <a href="https://arxiv.org/abs/1412.6980">Kingma and Ba</a></strong></td>
+<td>Adapt updates with bias-corrected gradient moments</td>
+<td>Adam in 10; the initial preprint is from 2014</td>
+</tr>
+<tr>
+<td><strong>2017 · <a href="https://arxiv.org/abs/1706.03762">Vaswani et al.</a> and <a href="https://proceedings.mlr.press/v70/guo17a.html">Guo et al.</a></strong></td>
+<td>Transformer attention; separately, modern calibration and temperature scaling</td>
+<td>Architecture in 06/10 and probability evaluation in 03/07</td>
+</tr>
+<tr>
+<td><strong>2019 · <a href="https://aclanthology.org/N19-1423/">BERT</a> and <a href="https://arxiv.org/abs/1907.11692">RoBERTa</a></strong></td>
+<td>Pretrain contextual encoders and adapt them to downstream tasks</td>
+<td>Background for representations richer than word presence; BERT's row uses its 2019 conference publication</td>
+</tr>
+<tr>
+<td><strong>2019 · <a href="https://aclanthology.org/D19-1410/">Sentence-BERT</a> and <a href="https://aclanthology.org/D19-1404/">Yin, Hay, and Roth</a></strong></td>
+<td>Train sentence vectors for matching; or express labels as hypotheses</td>
+<td>Two ways to connect text with descriptions</td>
+</tr>
+<tr>
+<td><strong>2022 preprint · <a href="https://arxiv.org/abs/2209.11055">SetFit</a></strong></td>
+<td>Adapt a pretrained sentence encoder and classifier from a small labeled task set</td>
+<td>Few-shot supervised adaptation; different from the randomly initialized toy models</td>
+</tr>
+</tbody>
+</table>
+<h2 id="four-papers-to-read-more-closely">Four papers to read more closely<a class="anchor-link" href="#four-papers-to-read-more-closely">¶</a></h2><h3 id="roberta--improve-the-pretraining-recipe">RoBERTa · improve the pretraining recipe<a class="anchor-link" href="#roberta--improve-the-pretraining-recipe">¶</a></h3><p><a href="https://arxiv.org/abs/1907.11692">Liu et al. (2019), <em>RoBERTa: A Robustly Optimized BERT Pretraining Approach</em></a>
+studies BERT's training choices. It uses more data and longer training, larger batches, dynamic
+masking, and removes the next-sentence-prediction objective. It retains an encoder-based approach.
+The lesson is that training data and procedure matter alongside architecture.</p>
+<p>For a bounded classification task, a contextual encoder can be adapted with an output head.
+Our tiny Transformer shares the attention idea, but does not reproduce RoBERTa's pretraining,
+tokenization, scale, weights, or results. This course does not execute RoBERTa.</p>
+<h3 id="sentence-bert--represent-sentences-for-comparison">Sentence-BERT · represent sentences for comparison<a class="anchor-link" href="#sentence-bert--represent-sentences-for-comparison">¶</a></h3><p><a href="https://aclanthology.org/D19-1410/">Reimers and Gurevych (2019), <em>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</em></a>
+starts from pretrained contextual encoders and trains shared-weight sentence representations
+using paired or triplet objectives. The paper describes pooling choices; its default uses mean
+pooling of contextual token outputs. Sentence vectors can then be compared with cosine similarity.</p>
+<p>Mean pooling does not itself make our random-embedding baseline Sentence-BERT. In the baseline,
+each word has the same vector regardless of its neighbors. In a contextual encoder, token outputs
+already depend on the sequence before averaging. A contextual average can therefore retain
+order-dependent information. Its existence does not establish that a specific model solves our
+reversed-message example. A similarity score is also not a calibrated class probability.</p>
+<h3 id="entailment-classification--make-the-label-a-hypothesis">Entailment classification · make the label a hypothesis<a class="anchor-link" href="#entailment-classification--make-the-label-a-hypothesis">¶</a></h3><p><a href="https://aclanthology.org/D19-1404/">Yin, Hay, and Roth (2019), <em>Benchmarking Zero-shot Text Classification: Datasets, Evaluation and Entailment Approach</em></a>
+recasts candidate labels as natural-language hypotheses. The input text is the premise; a
+source-trained model judges whether it supports the hypothesis. This task is called <strong>natural
+language inference (NLI)</strong>. A target label can
+therefore enter as a description rather than only as a column of a fixed classifier head.</p>
+<p>The reviewed paper trains binary entailment/non-entailment models using source datasets such
+as MNLI, RTE, and FEVER. Do not silently substitute a modern three-class pipeline or a particular
+softmax-over-candidates convention and attribute it to that paper. Its zero-shot setting does
+not mean the underlying model has never been trained. Hypothesis wording, candidate definitions,
+and evaluation labels all matter.</p>
+<p>The paper separates <strong>fully-unseen</strong> target labels, using the source-trained inference model,
+from <strong>partially-unseen</strong> labels, where provided examples from seen task labels allow additional
+fine-tuning. Read the evaluation setting alongside each result.</p>
+<p>This is a useful comparison with evidence-plus-question workflows. It does not establish that
+Jev uses NLI, or that entailment scores implement Choice, Score, Noul, or Jev confidence.</p>
+<h3 id="setfit--learn-a-small-labeled-task">SetFit · learn a small labeled task<a class="anchor-link" href="#setfit--learn-a-small-labeled-task">¶</a></h3><p><a href="https://arxiv.org/abs/2209.11055">Tunstall et al. (2022), <em>Efficient Few-Shot Learning Without Prompts</em></a>
+introduces SetFit. First, positive and negative pairs from labeled examples adapt a pretrained
+Sentence Transformer through contrastive fine-tuning. Second, a logistic-regression head learns
+the task labels from the encoded original examples. Prediction encodes a new text and applies
+that learned classifier.</p>
+<p>Here, contrastive fine-tuning teaches the encoder to give same-label pairs higher similarity
+and different-label pairs lower similarity. It learns how to compare examples before learning
+the final task classifier.</p>
+<p>The pair construction reuses existing labels; it does not create new independent evidence or
+an enlarged independent test set. The original paper's second stage is logistic regression;
+later library options are separate implementation choices. Our six toy models train from random
+weights and do not reproduce this pretrained two-stage method.</p>
+<h2 id="compare-how-labels-enter">Compare how labels enter<a class="anchor-link" href="#compare-how-labels-enter">¶</a></h2><p>These are mechanism comparisons. Only the NumPy and six small PyTorch models are executed in
+the course; no accuracy ranking against the methods below has been measured.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>How labels enter</th>
+<th>Task-specific fitting?</th>
+<th>Meaning of output</th>
+<th>What to inspect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Learned classifier / encoder head</td>
+<td>Learned output classes</td>
+<td>Yes for the task head, often the encoder too</td>
+<td>Class output, possibly normalized probabilities</td>
+<td>New-label handling, errors, calibration</td>
+</tr>
+<tr>
+<td>Sentence-BERT matching</td>
+<td>Candidate descriptions or example vectors</td>
+<td>Encoder was trained previously; task adaptation may be added</td>
+<td>Similarity</td>
+<td>Wording, negation, score interpretation</td>
+</tr>
+<tr>
+<td>Entailment-based classification</td>
+<td>Text plus label hypotheses</td>
+<td>Source inference training; no task fitting in the fully-unseen setup</td>
+<td>Entailment-based judgments</td>
+<td>Templates, candidate definitions, threshold policy</td>
+</tr>
+<tr>
+<td>SetFit</td>
+<td>Labeled examples define the task classes</td>
+<td>Yes, through the two stages</td>
+<td>Learned classifier output</td>
+<td>Label quality, split integrity, held-out behavior</td>
 </tr>
 <tr>
 <td>Jev's documented interface</td>
-<td>State + typed questions → decisions and probabilities</td>
-<td>Natural-language criteria define the bounded judgments for each request</td>
+<td>State, typed questions, and criteria in the request</td>
+<td>No learner-side fitting in this course</td>
+<td>Documented typed estimates</td>
+<td>Contract, measured correctness, calibration, application policy</td>
 </tr>
 </tbody>
 </table>
-<p>The existence of typed output alone does not prove a novel architecture: classifiers and constrained
-decoders already constrain outputs. Jev's claimed contribution combines a decision-oriented interface,
-training, and execution. The exact comparison needs task-matched measurements, not labels.</p>
-<p>An LLM can use constrained decoding and return valid JSON. That addresses syntax, not automatically
-truth or calibration. Conversely, a classifier's softmax numbers are not automatically calibrated.</p>
-<h3 id="4-what-should-stay-in-code">4. What should stay in code?<a class="anchor-link" href="#4-what-should-stay-in-code">¶</a></h3><p>TypeSafe lists weaknesses in exact arithmetic, long irrelevant context, adversarial text, and consistency
-between differently phrased questions. Use explicit criteria, filter evidence, and enforce required
-identities in software. It also warns against treating rubric scores as precise numerical reconstruction.
-<a href="https://docs.typesafe.ai/model-jaggedness/jev-1.13">Known limitations</a>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-04-1-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Math companion · choose an allowed action by modeled cost</strong></p>
-<p>$$a^*\in\operatorname*{arg\,min}_{a\in\mathcal A(s)}
-\sum_y C(a,y)\,p(y\mid s).$$
-$s$ is the supplied state, $\mathcal A(s)$ is the set of actions allowed by explicit
-permissions, $C(a,y)$ is the cost of action $a$ when outcome $y$ occurs, and
-$p(y\mid s)$ is the probability of outcome $y$ given state $s$.
-The sum is expected cost. A probability does not add a forbidden action to $\mathcal A(s)$.
-This is a general decision-theory view; <a href="https://doi.org/10.1109/TIT.1970.1054406">Chow (1970)</a>
-studies rejection alongside recognition. It does not specify our workflow or permissions.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7ed30945827b-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Exact money arithmetic belongs in code; integers represent cents.</span>
-<span class="n">unit_price_cents</span><span class="p">,</span> <span class="n">quantity</span> <span class="o">=</span> <span class="mi">1299</span><span class="p">,</span> <span class="mi">3</span>
-<span class="n">total_cents</span> <span class="o">=</span> <span class="n">unit_price_cents</span> <span class="o">*</span> <span class="n">quantity</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Exact total: </span><span class="si">{</span><span class="n">total_cents</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
-
-<span class="c1"># If these are exact complements in our application, derive the complement.</span>
-<span class="n">refund_requested_p</span> <span class="o">=</span> <span class="mf">0.72</span>
-<span class="n">no_refund_requested_p</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">refund_requested_p</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Complement computed in code:'</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">no_refund_requested_p</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Exact total: 38.97
-Complement computed in code: 0.28
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e32fec89c407-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<blockquote>
-<p><strong>Optional deeper practice.</strong> You can stop reading here on your first pass. If you run the notebook, use Run All so the later checks still have their inputs.</p>
-</blockquote>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a1a88c458ad7-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="5-rewrite-vague-questions-into-testable-contracts">5. Rewrite vague questions into testable contracts<a class="anchor-link" href="#5-rewrite-vague-questions-into-testable-contracts">¶</a></h3><p>The criteria should tell a reader how to label a boundary case. These are authored examples;
-we are not claiming the rewrite improves Jev without running an evaluation.</p>
-<table>
-<thead>
-<tr>
-<th>Vague</th>
-<th>More testable</th>
-<th>Edge case to include</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Is this bad?</td>
-<td>Does the reported bug prevent completion of the named task without a workaround?</td>
-<td>Inconvenient but a workaround exists</td>
-</tr>
-<tr>
-<td>Handle the refund</td>
-<td>Does the message explicitly ask to return money already paid?</td>
-<td>A price question is not a refund request</td>
-</tr>
-<tr>
-<td>Choose the right team</td>
-<td>Choose the primary queue using the stated precedence rules</td>
-<td>A failed export of an invoice</td>
-</tr>
-<tr>
-<td>Is the customer verified?</td>
-<td>Does the supplied trusted account record have <code>verified=true</code>?</td>
-<td>This is a code check, not a model question</td>
-</tr>
-</tbody>
-</table>
-<p>Write exclusions as well as inclusions. Keep each probability attached to its precise question;
-changing the definition changes what the number means.</p>
-<h3 id="6-demonstrate-an-order-sensitive-pipeline">6. Demonstrate an order-sensitive pipeline<a class="anchor-link" href="#6-demonstrate-an-order-sensitive-pipeline">¶</a></h3><p>In a two-stage workflow, the first answer can choose which evidence to retrieve for the second.
-Questions that depend on that retrieved evidence cannot be answered using the earlier, incomplete state.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5b824ab10219-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">documents</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">'billing'</span><span class="p">:</span> <span class="s1">'Billing policy: duplicate charges can be investigated using a transaction ID.'</span><span class="p">,</span>
-    <span class="s1">'technical'</span><span class="p">:</span> <span class="s1">'Technical checklist: browser version, error text, and reproduction steps.'</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">first_stage_choice</span> <span class="o">=</span> <span class="s1">'technical'</span>  <span class="c1"># Hand-authored stand-in for a model result.</span>
-<span class="n">second_stage_state</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="s1">'CSV export crashes.'</span><span class="p">,</span> <span class="s1">'reference'</span><span class="p">:</span> <span class="n">documents</span><span class="p">[</span><span class="n">first_stage_choice</span><span class="p">]}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">second_stage_state</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'The second stage now has evidence that was absent from the first.'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'message': 'CSV export crashes.', 'reference': 'Technical checklist: browser version, error text, and reproduction steps.'}
-The second stage now has evidence that was absent from the first.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12b0e96ea56a-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="7-design-a-fair-comparison-before-collecting-results">7. Design a fair comparison before collecting results<a class="anchor-link" href="#7-design-a-fair-comparison-before-collecting-results">¶</a></h3><table>
-<thead>
-<tr>
-<th>Hold fixed</th>
-<th>Record</th>
-<th>Report</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Task definitions and input cases</td>
-<td>Model version, prompt version, dataset split</td>
-<td>Accuracy and per-class errors</td>
-</tr>
-<tr>
-<td>Allowed candidate set</td>
-<td>Raw probabilities and answer validity</td>
-<td>Calibration and log loss</td>
-</tr>
-<tr>
-<td>Hardware/service conditions where possible</td>
-<td>Input size, wall time, failures, retries</td>
-<td>Median and p95 latency</td>
-</tr>
-<tr>
-<td>Evaluation labels</td>
-<td>Per-case usage and retry costs</td>
-<td>Coverage, review rate, cost per resolved case</td>
-</tr>
-</tbody>
-</table>
-<p>Do not compare Jev's task probabilities with an LLM merely saying “I am 95% confident” as though
-the two measurements have identical meaning. Benchmark the actual outputs and complete workflow.
-Provider benchmarks are useful hypotheses to test; they do not replace measurements on your task.</p>
-<p><strong>Predict first — exercise 4:</strong> Your topic probability is 0.96, but required account permission is false.
-Should the system act? Which part of the implementation should enforce the answer?</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=109b46efb555-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="checks">Checks<a class="anchor-link" href="#checks">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=85e7e13052f3-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="p">[</span><span class="n">route</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tickets</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span>
-    <span class="s1">'priority_technical_queue'</span><span class="p">,</span> <span class="s1">'billing_queue'</span><span class="p">,</span> <span class="s1">'human_review'</span><span class="p">,</span> <span class="s1">'collect_more_information'</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">upper</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">total_cents</span> <span class="o">==</span> <span class="mi">3897</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Routing examples, probability bounds, and exact arithmetic passed.'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Routing examples, probability bounds, and exact arithmetic passed.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d9862241d318-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="next-steps">Next Steps<a class="anchor-link" href="#next-steps">¶</a></h2><p>Add a “security” topic. Decide which deterministic rule should force review regardless of probability.
-Then write down examples where two topics overlap, and decide how your criteria resolve them.</p>
-<p>The final notebook translates these ideas into an <a href="05_optional_real_jev_api.html">optional official API call</a>.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=521c8dabcbe2-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="take-three-ideas-with-you">Take three ideas with you<a class="anchor-link" href="#take-three-ideas-with-you">¶</a></h2><ul>
-<li>Ask focused questions with clear criteria.</li>
-<li>Use code for arithmetic, permissions, and combining results.</li>
-<li>Dependent stages need the right evidence before they can run.</li>
-</ul>
-<p><strong>You are ready to move on when:</strong> You can decide which work belongs to the model and which rules belong in code.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=383df90d6f0f-0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="check-your-understanding">Check your understanding<a class="anchor-link" href="#check-your-understanding">¶</a></h2><p>Two questions run in parallel. Can I multiply their probabilities to get the probability that both are true?</p>
-<p>Pause and explain your answer before opening the explanation.</p>
-<details>
-<summary>Show the explanation</summary>
-<p>Only if statistical independence is justified. Running calculations together does not make the events independent.</p>
-</details>
-<p>For a short next step, try the <a href="PRACTICE.html">practice questions</a>.
-For runnable exercises, use the <a href="08_exercises_and_solutions.html">worked exercises</a>.</p>
-<p>If you are unsure where to go next, use <a href="COURSE.html">the course outline</a>.</p>
-<p><a href="assignments_README.html">Assignments</a> · <a href="QUICK_REFERENCE.html">Quick reference</a> · <a href="COURSE.html">Course outline</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=math-04-papers">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="paper-references">Paper references<a class="anchor-link" href="#paper-references">¶</a></h2><p>Read these for the general methods used or contrasted in this lesson. They do not establish Jev’s unpublished architecture or RLCD algorithm. The formulas above are code-matched teaching notation unless explicitly attributed.</p>
-<ul>
-<li><p><strong>Chow (1970).</strong> <a href="https://doi.org/10.1109/TIT.1970.1054406">On Optimum Recognition Error and Reject Tradeoff</a>. IEEE Transactions on Information Theory 16(1):41–46. The recognition-versus-rejection problem; our review costs and policy are authored teaching choices.</p>
-</li>
-<li><p><strong>Devlin et al. (2019).</strong> <a href="https://aclanthology.org/N19-1423/">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a>. NAACL-HLT:4171–4186. Contextual language representations and downstream classification; BERT is not run in this course.</p>
-</li>
-</ul>
-<p><a href="PAPER_GUIDE.html">Paper reading guide and equation map</a> · <a href="SOURCES.html">Jev documentation and source limits</a>.</p>
+<p>The nearest analogy depends on the question. A task head illustrates direct classification;
+sentence vectors illustrate representation and matching; NLI illustrates judging a description;
+SetFit illustrates adaptation from examples. None establishes Jev's model lineage.</p>
+<h2 id="a-reading-exercise">A reading exercise<a class="anchor-link" href="#a-reading-exercise">¶</a></h2><p>Use “The payment failed, not the export” and its reversed partner. For one paper, write:</p>
+<ol>
+<li>What is supplied as evidence, and how are the candidate labels represented?</li>
+<li>What parameters were trained previously, and what would need new task examples?</li>
+<li>What information survives the representation before the final score?</li>
+<li>Does the output mean similarity, entailment, or a task-class probability?</li>
+<li>What new held-out examples would test your claim about the pair?</li>
+</ol>
+<p>Do not fill in an unexecuted model's predictions as facts. Record the source's method, our smaller
+implementation's differences, and the measurement needed to compare them. Source access and
+full-text limits are recorded in <a href="SOURCES.html">SOURCES.md</a>.</p>
 </div>
 </div>
 </div>
 </div>
 </main>
-<script>const codeToggle=document.getElementById('show-code');
-codeToggle.disabled=false;document.body.classList.add('reading-mode');
-codeToggle.addEventListener('change',function(){
-document.body.classList.toggle('reading-mode',!this.checked);});</script></body>
+</body>
 </html>

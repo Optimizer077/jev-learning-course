@@ -9,6 +9,7 @@ from course_paths import ROOT
 
 sys.path.insert(0, str(ROOT / 'src'))
 from lab_core import WORD_ORDER_PAIR, load_tickets, tokenise, vocabulary
+from model_history import HISTORY_TRACKS
 
 ASSETS = ROOT / 'assets'
 INK, TEAL, VIOLET, CORAL = '#13243b', '#0d766f', '#6245b7', '#b7432b'
@@ -50,7 +51,7 @@ def save(fig, name, description=''):
     preview = ROOT / 'dist' / 'visual-previews'
     preview.mkdir(parents=True, exist_ok=True)
     fig.savefig(preview/f'{name}.png', dpi=150, facecolor=fig.get_facecolor())
-    if name in {'decision-flow', 'question-types', 'calibration-counts', 'data-splits', 'word-order'}:
+    if name in {'decision-flow', 'question-types', 'calibration-counts', 'data-splits', 'word-order', 'model-history-mobile'}:
         fig.savefig(ASSETS/f'{name}.png', dpi=150, facecolor=fig.get_facecolor())
     if name.endswith('-mobile') or name in {'decision-flow', 'question-types', 'calibration-counts', 'data-splits', 'word-order'}:
         fig.savefig(preview/f'{name}-360.png', dpi=360/fig.get_figwidth(), facecolor=fig.get_facecolor())
@@ -124,6 +125,7 @@ def build_visuals():
 
     build_teaching_visuals()
     build_project_visuals()
+    build_history_visuals()
 
 
 def build_teaching_visuals():
@@ -253,6 +255,47 @@ def build_project_visuals():
     label(ax, 24, 32, 'A limitation of our local baseline; no Jev call.', 12, '#405671')
     save(fig, 'word-order',
          f'Authored messages: {WORD_ORDER_PAIR}. Both have active training-vocabulary words {known}; unseen words {unseen} are dropped. Identical binary features cannot yield different deterministic classifier outputs.')
+
+
+def build_history_visuals():
+    description = ('Selected publication milestones grouped into probability evaluation, input '
+                   'representation, and task adaptation. Brier 1950, Chow 1970, Guo 2017; '
+                   'backpropagation 1986, term weighting 1988, CNN and GRU 2014, Transformer 2017; '
+                   'BERT, RoBERTa, Sentence-BERT and entailment-based classification 2019; '
+                   'SetFit preprint 2022. This does not establish Jev\'s internal ancestry.')
+    fig, ax = canvas(1200, 700, '#f5f7fc')
+    label(ax, 24, 666, 'A SHORT HISTORY OF THE IDEAS', 20, INK, 'bold')
+    label(ax, 24, 628, 'Three threads to follow while reading the course papers.', 14, '#405671')
+    for column, (title, color, fill, milestones) in enumerate(HISTORY_TRACKS):
+        x = 22 + 397*column
+        label(ax, x+9, 581, title, 16, color, 'bold')
+        for row, (year, heading, detail) in enumerate(milestones):
+            y = 415-161*row
+            box(ax, x, y, 362, 143, 'white', '#d9e2f0')
+            box(ax, x+16, y+103, 150, 27, fill)
+            label(ax, x+29, y+117, year, 11.5, color, 'bold')
+            label(ax, x+19, y+83, heading, 14, INK, 'bold')
+            label(ax, x+19, y+37, detail, 12.4, '#405671', linespacing=1.35)
+    label(ax, 24, 54, 'Publication milestones; spacing is schematic. Follow the linked papers for details.', 12, '#405671')
+    label(ax, 24, 24, 'Jev\'s internal model lineage is unspecified in the reviewed documentation.', 12, INK)
+    save(fig, 'model-history', description)
+
+    fig, ax = canvas(540, 1520, '#f5f7fc')
+    label(ax, 24, 1483, 'A SHORT HISTORY OF THE IDEAS', 18, INK, 'bold')
+    label(ax, 24, 1447, 'Three threads. Selected papers.', 14, '#405671')
+    label(ax, 24, 1420, 'Dates identify publications.', 12.5, '#405671')
+    for group, (title, color, fill, milestones) in enumerate(HISTORY_TRACKS):
+        top = 1390-425*group
+        label(ax, 26, top, title.upper(), 16, color, 'bold')
+        for row, (year, heading, detail) in enumerate(milestones):
+            y = top-150-126*row
+            box(ax, 22, y, 496, 118, 'white', '#d9e2f0')
+            label(ax, 42, y+96, year, 12.5, color, 'bold')
+            label(ax, 42, y+65, heading, 15.5, INK, 'bold')
+            label(ax, 42, y+26, detail, 13.5, '#405671', linespacing=1.25)
+    label(ax, 24, 77, 'Publication dates; spacing is schematic.', 12.5, '#405671')
+    label(ax, 24, 40, 'Jev\'s internal lineage is unspecified.', 12.5, INK)
+    save(fig, 'model-history-mobile', description)
 
 
 if __name__ == '__main__':

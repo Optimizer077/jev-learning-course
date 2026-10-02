@@ -14,6 +14,10 @@ The examples below explain roles; performance depends on the actual task and eva
 Changing one part does not automatically repair the others. A threshold can send difficult cases
 to review, but it cannot recover word order discarded by a bag-of-words representation.
 
+The optional [history and primary-paper guide](MODEL_HISTORY.md) follows these ideas through
+Sentence-BERT, entailment-based classification, SetFit, and RoBERTa. It compares their mechanisms
+with Jev's documented interface without inferring its private model lineage.
+
 ## Follow the same support message through different approaches
 
 Message: **“The payment failed, not the export.”** Intended primary queue: **billing**.
@@ -104,6 +108,10 @@ messages have different reference labels, those models must give the same distri
 and therefore cannot get both labels right. Adding layers, training longer, or changing a threshold
 does not repair this representation collision. A CNN, GRU, or Transformer can distinguish the
 inputs, but that capability alone does not guarantee a correct learned answer.
+
+That mean-pooling statement applies to our noncontextual token-embedding toy. In Sentence-BERT,
+token representations depend on the sequence before pooling, so their average need not have
+the same permutation invariance. See the [Sentence-BERT discussion](MODEL_HISTORY.md#sentence-bert--represent-sentences-for-comparison).
 
 All six models still use a fixed three-label task head. They do not accept arbitrary new question
 descriptions in the way Jev's typed request interface does. PyTorch supplies tensor operations and

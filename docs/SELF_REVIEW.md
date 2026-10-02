@@ -120,3 +120,22 @@ full-text gaps are recorded in [SOURCES.md](SOURCES.md). All 302 inline and disp
 were rendered locally with MathJax without TeX errors, including 48 display-equation blocks.
 Six local equation-preview sheets were inspected for legibility and clipping. This checks the
 math artwork rather than browser page layout. Browser and hosted-Colab limits still apply.
+
+## Fifth pass: history and nearby models
+
+The reviewers read four more primary papers and added a history guide, responsive timeline,
+and optional notebook comparisons for Sentence-BERT, entailment-based classification, SetFit,
+and RoBERTa. The source bibliography distinguishes publication milestones from model ancestry.
+
+Two consequential distinctions were checked: contextual mean pooling does not have the same
+order-invariance guarantee as the toy's context-free word vectors; Yin's reviewed entailment
+method uses a binary source-trained model rather than an assumed modern three-class pipeline.
+Its fully-unseen and partially-unseen evaluation settings are distinguished.
+SetFit's original two-stage method and logistic-regression head are stated explicitly.
+The existing experiment measures its three local methods; the added research comparisons contain
+no fabricated model outputs or accuracy ranking.
+
+The history figure is embedded in saved notebook output with a description, and its PNG is
+included in the Colab companion checks. Primary-paper access and limits remain in [SOURCES.md](SOURCES.md).
+The desktop timeline and the mobile version at a 360-pixel reading width were inspected locally
+for clipping, spacing, and legible labels.

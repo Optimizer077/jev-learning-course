@@ -19,6 +19,7 @@
 | [Quick reference](QUICK_REFERENCE.md) | How the calculations and action rules work |
 | [Glossary](GLOSSARY.md) | What the unfamiliar terms mean |
 | [Model guide](MODEL_GUIDE.md) | How related approaches connect |
+| [Model history and papers](MODEL_HISTORY.md) | How the methods developed and what Sentence-BERT, NLI, SetFit, and RoBERTa contribute |
 | [FAQ](FAQ.md) | Common learning and setup questions |
 | [Sources](SOURCES.md) | Which statements come from documentation or research |
 | [Paper reading guide](PAPER_GUIDE.md) | Which papers explain each lesson's equations and methods |

@@ -48,15 +48,27 @@ PAPERS = {
     'bootstrap': ('Efron (1979)', 'Bootstrap Methods: Another Look at the Jackknife',
                   'The Annals of Statistics 7(1):1–26', 'https://doi.org/10.1214/aos/1176344552',
                   'Resampling with replacement; the lesson explicitly uses a percentile interval rather than claiming all bootstrap methods are the same.'),
+    'sbert': ('Reimers and Gurevych (2019)', 'Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks',
+              'EMNLP-IJCNLP:3982–3992', 'https://aclanthology.org/D19-1410/',
+              'Trained contextual sentence embeddings; mean pooling alone does not reproduce Sentence-BERT.'),
+    'nli': ('Yin, Hay, and Roth (2019)', 'Benchmarking Zero-shot Text Classification: Datasets, Evaluation and Entailment Approach',
+            'EMNLP-IJCNLP:3914–3923', 'https://aclanthology.org/D19-1404/',
+            'Candidate labels as hypotheses; the reviewed paper uses binary entailment/non-entailment models.'),
+    'setfit': ('Tunstall et al. (2022)', 'Efficient Few-Shot Learning Without Prompts',
+               'arXiv preprint 2209.11055', 'https://arxiv.org/abs/2209.11055',
+               'SetFit: contrastive adaptation of a pretrained Sentence Transformer, then a task classifier.'),
+    'roberta': ('Liu et al. (2019)', 'RoBERTa: A Robustly Optimized BERT Pretraining Approach',
+                'arXiv preprint 1907.11692', 'https://arxiv.org/abs/1907.11692',
+                'Changes to BERT pretraining; a research comparison, not a model executed here.'),
 }
 
 READINGS = {
     '00': ('guo', 'brier'), '01': ('guo', 'brier'),
     '02': ('backprop', 'guo', 'proper'), '03': ('guo', 'brier', 'chow', 'bootstrap'),
     '04': ('chow', 'bert'), '05': ('guo', 'brier'),
-    '06': ('attention', 'bert', 'proper'), '07': ('guo', 'brier', 'chow'),
-    '08': ('guo', 'chow', 'attention'), '09': ('tfidf', 'bert', 'chow'),
-    '10': ('cnn', 'gru', 'attention', 'adam', 'brier', 'proper'),
+    '06': ('attention', 'bert', 'proper', 'sbert', 'nli', 'setfit'), '07': ('guo', 'brier', 'chow'),
+    '08': ('guo', 'chow', 'attention'), '09': ('tfidf', 'bert', 'chow', 'roberta', 'sbert', 'nli', 'setfit'),
+    '10': ('cnn', 'gru', 'attention', 'adam', 'brier', 'proper', 'bert', 'roberta', 'sbert'),
 }
 
 # Anchors are checked exactly once so a renamed section cannot silently lose math.

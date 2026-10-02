@@ -6,6 +6,10 @@ Every notebook includes **math companions beside the examples** and a **Paper re
 section. You can finish a first reading without studying every equation or reading every paper.
 Choose one formula that explains a result you already saw, then follow its source.
 
+For historical context and nearby research directions, use the
+[model history and comparison guide](MODEL_HISTORY.md). It connects Sentence-BERT, entailment-based
+classification, SetFit, and RoBERTa to the representations and decisions taught here.
+
 ## A small symbol key
 
 | Symbol | Meaning in this course |

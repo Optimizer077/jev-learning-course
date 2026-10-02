@@ -5,6 +5,7 @@ import nbformat as nbf
 from lesson_upgrades import enrich
 from public_course import prepare_public
 from paper_math import enrich_math
+from model_history import enrich_history
 
 from course_paths import ROOT, NOTEBOOKS, NOTEBOOK_SETUP, rewrite_legacy_markdown
 NOTEBOOKS.mkdir(exist_ok=True)
@@ -18,6 +19,7 @@ def code(text):
 def save(name, cells):
     cells = enrich(name, cells, md, code)
     cells = prepare_public(name, cells, md, code)
+    cells = enrich_history(name, cells, md, code)
     cells = enrich_math(name, cells, md)
     notebook = nbf.v4.new_notebook(cells=cells, metadata={
         'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'},

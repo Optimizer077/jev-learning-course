@@ -7821,7 +7821,7 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 </style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ad92a706">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=57b2fd2b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7857,6 +7857,9 @@ The examples below explain roles; performance depends on the actual task and eva
 </table>
 <p>Changing one part does not automatically repair the others. A threshold can send difficult cases
 to review, but it cannot recover word order discarded by a bag-of-words representation.</p>
+<p>The optional <a href="MODEL_HISTORY.html">history and primary-paper guide</a> follows these ideas through
+Sentence-BERT, entailment-based classification, SetFit, and RoBERTa. It compares their mechanisms
+with Jev's documented interface without inferring its private model lineage.</p>
 <h2 id="follow-the-same-support-message-through-different-approaches">Follow the same support message through different approaches<a class="anchor-link" href="#follow-the-same-support-message-through-different-approaches">¶</a></h2><p>Message: <strong>“The payment failed, not the export.”</strong> Intended primary queue: <strong>billing</strong>.</p>
 <table>
 <thead>
@@ -8048,6 +8051,9 @@ messages have different reference labels, those models must give the same distri
 and therefore cannot get both labels right. Adding layers, training longer, or changing a threshold
 does not repair this representation collision. A CNN, GRU, or Transformer can distinguish the
 inputs, but that capability alone does not guarantee a correct learned answer.</p>
+<p>That mean-pooling statement applies to our noncontextual token-embedding toy. In Sentence-BERT,
+token representations depend on the sequence before pooling, so their average need not have
+the same permutation invariance. See the <a href="MODEL_HISTORY.html#sentence-bert--represent-sentences-for-comparison">Sentence-BERT discussion</a>.</p>
 <p>All six models still use a fixed three-label task head. They do not accept arbitrary new question
 descriptions in the way Jev's typed request interface does. PyTorch supplies tensor operations and
 automatic differentiation; using it does not make a model calibrated or reproduce RLCD.</p>

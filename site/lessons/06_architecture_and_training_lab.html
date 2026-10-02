@@ -7915,7 +7915,8 @@ mask, and compare objectives. These are demonstrations of possibilities, not cla
 <span class="n">REQUIRED_FILES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"src/lab_core.py"</span><span class="p">,</span> <span class="s2">"src/tutorial_utils.py"</span><span class="p">,</span> <span class="s2">"src/torch_lab.py"</span><span class="p">,</span>
                   <span class="s2">"data/tickets.json"</span><span class="p">,</span> <span class="s2">"data/torch_toy.json"</span><span class="p">,</span>
                   <span class="s2">"assets/decision-flow.png"</span><span class="p">,</span> <span class="s2">"assets/question-types.png"</span><span class="p">,</span>
-                  <span class="s2">"assets/calibration-counts.png"</span><span class="p">,</span> <span class="s2">"assets/data-splits.png"</span><span class="p">,</span> <span class="s2">"assets/word-order.png"</span><span class="p">)</span>
+                  <span class="s2">"assets/calibration-counts.png"</span><span class="p">,</span> <span class="s2">"assets/data-splits.png"</span><span class="p">,</span> <span class="s2">"assets/word-order.png"</span><span class="p">,</span>
+                  <span class="s2">"assets/model-history-mobile.png"</span><span class="p">)</span>
 <span class="n">COURSE_ROOT</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">)</span>
                     <span class="k">if</span> <span class="nb">all</span><span class="p">((</span><span class="n">p</span> <span class="o">/</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">REQUIRED_FILES</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
 <span class="c1"># Colab opens a single notebook; fetch its companion code and fictional data.</span>
@@ -7962,6 +7963,24 @@ candidate description</strong>, then computes compatibility. Changing descriptio
 <p>The simple example below is only word overlap. A learned encoder or cross-encoder can be much
 richer. <a href="https://aclanthology.org/N19-1423/">BERT</a> is a primary example of a pretrained language
 representation adapted for downstream classification; it is not evidence that Jev is BERT.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=history-06-reading">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Paper connection · three ways to use candidate descriptions</strong></p>
+<p>Our overlap scores below use word-presence vectors. The research offers richer choices:
+<a href="https://aclanthology.org/D19-1410/">Sentence-BERT</a> compares trained contextual sentence vectors;
+an <a href="https://aclanthology.org/D19-1404/">entailment approach</a> reads a text together with a label
+hypothesis; <a href="https://arxiv.org/abs/2209.11055">SetFit</a> learns a classifier from a small labeled task set.
+These differ in what must be encoded together, how labels enter, and what training is required.
+None is executed in this cell or disclosed as Jev's implementation.</p>
+<p>The <a href="MODEL_HISTORY.html">history and comparison guide</a> explains the papers and their scope.</p>
 </div>
 </div>
 </div>
@@ -8435,6 +8454,12 @@ For runnable exercises, use the <a href="08_exercises_and_solutions.html">worked
 <li><p><strong>Devlin et al. (2019).</strong> <a href="https://aclanthology.org/N19-1423/">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a>. NAACL-HLT:4171–4186. Contextual language representations and downstream classification; BERT is not run in this course.</p>
 </li>
 <li><p><strong>Gneiting and Raftery (2007).</strong> <a href="https://doi.org/10.1198/016214506000001437">Strictly Proper Scoring Rules, Prediction, and Estimation</a>. Journal of the American Statistical Association 102(477):359–378. Why proper probability losses reward honest probability forecasts.</p>
+</li>
+<li><p><strong>Reimers and Gurevych (2019).</strong> <a href="https://aclanthology.org/D19-1410/">Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</a>. EMNLP-IJCNLP:3982–3992. Trained contextual sentence embeddings; mean pooling alone does not reproduce Sentence-BERT.</p>
+</li>
+<li><p><strong>Yin, Hay, and Roth (2019).</strong> <a href="https://aclanthology.org/D19-1404/">Benchmarking Zero-shot Text Classification: Datasets, Evaluation and Entailment Approach</a>. EMNLP-IJCNLP:3914–3923. Candidate labels as hypotheses; the reviewed paper uses binary entailment/non-entailment models.</p>
+</li>
+<li><p><strong>Tunstall et al. (2022).</strong> <a href="https://arxiv.org/abs/2209.11055">Efficient Few-Shot Learning Without Prompts</a>. arXiv preprint 2209.11055. SetFit: contrastive adaptation of a pretrained Sentence Transformer, then a task classifier.</p>
 </li>
 </ul>
 <p><a href="PAPER_GUIDE.html">Paper reading guide and equation map</a> · <a href="SOURCES.html">Jev documentation and source limits</a>.</p>

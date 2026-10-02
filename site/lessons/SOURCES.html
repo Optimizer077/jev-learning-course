@@ -7821,7 +7821,7 @@ background:#13243b;color:white;border-radius:6px;transform:translateY(-180%)}
 </style></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light" id="lesson-content" role="main" tabindex="-1"><a class="lesson-skip-link" href="#lesson-content">Skip to lesson content</a><nav aria-label="Course and lesson navigation" class="course-nav"><a href="../index.html">← Course home</a><a href="../playground.html">Playground</a><a href="../practice.html">Practice</a><a href="GLOSSARY.html">Glossary</a></nav>
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b117b356">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=66e2741b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7990,6 +7990,44 @@ The TypeSafe documentation check date above remains separate.</p>
 cost bounds, case accounting, and pair-accuracy ceiling are course derivations. Binary
 one-probability Brier and full-category Brier have different scales, stated beside their formulas.
 None of the cited papers independently reproduces Jev or validates this course's toy results.</p>
+<h2 id="model-history-and-nearby-research-directions">Model history and nearby research directions<a class="anchor-link" href="#model-history-and-nearby-research-directions">¶</a></h2><p>Four additional primary papers were read on <strong>2026-10-02</strong> through command-line PDF and
+bibliography downloads. Their history, methods, and comparison limits appear in
+<a href="MODEL_HISTORY.html">MODEL_HISTORY.md</a> and the optional reading sections in lessons 06, 09, and 10.</p>
+<table>
+<thead>
+<tr>
+<th>Primary paper</th>
+<th>Sections read</th>
+<th>Used for and implementation limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://aclanthology.org/D19-1410/">Reimers and Gurevych (2019), Sentence-BERT</a></td>
+<td>Sections 3 and 3.1; ACL bibliography</td>
+<td>Shared contextual encoders, pooling, paired/triplet training; our random mean-embedding toy is not SBERT</td>
+</tr>
+<tr>
+<td><a href="https://aclanthology.org/D19-1404/">Yin, Hay, and Roth (2019), Benchmarking Zero-shot Text Classification</a></td>
+<td>Definitions and section 5; ACL bibliography</td>
+<td>Labels become hypotheses; the paper's source-trained binary entailment/non-entailment models differ from a modern three-class pipeline</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/2209.11055">Tunstall et al. (2022), Efficient Few-Shot Learning Without Prompts</a></td>
+<td>Introduction, sections 3.1 and 4.2</td>
+<td>SetFit's contrastive sentence-encoder adaptation and logistic-regression head; reused training pairs are not independent new labeled examples</td>
+</tr>
+<tr>
+<td><a href="https://arxiv.org/abs/1907.11692">Liu et al. (2019), RoBERTa</a></td>
+<td>Model/training changes and pretraining design comparisons</td>
+<td>Improved BERT training recipe; the small attention classifier does not reproduce its tokenizer, pretraining, scale, or results</td>
+</tr>
+</tbody>
+</table>
+<p>The course now links sixteen research papers, twelve of which were read in primary full text.
+The four historical full-text gaps in the earlier table remain. No pretrained weights were downloaded
+or evaluated for these reading comparisons, and no source establishes Jev's internal lineage.
+The timeline uses selected publication dates, not first-invention dates or a measured chronology of Jev.</p>
 <h2 id="pytorch-lab-references">PyTorch lab references<a class="anchor-link" href="#pytorch-lab-references">¶</a></h2><p>Lesson 10 was exercised locally with <strong>PyTorch 2.14.1+cpu</strong>, installed from the official CPU
 wheel index on <strong>2026-10-02</strong>. Installed API documentation and executable checks support the
 implementation. The links below are reference destinations; their webpages were not reopened.</p>
